@@ -35,14 +35,14 @@ body{
 }	
 	
 
-button#read-btn:hover {
+input#read-btn:hover {
     background: #000;
     color: #fff;
 }
-button#read-btn {
+input#read-btn {
+    width: 200px;
     background: transparent;
     font-size: 20px;
-    padding: 8px 40px;
     border: 2px solid black;
     color: #000;
 }
@@ -93,7 +93,7 @@ div#lt-blog p span {
 				</p>
 				
 				<a href="<%=fourInt[0].url%>"> 
-                   <button id="read-btn" class="read-more-btn" >Check Out Complete Interview</button>
+                   <input id="read-btn" type="button" class="read-more-btn" value="Ver Más" > 
                 </a>
 				
                 </div>

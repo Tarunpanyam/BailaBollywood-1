@@ -84,13 +84,17 @@
   <style>
     a{
       color:black;
+      font-weight: 700;
+
+    }
+    strong{
+      font-weight: 1000;
     }
     a:hover{
       color:black;
     }
     body{
       font-size: 18px;
-      font-weight: 700;
     }
   </style>
     
@@ -165,11 +169,11 @@
   </div>
     <!---- Blog Image-->
     <% if(blog.image.localeCompare("")==1){%>
-    <div class="text-center" style="margin-top:15px; margin-bottom:15px">
+    <div class="text-center" style="margin-top:20px; margin-bottom:20px">
     <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/uploads/<%= blog.image%>" alt="blog-image">
     </div>
     <%  }%>
-    <div class="container" style="margin-top:15px; margin-bottom:15px" >
+    <div class="container"  >
     <!---  Blog Content -->
       <p class="target" style="word-wrap:break-word; font-size: 18px;"><%= blog.content %></p>
     </div>
@@ -177,15 +181,15 @@
     <div class="container">
         <%subBlogz.forEach(function(subBlog){%>
           
-          <div style="padding-top:15px; padding-bottom: 15px;">
-          <h4 style="font-weight: 1000;"><%=subBlog.title%></h4>
+          <div>
+          <h4 style="font-weight: 1000; margin-top:20px;"><%=subBlog.title%></h4>
           </div>
          <% if(subBlog.image.localeCompare("")==1){%>
           <div  class="text-center">
-            <img style="max-width:100%; height:auto; object-fit: contain;" src="<%=subBlog.image%>" alt="image">
+            <img style="max-width:100%; height:auto; object-fit: contain; margin-top: 20px; margin-bottom: 20px;" src="<%=subBlog.image%>" alt="image">
           </div>
         <%}%>
-          <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;"><%=subBlog.content%></p>
+          <div class="target mt-2" style="word-wrap:break-word; font-size: 18px;"><%=subBlog.content%></div>
         
         <%})%>
       </div>

@@ -91,13 +91,19 @@ router.get('/', (req, res) => {
   });
 
   // Only Admin can see the comments
-  router.get('/posts/:id/comments',cacheData.memoryCacheUse(36000),(req,res)=>{
+  router.get('/posts/:id/admin',cacheData.memoryCacheUse(36000),(req,res)=>{
     let id = req.params.id;
     
-    Blog.findById(id).populate("comments").exec(function(err,blog){
+    Blog.findById(id).populate("subBlogs").populate("comments").exec(function(err,blog){
       if(err)
       console.log(err);
-      res.render('../views/blogs/show2', {blog});
+      //console.log(blog.subBlogs[0].image);
+      console.log("----!"+blog.image+"!------");
+      var subBlogz=blog.subBlogs;
+      //subBlogz.forEach(function(subBlog){
+      //  console.log(subBlog.image);
+      //})
+      res.render('../views/blogs/adminShow', {blog,subBlogz});
     });
   })
 
@@ -185,7 +191,7 @@ router.post('/:id/subBlogs/new',async(req,res)=>{
   }
   blog.subBlogs.push(subBlog);
   await blog.save();
-  res.redirect('/blogs/posts/'+blog._id+"/comments");
+  res.redirect('/blogs/posts/'+blog._id+"/admin");
     
   } catch (err) {
     console.log(err.message);
@@ -202,6 +208,8 @@ router.get('/posts/:id/delete',cacheData.memoryCacheUse(36000),async (req,res)=>
     
     fs.unlinkSync(toDel);
     blog.subBlogs.remove({},err=>{
+      if(err)
+      console.log(err.message);
       console.log("SubBlogs Deleted");
     });
   });
@@ -218,7 +226,7 @@ router.get('/posts/:id/delete',cacheData.memoryCacheUse(36000),async (req,res)=>
 
 // Post route for adding new comment on individual Blog
 // url:/blogs/posts/:id
-router.post('/posts/:id',middleware.isLoggedIn,(req,res)=>{
+router.post('/posts/:id',(req,res)=>{
   let id = req.params.id;
   //console.log(req.user);
   //console.log("post method triggered");
@@ -254,27 +262,27 @@ router.get("/bollywood",cacheData.memoryCacheUse(36000),(req,res)=>{
 })
 // Folk Dance Blog Index Page
 router.get("/folkDance",cacheData.memoryCacheUse(36000),(req,res)=>{
-  Blog.find({tag:"Folk Dance"}).sort({created:-1}).then(blogs => {
+  Blog.find({tag:"Danzas folklóricas"}).sort({created:-1}).then(blogs => {
     res.render('../views/blogs/folkDance',{blogs});
   })
 })
-// Music Blog Index Page
+// Música Blog Index Page
 router.get("/music",cacheData.memoryCacheUse(36000),(req,res)=>{
-  Blog.find({tag:"Music"}).sort({created:-1}).then(blogs => {
+  Blog.find({tag:"Música"}).sort({created:-1}).then(blogs => {
     res.render('../views/blogs/music',{blogs});
   })
 })
-// Art Blogs Index Page
+// letras Blogs Index Page
 router.get("/art",cacheData.memoryCacheUse(36000),(req,res)=>{
   
-  Blog.find({tag:"Art"}).sort({created:-1}).then(blogs => {
+  Blog.find({tag:"letras"}).sort({created:-1}).then(blogs => {
     res.render('../views/blogs/art',{blogs});
   })
 })
 
-// Literature Blog Index Page
+// Literatura Blog Index Page
 router.get("/literature",cacheData.memoryCacheUse(36000),(req,res)=>{
-  Blog.find({tag:"Literature"}).sort({created:-1}).then(blogs => {
+  Blog.find({tag:"Literatura"}).sort({created:-1}).then(blogs => {
     res.render('../views/blogs/literature',{blogs});
   })
 })

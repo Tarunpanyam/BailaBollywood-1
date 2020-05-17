@@ -81,112 +81,103 @@
 
   <!---------------Css file for responsiveness------------------>
   <link rel="stylesheet" type="text/css" href="/stylesheets/responsive-breakpoints.css" />
-
+  <style>
+    a{
+      color:black;
+    }
+    a:hover{
+      color:black;
+    }
+    body{
+      font-size: 18px;
+      font-weight: 700;
+    }
+  </style>
     
   </head>
-<body style="background:linear-gradient(to right,#ff5f6d,#f7b733);">
+<body >
 
- <!------------------------------------Navigation Bar Section-One------------------------------------------>
 
-  <nav id="nav-header" class="navbar navbar-expand-lg navbar-light sticky-top  ">
-    <a class="navbar-brand p-0 m-0" href="/"><img src="/images/Spanish-bolo-natraj-transparent.png" class="logo-navbar"
-        alt="Logo Of Baila Bollywood"></a>
-    <button class="navbar-toggler mr-3  " type="button" data-toggle="collapse"
-      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class=" navbar-toggler-icon"></span>
-    </button>
-
-   <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
-          <ul class="navbar-nav nav nav-pills ">
-            <li class="nav-item m-xl-2 active">
-              <a class="nav-link text-center font-weight-bold " href="/">Inicio </a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#about">
-                Quiénes Somos
-                </a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#blogs">Nuestro Blog</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#pop-categ">Lo más Popular</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#found-note">Nuestro Fundador </a>
-            </li>
-            
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/danzas-folkloricas-de-India">Danzas folclóricas</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/equipo">Equipo</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/blogs">Blogs</a>
-            </li>
-          </ul>
-      <form class="form-inline  log-reg-btn ml-xl-5 ml-lg-5  justify-content-center">
-        <% if(!currentUser) {%>
-        <a class="btn mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3  login-btn " href="/login" target="_top"><i
-            class="fa fa-sign-in"></i> Iniciar Sesión </a>
-        <a class="btn mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 register-btn " href="/register" target="_top"><i
-            class="fa fa-user-plus"></i> Regístrate</a>
-        <% }else{ %>
-        <a class="btn  mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 login-btn " href="/logout" target="_top"><i
-            class="fa fa-sign-in"></i> Cerrar Sesión</a>
-        <a class="btn  mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 register-btn " href="/dashboard" target="_top"><i
-            class="fa fa-heart"></i> My Tablero</a>
-        <% } %>
-      </form>
-    </div>
-  </nav>
-
-  <div class="container"> 
-<div class="container">
+  <div class="container" >
+    <div style="border: 1px solid black;">
   <!--  Blog Title-->
-  <div class="text-center" style="margin-top:25px ;margin-bottom:25px">
-    <h1 class="text-center display-4" style="color:blanchedalmond; padding-top:20px" ><%= blog.title %></h1>
+  <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
+    <h1 class="text-center display-4" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" ><%= blog.title %></h1>
     <!--  Blog DAte && Blog Creator-->
-    <h5 class="text-muted"><%= blog.time %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted By: <%= blog.creator %></h5>
+    <h5 class="text-muted" ><%= blog.time %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted By: <%= blog.creator %></h5>
   
     
   </div>
     <!---- Blog Image-->
-    <div class="text-center">
-    <img class="img-responsive" style="width: 80%; height:auto;" src="/uploads/<%= blog.image%>" alt="blog-image">
+    <% if(blog.image.localeCompare("")==1){%>
+    <div class="text-center" style="margin-top:15px; margin-bottom:15px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/uploads/<%= blog.image%>" alt="blog-image">
     </div>
-    <div class="container" style="margin-top:25px; margin-bottom:35px" >
+    <%  }%>
+    <div class="container" style="margin-top:15px; margin-bottom:15px" >
     <!---  Blog Content -->
-      <p id="target" style="word-wrap:break-word;" ><%= blog.content %></p>
+      <p class="target" style="word-wrap:break-word; font-size: 18px;"><%= blog.content %></p>
     </div>
+  </div>
+    
+    <div class="container">
+        <%subBlogz.forEach(function(subBlog){%>
+          <div style="border: 1px solid black;">
+          
+          <div style="padding-top:15px; padding-bottom: 15px;">
+          <h4 style="font-weight: 1000;"><%=subBlog.title%></h4>
+          </div>
+         <% if(subBlog.image.localeCompare("")==1){%>
+          <div  class="text-center">
+            <img style="max-width:100%; height:auto; object-fit: contain;" src="<%=subBlog.image%>" alt="image">
+          </div>
+        <%}%>
+          <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;"><%=subBlog.content%></p>
+        </div>
+        <%})%>
+      </div>
+      
+    
   </div>
   <div class="container">
-    <a href="/blogs/<%=blog._id%>/subBlogs/new">
-    <button style="margin-top: 20px; border:1px solid #f7b733; width:150px; background:linear-gradient(to bottom,#ff5f6d,#f7b733);" type="submit">Add Sub-Blog </button>
-  </a>
-  </div>
+    <div class="text-center" style="margin-top:20px; margin-bottom: 20px;">
+      <a href="/blogs/<%=blog._id%>/subBlogs/new">
+      <button style="width: 80%; background-color: black;" class="btn btn-primary">Add More Parts to this blog</button>
+    </a>
+    </div>
+    </div>
   
-  <div class="container" style="margin-top:100px"  >
-    
-      <% blog.comments.forEach(comment=>{ %>
-        <div class="container" style="border:darkgreen 2px solid">
-        <div class="media" style="margin-top: 10px;">
-            <div class="media-body">
-            <h5 class="mt-0"><%=comment.author.username%> </h5>
-            <%= comment.text %>
-        </div>
-        </div>
-    
-    <form action="/blogs/posts/<%=blog._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
-      <button style="margin-top: 20px; border:1px solid #f7b733; width:150px; background:linear-gradient(to bottom,#ff5f6d,#f7b733);" type="submit">Delete </button>
+  <div class="container">
+    <div style="padding-top: 100px; padding-bottom: 150px;">
+    <form action="/blogs/posts/<%= blog._id %>" method="POST">
+
+      <h3  style="color:grey">Leave A Reply</h3>
+      <textarea style="height: 100px; width: 100%; border:black 1px solid" name="comment[text]" placeholder="Add Comment Here"></textarea>
+      <input style="margin-top: 20px; border:1px solid black; width:150px; " type="submit" value="Post Comment" />
     </form>
   </div>
-      <% }); %>
   </div>
-</div>
 
+  <div class="container">
+        <div class="text-center" style="margin-top:20px; margin-bottom: 20px;">
+          <a href="#">
+          <button style="width: 80%; background-color: black;" class="btn btn-primary">Add More Parts to this blog</button>
+        </a>
+        </div>
+        </div>
+  
+
+
+<!--Parsing HTML JS-->
+<script>
+$(".target").each(function(){
+    let text = ( $(this).text());
+
+    let html = $.parseHTML(text);
+    $(this).empty();
+    $(this).append(html);
+  });
+</script>
 <!--Boot Strap-->  
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

@@ -59,76 +59,10 @@
   <!---------------------------Google Fonts----------------------------------------->
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web:200&display=swap" rel="stylesheet" />
 
-  <!----------------------------Navbar Css Files---------------------->
-  <link rel="stylesheet" type="text/css" href="/stylesheets/navbar.css" />
-  <!-- Swiper css initialized-->
-  <link rel="stylesheet" type="text/css" href="/stylesheets/swiper.min.css" />
-  <!-- Swiper javascript initialized-->
-  <script src="scripts/swiper.min.js"></script>
-  <!-------------Css file of index.html-------------------------->
-  <link rel="stylesheet" type="text/css" href="/stylesheets/index.css" />
-
-  <!---------------Css file for responsiveness------------------>
-  <link rel="stylesheet" type="text/css" href="/stylesheets/responsive-breakpoints.css" />
+ 
 
   </head>
   <body>
- <!------------------------------------Navigation Bar Section-One------------------------------------------>
-
-  <nav id="nav-header" class="navbar navbar-expand-lg navbar-light sticky-top  ">
-    <a class="navbar-brand p-0 m-0" href="/"><img src="/images/Spanish-bolo-natraj-transparent.png" class="logo-navbar"
-        alt="Logo Of Baila Bollywood"></a>
-    <button class="navbar-toggler mr-3  " type="button" data-toggle="collapse"
-      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class=" navbar-toggler-icon"></span>
-    </button>
-
-   <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
-          <ul class="navbar-nav nav nav-pills ">
-            <li class="nav-item m-xl-2 active">
-              <a class="nav-link text-center font-weight-bold " href="/">Inicio </a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#about">
-                Quiénes Somos
-                </a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#blogs">Nuestro Blog</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#pop-categ">Lo más Popular</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#found-note">Nuestro Fundador </a>
-            </li>
-           
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/danzas-folkloricas-de-India">Danzas folclóricas</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/equipo">Equipo</a>
-            </li>
-           <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/blogs">Blogs</a>
-            </li> 
-          </ul>
-      <form class="form-inline  log-reg-btn ml-xl-5 ml-lg-5  justify-content-center">
-        <% if(!currentUser) {%>
-        <a class="btn mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3  login-btn " href="/login" target="_top"><i
-            class="fa fa-sign-in"></i> Iniciar Sesión </a>
-        <a class="btn mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 register-btn " href="/register" target="_top"><i
-            class="fa fa-user-plus"></i> Regístrate</a>
-        <% }else{ %>
-        <a class="btn  mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 login-btn " href="/logout" target="_top"><i
-            class="fa fa-sign-in"></i> Cerrar Sesión</a>
-        <a class="btn  mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 register-btn " href="/dashboard" target="_top"><i
-            class="fa fa-heart"></i> My Tablero</a>
-        <% } %>
-      </form>
-    </div>
-  </nav>
 
     <div class="container">
       <form action="/blogs/posts/new" method="POST" enctype="multipart/form-data">
@@ -137,10 +71,10 @@
         <input type="file" name="image"/>
         <select id="cars" name="tag">
           <option value="Bollywood">Bollywood</option>
-          <option value="Literature">Literature</option>
-          <option value="Folk Dance">Folk Dance</option>
-          <option value="Art">Art</option>
-          <option value="Music">Music</option>
+          <option value="Literatura">Literatura</option>
+          <option value="Danzas Folklóricas">Danzas Folklóricas</option>
+          <option value="Letras">Letras</option>
+          <option value="Música">Música</option>
         </select>
         <input type="text" name="name" placeholder="Your name" required minlength="4"/>
         <input type="submit" value="Publish" />
