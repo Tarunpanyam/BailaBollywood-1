@@ -1,20 +1,66 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<title>Kashmir-Folk Dance Rouff</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="/stylesheets/state-style.css">
-  <meta charset="UTF-8">
+  <head>
+    <title>Kashmir Folk Danzas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    
+   <script>
+      $(document).ready(function(){
+    let text = ( $("#target").text());
+    let html = $.parseHTML(text);
+    $("#target").empty();
+    $("#target").append(html);
+  
+});
+    </script>
+
+      <meta charset="UTF-8">
   <!--Title of the Website-->
-  <title>Baila Bollywood</title>
   <!--Meta tag that tells browser to not translate page to english (Preferably chrome)-->
   <meta name="google" content="notranslate" />
   <!--Meta tags for SEO-->
-  <meta name="description"
-    content="A Spanish Language Portal on Indian Dance Songs Subtitled into Spanish Language.Spanish Speakers can watch Bollywood Songs with Spanish Subtitles." />
   <meta name="robots" content="index, follow" />
+   <meta name="keywords" content="Cine India, Canciones de Bollywood, Baile de Bollywood, Películas hindú, Películas de la india, Cultura India, Indian culture, Danzas de la India, Bailes de la India, Bollywood en español, Cine de Bollywood" />
+   <meta name="title" content="Un portal sobre la cultura India " />
+   <meta name="description" content="Todo sobre la cultura milenaria de la India, danzas y bailes, música hindú, el cine de Bollywood, canciones de Bollywood, la sociedad y las tradiciones, arte de la India,  y las relaciones bilaterales entre la India y el mundo hispanohablante. " />
+
+
+  <!------------------Social Media Icons------------------------>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  
   <!--Meta tag for Responsiveness-->
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <!--Meta tag for google site verification-->
+  <meta name="google-site-verification" content="86RNMqD2_RNqFP-WmWf9pmzSbjEz_RQMLAnS8yhKQpg" />
+  
+  
+
+  <!-------------------Meta Tags for OG-->
+<!-- HTML Meta Tags -->
+<meta name="description" content="Todo sobre la cultura milenaria de la India, danzas y bailes, música hindú, el cine de Bollywood, canciones de Bollywood, la sociedad y las tradiciones, arte de la India,  y las relaciones bilaterales entre la India y el mundo hispanohablante.">
+
+<!-- Google / Search Engine Tags -->
+<meta itemprop="name" content="Baila Bollywood-A Spanish Language Portal on Indian Dance Songs">
+<meta itemprop="description" content="Todo sobre la cultura milenaria de la India, danzas y bailes, música hindú, el cine de Bollywood, canciones de Bollywood, la sociedad y las tradiciones, arte de la India,  y las relaciones bilaterales entre la India y el mundo hispanohablante.">
+<meta itemprop="image" content="https://pbs.twimg.com/media/EQlEz7pW4AAKwC4.jpg">
+
+<!-- Primary Meta Tags -->
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.bailabollywood.com/">
+<meta property="og:title" content="Un portal sobre la cultura India ">
+<meta property="og:description" content="Todo sobre la cultura milenaria de la India, danzas y bailes, música hindú, el cine de Bollywood, canciones de Bollywood, la sociedad y las tradiciones, arte de la India,  y las relaciones bilaterales entre la India y el mundo hispanohablante. ">
+<meta property="og:image" content="https://pbs.twimg.com/media/EQlEz7pW4AAKwC4.jpg">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://www.bailabollywood.com/">
+<meta property="twitter:title" content="Un portal sobre la cultura India ">
+<meta property="twitter:description" content="Todo sobre la cultura milenaria de la India, danzas y bailes, música hindú, el cine de Bollywood, canciones de Bollywood, la sociedad y las tradiciones, arte de la India,  y las relaciones bilaterales entre la India y el mundo hispanohablante. ">
+<meta property="twitter:image" content="https://pbs.twimg.com/media/EQlEz7pW4AAKwC4.jpg">
+
   <!--Title bar Icon-->
   <link rel="icon" href="/images/Spanish-bolo-natraj-transparent.png" />
   <!---------------Bootstrap Stylesheet---------------------------------------->
@@ -35,12 +81,40 @@
 
   <!---------------Css file for responsiveness------------------>
   <link rel="stylesheet" type="text/css" href="/stylesheets/responsive-breakpoints.css" />
+  <style>
+    a{
+      color:black;
+    }
+    a:hover{
+      color:black;
+    }
+    body{
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .btn-social { 
+  display: inline-block; 
+  
+}
 
-  <!------------------Social Media Icons------------------------>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-</head>
-<body style="background-color: #fff; color: #343a40;">
- 
+.list-inline { 
+  padding-left: 0; 
+  list-style: none; 
+  margin-left: -5px; }
+
+.list-inline > li { 
+  display: inline-block;  
+  padding-left: 5px; 
+  padding-right: 5px; 
+}
+
+
+
+  </style>
+    
+  </head>
+<body >
+
  <!------------------------------------Navigation Bar Section-One------------------------------------------>
 
   <nav id="nav-header" class="navbar navbar-expand-lg navbar-light sticky-top  ">
@@ -71,16 +145,16 @@
             <li class="nav-item m-xl-2">
               <a class="nav-link text-center font-weight-bold " href="/#found-note">Nuestro Fundador </a>
             </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold" data-toggle="modal" data-target="#exampleModalCenter" >Contacto</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/india-map">Danzas folclóricas</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/team">Equipo</a>
-            </li>
             
+            <li class="nav-item m-xl-2">
+              <a class="nav-link text-center font-weight-bold " href="/danzas-folkloricas-de-India">Danzas folclóricas</a>
+            </li>
+            <li class="nav-item m-xl-2">
+              <a class="nav-link text-center font-weight-bold " href="/equipo">Equipo</a>
+            </li>
+            <li class="nav-item m-xl-2">
+              <a class="nav-link text-center font-weight-bold " href="/blogs">Blogs</a>
+            </li>
           </ul>
       <form class="form-inline  log-reg-btn ml-xl-5 ml-lg-5  justify-content-center">
         <% if(!currentUser) {%>
@@ -98,76 +172,179 @@
     </div>
   </nav>
 
+  <div class="container" >
+  <!--  Blog Title-->
+  <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
+    <h1 class="text-center display-4" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" >
+        Danzas populares de  Kashmir</h1>
+  
+    
+  </div>
+    <!---- Blog Image-->
+     <div class="text-center" style="margin-top:20px; margin-bottom:15px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/rouff-1.jpg" alt="blog-image">
+    </div>
+    
+        <h4 style="font-weight: 1000; margin-top: 50px;">Rouf</h4>
+
+    <div class="container" style="margin-top:15px; margin-bottom:15px" >
+    <!---  Blog Content -->
+      <p class="target" style="word-wrap:break-word; font-size: 18px;">
+          Es un elegante baile originado en la comunidad musulmana de Cachemira y que es principalmente realizado por mujeres. Uno puede presenciar esta danza durante el período de Ramzan y la temporada de cosecha, al igual que en otras ocasiones alegres. El baile consiste principalmente en el juego de pies (llamado "Chakri" en el idioma local) rimado y sincronizado al ritmo de una poesía mística. Puedes buscar el musical de la canción "Bumbro" en el cual la famosa actriz de Bollywood, Priety Zinta, interpreta una hermosa versión de este baile.
+      </p>
+
+      <p class="target" style="word-wrap:break-word; font-size: 18px;">
+         Este es el listado de las cinco formas de danza folclórica más famosas de Rajasthan, que debes conocer:
+
+      </p>
+          <div class="text-center" style="margin-top:20px; margin-bottom:15px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/rouff-2.jpg" alt="blog-image">
+    </div>
+    </div>
 
   
-<h1 class="state-h1">Kashmir</h1>
-<div id="main-container">
-		
-		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height:500px; max-width: 80%; margin: auto; overflow: hidden;">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="/images/rouff-1.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="/images/rouff-2.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="/images/rouff-3.jpg" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+    <div class="container" style="margin-top:15px; margin-bottom:15px" >
+    <!---  Blog Content -->
+    <h4 style="font-weight: 1000; margin-top: 50px;">Kud</h4>
+      <p class="target" style="word-wrap:break-word; font-size: 18px;">
+           Las pintorescas montañas de Jammu y Cachemira están cubiertas por el manto de las culturas populares. La danza Kud es parte de una de esas culturas de las cordilleras medias. El baile se realiza para celebrar una cosecha exitosa y rentable, especialmente la del maíz. Es una danza ritual realizada por los habitantes locales (principalmente agricultores) en honor a los Lok Devtas (Dioses del pueblo). Es su manera de agradecer a las deidades por protegerlos a ellos, a sus familias, a sus cultivos y a su ganado.
+      </p>
 
- 
-<div class="card mb-3" style="max-width: 80%; margin: auto; margin-top: 20px; background-color: #ede59a">
-  <div class="row no-gutters">
-    <div class="col-md-4 fill" >
-      <img src="/images/rouff-2.jpg" class="card-img" alt="...">
+      <p class="target" style="word-wrap:break-word; font-size: 18px;">
+         El baile celebra la felicidad de las personas. Por lo tanto, cualquiera puede participar. No requiere entrenamiento profesional. Incluso los turistas pueden bailar junto a los artistas. Todos visten su mejor ropa tradicional para divertirse. La música de  grandes trompetas, tambores y flautas marca el ritmo de la celebración. En general se baila por la noche junto a una hoguera, creando así, el ambiente perfecto.
+
+      </p>
+     
+    
+    <div class="text-center" style="margin-top:15px; margin-bottom:15px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/kud.png" alt="blog-image">
     </div>
-    <div class="col-md-8" style="background-color: #ede59a">
-      <div class="card-body">
-            <h1 id="card-head">Danza Rouff</h1>
-                <p class="card-text">Rouf o Rouff es una forma de danza folclórica practicada principalmente por las mujeres de Cachemira. En esta danza las mujeres forman dos líneas entre sí y realizan diversos gestos corporales; una danza que marca la temporada de primavera y el inicio de festivales como Id-ul-Fitr para la comunidad musulmana. La simplicidad en su trabajo de pies junto con las canciones populares hacen que sea un hermoso espectáculo. Tradicionalmente, las canciones de rouf se cantaban mientras las mujeres realizaban actividades cotidianas, por lo que carecían de música; sin embargo, mientras se actúa en el escenario o en una reunión informal, se utilizan instrumentos musicales populares como Noet, Tumbakhnari, Rabab, para acompañar los cantos y los movimientos. 
-               </p>
+
+ </div>
+    
+    <div class="container">
+      
+          
+          <div>
+          <h4 style="font-weight: 1000; margin-top: 50px;">Dumhal</h4>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+         Dumhal es una danza popular de la tribu Wattal / Watal de esta región. Según sus tradiciones, solo puede ser bailado por los hombres de la tribu. Para ello visten largas túnicas coloridas, gorros cónicos y adornos de cuentas. Moviéndose en procesión, muestran su cultura a través de su actuación. Los bailarines colocan un estandarte en el suelo y danzan a su alrededor. Los hombres cantan y bailan al ritmo de los tambores. Dumhal se realiza en ocasiones auspiciosas para el clan. 
+        </p> 
+
+          
+
+        <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+        <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/dumhal.png" alt="blog-image">
+        </div>
+            
 
       </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3" style="max-width: 80%; margin: auto; margin-top: 20px; background-color: #ede59a">
-  <div class="row no-gutters">
-    <div class="col-md-4 fill" >
-      <img src="/images/rouff-4.png" class="card-img" alt="...">
-    </div>
-    <div class="col-md-8" style="background-color: #ede59a">
-      <div class="card-body">
-            <h1 id="card-head">Danza Rouff En Bollywood</h1>
-                <p class="card-text">Esta forma de baile fue representada en la película Mission Kashmir (2000) dirigida y producida por Vidhu Vinod Chopra. La canción de Bumbro de la película protagonizada por Preiti Zinta es  una maravillosa interpretación de Rouf. Bumbro es una canción popular de Cachemira, originalmente escrita para la primera ópera de Kashmir Bombur ta Yemberzal. Esta canción se canta generalmente durante la ceremonia del mehndi en una boda.
-               </p>
+      
+    
+   
 
-      </div>
+    <div class="container">
+      
+          
+          <div>
+          <h4 style="font-weight: 1000; margin-top: 50px;">Bhand Jashan</h4>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Es uno de los bailes folclóricos, elegantes y atractivos de la región, que combina el drama. Lo interpretan entre 15 a 20 personas. Es una danza popular bastante expresiva. Narra historias tanto políticas como sociales. El tono de la actuación es satírico. Los movimientos son en su mayoría, simples y elegantes. Los artistas colocan sus manos en la cintura de las bailarinas y se mueven de manera conjunta, hacia adelante y hacia atrás. Estos pasos son al ritmo de música ligera, por lo tanto no requiere el uso de instrumentos musicales pesados.
+        </p>   
+           <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+        Las mujeres se visten con sus coloridos y tradicionales pheran kurta y salwar. Cubren sus cabezas con una bufanda adornada con joyas étnicas de Cachemira. Los hombres, por su parte, usan kurta, pijama y un sombrero colorido. También llevan pañuelos especiales llamados Rumal en sus manos. Bhand literalmente quiere decir payaso y Jashan, celebración. Por lo tanto, este baile también es conocido como festival de payasos.        
+      </p>   
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/rouff-3.jpg" alt="blog-image">
     </div>
+        
+      </div>
+
+      
+
+<div class="container">
+
+          <div>
+          <h4 style="font-weight: 1000; margin-top: 50px;">Hafiza</h4>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Hafiza es un baile común de Cachemira, practicado en ocasiones festivas,  como el matrimonio, el parto, la cosecha entre otras. Además, forma parte del Sufiana Kalam (música devocional de los místicos musulmanes, o sea los sufis). Lo danzan bailarines entrenados, tanto durante la ceremonia de Henna de la novia (la aplicación de Henna en las manos y los pies es parte de las costumbres antes de la boda), así como en la procesión del novio. La actuación es acompañada  de un instrumento musical llamado Santoor, (dulcimer martillado) que tiene casi 100 cuerdas y es tocado con la ayuda de palos.
+        </p> 
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/rouff-4.png" alt="blog-image">
+    </div>
+        
+      </div>
+        
+
   </div>
+
+
+<div class="container">
+
+          <div>
+          <h4 style="font-weight: 1000; margin-top: 50px;">Bacha Nagma</h4>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Otra baile único del valle de Cachemira es Bacha Nagma. Lo danzan jóvenes vestidos de mujeres, con atuendos y ornamentos tradicionales. Es bailado por 6 a 7 personas, en diversas reuniones culturales. No se requiere de cantantes ya que los mismos bailarines cantan en coro. La música es fuerte y entretenida. Los artistas realizan movimientos elegantes y flexibles, demostrando un talento único. En general, la actuación es entretenida debido al canto melodioso y a la excelente actuación de los intérpretes.        </p> 
+
+  
+        
+      </div>
+        
+
+  </div>
+
+
+ <div class="container"  style="padding:30px; text-align:center; font-style: italic; font-weight:bolder; ">
+ <h4 style="font-size:19px; color: rgb(247,183,51); font-family: Arial, Helvetica, sans-serif; font-weight: 12000; ">Namaste! Un plataforma única en internet para explorar India a través de reseñas culturales y material artístico hecho por hablantes nativos de hindi Conectar con nosotros significa, conectar directamente con la India.<span style="color: blue; text-decoration: underline; font-family: Arial, Helvetica, sans-serif; font-weight: 12000;"> Te damos una calurosa bienvenida a nuestra App. Descarga, utiliza y comparte!</span> </h4>
+
+   <a href="https://play.google.com/store/apps/details?id=com.spanishbolo.bb&hl=es" class="col-4 text-center" style="border: none;"><img src="/images/google-play-final-icon.png" style="width: 100px; height:100px; margin: 10px;"></a>
+<h4>Conecta con Nosotros :</h4>
+<div class="social-icons">
+              <a href="https://www.facebook.com/Baila-Bollywood-105697461007966/"
+                class="col-4 fa fa-facebook text-center" title="Facebook Link" target="_blank"></a>
+             
+              <a href="https://www.linkedin.com/in/baila-bollywood-3a3b031a1" class="col-4 fa fa-linkedin  text-center"
+                title="Linkedin Link" target="_blank"></a>
+              <a href="https://instagram.com/bailabollywood20?igshid=15jmz5uzyz1jj"
+                class="col-4 fa fa-instagram text-center" title="Instagram Link" target="_blank"></a>
+              <a href="https://www.quora.com/share/Baila-Bollywood-on-Instagram-Introducing-Baila-Bollywood-3-days-to-go-bailabollywood-spanishculture-indianculture-bollywood-music-spanishbolo-1?ch=3&share=2cd5e92a&srid=uOprOw"
+                title="Quora Link" class="col-4 fa fa-quora  text-center" target="_blank"></a>
+              <a href="https://www.medium.com/@bailabollywood20" class="col-4 fa fa-medium  text-center" title="Medium Link"
+                target="_blank"></a>
+                <a href="https://www.youtube.com/channel/UCUb7jsujf73W8NaVYXqOZ1w?view_as=subscriber" class="col-4 fa fa-youtube  text-center" title="Youtube Link"
+                target="_blank"></a>
+
+
+            
+               
+
+            </div>
 </div>
-</div>
+
+
+<!--Parsing HTML JS-->
+<script>
+$(".target").each(function(){
+    let text = ( $(this).text());
+
+    let html = $.parseHTML(text);
+    $(this).empty();
+    $(this).append(html);
+  });
+</script>
+<!--Boot Strap-->  
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
-  <script type="text/javascript">$('#mainCarousel').carousel({
-    interval: 400
-});</script>
 </body>
 </html>
