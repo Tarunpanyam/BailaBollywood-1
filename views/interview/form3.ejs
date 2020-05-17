@@ -18,57 +18,33 @@
 </div>
       
       <div class="container">
-    <form action="/interviews/posts?type=0" method="POST">
+    <form action="/interviews/posts/<%=id%>?type=3" method="POST">
         <div class="input-group input-group-lg">
             
             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
-              required
-              name="interview[title]"
+              
+              name="subInterview[title]"
               placeholder="Enter Your Title">
           </div>
           <div class="input-group input-group-lg mt-3">
             
             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
-            name="interview[image]" 
-            required 
+            name="subInterview[image]"  
                 placeholder="Enter Image URL">
           </div>
-          <div class="input-group input-group-lg mt-3">
-            
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
-            name="interview[thumbnail]"  
-            required
-                placeholder="Enter Thumbnail URL">
-          </div>
-          <div class="input-group input-group-lg mt-3">
-            
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
-            name="interview[interviewee]"
-            required
-                placeholder="Enter Interviewee Name">
-          </div>
-          <div class="input-group input-group-lg mt-3">
-            
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
-            name="interview[interviewer]"  
-            required
-                placeholder="Enter Interviewer Name">
-          </div>
-          <div class="input-group input-group-lg mt-3">
-            
-            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
-            name="interview[quote]"  
-                placeholder="Enter Quote If any">
+          
           </div>
           <div class="form-group mt-5">
             <label for="editor">Enter Your Content Here:</label>
             <textarea 
-            name="interview[content]"
+            name="subInterview[content]"
             class="form-control"  rows="9"
             id='editor'  type="text"  ></textarea>
             
           </div>
-          <button type="submit" class="btn btn-primary">Publish</button>
+          <div class="text-center" style="margin-top:20px;">
+            <button style="width: 80%;" type="submit" class="btn btn-primary">Publish</button>
+          </div>
         </form>
         </div>
         <script>

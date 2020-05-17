@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+      <!----------------------------Interview Main Part --------------------->
+    <div class="container-fluid">
+        <div class="container-sm">
+            <div class="text-center" >
+                <img style="max-width:100%; height:auto;" class="mt-5 mb-1" src="<%=Interview.image%>" alt="interview-image">
+            </div>
+        <div style="margin-top:12px;">
+            <h2><i><%=Interview.title%></i></h2>
+            <div style="border-top:2px solid #bfbfbf">
+            <p ><small><strong>May 13 2020&emsp;|&emsp;By <%=Interview.interviewer%></strong></small></p>
+        </div>
+        </div>
+        <div>
+            <p class="target"><%=Interview.content%></p>
+        </div>
+        
+        
+    
+        
+        
+        
+    <!---------------------------------------------------------------------------->
+
+
+    <!-------------------------------Interview Remaining Part------------------------->
+    
+        <% Interview.subInterviews.forEach(function(data){if(data.title!=("")){%>
+            <div class="mt-5 mb-5">
+                <h5><strong><%=data.title%></strong></h5>
+            </div>
+        <%}if(data.image!=("")){%>
+            <div class="text-center" >
+                <img style="max-width:100%; height:auto;" class="mt-5 mb-1" src="<%=data.image%>" alt="interview-image">
+            </div>
+        <%}if(data.content!=("")){%>
+            <div>
+                <p class="target"><%=data.content%></p>
+            </div>
+        <%}})%>
+    </div>
+</div>
+
+
+
+
+    <!-------------------------------------------------------------------------------->
+    
+    <!---------------------------------Using Jquery to parse html-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    
+    <script>
+        $(".target").each(function(){
+            let text = ( $(this).text());
+        
+            let html = $.parseHTML(text);
+            $(this).empty();
+            $(this).append(html);
+          });
+        </script>
+<!--Boot Strap-->  
+
+
+</body>
+</html>

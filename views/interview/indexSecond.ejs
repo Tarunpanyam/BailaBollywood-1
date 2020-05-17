@@ -1,0 +1,165 @@
+<html>
+<head>
+  <title>Blogs </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <!----------------------------Navbar Css Files---------------------->
+  <link rel="stylesheet" type="text/css" href="/stylesheets/navbar.css" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/index.css" />
+
+<style type="text/css">
+body{
+    
+  background:linear-gradient(to right,#ff5f6d,#f7b733);
+}
+
+
+.container-fluid {
+    width: 90%;
+    margin-top: 50px;
+}
+
+.col-12.col-sm-12.col-md-5, .col-12.col-sm-12.col-md-7 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+.image-wrapper img {
+    width: 100%;
+}
+
+#lt-blog p {
+    padding-top: 10px;
+}	
+	
+
+button#read-btn:hover {
+    background: #000;
+    color: #fff;
+}
+button#read-btn {
+    background: transparent;
+    font-size: 20px;
+    padding: 8px 40px;
+    border: 2px solid black;
+    color: #000;
+}
+
+div#lt-blog p span {
+    color: #a9a9a9;
+}
+
+
+
+
+</style>
+<!------Boot Strap Files-->
+
+
+</head>
+
+
+<body>
+
+
+<div class="container-fluid">
+      <div class="row" style= "padding: 20px 0px; padding-bottom:10px;">
+        <div class="col-12 col-sm-12 col-md-8">
+          <div class="container">
+            <div class="promo" style="--overlay-color: hotpink">
+             
+			 <h4 style=" margin-top: 8px; font-size: 22px; ">New Interview</h4>
+
+			  <div class="image-wrapper">
+              
+                    <img src="<%=fourInt[0].image%>">
+                <h4 style="font-style: italic; margin-top: 8px; font-size: 22px; "><%=fourInt[0].title%></h4>
+                <hr>
+				
+				<p>
+				<b><%=twoQ[0].title%></b> <br><br>
+                    <p class="target">
+                <%=twoQ[0].content%>
+            </p>
+
+				</p>
+				
+				<p>
+				<b><%=twoQ[1].title%></b> <br><br>
+                <p class="target"><%=twoQ[1].content%></p>
+                
+				</p>
+				
+				<a href="<%=fourInt[0].url%>"> 
+                   <button id="read-btn" class="read-more-btn" >Check Out Complete Interview</button>
+                </a>
+				
+                </div>
+                <h2 class="title" data-cta="Explora nuestro mundo →"></h2>
+            </div>
+          </div>
+        </div>
+		
+		
+		
+		
+        <div class="col-12 col-sm-12 col-md-4"> 
+          <div class="container">
+          			 <h4 style=" margin-top: 8px; font-size: 22px; ">Cultural</h4>
+
+            <div class="image-wrapper">
+              
+                    <img src="<%=fourInt[1].image%>">
+                <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 30px;"><%=fourInt[1].title%></h4>
+				
+				</div>
+				
+				            <div class="image-wrapper">
+              
+                    <img src="<%=fourInt[2].image%>">
+                <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 30px;"><%=fourInt[2].title%></h4>
+				
+				</div>
+				
+				            <div class="image-wrapper">
+              
+                    <img src="<%=fourInt[3].image%>">
+                <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 30px;"><%=fourInt[3].title%></h4>
+				
+				</div>
+			
+			
+        </div>
+        </div>
+      </div>
+	  <hr>
+    </div>
+	
+	
+	
+
+	
+	
+	
+
+	
+	
+	
+	
+	<script>
+        $(".target").each(function(){
+            let text = ( $(this).text());
+        
+            let html = $.parseHTML(text);
+            $(this).empty();
+            $(this).append(html);
+          });
+        </script>
+	
+	
+	
+	
+</body>
+</html>

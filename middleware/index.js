@@ -1,4 +1,4 @@
-var middlewareObj = {};
+ var middlewareObj = {};
 
 //Middleware
 middlewareObj.isLoggedIn = function (req, res, next) {

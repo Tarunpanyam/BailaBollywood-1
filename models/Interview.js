@@ -20,15 +20,21 @@ function date () {
 }
 
 const InterviewSchema = new Schema({
-  
-  title: {type: String, trim: true, required: true},
-  image: {type: String, required: true, unique: false },
-  content: {type: String, required: true},
-  creator: {type: String, required: true},
-  tag:{type:String , required:true},
+  title:{type:String, trim:true , required:true},
+  image:{type:String, trim:true , required:true},
+  thumbnail:{type:String , trim:true,required:true},
+  interviewee:{type:String , trim:true , required:true},
+  interviewer:{type:String , trim:true , required:true},
+  content:{type:String},
   created:  {type: Date, default: Date.now},
-  time: {type: String, default: date()},
-  video:{type:String }
+  time: {type: String},
+  quote   :{type:String , default:""},
+  subInterviews:[
+    {
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"SubInterview"
+    }
+  ]
 })
 
 module.exports = mongoose.model('Interview', InterviewSchema);

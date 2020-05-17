@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+      <!----------------------------Interview Main Part --------------------->
+    <div class="container-fluid" >
+      <div class="conatiner mt-5 mb-5" style="border: black 2px solid;">
+        <div class="text-center">
+        <img style="max-width:15%; height:auto;" src="<%=Interview.image%>">
+        </div>
+        <div class="text-center">
+            <p><%=Interview.title%></p>
+            <p><strong><%=Interview.quote%></strong></p>
+            
+        </div>
+        <div>
+          <!-------------------------------------Edit Button For Part---------------------->
+      <div class="container">
+        <div class="text-center" style="margin-top:20px; margin-bottom: 20px;">
+          <a href="/interviews/posts/<%=Interview._id%>/edit">
+          <button style="width: 80%; background-color: black;" class="btn btn-primary">Edit This Part</button>
+        </a>
+        </div>
+        <div class="text-center" style="margin-top:20px; margin-bottom: 20px;">
+          <a href="/interviews/posts/<%=Interview._id%>">
+          <button style="width: 80%; background-color: black;" class="btn btn-primary">View Interview</button>
+        </a>
+        </div>
+      </div>
+          
+        </div>
+    </div>
+    <!---------------------------------------------------------------------------->
+
+
+    <!-------------------------------Interview Remaining Part------------------------->
+
+    <div class="container">
+      <% Interview.subInterviews.forEach(function(data){%>
+          <div class="container-fluid" style=" padding:2px; border:2px solid black;">
+          <%if(data.title!=("")){%>
+          <div class="container-fluid text-center">
+              <h5><strong><%=data.title%></strong></h5>
+          </div>
+      <%}if(data.image!=("")){%>
+          <div class="container-fluid text-center">
+              <img style="max-width: 20%; height: auto;"  src="<%=data.image%>" alt="image">
+          </div>
+      <%}if(data.content!=("")){%>
+          <div class="container-fluid text-center">
+              <div class="target">
+                  <%=data.content%>
+              </div>
+          </div>
+      <%}%>
+      <!-------------------------------------Edit Button For Part---------------------->
+      <div class="container">
+        <div style="margin-top:20px;">
+          <a href="/interviews/posts/<%=Interview._id%>/subInterviews/<%=data._id%>/edit">
+          <button style=" background-color: black;" class="btn btn-primary">Edit This Part</button>
+        </a>
+        <a href="/interviews/posts/<%=Interview._id%>/subInterviews/<%=data._id%>/delete">
+          <button style=" background-color: black;" class="btn btn-primary">Delete This Part</button>
+        </a>
+        </div>
+      </div>
+      
+          <%})%>
+
+  </div>
+
+    
+
+
+
+
+    <!-------------------------------------------------------------------------------->
+    <div class="container">
+    <div class="text-center" style="margin-top:20px;">
+      <a href="/interviews/posts/<%=Interview._id%>/add-more-information">
+      <button style="width: 80%; background-color: black;" class="btn btn-primary">Add More Information</button>
+    </a>
+    </div>
+  </div>
+
+      <!---------------------------------Using Jquery to parse html-->
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  
+
+    <script>
+        $(".target").each(function(){
+            let text = ( $(this).text());
+
+            let html = $.parseHTML(text);
+            $(this).empty();
+            $(this).append(html);
+          });
+        </script>
+
+    
+
+</body>
+</html>
