@@ -5,7 +5,7 @@ const SubInterview = require('../models/SubInterview');
 const cacheData = require('../middleware/cacheData');
 
 
-router.get('/interviews',(req,res)=>{
+router.get('/interviews/index',(req,res)=>{
   Interview.find({},(err,Interviews)=>{
     res.render('../views/interview/index',{Interviews});
   })
@@ -19,7 +19,7 @@ router.get("/interviews/interview1",(req,res) => {
   });
 
   
-router.get("/interviews/index",(req,res) => {
+router.get("/interviews/",(req,res) => {
   Interview.find({},(err,allInterviews)=>{
     if(err)
     console.log(err);
