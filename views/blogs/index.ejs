@@ -66,10 +66,17 @@ div#lt-blog p span {
 }
 @media only screen and (min-width:600px){
   .mobile-container{
-    width:70%;
+    width:90%;
   }
 .title-div{
   font-size: 40px;;
+}
+div#top-post-container p {
+    text-align: justify;
+}
+
+div#top-post-container h1 {
+    text-align: justify;
 }
 
 }
@@ -173,12 +180,14 @@ div#lt-blog p span {
             <div>
               
              <h1 style="padding:5px;color:black;" class="title-div"><%=blog.title%></h1>
-             <p style="color: white;">Categoría:<%=blog.tag%></p>
+             <p style="color:#000;">Categoría:<%=blog.tag%></p>
              
              <p style="color:black; word-wrap:break-word;" class="target"><%=blog.content%></p>
             <a href="/blogs/posts/<%= blog._id %>"> 
-             
-             <button id="read-btn" class="read-more-btn" style="background:linear-gradient(to right,#ff5f6d,#f7b733); font-size:20px; border-radius: 10px; padding-left: 40px; padding-right: 40px; padding-bottom: 30px; border:3px solid white">Ver Más</button>
+            
+              <button id="read-btn" class="read-more-btn" style="background:linear-gradient(to right,#ff5f6d,#f7b733); font-size:20px; padding-left: 45px; padding-right: 45px; padding-bottom: 40px; border:3px solid #000; border-radius: 20px;">Ver Más</button>
+            
+            
             </a></div><a href="/blogs/posts/<%= blog._id %>">
           </a>
         </div>
@@ -188,7 +197,7 @@ div#lt-blog p span {
     <%})%>
     
     
-  <div class="container grid-layout">
+  <div class="container grid-layout" style="margin-bottom: 100px;">
     <h1 style="padding-top:50px; margin-bottom:30px; margin-top: 40px; font-weight: bold; color: white;" class="text-center">Últimas publicaciones</h1>
     <%    latestBlogs.forEach(data=>{ if(data.index===1){ %>
         <div class="row d-flex justify-content-between">

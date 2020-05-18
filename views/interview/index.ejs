@@ -12,8 +12,8 @@
   </head>
   <body>
     <%Interviews.forEach((interview)=>{%>
-    <div class="container">
-        <img style="width:auto; max-height:70%;" src="<%=interview.thumbnail%>" alt="image">
+    <div class="container text-center">
+        <img style="width:25%; height:25%;" src="<%=interview.thumbnail%>" alt="image">
         <a href="/interviews/posts/<%=interview._id%>">
             <div class="text-center" style="margin-top:20px;">
                 <button style="width: 80%;"  class="btn btn-primary">Check Out This Interview</button>

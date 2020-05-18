@@ -29,6 +29,12 @@ const InterviewSchema = new Schema({
   created:  {type: Date, default: Date.now},
   time: {type: String},
   quote   :{type:String , default:""},
+  comments:[
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Comment"
+   }
+  ],
   subInterviews:[
     {
       type:mongoose.Schema.Types.ObjectId,

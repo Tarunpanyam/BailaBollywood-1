@@ -32,7 +32,7 @@ const BlogSchema = new Schema({
   comments:[
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "BlogComment"
+      ref: "Comment"
    }
   ],
   subBlogs:[

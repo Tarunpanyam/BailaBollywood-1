@@ -12,17 +12,50 @@
 
 
 <style type="text/css">
+ html,body
+ {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+ } 
+ body
+ {
+  background:linear-gradient(to right,#ff5f6d,#f7b733);
+ }
 .container-fluid {
     width: 80%;
-    border: 2px solid #d2d2d2;
     margin-top: 50px;
+}
+.image-wrapper:hover {
+    outline: 2px solid #ffa700;
+    outline-offset: -20px;
+}
+div#lt-blog img {
+    border: 2px solid #ffffff;
+    padding: 10px;
+}
+
+div#top-post-container p {
+    text-align: justify;
+}
+
+div#top-post-container h1 {
+    text-align: justify;
+}
+.row.d-flex.justify-content-between p {
+    text-align: justify;
+}
+.container.grid-layout {
+    padding-bottom: 70px;
 }
 .col-12.col-sm-12.col-md-5, .col-12.col-sm-12.col-md-7 {
     padding-left: 0px;
     padding-right: 0px;
+    height: 100%;
 }
 .image-wrapper img {
     width: 100%;
+
 }
 #lt-blog p {
     padding-top: 10px;
@@ -42,6 +75,22 @@ button#read-btn {
 div#lt-blog p span {
     color: #a9a9a9;
 }
+
+.col-xl-4.col-lg-4.col-md-6.col-sm-6.footer-right {
+    padding-top: 20px;
+}
+
+p.text-white.text-center.mt-3 {
+    width: 70%;
+}
+
+img.footer-right-img {
+    margin-top: 0px !important;
+}
+
+.footer-row {
+    padding-bottom: 20px; }
+    
 </style>
 
 <!------Boot Strap Files-->
@@ -66,30 +115,30 @@ div#lt-blog p span {
    <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
           <ul class="navbar-nav nav nav-pills ">
             <li class="nav-item m-xl-2 active">
-              <a class="nav-link text-center font-weight-bold " href="/">Inicio </a>
+              <a class="nav-link text-center  " href="/">Inicio </a>
             </li>
             <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#about">
+              <a class="nav-link text-center  " href="/#about">
                 Quiénes Somos
                 </a>
             </li>
             <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#blogs">Nuestro Blog</a>
+              <a class="nav-link text-center  " href="/#blogs">Nuestro Blog</a>
             </li>
             <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#pop-categ">Lo más Popular</a>
+              <a class="nav-link text-center  " href="/#pop-categ">Lo más Popular</a>
             </li>
             <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#found-note">Nuestro Fundador </a>
+              <a class="nav-link text-center  " href="/#found-note">Nuestro Fundador </a>
             </li>
             <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/danzas-folkloricas-de-India">Danzas folclóricas</a>
+              <a class="nav-link text-center  " href="/danzas-folkloricas-de-India">Danzas folclóricas</a>
             </li>
             <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/equipo">Equipo</a>
+              <a class="nav-link text-center  " href="/equipo">Equipo</a>
             </li>
             <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/blogs">Blogs</a>
+              <a class="nav-link text-center  " href="/blogs">Blogs</a>
             </li>
             
           </ul>
@@ -110,10 +159,10 @@ div#lt-blog p span {
   </nav>
 
 
-<h1 style="padding-top:70px; margin-bottom:20px; font-weight: bold;" class="text-center display-4">Lo más destacado </h1>
+<h1 style="padding-top:70px; margin-bottom:20px; font-weight: bold; color: white;" class="text-center display-4">Lo más destacado </h1>
     <% blogs.forEach( blog => { %>
-<div class="container-fluid" id="top-post-container">
-      <div class="row" style= "padding: 10px 0px;">
+<div class="container-fluid" id="top-post-container" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);">
+      <div class="row" style= "padding: 15px 0px;">
         <div class="col-12 col-sm-12 col-md-5">
           <div class="container">
             <a href="/blogs/posts/<%= blog._id %>" class="article-links"><div class="promo" style="--overlay-color: hotpink">
@@ -136,17 +185,18 @@ div#lt-blog p span {
             </div></a>
           </div>
         </div>
-        <div class="col-12 col-sm-12 col-md-7" style="padding-top: 20px;"> 
-          <div class="container" style="width: 70%;">
+        <div class="col-12 col-sm-12 col-md-7" style="padding-bottom: 20px; padding-top: 20px;"> 
+          <div class="container" style="width: 90%;">
           
             <div>
-              <p><span style="padding:5px; color:black; border:1px black solid"><%=blog.time%></span></p>
+              <p><span style="color: #000; border: 2px #000 solid; padding: 10px 25px;"><%=blog.time%></span></p>
              <h1 style="padding:5px;color:black;"><%=blog.title%></h1>
-             <p>Tags:<%=blog.tag%></p>
+             <p style="color: #000;">Categoría:<%=blog.tag%></p>
              
              <p style="color:black; word-wrap:break-word;" class="target"><%=blog.content%></p>
             <a href="/blogs/posts/<%= blog._id %>"> 
-             <button id="read-btn" class="read-more-btn">Ver Más</button>
+             
+             <button id="read-btn" class="read-more-btn" style="background:linear-gradient(to right,#ff5f6d,#f7b733); font-size:20px; padding-left: 45px; padding-right: 45px; padding-bottom: 40px; border:3px solid #000;">Ver Más</button>
             </a></div><a href="/blogs/posts/<%= blog._id %>">
           </a>
         </div>
@@ -156,8 +206,8 @@ div#lt-blog p span {
     <%})%>
     
     
-	<div class="container grid-layout">
-    <h1 style="padding-top:70px; margin-bottom:20px; font-weight: bold;" class="text-center display-4">Últimas publicaciones</h1>
+  <div class="container grid-layout">
+    <h1 style="padding-top:50px; margin-bottom:30px; margin-top: 40px; font-weight: bold; color: white;" class="text-center display-4">Últimas publicaciones</h1>
     <%    latestBlogs.forEach(data=>{ if(data.index===1){ %>
         <div class="row d-flex justify-content-between">
             
@@ -166,7 +216,7 @@ div#lt-blog p span {
               <a href="<%=data.url%>">
             <img src="/uploads/<%= data.thumbnail %>" alt="image" style="width:100%; height:300px;">
           </a>
-            <p style="color:grey;font-weight: bolder;"><%=data.title%><br><span>Category-<%=data.tag%></span></p>
+            <p style="color:white;font-weight:bold; font-size: 17px;"><%=data.title%><br><span style="color: #f5f5f5;">Categoría-<%=data.tag%></span></p>
           
         </div>
       
@@ -175,7 +225,7 @@ div#lt-blog p span {
               <a href="<%=data.url%>">
             <img src="<%=data.thumbnail%>" alt="image" style="width:100%; height:300px;">
           </a>
-            <p style="color:grey;font-weight: bolder;"><%=data.title%><br><span>Category-<%=data.tag%></span></p>
+            <p style="color:white;font-weight: bold; font-size: 17px; "><%=data.title%><br><span style="color: #f5f5f5;">Categoría-<%=data.tag%></span></p>
           
         </div>
       
@@ -186,21 +236,18 @@ div#lt-blog p span {
     
   </div>
   </div>
-	
-		
-	
-
- <section class="baila-section section-six">
-      <div class="container-fluid" style="width: 100%; padding: 0;
-      margin: 0;">
-
+  
+    
+  
+ <section class="baila-section section-six" style="padding:0; margin: 0;">
+      <div class="container-fluid" style="width: 100%; margin: auto; border: none;">
         <div class="row footer-row">
           <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 footer-left ">
             <div id="logo-float">            
-            <a href="https://www.bailabollywood.com/" target="_blank"> <img class="footer-logo mt-5"
+            <a href="https://www.bailabollywood.com/" target="_blank"> <img class="footer-logo"
                 src="/images/baila-bollywood-transparent-white.png" alt="spanish bolo" style="width: 140px; height: 140px;"></a>
             
-            <a href="https://www.spanishbolo.com/" target="_blank"> <img class="footer-logo mt-5"
+            <a href="https://www.spanishbolo.com/" target="_blank"> <img class="footer-logo"
                 src="/images/spanish-bolo-logo.png" style="max-width: 140px; max-height: 140px;" alt="spanish bolo"></a>
             </div>
             <p class="text-white text-center mt-3">Nuestros proyectos <a href="https://www.spanishbolo.com/" target="_blank">SpanishBOLO</a> y BailaBollywood exploran los rincones culturales  de la India y el mundo hispanohablante, para compartir estas riquezas con nuestros lectores, y así,  afianzar el  vínculo entre ambas regiones, creando un sentido de comunidad y hermandad social.   
@@ -225,12 +272,11 @@ div#lt-blog p span {
                 target="_blank"></a>
             </div>
           </div>
-          <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 footer-right">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 footer-right">
             <img src="/images/baila-bollywood-transparent-white.png" class="footer-right-img " alt="baila bollywood">
           </div>
         </div>
       </div>
-
     </section>
   
     <div class="footer-section ">
@@ -239,18 +285,15 @@ div#lt-blog p span {
           class="text-white mx-1" target="_blank" title="Vaibhav's Linkedin Profile" style="font-size: 20px;">Vaibhav Kaul</a></div>
       And <a href="https://www.linkedin.com/in/pawan-saggu-06589b157/" class="text-white mx-1"
           target="_blank" title="Pawan's Linkedin Profile" style="font-size: 20px">Pawan Saggu</a>
-          <a style="text-decoration: underline;" href="#privacyPolicyModal" class="text-white text-center font-weight-bold mb-1"  data-toggle="modal" data-target="#privacyPolicyModal">Política de Privacidad</a>
+          <a style="text-decoration: underline;" href="#privacyPolicyModal" class="text-white text-center  mb-1"  data-toggle="modal" data-target="#privacyPolicyModal">Política de Privacidad</a>
       <br />
       &copy; 2020 Copyright BailaBollywood<img src="/images/Spanish-bolo-natraj-transparent.png" alt="Spanish Bolo">
   </div>
-
-
-
-
-	<script>
+  <script>
   $(".target").each(function(){
     let text = ( $(this).text());
     text = text.substring(0,200);
+    text = text + "...."
     let html = $.parseHTML(text);
     $(this).empty();
     $(this).append(html);

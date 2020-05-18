@@ -100,11 +100,19 @@
   
       .mobile-container{
         width: 90%;
+        margin-left: 5%;
       }
 }
-@media only screen and (min-width:600px){
+@media only screen and (min-width: 992px) {
+  .mobile-container{
+    width: 62%;
+    margin-left:19%;
+  }
+}
+@media only screen and (min-width:992px){
   .mobile-container{
     width: 50%;
+    margin-left: 25%;
   }
 }
   </style>
@@ -187,7 +195,7 @@
     
     <div class="container"  >
     <!---  Blog Content -->
-      <p class="target" style="word-wrap:break-word; font-size: 18px;"><%= blog.content %></p>
+      <p class="target" style="text-align: justify !important; font-size: 18px;"><%= blog.content %></p>
     </div>
     
     <div class="container">
@@ -201,7 +209,7 @@
             <img style="width:100%; height:auto; object-fit: contain; margin-top: 20px; margin-bottom: 20px;" src="<%=subBlog.image%>" alt="image">
           </div>
         <%}%>
-          <div class="target mt-2" style="word-wrap:break-word; font-size: 18px;"><%=subBlog.content%></div>
+          <div class="target mt-2" style="text-align: justify !important; font-size: 18px;"><%=subBlog.content%></div>
         
         <%})%>
       </div>
@@ -209,17 +217,63 @@
     
   </div>
   
-  <div class="container">
-    <div style="padding-top: 100px; padding-bottom: 150px;">
+ <div class="mobile-container"  style="padding:30px; text-align:center; font-style: italic; font-weight:bolder; ">
+  <hr>
+  <h4 style="font-size:19px; color: rgb(247,183,51); font-family: Arial, Helvetica, sans-serif; font-weight: 12000; ">Namaste! Un plataforma única en internet para explorar India a través de reseñas culturales y material artístico hecho por hablantes nativos de hindi Conectar con nosotros significa, conectar directamente con la India.<span style="color: blue; text-decoration: underline; font-family: Arial, Helvetica, sans-serif; font-weight: 12000;"> Te damos una calurosa bienvenida a nuestra App. Descarga, utiliza y comparte!</span> </h4>
+ 
+    <a href="https://play.google.com/store/apps/details?id=com.spanishbolo.bb&hl=es" class="col-4 text-center" style="border: none;"><img src="/images/google-play-final-icon.png" style="width: 100px; height:100px; margin: 10px;"></a>
+ <h4>Conecta con Nosotros :</h4>
+ <div class="social-icons">
+               <a href="https://www.facebook.com/Baila-Bollywood-105697461007966/"
+                 class="col-4 fa fa-facebook text-center" title="Facebook Link" target="_blank"></a>
+              
+               <a href="https://www.linkedin.com/in/baila-bollywood-3a3b031a1" class="col-4 fa fa-linkedin  text-center"
+                 title="Linkedin Link" target="_blank"></a>
+               <a href="https://instagram.com/bailabollywood20?igshid=15jmz5uzyz1jj"
+                 class="col-4 fa fa-instagram text-center" title="Instagram Link" target="_blank"></a>
+               <a href="https://www.quora.com/share/Baila-Bollywood-on-Instagram-Introducing-Baila-Bollywood-3-days-to-go-bailabollywood-spanishculture-indianculture-bollywood-music-spanishbolo-1?ch=3&share=2cd5e92a&srid=uOprOw"
+                 title="Quora Link" class="col-4 fa fa-quora  text-center" target="_blank"></a>
+               <a href="https://www.medium.com/@bailabollywood20" class="col-4 fa fa-medium  text-center" title="Medium Link"
+                 target="_blank"></a>
+                 <a href="https://www.youtube.com/channel/UCUb7jsujf73W8NaVYXqOZ1w?view_as=subscriber" class="col-4 fa fa-youtube  text-center" title="Youtube Link"
+                 target="_blank"></a>
+ 
+ 
+             
+                
+ 
+             </div>
+ </div>
+  
+  <div class="mobile-container text-center">
+    <hr>
+    <div style="padding-top: 100px; padding-bottom: 50px;">
     <form action="/blogs/posts/<%= blog._id %>" method="POST">
 
-      <h3  style="color:grey">Leave A Reply</h3>
-      <textarea style="height: 100px; width: 100%; border:black 1px solid" name="comment[text]" placeholder="Add Comment Here"></textarea>
-      <input style="margin-top: 20px; border:1px solid black; width:150px; " type="submit" value="Post Comment" />
+      <h3  style="color:grey">Leave A Reply </h3>
+      <input required type="text" style="width: 100%; margin-top:5px; margin-bottom: 15px;" name="comment[name]" placeholder="Name">
+      <input required type="email" style="width: 100%;  margin-bottom: 15px;" name="comment[email]" placeholder="Email">
+      <textarea required style="width: 100%;" name="comment[text]" rows="5" placeholder="Add Comment Here"></textarea>
+      <input required style="margin-top: 20px;  width:150px; "  type="submit" value="Post Comment" />
     </form>
   </div>
+  </div> 
+
+  <div class="mobile-container" style="margin-bottom:100px ">
+    <% commentz.forEach(comment=>{%>
+      <div class="media" style="background-color: #f5f5f5; border-radius: 10px; margin-top: 20px;">
+        <div class="media-body">
+          <h5 style="font-weight: bold; padding-left: 10px; padding-top: 10px;"><%=comment.name%></h5>
+         <p style="padding-top:5px; padding-left: 10px;"> <%= comment.text %></p>
+        </div>
+      </div>
+    <%})%>
   </div>
 
+  
+
+ 
+ 
 
   
 
