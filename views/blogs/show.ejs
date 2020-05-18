@@ -213,6 +213,18 @@
         
         <%})%>
       </div>
+      <hr>
+     <% if(prevId!=0){%>
+        <a  href='/blogs/posts/<%=prevId%>'>
+          <input type="button" style="width: 20%;" value="<-Prev Blog" class="float-left">
+          </a>
+
+      <%}if(nextId!=0){%>
+        <a href="/blogs/posts/<%=nextId%>">
+          <input type="button" style="width: 20%;" value="Next Blog->" class="float-right">
+        </a>
+      <%}%>
+      
       
     
   </div>

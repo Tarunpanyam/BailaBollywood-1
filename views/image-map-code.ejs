@@ -100,6 +100,69 @@
   text-align: center;
 }
 
+.footer-center, .footer-left {
+    border-right: none; }
+
+
+/** css for accordion **/
+.custom-accordion {margin-bottom: 50px; width: 75%;}
+ 
+button.accordion {
+  width: 100%;
+  background-color: #f7b733;
+  border: 1px solid #fff;
+  outline: none;
+  text-align: left;
+  padding: 15px 20px;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s linear;
+}
+button.accordion:hover, button.accordion.is-open {
+    background-color: rgba(247, 183, 51, 0.75) !important;
+}
+ 
+button.accordion:after {
+  content: '\f055';
+  font-family: "fontawesome";
+  font-size: 14px;
+  float: right;
+	
+}
+ 
+button.accordion.is-open:after {
+  content: '\f056';
+}
+ 
+button.accordion:hover, button.accordion.is-open {
+  background-color: #ddd;
+}
+ 
+.accordion-content {
+  background-color: white;
+  border-left: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+
+button.accordion.is-open {
+    font-weight: 800;
+}
+.accordion-content p {
+    font-weight: 600;
+}
+
+button.accordion {
+    font-weight: 800;
+}
+
+.container-acc p {
+    text-align: justify;
+}
 
    </style>
 
@@ -223,57 +286,640 @@
 </div>
 
 
-<section class="baila-section section-six">
-      <div class="container-fluid">
-        <div class="row footer-row">
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 footer-left ">
-             <div id="logo-float">            
-            <a href="https://www.bailabollywood.com/" target="_blank"> <img class="footer-logo mt-5"
-                src="/images/baila-bollywood-transparent-white.png" alt="spanish bolo" style="max-width: 140px; max-height: 140px;"></a>
+<section class="container custom-accordion">
+ 
+
+    <button class="accordion">Danzas populares de Kashmir </button>
+    <div class="accordion-content">
+     
+
+      <div class="container-acc" >
+        <!--  Blog Title-->
+        <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
+          <h1 class="text-center display-4" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" >
+              Danzas populares de  Kashmir</h1>
+        
+          
+        </div>
+          <!---- Blog Image-->
+           <div class="text-center" style="margin-top:20px; margin-bottom:15px">
+          <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/rouff-1.jpg" alt="blog-image">
+          </div>
+          
+              <h4 style="font-weight: 1000; margin-top: 50px;">Rouf</h4>
+      
+          <div class="container-acc" style="margin-top:15px; margin-bottom:15px" >
+          <!---  Blog Content -->
+            <p class="target" style="word-wrap:break-word; font-size: 18px;">
+                Es un elegante baile originado en la comunidad musulmana de Cachemira y que es principalmente realizado por mujeres. Uno puede presenciar esta danza durante el período de Ramzan y la temporada de cosecha, al igual que en otras ocasiones alegres. El baile consiste principalmente en el juego de pies (llamado "Chakri" en el idioma local) rimado y sincronizado al ritmo de una poesía mística. Puedes buscar el musical de la canción "Bumbro" en el cual la famosa actriz de Bollywood, Priety Zinta, interpreta una hermosa versión de este baile.
+            </p>
+      
+            <p class="target" style="word-wrap:break-word; font-size: 18px;">
+               Este es el listado de las cinco formas de danza folclórica más famosas de Rajasthan, que debes conocer:
+      
+            </p>
+                <div class="text-center" style="margin-top:20px; margin-bottom:15px">
+          <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/rouff-2.jpg" alt="blog-image">
+          </div>
+          </div>
+      
+        
+          <div class="container-acc" style="margin-top:15px; margin-bottom:15px" >
+          <!---  Blog Content -->
+          <h4 style="font-weight: 1000; margin-top: 50px;">Kud</h4>
+            <p class="target" style="word-wrap:break-word; font-size: 18px;">
+                 Las pintorescas montañas de Jammu y Cachemira están cubiertas por el manto de las culturas populares. La danza Kud es parte de una de esas culturas de las cordilleras medias. El baile se realiza para celebrar una cosecha exitosa y rentable, especialmente la del maíz. Es una danza ritual realizada por los habitantes locales (principalmente agricultores) en honor a los Lok Devtas (Dioses del pueblo). Es su manera de agradecer a las deidades por protegerlos a ellos, a sus familias, a sus cultivos y a su ganado.
+            </p>
+      
+            <p class="target" style="word-wrap:break-word; font-size: 18px;">
+               El baile celebra la felicidad de las personas. Por lo tanto, cualquiera puede participar. No requiere entrenamiento profesional. Incluso los turistas pueden bailar junto a los artistas. Todos visten su mejor ropa tradicional para divertirse. La música de  grandes trompetas, tambores y flautas marca el ritmo de la celebración. En general se baila por la noche junto a una hoguera, creando así, el ambiente perfecto.
+      
+            </p>
+           
+          
+          <div class="text-center" style="margin-top:15px; margin-bottom:15px">
+          <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/kud.png" alt="blog-image">
+          </div>
+      
+       </div>
+          
+          <div class="container-acc">
             
-            <a href="https://www.spanishbolo.com/" target="_blank"> <img class="footer-logo mt-5"
-                src="/images/spanish-bolo-logo.png" style="max-width: 140px; max-height: 140px;" alt="spanish bolo"></a>
+                
+                <div>
+                <h4 style="font-weight: 1000; margin-top: 50px;">Dumhal</h4>
+                </div>
+                
+             <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+               Dumhal es una danza popular de la tribu Wattal / Watal de esta región. Según sus tradiciones, solo puede ser bailado por los hombres de la tribu. Para ello visten largas túnicas coloridas, gorros cónicos y adornos de cuentas. Moviéndose en procesión, muestran su cultura a través de su actuación. Los bailarines colocan un estandarte en el suelo y danzan a su alrededor. Los hombres cantan y bailan al ritmo de los tambores. Dumhal se realiza en ocasiones auspiciosas para el clan. 
+              </p> 
+      
+                
+      
+              <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+              <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/dumhal.png" alt="blog-image">
+              </div>
+                  
+      
             </div>
-            <p class="text-white text-center mt-3">Nuestros proyectos <a href="https://www.spanishbolo.com/" target="_blank">SpanishBOLO</a> y BailaBollywood exploran los rincones culturales  de la India y el mundo hispanohablante, para compartir estas riquezas con nuestros lectores, y así,  afianzar el  vínculo entre ambas regiones, creando un sentido de comunidad y hermandad social.   
+            
+          
+         
+      
+          <div class="container-acc">
+            
+                
+                <div>
+                <h4 style="font-weight: 1000; margin-top: 50px;">Bhand Jashan</h4>
+                </div>
+                
+             <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+      Es uno de los bailes folclóricos, elegantes y atractivos de la región, que combina el drama. Lo interpretan entre 15 a 20 personas. Es una danza popular bastante expresiva. Narra historias tanto políticas como sociales. El tono de la actuación es satírico. Los movimientos son en su mayoría, simples y elegantes. Los artistas colocan sus manos en la cintura de las bailarinas y se mueven de manera conjunta, hacia adelante y hacia atrás. Estos pasos son al ritmo de música ligera, por lo tanto no requiere el uso de instrumentos musicales pesados.
+              </p>   
+                 <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+              Las mujeres se visten con sus coloridos y tradicionales pheran kurta y salwar. Cubren sus cabezas con una bufanda adornada con joyas étnicas de Cachemira. Los hombres, por su parte, usan kurta, pijama y un sombrero colorido. También llevan pañuelos especiales llamados Rumal en sus manos. Bhand literalmente quiere decir payaso y Jashan, celebración. Por lo tanto, este baile también es conocido como festival de payasos.        
+            </p>   
+      
+          <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+          <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/rouff-3.jpg" alt="blog-image">
+          </div>
+              
+            </div>
+      
+            
+      
+      <div class="container-acc">
+      
+                <div>
+                <h4 style="font-weight: 1000; margin-top: 50px;">Hafiza</h4>
+                </div>
+                
+             <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+      Hafiza es un baile común de Cachemira, practicado en ocasiones festivas,  como el matrimonio, el parto, la cosecha entre otras. Además, forma parte del Sufiana Kalam (música devocional de los místicos musulmanes, o sea los sufis). Lo danzan bailarines entrenados, tanto durante la ceremonia de Henna de la novia (la aplicación de Henna en las manos y los pies es parte de las costumbres antes de la boda), así como en la procesión del novio. La actuación es acompañada  de un instrumento musical llamado Santoor, (dulcimer martillado) que tiene casi 100 cuerdas y es tocado con la ayuda de palos.
+              </p> 
+      
+          <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+          <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/rouff-4.png" alt="blog-image">
+          </div>
+              
+            </div>
+              
+      
+        </div>
+
+
+    </div>
+ 
+ 
+
+
+
+    <button class="accordion">Danzas populares de Punjab</button>
+    <div class="accordion-content">
+      
+      <div class="container-acc" >
+        <!--  Blog Title-->
+        <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
+          <h1 class="text-center display-4" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" >
+              Danzas populares de  Punjab</h1>
+        
+          
+        </div>
+          <!---- Blog Image-->
+           <div class="text-center" style="margin-top:20px; margin-bottom:15px">
+          <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/bhangra-1.jpg" alt="blog-image">
+          </div>
+          
+          <div class="container-acc" style="margin-top:15px; margin-bottom:15px" >
+          <!---  Blog Content -->
+            <p class="target" style="word-wrap:break-word; font-size: 18px;">
+          La tierra de los cinco ríos, el Punjab, tiene una de las culturas más ricas del mundo. La mayoría de las celebraciones sociales indias están incompletas sin un baile  del folclore de esta región. Tanto la música como la danza de esta región son utilizadas en películas, y para animar  bodas, fiestas, discotecas y festividades.  </p>
+      
+            <p class="target" style="word-wrap:break-word; font-size: 18px;">
+      Las canciones Punjabi son cantadas por personas de todas las religiones y en varios estados de la India. La mayoría  conoce algunos movimientos básicos de baile que se han convertido en sinónimos de la danza punjabi.Tal es la fama que se ha ganado, que el estilo Punjabi define un estado de ánimo y se ha convertido en la  esencia  de Bollywood.
+            </p>
+            
+            <p class="target" style="word-wrap:break-word; font-size: 18px;">
+      Aunque existen muchos bailes folclóricos en el Punjab, hablaremos sobre los tres que son más populares, no solo en la India sino también a nivel internacional.
+           </p>
+                
+          </div>
+      
+        
+          <div class="container-acc" style="margin-top:15px; margin-bottom:15px" >
+          <!---  Blog Content -->
+          <h4 style="font-weight: 1000; margin-top: 50px;">Bhangra</h4>
+            <p class="target" style="word-wrap:break-word; font-size: 18px;">
+                 El rey de los bailes populares en la India, es el Bhangra,  uno de los más enérgicos y divertidos. Esto se da tanto con la danza como con la música. Juntos tienen el  poder para que puedas crear tu divertida versión del baile en poco tiempo. 
+            </p>
+      
+            <p class="target" style="word-wrap:break-word; font-size: 18px;">
+               Es tanta la popularidad de este baile, que cualquier celebración india está incompleta sin una actuación de Bhangra. Hoy, la mayoría de las películas de Bollywood incluye entre sus musicales una canción Punjabi acompañada de un por una coreografía de Bhangra. Rara vez se da el caso en el que un número popular del Punjab no tenga éxito si es parte de una película. Cada vez más se comprueba que toca los sentimientos de la audiencia de manera correcta.
+      
+            </p>
+           
+          
+          <div class="text-center" style="margin-top:15px; margin-bottom:15px">
+          <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/bhangra-2.jpg" alt="blog-image">
+          </div>
+          <p class="target" style="word-wrap:break-word; font-size: 18px;">
+               Sin embargo, tradicionalmente este baile era realizado durante el  Vaisakhi o Baisakhi, festival de la cosecha celebrado por la gente del Punjab. Es un hecho conocido que la agricultura es parte importante de las actividades económicas de  la India. Por lo tanto, una cosecha rentable y abundante asegura el sustento de muchos agricultores. Vaisakhi es el día en que los agricultores y sus familias agradecen las cosechas exitosas. También marca el comienzo del Año Nuevo Punjabi.
+      
+               Este baile es conocido por su energía altamente contagiosa. Implica muchos movimientos simples y pegadizos, así como también movimientos complejos y hábiles. Saltar, ponerse en cuclillas y aplaudir son parte del Bhangra. Todos los pasos son acompañados con el ritmo de Dhol (un tipo de tambor), Alghoza (un par de instrumentos de viento hechos de madera), Chimpta (pinzas con pequeños cascabeles de latón) y Tumbi (instrumento de cuerda única) y con las canciones populares tradicionales.
+      
+      
+            </p>
+            <p class="target" style="word-wrap:break-word; font-size: 18px;">
+               Pero lo que hace más atractivo a este bailes, son los vestidos vibrantes y coloridos de los bailarines. Un atuendo típico para hombres incluye Lungi  o  Chadar (prenda inferior), Kurta (una camisa larga) con un chaleco y un turbante llamado Turla o Torla (con forma de abanico). Las mujeres, por otro lado, usan Patiala o Sharrara, así como Kurti o Ghagra-Choli. En cualquier caso, la Dupatta (estola) tiene un borde dorado que completa el aspecto.
+      
+              La actuación grupal del Bhangra es exuberante, tiene gracia, velocidad y lo más importante, diversión.
+      
+      
+            </p>
+           
+      
+       </div>
+          
+          <div class="container-acc">
+            
+                
+                <div>
+                <h4 style="font-weight: 1000; margin-top: 50px;">Giddha</h4>
+                </div>
+                
+             <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+              Un baile totalmente femenino, tan enérgico como el Bhangra. También podría ser considerado como su contraparte femenina. Es realizado en distintas ocasiones sociales o festivas.  
+              </p> 
+      
+              <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+              Esta danza caracterizada por la vivacidad, simboliza el poder de las mujeres. Giddha es un baile de gran ritmo y juego de pies. Los pasos son tan rápidos que los espectadores no tienen tiempo ni para parpadear. 
+              </p> 
+      
+              <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+              <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/giddha.png" alt="blog-image">
+              </div>
+                  
+              <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+              La mayoría de las bailarinas forman un círculo y se mueven al ritmo del Dhol. Una de ellas recita letras que las demás repiten, mientras aplauden de manera rítmica. No hay ninguna regla que se deba cumplir. Las artistas tienen la libertad de ser creativas e innovar estos recitales cíclicos.
+              Los temas abordados durante la actuación pueden ser muy variados, van desde la vida cotidiana de una mujer en la aldea hasta los asuntos políticos. 
+              </p> 
+      
+              <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+              El atractivo de este baile se ve reforzado con los trajes coloridos y extravagantes. Son los mismos que usan en el  Bhangra. Al igual que la mayoría de las danzas del Punjab, también esta es para disfrutar y hacer disfrutar a la audiencia.
+              </p> 
+                
+      
+              
+      
+            </div>
+            
+          
+         
+      
+          <div class="container-acc">
+            
+                
+                <div>
+                <h4 style="font-weight: 1000; margin-top: 50px;">Jhumar</h4>
+                </div>
+                
+             <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+      Es una danza folclórica masculina en la cual, tres generaciones de una familia bailan  juntas: padre, hijo y nieto. Actuar en cualquier ocasión alegre para expresar felicidad es de lo que se trata este baile. Ya sea en una feria, una boda, un evento social o en cualquier otra celebración, el Jhumar es imprescindible. Existen pocas variaciones de este estilo de baile y cada una difiere en algo de la otra. Aunque el vestuario es mayormente similar al utilizado en el  Bhangra.        </p>   
+                 <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+              Finalmente, remarco  que es un baile bien intenso, como la mayoría de los bailes Punjabi ya  que está lleno de entusiasmo.       
+            </p>   
+      
+          <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+          <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/jhumar.png" alt="blog-image">
+          </div>
+              
+            </div>
+      
+            
+      
+        </div>
+      
+
+
+    </div>
+
+
+
+ 
+ 
+    <button class="accordion">Danzas populares de Rajasthan</button>
+    <div class="accordion-content">
+     
+
+      <div class="container-acc" >
+        <!--  Blog Title-->
+        <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
+          <h1 class="text-center display-4" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" >
+              Danzas populares de  Rajasthan</h1>
+        
+          
+        </div>
+          <!---- Blog Image-->
+           <div class="text-center" style="margin-top:20px; margin-bottom:15px">
+          <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/ghoomar-1.png" alt="blog-image">
+          </div>
+        
+          <div class="container-acc" style="margin-top:30px; margin-bottom:15px" >
+          <!---  Blog Content -->
+            <p class="target" style="word-wrap:break-word; font-size: 18px;">
+                 Rajasthan es el estado del desierto de la India, es la tierra de reyes, reinas,  palacios y mucho más. Pero lo más importante,  es una tierra poseedora de una rica cultura. Su vasta historia puede verse reflejada en su  variado folklore. Todas sus manifestaciones culturales son únicas. La esencia del lugar está en sus costumbres y tradiciones. La gastronomía, la música y la danza, son piezas clave de la cultura rajasthani. No es solo un patrimonio que preservar, sino que es parte de la  identidad misma de sus habitantes. Es justamente su cultura, la que lo convierte en uno de los estados turísticos más queridos de la India.  
+            </p>
+      
+            <p class="target" style="word-wrap:break-word; font-size: 18px;">
+               Este es el listado de las cinco formas de danza folclórica más famosas de Rajasthan, que debes conocer:
+      
             </p>
           </div>
-          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 footer-center">
-            <h4 class="mt-5  display-5">Conecta con Nosotros :</h4>
-            <br>
-            <div class="social-icons row justify-content-center">
-              <a href="https://www.facebook.com/Baila-Bollywood-105697461007966/"
-                class="col-4 fa fa-facebook text-center" title="Facebook Link" target="_blank"></a>
-             
-              <a href="https://www.linkedin.com/in/baila-bollywood-3a3b031a1" class="col-4 fa fa-linkedin  text-center"
-                title="Linkedin Link" target="_blank"></a>
-              <a href="https://instagram.com/bailabollywood20?igshid=15jmz5uzyz1jj"
-                class="col-4 fa fa-instagram text-center" title="Instagram Link" target="_blank"></a>
-              <a href="https://www.quora.com/share/Baila-Bollywood-on-Instagram-Introducing-Baila-Bollywood-3-days-to-go-bailabollywood-spanishculture-indianculture-bollywood-music-spanishbolo-1?ch=3&share=2cd5e92a&srid=uOprOw"
-                title="Quora Link" class="col-4 fa fa-quora  text-center" target="_blank"></a>
-              <a href=" https://link.medium.com/jSOvCnafY3" class="col-4 fa fa-medium  text-center" title="Medium Link"
-                target="_blank"></a>
-                <a href="https://www.youtube.com/channel/UCUb7jsujf73W8NaVYXqOZ1w?view_as=subscriber" class="col-4 fa fa-youtube  text-center" title="Youtube Link"
-                target="_blank"></a>
+      
+        
+          <div class="container-acc" style="margin-top:15px; margin-bottom:15px" >
+          <!---  Blog Content -->
+          <h4 style="font-weight: 1000; margin-top: 50px;"> Rajasthani Ghoomar</h4>
+            <p class="target" style="word-wrap:break-word; font-size: 18px;">
+                 Entre los muchos bailes folclóricos tradicionales de Rajasthan, Ghoomar es el más famoso. Ha sido bien acogido por otras comunidades del estado, aunque  su origen se encuentra en la tribu Bhil. Tradicionalmente esta danza era realizada para adorar a la Diosa Saraswati; sin embargo, actualmente se la baila en casi cualquier festividad como forma de celebración.
+            </p>
+      
+            <p class="target" style="word-wrap:break-word; font-size: 18px;">
+                El nombre Ghoomar  deriva de la palabra Ghoomna que  literalmente significa  girar. Es interesante saber que es, precisamente esto, lo que define a esta danza. Una  bailarina tiene que realizar varios giros durante todo el baile, lo que lo convierte en una de las danzas más complejas que hayan sido vistas.
+      
+            </p>
+            <p class="target" style="word-wrap:break-word; font-size: 18px;">
+              Una buena actuación de Ghoomar deja maravillada a las personas que lo presencian. El ímpetu de todos y cada uno de los movimientos, se ve reforzado por la riqueza de los trajes tradicionales. El giro conjunto de las bailarinas crea una imagen de caleidoscopio de colores. Según la tradición esta danza es el símbolo de la femineidad, por lo tanto es realizado solo por niñas y mujeres. La vestimenta que acompaña a este baile está compuesta por el  Ghagra-Choli. Ghagra es una falda larga, circular y con mucho vuelo, decorada con cristales, espejos y bordado de hilos pesados, mientras que el Choli es una blusa pequeña, una especie de top sumamente adornado. Este atuendo se acompaña con una dupatta (estola), que se utiliza como un velo con el que se cubre la cabeza.Se completa el atuendo con joyería típica de piedras preciosa y láminas de oro o plata.
+      
+            </p>
+          
+          <div class="text-center" style="margin-top:15px; margin-bottom:15px">
+          <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/ghoomar-2.jpg" alt="blog-image">
+          </div>
+      
+           <p class="target" style="word-wrap:break-word; font-size: 18px;">
+              Una buena actuación de Ghoomar deja maravillada a las personas que lo presencian. El ímpetu de todos y cada uno de los movimientos, se ve reforzado por la riqueza de los trajes tradicionales. El giro conjunto de las bailarinas crea una imagen de caleidoscopio de colores. Según la tradición esta danza es el símbolo de la femineidad, por lo tanto es realizado solo por niñas y mujeres. La vestimenta que acompaña a este baile está compuesta por el  Ghagra-Choli. Ghagra es una falda larga, circular y con mucho vuelo, decorada con cristales, espejos y bordado de hilos pesados, mientras que el Choli es una blusa pequeña, una especie de top sumamente adornado. Este atuendo se acompaña con una dupatta (estola), que se utiliza como un velo con el que se cubre la cabeza.Se completa el atuendo con joyería típica de piedras preciosa y láminas de oro o plata.
+      
+            </p>
+             <p class="target" style="word-wrap:break-word; font-size: 18px;">
+              Una fascinante interpretación de danza Ghoomar, es la actuación de Deepika Padukone en la película de Bollywood, Padmavati (2018), dirigida por Sanjay Leela Bhansali. Mira el video a continuación <a style="text-decoration: underline;" href="https://www.youtube.com/watch?v=6cKErCWrb44">Youtube</a>
+            </p>
+          </div>
+          
+          <div class="container-acc">
+            
+                
+                <div>
+                <h4 style="font-weight: 1000; margin-top: 50px;">Kalbelia</h4>
+                </div>
+                
+             <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+                Esta danza popular de Rajasthan está vinculada a la tribu nómada del mismo nombre. Es conocido por ser uno de los bailes folclóricos más sensuales de la India, y esto tiene una explicación: la antigua tribu Kalbelia, tenía experiencia como encantadores y cazadores de serpientes. Esta herencia se encuentra bien reflejada en toda su forma de ser. Desde los movimientos de baile, hasta en su vestimenta, la semejanza con los movimientos de las serpientes es sorprendente. 
+              </p> 
+      
+              <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+              El baile es realizado principalmente por las mujeres de la tribu, mientras que los hombres se encargan de tocar la música. El instrumento de viento que se toca sin parar durante la actuación, se llama Pungi y está hecho de madera. Las bailarinas muestran su flexibilidad, a través de elegantes pasos acrobáticos, junto con giros, piruetas y otros movimientos ondulantes.
+              </p>   
+      
+              <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+              <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/kalbelia.png" alt="blog-image">
+              </div>
+                  
+              <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+                    El vestuario incluye un Ghagra (falda) de gran circunferencia, un iAngrakhi (blusa) para la parte superior del cuerpo y un velo para cubrir la cabeza. Todo el atuendo es es esencialmente negro, con incrustaciones de espejo, bordados de hilo plateado y cordones rojos. Las bailarinas usan ornamentación tradicional, junto a tobilleras y  tatuajes. 
+              </p>   
+               <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+      
+                La música y la danza Kalbelia fueron declaradas parte de la Lista del Patrimonio Inmaterial de la Humanidad, por la UNESCO en el año 2010.
+      
+              </p> 
+      
             </div>
+            
+          
+            <div class="container-acc">
+              <div>
+                <h4 style="font-weight: 1000; margin-top: 50px;">Bhavai</h4>
+            </div>
+                 <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+         La danza Bhavani es un acto de equilibrio puro entre el cuerpo y los accesorios. Las bailarinas visten trajes pesados, y  ​​balancean una torre de siete o nueve ollas de latón o de barro sobre sus cabezas, mientras realizan otros movimientos. El acto se intensifica cuando objetos como una placa de latón, el filo de una espada o una botella de vidrio se colocan como base. Toda la vista es impresionante. El espectáculo se ve reforzado por la vestimenta colorida y los adornos pesados que utilizan las bailarinas. Este atuendo está compuesto por el Ghagra y el Choli rajasthani. Incluso las ollas de hierro están ornamentadas y que pueden llegar a ser hasta 12. 
+            </p> 
+      
+            <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+           <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/bhavai.png" alt="blog-image">
+            </div>
+      
+      
+            </div>
+      
+          <div class="container-acc">
+            
+                
+                <div>
+                <h4 style="font-weight: 1000; margin-top: 50px;">Kachchhi Ghodi</h4>
+                </div>
+                
+             <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+      
+       El Kachchhi Ghodi es una danza folclórica realizada por hombres que simulan ir montados en caballos. El vestuario es elaborado, e incluye Dhoti-Kurta y un turbante, a esto se añaden las figuras de caballos, igualmente coloridos y decorados con abundantes bordados. Es muy entretenido ver a los bailarines con sus espadas, montados en sus caballos decorados. Aunque esta danza es bailada en muchas festividades, donde más se destaca es en la fiesta de los novios, durante las  celebraciones de boda. Es un espectáculo lleno de vida y alegría, que no debes perderte si visitas Rajasthan.
+      
+              </p>   
+      
+          <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+          <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/kachchhi-ghodi.png" alt="blog-image">
           </div>
-          <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 footer-right">
-            <img src="/images/baila-bollywood-transparent-white.png" class="footer-right-img " alt="baila bollywood">
+              
+            </div>
+      
+            
+      
+      <div class="container-acc">
+      
+                <div>
+                <h4 style="font-weight: 1000; margin-top: 50px;">Gair</h4>
+                </div>
+                
+             <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+      Esta forma popular de danza forma parte del acervo cultural de la tribu Bhil de Rajasthan, e incluye bailarines masculinos y femeninos. Estos sostienen palos de madera en sus manos mientras danzan en forma circular. Batiendo estos palos van marcando el ritmo.  El vestuario es una túnica larga y plisada que se abre como una falda acampanada en la parte inferior, el borde de la prenda es de color azul. Estas túnicas son en su mayoría rojas o blancas,con bordados en plata u oro, lo cual las hace lucir excepcionalmente bellas. El look se completa con un turbante de color azafrán. Las principales festividades en las que se puede ver el Gair son, el festival Holi, conocido como festival de los colores, y el Janmastami, en el que se celebra el cumpleaños del Señor Krishna.
+      
+              </p> 
+      
+          <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+          <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/gair.png" alt="blog-image">
           </div>
+              
+            </div>
+              
+      
+        </div>
+      
+
+
+
+    </div>
+
+
+
+
+    
+    <button class="accordion"> Danzas populares de  Maharashtra</button>
+    <div class="accordion-content">
+
+    <div class="container-acc" >
+      <!--  Blog Title-->
+      <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
+        <h1 class="text-center display-4" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" >
+            Danzas populares de  Maharashtra</h1>
+      
+        
+      </div>
+        <!---- Blog Image-->
+         <div class="text-center" style="margin-top:20px; margin-bottom:15px">
+        <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/lavani-1.jpg" alt="blog-image">
+        </div>
+        
+            <h4 style="font-weight: 1000; margin-top: 50px;">Lavani</h4>
+    
+        <div class="container-acc" style="margin-top:15px; margin-bottom:15px" >
+        <!---  Blog Content -->
+          <p class="target" style="word-wrap:break-word; font-size: 18px;">
+              Su nombre proviene de la palabra Lavanya que significa belleza, Lavani es considerada como la piedra angular del teatro popular marathi. Tanto el baile como la música son bastante rápidos. "Dholki" (una forma de tambor) es fundamental para dar el ritmo de tempo alto, necesario en este baile. Lo bailan principalmente las mujeres; por lo tanto, el vestuario es un sari típico de nueve yardas envuelto en el estilo tradicional marathi, junto con joyas pesadas, ghungroo (campanillas) y el tradicional bindi rojo en la frente. Un aspecto notable de Lavani es que aborda los aspectos sociopolíticos prevalentes de la sociedad. Las letras de sus canciones son, por lo tanto, una versión sarcástica de los mismo, pero con un tono erótico.
+          </p>
+    
+          <p class="target" style="word-wrap:break-word; font-size: 18px;">
+    En la actualidad, hay hombres que se visten como mujeres para bailar esta danza popular. Se amoldan a los personajes necesarios y muestran su pasión inquebrantable por el Lavani.
+          </p>
+              <div class="text-center" style="margin-top:20px; margin-bottom:15px">
+        <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/lavani-2.jpg" alt="blog-image">
+        </div>
+        </div>
+    
+      
+        <div class="container-acc" style="margin-top:15px; margin-bottom:15px" >
+        <!---  Blog Content -->
+        <h4 style="font-weight: 1000; margin-top: 50px;">Koli</h4>
+          <p class="target" style="word-wrap:break-word; font-size: 18px;">
+               Es una danza popular de Maharashtra, llamada así, por pescadores del estado, los Kolis. Esta comunidad es reconocida por su identidad propia,que la distingue de las las demás y que también se refleja en este baile. Así, muestra varios aspectos de su estilo de vida y ocupación, la pesca.
+          </p>
+    
+          <p class="target" style="word-wrap:break-word; font-size: 18px;">
+             Realizado tanto por hombres como por mujeres, el baile ayuda a los Kolis a relajarse después de las dificultades que enfrentan diariamente en el trabajo y en la vida. Actúan en línea o en parejas. Mientras actúan imitan el movimiento de los remos, de las olas y la pesca. El baile presenta algunas variaciones, dependiendo de la región. Independientemente de estas diferencias, el traje utilizado es más o menos el mismo. Las mujeres visten saris típicos de Maharashtra. Por su parte, los hombres usan pareos atados alrededor de sus cinturas de manera triangular.
+    
+          </p>
+         
+        
+        <div class="text-center" style="margin-top:15px; margin-bottom:15px">
+        <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/koli.png" alt="blog-image">
+        </div>
+    
+     </div>
+        
+        <div class="container-acc">
+          
+              
+              <div>
+              <h4 style="font-weight: 1000; margin-top: 50px;">Dindi</h4>
+              </div>
+              
+           <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+            Es una danza folklórica devocional realizada el día 11 del mes de Kartik (octubre-noviembre).  Recibe su nombre del Dindi, instrumento musical similar a un pequeño tambor. Por lo tanto, no hay duda de que este instrumento es fundamental en la presentación  de este baile. 
+            </p> 
+            <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+            La danza retrata la alegría de la deidad hindú Krishna. Los artistas creen que presentar este baile prácticamente abre las puertas del cielo. Danzan en rondas al ritmo del Dindi. Otro instrumento musical utilizado es el Mridangam (instrumento de percusión) además, hay un cantante. Hermosos versos y poemas se suman a la belleza del baile. En general, los movimientos oscilantes, la música relajante y las letras expresivas crean un ambiente perfecto para la actuación y para sus espectadores.
+            </p> 
+    
+    
+              
+    
+            <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+            <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/dindi.png" alt="blog-image">
+            </div>
+                
+    
+          </div>
+          
+        
+       
+    
+        <div class="container-acc">
+          
+              
+              <div>
+              <h4 style="font-weight: 1000; margin-top: 50px;">Dhangari Gaja</h4>
+              </div>
+              
+           <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+    Realizada por los pastores del distrito de Solapur, conocidos como Dhangars, esta danza es reconocida como una de las más vibrantes del estado. Debido a la naturaleza de su ocupación, los Dhangars deben viajar y mantenerse alejados de sus familias durante mucho tiempo. Mientras viajan, pasan su tiempo cerca de la naturaleza, lo que los inspira a escribir hermosos pareados y poemas. Estos poemas también están dedicados a su deidad, Dios Biruba. Al regresar, celebran con sus familias bailando estos poemas musicalizados con los ritmos del tambor. Es también una forma de buscar las bendiciones de su deidad. Los artistas, vestidos con sus atuendos tradicionales, llevan a cabo esta celebración con gran pompa y fervor.
+            </p>   
+          
+        <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+        <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/dhangari.png" alt="blog-image">
+        </div>
+            
+          </div>
+    
+          
+    
+    <div class="container-acc">
+    
+              <div>
+              <h4 style="font-weight: 1000; margin-top: 50px;">Povadas</h4>
+              </div>
+              
+           <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+    Presentado en forma de baladas, este baile representa la vida del gran gobernante Maratha, Shri Chhatrapati Shivaji Maharaj. Algunas de las famosas baladas que se llevan a cabo, a menudo incluyen a Afzal Khanacha Vadh y aTanaji Malusare. La mayoría de estas baladas narran las historias de valentía y victorias del Rey Shivaji y todo el Imperio Maratha. Sin embargo, hoy en día los temas son variados e incluyen cuestiones políticas y sociales. La actuación comienza con una breve oración después de la cual el cantante principal, o Shahir comienza a cantar. El resto comienza a bailar. Los demás  artistas conocidos como Jhilkari tocan instrumentos musicales y cantan. La danza es realizada exclusivamente por hombres vestidos con ropas tradicionales.
+            </p> 
+    
+        <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+        <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/povadas.png" alt="blog-image">
+        </div>
+            
+          </div>
+            
+    
+      </div>
+    
+
+</div>
+
+
+
+
+
+
+
+
+</section>
+
+
+
+<div class="container"  style="padding:30px; text-align:center; font-style: italic; font-weight:bolder; ">
+<h4 style="font-size:19px; color: rgb(247,183,51); font-family: Arial, Helvetica, sans-serif; font-weight: 12000; ">Namaste! Un plataforma única en internet para explorar India a través de reseñas culturales y material artístico hecho por hablantes nativos de hindi Conectar con nosotros significa, conectar directamente con la India.<span style="color: blue; text-decoration: underline; font-family: Arial, Helvetica, sans-serif; font-weight: 12000;"> Te damos una calurosa bienvenida a nuestra App. Descarga, utiliza y comparte!</span> </h4>
+
+<a href="https://play.google.com/store/apps/details?id=com.spanishbolo.bb&hl=es" class="col-4 text-center" style="border: none;"><img src="/images/google-play-final-icon.png" style="width: 100px; height:100px; margin: 10px;"></a>
+<h4>Conecta con Nosotros :</h4>
+<div class="social-icons">
+      <a href="https://www.facebook.com/Baila-Bollywood-105697461007966/"
+        class="col-4 fa fa-facebook text-center" title="Facebook Link" target="_blank"></a>
+     
+      <a href="https://www.linkedin.com/in/baila-bollywood-3a3b031a1" class="col-4 fa fa-linkedin  text-center"
+        title="Linkedin Link" target="_blank"></a>
+      <a href="https://instagram.com/bailabollywood20?igshid=15jmz5uzyz1jj"
+        class="col-4 fa fa-instagram text-center" title="Instagram Link" target="_blank"></a>
+      <a href="https://www.quora.com/share/Baila-Bollywood-on-Instagram-Introducing-Baila-Bollywood-3-days-to-go-bailabollywood-spanishculture-indianculture-bollywood-music-spanishbolo-1?ch=3&share=2cd5e92a&srid=uOprOw"
+        title="Quora Link" class="col-4 fa fa-quora  text-center" target="_blank"></a>
+      <a href="https://www.medium.com/@bailabollywood20" class="col-4 fa fa-medium  text-center" title="Medium Link"
+        target="_blank"></a>
+        <a href="https://www.youtube.com/channel/UCUb7jsujf73W8NaVYXqOZ1w?view_as=subscriber" class="col-4 fa fa-youtube  text-center" title="Youtube Link"
+        target="_blank"></a>
+
+
+    
+       
+
+    </div>
+</div>
+
+
+
+
+
+<section class="baila-section section-six" style="padding:0; margin: 0;">
+  <div class="container-fluid" style="width: 100%; margin: auto; border: none;">
+    <div class="row footer-row">
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 footer-left ">
+        <div id="logo-float">            
+        <a href="https://www.bailabollywood.com/" target="_blank"> <img class="footer-logo mt-5"
+            src="/images/baila-bollywood-transparent-white.png" alt="spanish bolo" style="width: 140px; height: 140px;"></a>
+        
+        <a href="https://www.spanishbolo.com/" target="_blank"> <img class="footer-logo mt-5"
+            src="/images/spanish-bolo-logo.png" style="max-width: 140px; max-height: 140px;" alt="spanish bolo"></a>
+        </div>
+        <p class="text-white text-center mt-3">Nuestros proyectos <a href="https://www.spanishbolo.com/" target="_blank">SpanishBOLO</a> y BailaBollywood exploran los rincones culturales  de la India y el mundo hispanohablante, para compartir estas riquezas con nuestros lectores, y así,  afianzar el  vínculo entre ambas regiones, creando un sentido de comunidad y hermandad social.   
+  </p>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 footer-center">
+        <h4 class="mt-5  display-5">Conecta con Nosotros :</h4>
+        <br>
+        <div class="social-icons row justify-content-center">
+          <a href="https://www.facebook.com/Baila-Bollywood-105697461007966/"
+            class="col-4 fa fa-facebook text-center" title="Facebook Link" target="_blank"></a>
+         
+          <a href="https://www.linkedin.com/in/baila-bollywood-3a3b031a1" class="col-4 fa fa-linkedin  text-center"
+            title="Linkedin Link" target="_blank"></a>
+          <a href="https://instagram.com/bailabollywood20?igshid=15jmz5uzyz1jj"
+            class="col-4 fa fa-instagram text-center" title="Instagram Link" target="_blank"></a>
+          <a href="https://www.quora.com/share/Baila-Bollywood-on-Instagram-Introducing-Baila-Bollywood-3-days-to-go-bailabollywood-spanishculture-indianculture-bollywood-music-spanishbolo-1?ch=3&share=2cd5e92a&srid=uOprOw"
+            title="Quora Link" class="col-4 fa fa-quora  text-center" target="_blank"></a>
+          <a href=" https://link.medium.com/jSOvCnafY3" class="col-4 fa fa-medium  text-center" title="Medium Link"
+            target="_blank"></a>
+            <a href="https://www.youtube.com/channel/UCUb7jsujf73W8NaVYXqOZ1w?view_as=subscriber" class="col-4 fa fa-youtube  text-center" title="Youtube Link"
+            target="_blank"></a>
         </div>
       </div>
-
-    </section>
-    <div class="footer-section ">
-    <i style="color:#fff"class="fa mr-3 d-block fa-flag-checkered"></i>
-      Website Made With &hearts; By <div style="line-height: 48px;"><a href=" https://www.linkedin.com/in/vaibhav-kaul-ab5941182/"
-          class="text-white mx-1" target="_blank" title="Vaibhav's Linkedin Profile" style="font-size: 20px;">Vaibhav Kaul</a></div>
-      And <a href="https://www.linkedin.com/in/pawan-saggu-06589b157/" class="text-white mx-1"
-          target="_blank" title="Pawan's Linkedin Profile" style="font-size: 20px">Pawan Saggu</a>
-          <a style="text-decoration: underline;" href="#privacyPolicyModal" class="text-white text-center font-weight-bold mb-1"  data-toggle="modal" data-target="#privacyPolicyModal">Política de Privacidad</a>
-
-      <br />
-      &copy; 2020 Copyright BailaBollywood<img src="/images/Spanish-bolo-natraj-transparent.png" alt="Spanish Bolo">
+      <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 footer-right">
+        <img src="/images/baila-bollywood-transparent-white.png" class="footer-right-img " alt="baila bollywood">
+      </div>
+    </div>
   </div>
+</section>
+
+<div class="footer-section ">
+<i style="color:#fff"class="fa mr-3 d-block fa-flag-checkered"></i>
+  Website Made With &hearts; By <div style="line-height: 48px;"><a href=" https://www.linkedin.com/in/vaibhav-kaul-ab5941182/"
+      class="text-white mx-1" target="_blank" title="Vaibhav's Linkedin Profile" style="font-size: 20px;">Vaibhav Kaul</a></div>
+  And <a href="https://www.linkedin.com/in/pawan-saggu-06589b157/" class="text-white mx-1"
+      target="_blank" title="Pawan's Linkedin Profile" style="font-size: 20px">Pawan Saggu</a>
+      <a style="text-decoration: underline;" href="#privacyPolicyModal" class="text-white text-center  mb-1"  data-toggle="modal" data-target="#privacyPolicyModal">Política de Privacidad</a>
+  <br />
+  &copy; 2020 Copyright BailaBollywood<img src="/images/Spanish-bolo-natraj-transparent.png" alt="Spanish Bolo">
+</div>
+
+
+
+
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
       crossorigin="anonymous"></script>
@@ -289,5 +935,27 @@
       $('img[usemap]').rwdImageMaps();
     });
       </script>
+
+
+<script>
+var accordions = document.getElementsByClassName("accordion");
+ 
+for (var i = 0; i < accordions.length; i++) {
+  accordions[i].onclick = function() {
+    this.classList.toggle('is-open');
+ 
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight) {
+      // accordion is currently open, so close it
+      content.style.maxHeight = null;
+    } else {
+      // accordion is currently closed, so open it
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  }
+}
+  </script>
+
+
 </body>
 </html>

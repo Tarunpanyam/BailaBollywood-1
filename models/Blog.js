@@ -29,6 +29,7 @@ const BlogSchema = new Schema({
   created:  {type: Date, default: Date.now},
   time: {type: String, default: date()},
   thumbnail:{type:String, default:""},
+  number:{type:Number},
   comments:[
     {
       type: mongoose.Schema.Types.ObjectId,

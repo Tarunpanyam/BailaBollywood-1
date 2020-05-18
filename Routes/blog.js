@@ -17,30 +17,30 @@ const SubBlog = require('../models/SubBlog');
 
 // url:/blogs
 //  INdex page route
-router.get('/', (req, res) => {
-    Blog.find({}).then(blogs => {
-      
-      let latestBlogs = [];
-      let topBlogs = [];
-      let length = blogs.length;
-      let len = length-8;
-      let i=0;
-      let c=0;
-      let check=0;
-      blogs.forEach(function(blog){
-        i++;
-        if(i<=4)
-        {
-          topBlogs.push(blog);
-        }
-        if(i>=len){
-          c++;
-        if(blog.image==="")
+router.get('/', async(req, res) => {
+  try {
+    let latestBlogs = [];
+    let topBlogs = [];
+    let i=0;
+    let blogz = await Blog.find({});
+    blogz.forEach(blg=>{
+      i++;
+      if(i<=4)
+      topBlogs.push(blg);
+    })
+    let blogs = await Blog.find({}).sort({created:-1});
+    let length = blogs.length;
+    
+    let c=0;
+    let check=0;
+    blogs.forEach(blog=>{
+      c++;
+      if(c<=9){
+      if(blog.image==="")
         check=1;
         else{
           check=0;
         }
-        console.log(blog.time);
         let title = blog.title;
         let thumbnail = blog.thumbnail;
         let tag = blog.tag;
@@ -51,10 +51,20 @@ router.get('/', (req, res) => {
         let obj = {title:title,thumbnail:thumbnail,tag:tag,index:index,check:check,url:url};
         latestBlogs.push(obj);
       }
-      })
       
+      });
+        
       res.render('../views/blogs/index',{blogs:topBlogs,latestBlogs});
-    })
+
+
+    
+    
+  } catch (error) {
+    console.log(err.message);
+    
+  }
+    
+    
   })
 
 
@@ -73,23 +83,57 @@ router.get('/', (req, res) => {
 
   //url:/blogs/:id
   // getting individual Post
-  router.get('/posts/:id', async (req, res) => {
-    let id = req.params.id;
-    
-    Blog.findById(id).populate("subBlogs").populate("comments").exec(function(err,blog){
-      if(err)
-      console.log(err);
-      //console.log(blog.subBlogs[0].image);
-      console.log("----!"+blog.image+"!------");
+  router.get('/posts/:id', async (req, res) => { 
+    try {
+      var blogs = await Blog.find({});
+      var totalNumber = await blogs.length;
+      console.log('totalNumber:'+totalNumber);
+      let id = req.params.id;
+      let blog = await Blog.findById(id).populate('subBlogs').populate('comments');
       var subBlogz=blog.subBlogs;
       var commentz = blog.comments;
-      //subBlogz.forEach(function(subBlog){
-      //  console.log(subBlog.image);
-      //})
-      res.render('../views/blogs/show', {blog,subBlogz,commentz});
-    });
+      console.log(blog.number);
+      let a = blog.number+1;
+      let b = blog.number-1;
+      let next , prev ,nextId ,prevId;
+      nextId=0;
+      prevId=0;
+      
+      if(blog.number===1){
+        next = await Blog.find({number:a});
+        nextId = next[0]._id;
+        
+      }
+      else if(blog.number===totalNumber){
+        prev = await Blog.find({number:b});
+        prevId = prev[0]._id;
+      }
 
+      
+      else{
+      next = await Blog.find({number:a});
+      prev = await Blog.find({number:b});
+      nextId = next[0]._id;
+      prevId = prev[0]._id;
+      }
+      
+      
+      console.log(nextId);
+      console.log(prevId);
+      
+      res.render('../views/blogs/show', {blog,subBlogz,commentz,nextId,prevId});
+      
+    } catch (error) {
+      console.log(error.message);
+      
+    }
   });
+  
+    
+
+    
+
+
 
   // Only Admin can see the comments
   router.get('/posts/:id/admin',cacheData.memoryCacheUse(36000),(req,res)=>{
@@ -269,7 +313,14 @@ router.get("/AllBlogs",cacheData.memoryCacheUse(36000),async (req,res)=>{
   
   const blogs = await Blog.find().limit(limit*1).skip((page-1)*limit).sort({created:-1}).exec();
   */
- const blogs = await Blog.find({});
+ const blogs = await Blog.find({}).sort({created:-1});
+ let c=0;
+ let len = blogs.length;
+ blogs.forEach(blog=>{
+   c++;
+   blog.number = c;
+   blog.save();
+    })
   res.render('../views/blogs/blogAll',{blogs});
 }
 catch(err){
