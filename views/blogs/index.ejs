@@ -57,6 +57,13 @@ div#lt-blog img {
     border: 2px solid #ffffff;
     padding: 10px;
 }
+div#lt-blog a img:hover {
+    transform: scale(1.1) !important;
+}
+.image-wrapper:hover{
+  transform: scale(1.1) !important;
+
+}
 @media only screen and (max-width: 600px) {
   .mobile-container{
     width:90%
@@ -159,7 +166,7 @@ div#top-post-container h1 {
         <div class="col-12 col-sm-12 col-md-5">
           <div class="container" style="margin-top: 10px;">
             <a href="/blogs/posts/<%= blog._id %>" class="article-links"><div class="promo" style="--overlay-color: hotpink">
-                <div class="image-wrapper" >
+                <div class="image-wrapper " >
               
                     
                   <% if(blog.image.localeCompare("")==1){%>
