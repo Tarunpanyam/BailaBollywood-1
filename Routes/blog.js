@@ -89,6 +89,7 @@ router.get('/', async(req, res) => {
       var totalNumber = await blogs.length;
       console.log('totalNumber:'+totalNumber);
       let id = req.params.id;
+      console.log(id);
       let blog = await Blog.findById(id).populate('subBlogs').populate('comments');
       var subBlogz=blog.subBlogs;
       var commentz = blog.comments;
@@ -125,6 +126,7 @@ router.get('/', async(req, res) => {
       
     } catch (error) {
       console.log(error.message);
+      console.log(error);
       
     }
   });
@@ -169,51 +171,60 @@ router.delete("/posts/:id/comments/:cid",(req,res)=>{
   //url:/blogs/new
   // Adding New Blog
   // Only Admin can Add new Blog
-router.post('/posts/new',(req, res) => {
-    console.log("Post Method Triggered");
+router.post('/posts/new', async(req, res) => {
+  try {
     if (req.files) {
-        let file = req.files.image;
-        if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
-            //console.log(req.body.content);
-            let sanitizedContent = req.sanitize(req.body.content);
-            //console.log(sanitizedContent);
-            console.log(req.body.tag+"-------------");
-            let blog = new Blog({ 
-              title: req.body.title ,
-              tag:req.body.tag,
-              image: req.files.image.name,
-              thumbnail:req.files.image.name, 
-              content: sanitizedContent, 
-              creator: req.body.name })
+      let file = req.files.image;
+      if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+          //console.log(req.body.content);
+          let sanitizedContent = req.sanitize(req.body.content);
+          //console.log(sanitizedContent);
+          console.log(req.body.tag+"-------------");
+          let blogs = await Blog.find({});
+          let totalNumber = blogs.length+1;
+          let blog = new Blog({ 
+            title: req.body.title ,
+            tag:req.body.tag,
+            number:totalNumber,
+            image: req.files.image.name,
+            thumbnail:req.files.image.name, 
+            content: sanitizedContent, 
+            creator: req.body.name })
 
-            file.mv(`./public/uploads/${file.name}`, err => console.log(err ? 'Error on save the image!' : 'Image Uploaded!'));
-            
-            blog.save().then(() => {
-              console.log('Blog Saved!');
-              res.redirect('/blogs');
-            }).catch(err => console.log(err));
-        } // Finish mimetype statement
-    } else {
-      console.log('You must Upload a image-post!');
-      let sanitizedContent = req.sanitize(req.body.content);
-            //console.log(sanitizedContent);
-            console.log(req.body.tag+"-------------");
-            let blog = new Blog({ title: req.body.title ,
-              tag:req.body.tag,
-              image:"",
-              thumbnail:"", 
-              content: sanitizedContent, 
-              creator: req.body.name })
-            //file.mv(`./public/uploads/${file.name}`, err => console.log(err ? 'Error on save the image!' : 'Image Uploaded!'));
-            blog.save().then(() => {
-              console.log('Blog Saved!');
-              res.redirect('/blogs');
-            }).catch(err => console.log(err));
+          file.mv(`./public/uploads/${file.name}`, err => console.log(err ? 'Error on save the image!' : 'Image Uploaded!'));
+          
+          await blog.save();
+          console.log('Blog Saved!');
+          res.redirect('/blogs/allBlogs');
+        
+           
+      } // Finish mimetype statement
+  } else {
+    console.log('You must Upload a image-post!');
+    let sanitizedContent = req.sanitize(req.body.content);
+          //console.log(sanitizedContent);
+          console.log(req.body.tag+"-------------");
+          let blog = new Blog({ title: req.body.title ,
+            tag:req.body.tag,
+            image:"",
+            thumbnail:"", 
+            content: sanitizedContent, 
+            creator: req.body.name })
+          //file.mv(`./public/uploads/${file.name}`, err => console.log(err ? 'Error on save the image!' : 'Image Uploaded!'));
+          await blog.save();
+          console.log('Blog Saved!');
+            res.redirect('/blogs/allBlogs');
+          }
+         
+
+    
+  } catch (error) {
+    console.log(error.message);
+    
+  }
+});
 
 
-      
-    }
-}); 
 
 router.get('/:id/subBlogs/new',(req,res)=>{
   var id = req.params.id;
@@ -296,7 +307,7 @@ router.get("/allblogs/try",async(req,res)=>{
 });
 
 // All Blogs Combined
-router.get("/AllBlogs",cacheData.memoryCacheUse(36000),async (req,res)=>{
+router.get("/AllBlogs",async (req,res)=>{
   var page = 1;
   const limit = 4;
   try{
