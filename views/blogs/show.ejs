@@ -102,17 +102,30 @@
         width: 90%;
         margin-left: 5%;
       }
+      .suggestedBlog{
+        width: 90%;
+        height: auto;
+      }
 }
 @media only screen and (min-width: 992px) {
   .mobile-container{
     width: 62%;
     margin-left:19%;
   }
+  .suggestedBlog{
+    width: 63%;
+    height: auto;
+  }
 }
 @media only screen and (min-width:992px){
   .mobile-container{
     width: 50%;
     margin-left: 25%;
+
+  }
+  .suggestedBlog{
+    width: 50%;
+    height: auto;
   }
 }
   </style>
@@ -224,6 +237,27 @@
           <input type="button" style="width: 20%;" value="Next Blog->" class="float-right">
         </a>
       <%}%>
+      <hr>
+      <div class="container text-center" style="margin-top: 50px;" >
+        <h2>Suggested Blogs</h2>
+        <div id="lt-blog" class="mt-10 mb-5">
+          <a href="/blogs/posts/<%=suggestionBlog[0]._id%>">
+            
+            <% if(suggestionBlog[0].image.localeCompare("")==1){%>
+                    
+              <img alt="image" class="suggestedBlog"  src="/uploads/<%= suggestionBlog[0].thumbnail %>" />
+              <%} else {%>
+                
+                
+                <img alt="image" class="suggestedBlog"  src="<%= suggestionBlog[0].thumbnail %>"/>
+                <%}%>
+       
+       
+          </a>
+        <p style="color:black;font-weight:bolder; font-size: 20px;"><%=suggestionBlog[0].title%><br><span style="color: black; font-size: 17px;">Categoría-<%=suggestionBlog[0].tag%></span></p>
+      
+    </div>
+      </div>
       
       
     

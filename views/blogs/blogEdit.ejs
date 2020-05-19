@@ -65,53 +65,57 @@
   <body>
 
     <div class="container">
-      <form action="/blogs/posts/new" method="POST" enctype="multipart/form-data">
-        <input type="text" name="title" placeholder="Post title" required autofocus="on" minlength="4"/>
-        <textarea id='editor'  name="content" type="text" placeholder="Post Content..." required minlength="30"></textarea>
-        <input type="file" name="image"/>
+      <form action="/blogs/posts/<%=blog.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Post title" value="<%=blog.title%>" required autofocus="on" minlength="4"/>
+        <textarea id='editor'  name="content" type="text" value="<%=blog.content%>" placeholder="Post Content..." required minlength="30"></textarea>
+        
         Add Tags for Blog:
-        <select id="cars" name="tag[0]">
-          <option value=""></option>
+        <select id="cars" name="tag">
+          <option value="<%=blog.tag%>"><%=blog.tag%></option>
           <option value="Bollywood">Bollywood</option>
           <option value="Literatura">Literatura</option>
           <option value="Danzas Folklóricas">Danzas Folklóricas</option>
           <option value="Letras">Letras</option>
           <option value="Música">Música</option>
+          <option value=""></option>
         </select>
-        <select id="cars" name="tag[1]">
-          <option value=""></option>
+        <select id="cars" name="tag1">
+          <option value="<%=blog.tag1%>"><%=blog.tag1%></option>
           <option value="Bollywood">Bollywood</option>
           <option value="Literatura">Literatura</option>
           <option value="Danzas Folklóricas">Danzas Folklóricas</option>
           <option value="Letras">Letras</option>
           <option value="Música">Música</option>
+          <option value=""></option>
         </select>
-        <select id="cars" name="tag[2]">
-          <option value=""></option>
+        <select id="cars" name="tag2">
+          <option value=""><%=blog.tag2%></option>
           <option value="Bollywood">Bollywood</option>
           <option value="Literatura">Literatura</option>
           <option value="Danzas Folklóricas">Danzas Folklóricas</option>
           <option value="Letras">Letras</option>
           <option value="Música">Música</option>
+          <option value=""></option>
         </select>
-        <select id="cars" name="tag[3]">
-          <option value=""></option>
+        <select id="cars" name="tag3">
+          <option value=""><%=blog.tag3%></option>
           <option value="Bollywood">Bollywood</option>
           <option value="Literatura">Literatura</option>
           <option value="Danzas Folklóricas">Danzas Folklóricas</option>
           <option value="Letras">Letras</option>
           <option value="Música">Música</option>
+          <option value=""></option>
         </select>
-        <select id="cars" name="tag[4]">
-          <option value=""></option>
+        <select id="cars" name="tag4">
+          <option value=""><%=blog.tag4%></option>
           <option value="Bollywood">Bollywood</option>
           <option value="Literatura">Literatura</option>
           <option value="Danzas Folklóricas">Danzas Folklóricas</option>
           <option value="Letras">Letras</option>
           <option value="Música">Música</option>
+          <option value=""></option>
         </select>
 
-        <input type="text" name="name" placeholder="Your name" required minlength="4"/>
         <input type="submit" value="Publish" />
       </form>
     </div>

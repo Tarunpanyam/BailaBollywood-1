@@ -81,6 +81,41 @@ router.get('/', async(req, res) => {
     res.render("../views/blogs/new2");
   })
 
+  // All Blogs Combined
+router.get("/AllBlogs",async (req,res)=>{
+  var page = 1;
+  const limit = 4;
+  try{
+    /*
+  const count = await Blog.countDocuments();
+  const totalPages = Math.ceil(count/limit);
+  if(req.query.page!=null)
+  page = req.query.page;
+  console.log(page);
+  if(page<=0)
+  page=1;
+  if(page>totalPages)
+  page=totalPages;
+  
+  const blogs = await Blog.find().limit(limit*1).skip((page-1)*limit).sort({created:-1}).exec();
+  */
+ const blogs = await Blog.find({}).sort({created:-1});
+ let c=0;
+ let len = blogs.length;
+ blogs.forEach(blog=>{
+   c++;
+   blog.number = c;
+   
+   blog.save();
+    })
+  res.render('../views/blogs/blogAll',{blogs});
+}
+catch(err){
+  console.log(err.message);
+}
+})
+
+
   //url:/blogs/:id
   // getting individual Post
   router.get('/posts/:id', async (req, res) => { 
@@ -121,8 +156,25 @@ router.get('/', async(req, res) => {
       
       console.log(nextId);
       console.log(prevId);
+      const tagg = blog.tag;
+      console.log(tagg);
+      let currNumber = blog.number;
+      let blogz = await Blog.find({tag:tagg});
+      let numberArray=[];
+      let count=0;
+      blogz.forEach(blg=>{
+        if(blg.number!=currNumber)
+        {numberArray.push(blg.number);
+        count++;}
+      })
+      let randomNumber = Math.floor(Math.random()*count);
       
-      res.render('../views/blogs/show', {blog,subBlogz,commentz,nextId,prevId});
+      console.log(randomNumber);
+      var suggestedNumber = numberArray[randomNumber];
+      let suggestionBlog = await Blog.find({number:suggestedNumber});
+      console.log(suggestionBlog);
+      
+      res.render('../views/blogs/show', {blog,subBlogz,commentz,nextId,prevId,suggestionBlog});
       
     } catch (error) {
       console.log(error.message);
@@ -130,7 +182,19 @@ router.get('/', async(req, res) => {
       
     }
   });
+  router.get('/posts/:id/edit',async(req,res)=>{
+    try {
+      let id = req.params.id;
+      let blog = await Blog.findById(id);
+      res.render('../views/blogs/blogEdit',{blog});
   
+      
+    } catch (error) {
+      console.log(error.message);
+      
+    }
+
+  })
     
 
     
@@ -306,38 +370,6 @@ router.get("/allblogs/try",async(req,res)=>{
 })
 });
 
-// All Blogs Combined
-router.get("/AllBlogs",async (req,res)=>{
-  var page = 1;
-  const limit = 4;
-  try{
-    /*
-  const count = await Blog.countDocuments();
-  const totalPages = Math.ceil(count/limit);
-  if(req.query.page!=null)
-  page = req.query.page;
-  console.log(page);
-  if(page<=0)
-  page=1;
-  if(page>totalPages)
-  page=totalPages;
-  
-  const blogs = await Blog.find().limit(limit*1).skip((page-1)*limit).sort({created:-1}).exec();
-  */
- const blogs = await Blog.find({}).sort({created:-1});
- let c=0;
- let len = blogs.length;
- blogs.forEach(blog=>{
-   c++;
-   blog.number = c;
-   blog.save();
-    })
-  res.render('../views/blogs/blogAll',{blogs});
-}
-catch(err){
-  console.log(err.message);
-}
-})
 
 
 // deleting Blog ---only Admin can delete it
@@ -436,6 +468,39 @@ router.delete('/posts/comments/:cid',(req,res)=>{
     res.redirect('back');
 
   })
+})
+
+router.put('/posts/:id',async(req,res)=>{
+  try {
+    let id = req.params.id;
+    let blog = await Blog.findById(id);
+    console.log(blog.tag);
+    if(req.body.content!="")
+    {
+      blog.content = req.body.content;
+    }
+    blog.title = req.body.title;
+    blog.tag = req.body.tag;
+    
+    blog.tag1 = req.body.tag1;
+    
+    blog.tag2 = req.body.tag2;
+    
+    blog.tag3 = req.body.tag3;
+    
+    blog.tag4 = req.body.tag4;
+    console.log(req.body.tag);
+    console.log("-----"+req.body.tag2);
+    console.log(req.body.tag4);
+    blog.save();
+    res.redirect('/blogs/posts/'+id);
+    
+  } catch (error) {
+    console.log(error.message);
+    
+  }
+  
+  
 })
 
 
