@@ -81,36 +81,8 @@
 
   <!---------------Css file for responsiveness------------------>
   <link rel="stylesheet" type="text/css" href="/stylesheets/responsive-breakpoints.css" />
-  <style>
-    a{
-      color:black;
-    }
-    a:hover{
-      color:black;
-    }
-    body{
-      font-size: 18px;
-      font-weight: 700;
-    }
-    .btn-social { 
-  display: inline-block; 
-  
-}
+   <link rel="stylesheet" type="text/css" href="/stylesheets/states-style.css">
 
-.list-inline { 
-  padding-left: 0; 
-  list-style: none; 
-  margin-left: -5px; }
-
-.list-inline > li { 
-  display: inline-block;  
-  padding-left: 5px; 
-  padding-right: 5px; 
-}
-
-
-
-  </style>
     
   </head>
 <body >
@@ -175,7 +147,7 @@
   <div class="container" >
   <!--  Blog Title-->
   <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
-    <h1 class="text-center display-4" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" >
+    <h1 class="text-center display-4" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;  font-family: 'Ananda Namaste Regular';" >
         Danzas populares de  Punjab</h1>
   
     
@@ -203,7 +175,7 @@ Aunque existen muchos bailes folclóricos en el Punjab, hablaremos sobre los tre
   
     <div class="container" style="margin-top:15px; margin-bottom:15px" >
     <!---  Blog Content -->
-    <h4 style="font-weight: 1000; margin-top: 50px;">Bhangra</h4>
+    <h2 style="font-weight: 1000; margin-top: 50px;">Bhangra</h2>
       <p class="target" style="word-wrap:break-word; font-size: 18px;">
            El rey de los bailes populares en la India, es el Bhangra,  uno de los más enérgicos y divertidos. Esto se da tanto con la danza como con la música. Juntos tienen el  poder para que puedas crear tu divertida versión del baile en poco tiempo. 
       </p>
@@ -239,7 +211,7 @@ Aunque existen muchos bailes folclóricos en el Punjab, hablaremos sobre los tre
       
           
           <div>
-          <h4 style="font-weight: 1000; margin-top: 50px;">Giddha</h4>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Giddha</h2>
           </div>
           
        <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
@@ -275,7 +247,7 @@ Aunque existen muchos bailes folclóricos en el Punjab, hablaremos sobre los tre
       
           
           <div>
-          <h4 style="font-weight: 1000; margin-top: 50px;">Jhumar</h4>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Jhumar</h2>
           </div>
           
        <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
@@ -294,34 +266,7 @@ Es una danza folclórica masculina en la cual, tres generaciones de una familia 
 
   </div>
 
- 
- <div class="container"  style="padding:30px; text-align:center; font-style: italic; font-weight:bolder; ">
- <h4 style="font-size:19px; color: rgb(247,183,51); font-family: Arial, Helvetica, sans-serif; font-weight: 12000; ">Namaste! Un plataforma única en internet para explorar India a través de reseñas culturales y material artístico hecho por hablantes nativos de hindi Conectar con nosotros significa, conectar directamente con la India.<span style="color: blue; text-decoration: underline; font-family: Arial, Helvetica, sans-serif; font-weight: 12000;"> Te damos una calurosa bienvenida a nuestra App. Descarga, utiliza y comparte!</span> </h4>
-
-   <a href="https://play.google.com/store/apps/details?id=com.spanishbolo.bb&hl=es" class="col-4 text-center" style="border: none;"><img src="/images/google-play-final-icon.png" style="width: 100px; height:100px; margin: 10px;"></a>
-<h4>Conecta con Nosotros :</h4>
-<div class="social-icons">
-              <a href="https://www.facebook.com/Baila-Bollywood-105697461007966/"
-                class="col-4 fa fa-facebook text-center" title="Facebook Link" target="_blank"></a>
-             
-              <a href="https://www.linkedin.com/in/baila-bollywood-3a3b031a1" class="col-4 fa fa-linkedin  text-center"
-                title="Linkedin Link" target="_blank"></a>
-              <a href="https://instagram.com/bailabollywood20?igshid=15jmz5uzyz1jj"
-                class="col-4 fa fa-instagram text-center" title="Instagram Link" target="_blank"></a>
-              <a href="https://www.quora.com/share/Baila-Bollywood-on-Instagram-Introducing-Baila-Bollywood-3-days-to-go-bailabollywood-spanishculture-indianculture-bollywood-music-spanishbolo-1?ch=3&share=2cd5e92a&srid=uOprOw"
-                title="Quora Link" class="col-4 fa fa-quora  text-center" target="_blank"></a>
-              <a href="https://www.medium.com/@bailabollywood20" class="col-4 fa fa-medium  text-center" title="Medium Link"
-                target="_blank"></a>
-                <a href="https://www.youtube.com/channel/UCUb7jsujf73W8NaVYXqOZ1w?view_as=subscriber" class="col-4 fa fa-youtube  text-center" title="Youtube Link"
-                target="_blank"></a>
-
-
-            
-               
-
-            </div>
-</div>
-
+  <%- include footer-blogs.ejs %>
 
 
 <!--Parsing HTML JS-->
