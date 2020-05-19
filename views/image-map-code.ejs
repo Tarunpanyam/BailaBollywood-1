@@ -164,6 +164,25 @@ button.accordion {
     text-align: justify;
 }
 
+
+input.map-box {
+    border: 2px solid #f7b733;
+    padding: 8px 15px;
+    text-align: center;
+    font-weight: 700;
+}
+
+
+section.container.intro p {
+    font-size: 18px;
+    font-weight: 800;
+    text-align: justify;
+}
+section.container.intro {
+    width: 75%;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
    </style>
 
        <script src="/scripts/spanish-to-english-translate.js"></script>
@@ -234,53 +253,115 @@ button.accordion {
     </div>
   </nav>
 
-<div class="fluid-container">
-      <p class=" map-intro-spanish" style="color: black; font-size: 20px; font-weight: bold;">
-        Explore los bailes folclóricos indios a través del mapa indio, haga clic en los estados respectivos para explorar futhrer. 
-        <button onclick="spanToengMapIntro()" class="spanish-to-english d-inline btn btn-save float-right mt-4">Convert to
-            English</button>
-      </p>
-    
-      <p class=" map-intro-english" style="display: none;color: black; font-size: 20px; font-weight: bold;">
-       Explore the Indian folk dances through the Indian map, click on the respective states to explore futhrer.
-            <button onclick="engTospaMapIntro()" class="english-to-spanish d-inline btn btn-save float-right mt-4">Convert to
-            Spanish</button>
-        </p>
-  </div>
+
+
+
+<section class="container intro">
+
+  <p>
+  Con 28 estados y 8 territorios de la Unión, cientos de idiomas y miles de dialectos, la diversa cultura de la India no tiene límites, esta riqueza también es evidente en las expresiones artísticas, y con mucho más énfasis en la danza. En el siguiente apartado sobre Danzas folclóricas de India veremos, cómo cada estado tiene no solo una sino varias danzas representativas, ya que cada lugar tiene culturas e identidades múltiples.
+  La industria de cine Bollywood ha popularizado algunas de estas danzas llevándolas a la pantalla grande; estas representaciones han tenido tanta influencia, que incluso han sido tomadas como referencia oficial,  por encima de las formas tradicionales, pero esto no es un aspecto negativo, pues ha logrado, que millones de espectadores conozcan más sobre el arte de la danza popular, por ello incluímos algunas de las representaciones de Bollywood más famosas junto con las características de la danza folclórica que hay detrás.
+  </p>
+  
+  <p><strong>
+  A continuación te presentamos un panorama de las danzas folclóricas de la India que debes conocer si te gusta la cultura de este gran país:
+  </strong></p>
+
+</section>
+
+
 
 <div class="map-container">
 
-<img src="/images/india-map-new.png" usemap="#image-map">
+  <form name = "myform">
+    <input class="map-box" type = "text" name = "stage" size = "20" />
+ </form>
+
+
+ <img src="/images/india-map-new.png" usemap="#image-map">
 
 <map name="image-map">
-      <area target="_blank" class="map-point" alt="Jammu and Kashmir" title="Jammu and Kashmir" href="/kashmir" coords="238,114,222,108,217,96,212,76,211,41,226,25,239,17,255,28,267,36,275,46,287,49,299,47,312,43,330,46,335,56,331,67,323,76,321,84,323,96,324,104,321,111,317,119,309,127,295,128,261,124,254,123,246,120" shape="poly">
-      
-    <area target="_blank" alt="Himachal Pradesh" title="Himachal Pradesh" href="/himachal-pradesh" coords="289,164,294,151,309,147,307,131,302,126,283,126,267,123,257,126,261,140,265,147,272,151,273,158,279,160" shape="poly">
-    <area target="_blank" alt="Punjab" title="Punjab" href="/punjab" coords="222,137,231,131,245,131,256,140,264,149,265,159,262,165,256,170,253,181,246,184,235,181,224,176,218,173,215,166,219,152" shape="poly">
-    <area target="_blank" alt="Haryana" title="Haryana" href="/haryana" coords="270,166,283,165,283,171,277,183,274,194,277,204,279,212,281,217,278,224,271,226,262,220,253,217,250,205,245,192,232,189,229,180,236,179,244,184,249,184,258,183,262,178,267,174" shape="poly">
-    <area target="_blank" alt="Rajasthan" title="Rajasthan" href="/rajasthan" coords="117,239,126,244,136,250,132,263,132,273,129,281,152,288,163,293,178,297,190,305,196,319,208,326,220,322,222,310,220,299,224,290,235,289,244,292,243,303,239,313,245,314,254,307,265,306,267,296,272,285,261,281,261,266,280,252,276,238,255,229,245,219,222,195,212,183,202,177,196,193,178,209,163,223,146,221,135,218,126,225" shape="poly">
-    <area target="_blank" alt="Gujrat" title="Gujrat" href="/gujrat" coords="150,366,161,368,169,357,173,346,179,351,179,365,185,379,184,387,193,382,204,379,202,369,203,360,210,344,211,330,209,323,189,311,179,302,165,295,153,293,127,292,115,297,101,301,99,307,99,315,102,320,120,323,131,323,136,326,127,339,116,342,107,343,117,358,123,364,132,372,140,372,147,372,153,371" shape="poly">
-    <area target="_blank" alt="Madhya Pradesh" title="Madhya Pradesh" href="/madhya-pradesh" coords="217,342,212,357,218,356,227,364,248,370,273,370,311,368,330,370,346,367,357,357,372,343,385,321,388,305,361,296,336,293,316,292,309,282,316,269,309,250,286,253,270,275,266,271,279,283,277,297,251,312,240,313,241,298,235,292,222,294,226,306,229,312,223,326,217,334" shape="poly">
-    <area target="_blank" alt="Uttrakhand" title="Uttrakhand" href="/uttrakhand" coords="295,167,295,179,301,183,315,184,320,187,332,192,340,183,347,175,340,163,325,158,322,152,316,147,303,147,290,150" shape="poly">
-    <area target="_blank" alt="Uttar Pradesh" title="Uttar Pradesh" href="/uttar-pradesh" coords="285,223,287,240,297,253,317,255,319,264,316,272,315,280,323,286,333,285,339,281,350,282,352,290,366,289,375,286,385,296,396,295,403,294,406,287,409,275,419,274,419,256,416,242,397,237,379,230,364,218,343,210,334,202,317,198,304,186,294,185,290,171,280,179,275,191,275,206,284,229" shape="poly">
-    <area target="_blank" alt="Bihar" title="Bihar" href="/bihar" coords="409,283,409,291,425,291,437,292,449,294,463,293,472,295,480,291,485,279,496,275,503,265,499,255,486,251,471,252,463,252,447,251,437,251,423,250,423,263,423,270,425,275,446,278" shape="poly">
-    <area target="_blank" alt="Orrisa" title="Orrisa" href="/orrisa" coords="371,448,378,448,384,444,389,434,396,437,404,436,408,427,413,422,420,422,428,424,434,422,440,418,445,413,454,406,465,402,476,395,482,383,485,375,491,363,492,355,480,351,467,343,466,353,453,353,446,354,445,345,429,347,420,348,416,361,409,370,410,377,396,378,392,390,391,397,392,407,385,406,378,403,381,413,382,420,378,430,373,435" shape="poly">
-    <area target="_blank" alt="Jharkhand" title="Jharkhand" href="/jharkhand" coords="411,309,416,317,419,325,425,337,435,346,440,343,447,348,453,353,461,349,461,343,473,343,471,337,463,332,457,329,464,319,479,312,493,304,501,298,505,281,489,278,484,287,480,299,467,299,458,295,445,305,433,300,419,301,410,300" shape="poly">
-    <area target="_blank" alt="West Bengal" title="West Bengal" href="/west-bengal" coords="463,327,472,330,476,336,481,346,487,353,493,358,500,358,514,352,522,354,527,343,523,328,519,314,511,299,504,298,480,318,492,314,500,310" shape="poly">
-    <area target="_blank" alt="Meghalaya" title="Meghalaya" href="/meghalaya" coords="542,274,550,276,561,277,573,277,581,275,587,279,587,285,595,270,589,259,583,257,573,258,565,262,550,259,543,264" shape="poly">
-    <area target="_blank" alt="Assam" title="Assam" href="/assam" coords="539,250,551,238,573,241,598,235,620,226,633,212,655,204,649,215,638,224,631,234,626,243,619,253,614,260,609,269,605,281,599,288,592,292,597,273,595,260,585,253,572,253,567,259,556,259,543,259" shape="poly">
-    <area target="_blank" alt="Arunachal Pradesh" title="Arunachal Pradesh" href="/arunachal-pradesh" coords="573,217,584,216,595,206,605,196,618,184,629,180,646,178,657,173,665,185,669,191,678,196,680,207,680,219,662,221,647,229,637,230,646,217,657,205,640,208,627,214,621,221,602,227,593,229,582,233" shape="poly">
-    <area target="_blank" alt="Manipur" title="Manipur" href="/manipur" coords="608,287,608,277,617,271,629,263,637,266,639,276,645,275,657,267,662,269,671,277,677,285,673,295,667,301,653,319,642,319,636,314,633,306,630,299,619,298" shape="poly">
-    <area target="_blank" alt="Mizoram" title="Mizoram" href="/mizoram" coords="593,306,593,314,597,326,597,334,579,336,577,351,582,362,592,365,610,361,629,361,638,360,639,354,629,342,620,328,617,321,617,311,617,302,613,296,597,292" shape="poly">
-    <area target="_blank" alt="Tripura" title="Tripura" href="/tripura" coords="584,315,582,324,569,312,576,300,584,294,590,293,589,303" shape="poly">
-    <area target="_blank" alt="Sikkim" title="Sikkim" href="/sikkim" coords="515,229,509,234,497,234,501,222,501,210,501,201,502,191,506,184,509,173,513,184,517,192,521,204,520,213,517,223" shape="poly">
-    <area target="_blank" alt="Maharashtra" title="Maharashtra" href="/maharashtra" coords="197,486,207,492,216,484,213,476,230,468,249,460,265,449,281,441,290,425,297,407,313,408,331,408,337,417,343,422,353,417,358,413,349,403,349,388,348,378,335,370,325,368,302,370,285,373,255,375,239,375,229,368,219,361,210,360,212,375,207,384,197,389,185,389,180,401,179,414,179,426,179,437,181,455,189,470,193,479" shape="poly">
-    <area target="_blank" alt="Andhra Pradesh" title="Andhra Pradesh" href="/andhra-pradesh" coords="291,409,288,424,285,429,285,443,279,452,277,468,277,475,279,484,271,498,263,506,263,520,267,527,275,537,287,540,294,548,302,553,312,557,322,554,330,550,336,543,337,535,336,522,337,509,342,499,347,492,352,496,361,487,367,480,375,477,383,472,389,465,399,456,412,446,416,441,426,429,434,420,417,424,396,436,383,443,377,446,364,448,353,440,349,432,340,426,329,421,324,409,308,411,300,403,292,400" shape="poly">
-    <area target="_blank" alt="Goa" title="Goa" href="/goa" coords="202,511,205,504,206,495,193,492,187,488,180,467,173,459,148,467,144,487,114,488,81,503,77,527,85,543,118,551,151,551,182,539" shape="poly">
-    <area target="_blank" alt="Karnatka" title="Karnatka" href="/karnatka" coords="213,493,210,506,211,520,217,535,222,550,224,567,235,579,250,584,263,587,276,585,290,572,298,564,303,561,286,539,274,546,266,532,278,489,277,460,280,446,251,453,218,473,236,465,215,483" shape="poly">
-    <area target="_blank" alt="Kerela" title="Kerela" href="/kerela" coords="266,668,255,658,248,638,244,617,240,608,234,599,232,584,228,578,243,585,249,591,257,609,262,618,268,627,269,635,269,647,269,654" shape="poly">
-    <area target="_blank" alt="Tamil Nadu" title="Tamil Nadu" href="/tamil-nadu" coords="265,600,265,613,268,620,272,628,273,639,269,657,277,670,293,662,301,648,311,646,313,627,324,622,331,615,334,596,337,574,343,558,331,552,310,558,293,564,281,579,276,591,263,592,252,588" shape="poly">
-    <area target="_blank" alt="Nagaland" title="Nagaland" href="/nagaland" coords="617,268,609,264,617,256,628,248,631,240,645,237,650,237,647,250,645,258,641,263" shape="poly">
+
+    <area target="_blank" class="map-point" alt="Jammu and Kashmir" title="Jammu and Kashmir" href="/kashmir" coords="238,114,222,108,217,96,212,76,211,41,226,25,239,17,255,28,267,36,275,46,287,49,299,47,312,43,330,46,335,56,331,67,323,76,321,84,323,96,324,104,321,111,317,119,309,127,295,128,261,124,254,123,246,120" shape="poly" 
+    onMouseOver = "showTutorial('Jammu and Kashmir')" onMouseOut = "showTutorial('')">
+    <area target="_blank" alt="Himachal Pradesh" title="Himachal Pradesh" href="/himachal-pradesh" coords="289,164,294,151,309,147,307,131,302,126,283,126,267,123,257,126,261,140,265,147,272,151,273,158,279,160" shape="poly" 
+    onMouseOver = "showTutorial('Himachal Pradesh')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Punjab" title="Punjab" href="/punjab" coords="222,137,231,131,245,131,256,140,264,149,265,159,262,165,256,170,253,181,246,184,235,181,224,176,218,173,215,166,219,152" shape="poly" 
+    onMouseOver = "showTutorial('Punjab')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Haryana" title="Haryana" href="/haryana" coords="270,166,283,165,283,171,277,183,274,194,277,204,279,212,281,217,278,224,271,226,262,220,253,217,250,205,245,192,232,189,229,180,236,179,244,184,249,184,258,183,262,178,267,174" shape="poly" 
+    onMouseOver = "showTutorial('Haryana')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Rajasthan" title="Rajasthan" href="/rajasthan" coords="117,239,126,244,136,250,132,263,132,273,129,281,152,288,163,293,178,297,190,305,196,319,208,326,220,322,222,310,220,299,224,290,235,289,244,292,243,303,239,313,245,314,254,307,265,306,267,296,272,285,261,281,261,266,280,252,276,238,255,229,245,219,222,195,212,183,202,177,196,193,178,209,163,223,146,221,135,218,126,225" shape="poly" 
+    onMouseOver = "showTutorial('Rajasthan')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Gujrat" title="Gujrat" href="/gujrat" coords="150,366,161,368,169,357,173,346,179,351,179,365,185,379,184,387,193,382,204,379,202,369,203,360,210,344,211,330,209,323,189,311,179,302,165,295,153,293,127,292,115,297,101,301,99,307,99,315,102,320,120,323,131,323,136,326,127,339,116,342,107,343,117,358,123,364,132,372,140,372,147,372,153,371" shape="poly" 
+    onMouseOver = "showTutorial('Gujrat')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Madhya Pradesh" title="Madhya Pradesh" href="/madhya-pradesh" coords="217,342,212,357,218,356,227,364,248,370,273,370,311,368,330,370,346,367,357,357,372,343,385,321,388,305,361,296,336,293,316,292,309,282,316,269,309,250,286,253,270,275,266,271,279,283,277,297,251,312,240,313,241,298,235,292,222,294,226,306,229,312,223,326,217,334" shape="poly" 
+    onMouseOver = "showTutorial('Madhya Pradesh')" onMouseOut = "showTutorial('')">
+    
+    
+    <area target="_blank" alt="Uttrakhand" title="Uttrakhand" href="/uttrakhand" coords="295,167,295,179,301,183,315,184,320,187,332,192,340,183,347,175,340,163,325,158,322,152,316,147,303,147,290,150" shape="poly" 
+    onMouseOver = "showTutorial('Uttrakhand')" onMouseOut = "showTutorial('')">
+   
+    <area target="_blank" alt="Uttar Pradesh" title="Uttar Pradesh" href="/uttar-pradesh" coords="285,223,287,240,297,253,317,255,319,264,316,272,315,280,323,286,333,285,339,281,350,282,352,290,366,289,375,286,385,296,396,295,403,294,406,287,409,275,419,274,419,256,416,242,397,237,379,230,364,218,343,210,334,202,317,198,304,186,294,185,290,171,280,179,275,191,275,206,284,229" shape="poly" 
+    onMouseOver = "showTutorial('Uttar Pradesh')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Bihar" title="Bihar" href="/bihar" coords="409,283,409,291,425,291,437,292,449,294,463,293,472,295,480,291,485,279,496,275,503,265,499,255,486,251,471,252,463,252,447,251,437,251,423,250,423,263,423,270,425,275,446,278" shape="poly" 
+    onMouseOver = "showTutorial('Bihar')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Orrisa" title="Orrisa" href="/orrisa" coords="371,448,378,448,384,444,389,434,396,437,404,436,408,427,413,422,420,422,428,424,434,422,440,418,445,413,454,406,465,402,476,395,482,383,485,375,491,363,492,355,480,351,467,343,466,353,453,353,446,354,445,345,429,347,420,348,416,361,409,370,410,377,396,378,392,390,391,397,392,407,385,406,378,403,381,413,382,420,378,430,373,435" shape="poly" 
+    onMouseOver = "showTutorial('Orrisa')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Jharkhand" title="Jharkhand" href="/jharkhand" coords="411,309,416,317,419,325,425,337,435,346,440,343,447,348,453,353,461,349,461,343,473,343,471,337,463,332,457,329,464,319,479,312,493,304,501,298,505,281,489,278,484,287,480,299,467,299,458,295,445,305,433,300,419,301,410,300" shape="poly" 
+    onMouseOver = "showTutorial('Jharkhand')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="West Bengal" title="West Bengal" href="/west-bengal" coords="463,327,472,330,476,336,481,346,487,353,493,358,500,358,514,352,522,354,527,343,523,328,519,314,511,299,504,298,480,318,492,314,500,310" shape="poly" 
+    onMouseOver = "showTutorial('West Bengal')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Meghalaya" title="Meghalaya" href="/meghalaya" coords="542,274,550,276,561,277,573,277,581,275,587,279,587,285,595,270,589,259,583,257,573,258,565,262,550,259,543,264" shape="poly" 
+    onMouseOver = "showTutorial('Meghalaya')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Assam" title="Assam" href="/assam" coords="539,250,551,238,573,241,598,235,620,226,633,212,655,204,649,215,638,224,631,234,626,243,619,253,614,260,609,269,605,281,599,288,592,292,597,273,595,260,585,253,572,253,567,259,556,259,543,259" shape="poly" 
+    onMouseOver = "showTutorial('Assam')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Arunachal Pradesh" title="Arunachal Pradesh" href="/arunachal-pradesh" coords="573,217,584,216,595,206,605,196,618,184,629,180,646,178,657,173,665,185,669,191,678,196,680,207,680,219,662,221,647,229,637,230,646,217,657,205,640,208,627,214,621,221,602,227,593,229,582,233" shape="poly" 
+    onMouseOver = "showTutorial('Arunachal Pradesh')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Manipur" title="Manipur" href="/manipur" coords="608,287,608,277,617,271,629,263,637,266,639,276,645,275,657,267,662,269,671,277,677,285,673,295,667,301,653,319,642,319,636,314,633,306,630,299,619,298" shape="poly"  
+    onMouseOver = "showTutorial('Manipur')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Mizoram" title="Mizoram" href="/mizoram" coords="593,306,593,314,597,326,597,334,579,336,577,351,582,362,592,365,610,361,629,361,638,360,639,354,629,342,620,328,617,321,617,311,617,302,613,296,597,292" shape="poly" 
+    onMouseOver = "showTutorial('Mizoram')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Tripura" title="Tripura" href="/tripura" coords="584,315,582,324,569,312,576,300,584,294,590,293,589,303" shape="poly"
+    onMouseOver = "showTutorial('Tripura')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Sikkim" title="Sikkim" href="/sikkim" coords="515,229,509,234,497,234,501,222,501,210,501,201,502,191,506,184,509,173,513,184,517,192,521,204,520,213,517,223" shape="poly"
+    onMouseOver = "showTutorial('Sikkim')" onMouseOut = "showTutorial('')">
+   
+    <area target="_blank" alt="Maharashtra" title="Maharashtra" href="/maharashtra" coords="197,486,207,492,216,484,213,476,230,468,249,460,265,449,281,441,290,425,297,407,313,408,331,408,337,417,343,422,353,417,358,413,349,403,349,388,348,378,335,370,325,368,302,370,285,373,255,375,239,375,229,368,219,361,210,360,212,375,207,384,197,389,185,389,180,401,179,414,179,426,179,437,181,455,189,470,193,479" shape="poly"
+    onMouseOver = "showTutorial('Maharashtra')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Andhra Pradesh" title="Andhra Pradesh" href="/andhra-pradesh" coords="291,409,288,424,285,429,285,443,279,452,277,468,277,475,279,484,271,498,263,506,263,520,267,527,275,537,287,540,294,548,302,553,312,557,322,554,330,550,336,543,337,535,336,522,337,509,342,499,347,492,352,496,361,487,367,480,375,477,383,472,389,465,399,456,412,446,416,441,426,429,434,420,417,424,396,436,383,443,377,446,364,448,353,440,349,432,340,426,329,421,324,409,308,411,300,403,292,400" shape="poly"
+    onMouseOver = "showTutorial('Andhra Pradesh')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Goa" title="Goa" href="/goa" coords="202,511,205,504,206,495,193,492,187,488,180,467,173,459,148,467,144,487,114,488,81,503,77,527,85,543,118,551,151,551,182,539" shape="poly"
+    onMouseOver = "showTutorial('Goa')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Karnatka" title="Karnatka" href="/karnatka" coords="213,493,210,506,211,520,217,535,222,550,224,567,235,579,250,584,263,587,276,585,290,572,298,564,303,561,286,539,274,546,266,532,278,489,277,460,280,446,251,453,218,473,236,465,215,483" shape="poly"
+    onMouseOver = "showTutorial('Karnatka')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Kerela" title="Kerela" href="/kerela" coords="266,668,255,658,248,638,244,617,240,608,234,599,232,584,228,578,243,585,249,591,257,609,262,618,268,627,269,635,269,647,269,654" shape="poly"
+    onMouseOver = "showTutorial('Kerela')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Tamil Nadu" title="Tamil Nadu" href="/tamil-nadu" coords="265,600,265,613,268,620,272,628,273,639,269,657,277,670,293,662,301,648,311,646,313,627,324,622,331,615,334,596,337,574,343,558,331,552,310,558,293,564,281,579,276,591,263,592,252,588" shape="poly"
+    onMouseOver = "showTutorial('Tamil Nadu')" onMouseOut = "showTutorial('')">
+    
+    <area target="_blank" alt="Nagaland" title="Nagaland" href="/nagaland" coords="617,268,609,264,617,256,628,248,631,240,645,237,650,237,647,250,645,258,641,263" shape="poly"
+    onMouseOver = "showTutorial('Nagaland')" onMouseOut = "showTutorial('')">
 </map>
 
 </div>
@@ -937,6 +1018,10 @@ button.accordion {
       </script>
 
 
+
+
+
+
 <script>
 var accordions = document.getElementsByClassName("accordion");
  
@@ -956,6 +1041,15 @@ for (var i = 0; i < accordions.length; i++) {
 }
   </script>
 
+
+
+<script type = "text/javascript">
+  <!--
+     function showTutorial(name) {
+        document.myform.stage.value = name
+     }
+  //-->
+</script>
 
 </body>
 </html>
