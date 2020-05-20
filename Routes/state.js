@@ -41,5 +41,24 @@ router.get("/equipo",(req,res) => {
     res.render("../views/states/bengal.ejs")
   });
   
-  
+   router.get("/assam", cacheData.memoryCacheUse(36000),(req,res) => {
+    res.render("../views/states/assam.ejs")
+  });
+    router.get("/arunachal-pradesh", cacheData.memoryCacheUse(36000),(req,res) => {
+    res.render("../views/states/arunachal-pradesh.ejs")
+  });
+   router.get("/manipur", cacheData.memoryCacheUse(36000),(req,res) => {
+    res.render("../views/states/manipur.ejs")
+  });
+  router.get("/tamil-nadu", cacheData.memoryCacheUse(36000),(req,res) => {
+    res.render("../views/states/tamil-nadu.ejs")
+  });
+    router.get("/bihar", cacheData.memoryCacheUse(36000),(req,res) => {
+    res.render("../views/states/bihar.ejs")
+  });
+
+   router.get("/chhattisgarh", cacheData.memoryCacheUse(36000),(req,res) => {
+    res.render("../views/states/chhattisgarh.ejs")
+  });
+      
   module.exports=router;

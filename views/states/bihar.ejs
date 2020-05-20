@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title><%=blog.title %></title>
+    <title>Bihar Folk Danzas</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     
@@ -81,55 +81,9 @@
 
   <!---------------Css file for responsiveness------------------>
   <link rel="stylesheet" type="text/css" href="/stylesheets/responsive-breakpoints.css" />
-  <style>
-    a{
-      color:black;
-      font-weight: 700;
+    <link rel="stylesheet" type="text/css" href="/stylesheets/states-style.css">
 
-    }
-    strong{
-      font-weight: 1000;
-    }
-    a:hover{
-      color:black;
-    }
-    body{
-      font-size: 18px;
-    }
-    @media only screen and (max-width: 600px) {
   
-      .mobile-container{
-        width: 90%;
-        margin-left: 5%;
-      }
-      .suggestedBlog{
-        width: 90%;
-        height: auto;
-      }
-}
-@media only screen and (min-width: 992px) {
-  .mobile-container{
-    width: 62%;
-    margin-left:19%;
-  }
-  .suggestedBlog{
-    width: 63%;
-    height: auto;
-  }
-}
-@media only screen and (min-width:992px){
-  .mobile-container{
-    width: 50%;
-    margin-left: 25%;
-
-  }
-  .suggestedBlog{
-    width: 50%;
-    height: auto;
-  }
-}
-  </style>
-    
   </head>
 <body >
 
@@ -190,111 +144,169 @@
     </div>
   </nav>
 
-  <div class="container mobile-container" >
+  <div class="container" >
   <!--  Blog Title-->
   <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
-    <h1 class="text-center title-div" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" ><%= blog.title %></h1>
-    <!--  Blog DAte && Blog Creator-->
-    <h5 class="text-muted" ><%= blog.time %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted By: <%= blog.creator %></h5>
+    <h1 class="text-center display-4" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px; font-family: 'Ananda Namaste Regular'" >
+ Danzas populares de Bihara </h1>
   
     
   </div>
     <!---- Blog Image-->
-    <% if(blog.image.localeCompare("")==1){%>
-    <div class="text-center" style="margin-top:20px; margin-bottom:20px">
-    <img style="width:100%; height:auto; object-fit: contain;" src="/uploads/<%= blog.image%>" alt="blog-image">
+ 
+    <div class="text-center" style="margin-top:15px; margin-bottom:15px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/bihar.jpg" alt="blog-image">
     </div>
-    <%  }%>
-    
-    <div class="container"  >
+  
+    <div class="container" style="margin-top:15px; margin-bottom:15px" >
     <!---  Blog Content -->
-      <p class="target" style="text-align: justify !important; font-size: 18px;"><%= blog.content %></p>
+   
+      <p class="target" style="word-wrap:break-word; font-size: 18px;">
+Bihar es orgullosa de su rica historia cultural y mitológica. ¿Sabías que una de las universidades más antiguas del mundo, la Universidad de Nalanda, se encuentra en Bihar? Las raíces del jainismo,  también se encuentran en este estado. Así mismo, el Señor Budhha alcanzó la iluminación en Bihar. Por lo tanto, no es extraño que con tan fuertes diversidades religiosas y culturales, el estado tenga una gran cantidad de danzas populares para ofrecer.  </p>
+
+   
+      <p class="target" style="word-wrap:break-word; font-size: 18px;">
+Las de abajo son algunas de las danzas folklóricas que tenés que ver si visitas este estado.
+  </p>
+
+
+    <br>
     </div>
     
     <div class="container">
-        <%subBlogz.forEach(function(subBlog){%>
+      
           
           <div>
-          <h4 style="font-weight: 1000; margin-top:20px;"><%=subBlog.title%></h4>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Bidesia</h2>
           </div>
-         <% if(subBlog.image.localeCompare("")==1){%>
-          <div  class="text-center">
-            <img style="width:100%; height:auto; object-fit: contain; margin-top: 20px; margin-bottom: 20px;" src="<%=subBlog.image%>" alt="image">
-          </div>
-        <%}%>
-          <div class="target mt-2" style="text-align: justify !important; font-size: 18px;"><%=subBlog.content%></div>
-        
-        <%})%>
-      </div>
-      <hr>
-     <% if(prevId!=0){%>
-        <a  href='/blogs/posts/<%=prevId%>'>
-          <input type="button" style="width: 20%;" value="<-Prev Blog" class="float-left">
-          </a>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
 
-      <%}if(nextId!=0){%>
-        <a href="/blogs/posts/<%=nextId%>">
-          <input type="button" style="width: 20%;" value="Next Blog->" class="float-right">
-        </a>
-      <%}%>
-      <hr>
-      <div class="container text-center" style="margin-top: 50px;" >
-        <h2>Suggested Blogs</h2>
-        <div id="lt-blog" class="mt-10 mb-5">
-          <a href="/blogs/posts/<%=suggestionBlog[0]._id%>">
-            
-            <% if(suggestionBlog[0].image.localeCompare("")==1){%>
-                    
-              <img alt="image" class="suggestedBlog"  src="/uploads/<%= suggestionBlog[0].thumbnail %>" />
-              <%} else {%>
-                
-                
-                <img alt="image" class="suggestedBlog"  src="<%= suggestionBlog[0].thumbnail %>"/>
-                <%}%>
        
-       
-          </a>
-        <p style="color:black;font-weight:bolder; font-size: 20px;"><%=suggestionBlog[0].title%><br><span style="color: black; font-size: 17px;">Categoría-<%=suggestionBlog[0].tag%></span></p>
-      
+Esta danza-drama es considerada la más importante del estado de Bihar. La actuación versa sobre una variedad de temas como: aspectos socialmente relevantes, males sociales (matrimonio infantil, sistema de dote), temas contradictorios de ricos y pobres, tradicionales y modernos, urbanos y rurales y muchos más. La mayoría de los mismos son contundentes y al mismo tiempo sensibles. Bidesia a menudo expresa opiniones satíricas sobre los mismos. El baile casi siempre es acompañado de canciones conocidas como Biraha, que transmiten la agonía por la que pasan las mujeres abandonadas por sus maridos. El vestuario utilizado depende del personaje y muchas veces un artista masculino representa personajes femeninos. Se cree que este arte popular fue creado y popularizado por Bikhari Thakur en el siglo XX.</p>   
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/Bidesia.jpg" alt="blog-image">
     </div>
+        
       </div>
       
- <% include ../partials/footer-blog.ejs %>   
- 
     
-  
-  
-  <div class="mobile-container text-center">
-    <hr>
-    <div style="padding-top: 100px; padding-bottom: 50px;">
-    <form action="/blogs/posts/<%= blog._id %>" method="POST">
 
-      <h3  style="color:grey">Leave A Reply </h3>
-      <input required type="text" style="width: 100%; margin-top:5px; margin-bottom: 15px;" name="comment[name]" placeholder="Name">
-      <input required type="email" style="width: 100%;  margin-bottom: 15px;" name="comment[email]" placeholder="Email">
-      <textarea required style="width: 100%;" name="comment[text]" rows="5" placeholder="Add Comment Here"></textarea>
-      <input required style="margin-top: 20px;  width:150px; "  type="submit" value="Post Comment" />
-    </form>
-  </div>
-  </div> 
+    <div class="container">
+      
+          
+          <div>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Jat Jatin</h2>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
 
-  <div class="mobile-container" style="margin-bottom:100px ">
-    <% commentz.forEach(comment=>{%>
-      <div class="media" style="background-color: #f5f5f5; border-radius: 10px; margin-top: 20px;">
-        <div class="media-body">
-          <h5 style="font-weight: bold; padding-left: 10px; padding-top: 10px;"><%=comment.name%></h5>
-         <p style="padding-top:5px; padding-left: 10px;"> <%= comment.text %></p>
-        </div>
+       
+Es un baile que narra la historia de dos amantes Jat y Jatin, quienes estaban separados y han estado pasando por varias pruebas. Su relación se demuestra maravillosa a través de pequeños gestos, de momentos agridulces entre marido y mujer. El mensaje indirecto transmitido es superar las dificultades de la vida con una sonrisa. Finalmente, después de muchas pruebas y preocupaciones, los amantes se unen y viven felices para siempre.
+
+        </p> 
+
+        <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+En algunas ocasiones, también se representan otros temas como inundaciones u otra tragedia natural, así como la pobreza y otros problemas sociales. El baile es interpretado por bailarines de las regiones de Koshi y Mithila de Bihar. Los trajes son tradicionales de esas regiones y la danza está llena de gracia y vivacidad.       </p>   
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/jat-jatin.png" alt="blog-image">
+    </div>
+        
       </div>
-    <%})%>
+
+      
+
+<div class="container">
+
+          <div>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Jhijhiya</h2>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Es realizada en la mitológica ciudad de Mithila, en Bihar. El día después del festival de Navratri en India, se interpreta un baile exclusivo para mujeres. En este las bailarinas demuestran habilidades, como llevar linternas encendidas en sus cabezas. Independientemente de esta complejidad, ellas bailan con gracia. De hecho, las linternas encendidas elaboradas de arcilla, le dan más emoción a la actuación. Estos faroles tienen agujeros diseñados de una manera tan ingeniosa, que a través de ellos es posible ver las lámparas colocadas dentro. La forma que tienen de equilibrarse mientras realizan movimientos oscilantes es un espectáculo para la vista.
+        </p> 
+
+       
+
+  <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Sin embargo, este baile tiene  otro significado. Es una danza ritual en la que las mujeres rezan al Dios de la Lluvia, Señor  Indra. La lluvia es crucial para una agricultura exitosa. Pero las circunstancias no siempre son favorables. Las personas se enfrentan a la sequía, a las tierras resecas y a las nubes sin vida, que no vierten una sola gota de lluvia. Es entonces cuando bailan para pedir que llueva. Las mujeres cantan y danzan pidiendo al Señor Indra Lord un tiempo favorable. Además, agradecen a la deidad por muchos años de buena agricultura y le piden por una buena cosecha.   </p> 
+       
+
+  <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+La actuación es acompañada por cantantes y músicos que tocan instrumentos como harmonium, flautas y dholak (un tipo de tambor). Hay una melodía devocional en las palabras "Haali-Huli Barshun Inder Deveta", cuando se canta con convicción.  </p> 
+
+          	   
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/Jhijhiya.png" alt="blog-image">
+    </div>
+        
+
+		
+
+
+		
+      </div>
+        
+
+<div class="container">
+
+          <div>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Jumari</h2>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Realizado en la región de Mithilanchal, en Bihar, este baile es bastante parecido al Garba de Gujarat. Con esta danza se celebra el cambio de estaciones después de los meses de septiembre a octubre. Durante este tiempo, el cielo está despejado sin ningún rastro de las nubes, está iluminado por la Luna. Las mujeres casadas, vestidas con sus coloridos atuendos tradicionales, celebran este hermoso momento cantando y bailando, Jumari. Lo que  representa un buen presagio.
+        </p> 
+
+       
+
+
+               
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/bihar.jpg" alt="blog-image">
+    </div>
+        
+
+    
+
+
+    
+      </div>
+
+<div class="container">
+
+          <div>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Sohar Khilouna</h2>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Un nuevo nacimiento es celebrado con pompa y fervor en las familias de toda la India. Cada estado tiene sus propios rituales para la ocasión. En Bihar, hay un baile para celebrarlo,  junto a otras costumbres. En este sentido, las mujeres cantan la canción de Sohar, ‘Marchia baithal sasu pucheli’ mientras bailan con entusiasmo. Durante la actuación, piden por el bebé, al Señor Rama, al Señor Krishna y a otras deidades hindúes. Ellos bendicen al recién nacido y rezan por su bienestar. En general, el lenguaje corporal de estos bailarines es poético y expresivo.
+        </p> 
+
+       
+
+
+               
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/sohar.png" alt="blog-image">
+    </div>
+        
+
+    
+
+
+    
+      </div>
+
   </div>
 
-  
 
- 
- 
-
-  
+ <%- include footer-blogs.ejs %>
 
 
 <!--Parsing HTML JS-->

@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title><%=blog.title %></title>
+    <title>Manipur Folk Danzas</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     
@@ -81,55 +81,9 @@
 
   <!---------------Css file for responsiveness------------------>
   <link rel="stylesheet" type="text/css" href="/stylesheets/responsive-breakpoints.css" />
-  <style>
-    a{
-      color:black;
-      font-weight: 700;
+    <link rel="stylesheet" type="text/css" href="/stylesheets/states-style.css">
 
-    }
-    strong{
-      font-weight: 1000;
-    }
-    a:hover{
-      color:black;
-    }
-    body{
-      font-size: 18px;
-    }
-    @media only screen and (max-width: 600px) {
   
-      .mobile-container{
-        width: 90%;
-        margin-left: 5%;
-      }
-      .suggestedBlog{
-        width: 90%;
-        height: auto;
-      }
-}
-@media only screen and (min-width: 992px) {
-  .mobile-container{
-    width: 62%;
-    margin-left:19%;
-  }
-  .suggestedBlog{
-    width: 63%;
-    height: auto;
-  }
-}
-@media only screen and (min-width:992px){
-  .mobile-container{
-    width: 50%;
-    margin-left: 25%;
-
-  }
-  .suggestedBlog{
-    width: 50%;
-    height: auto;
-  }
-}
-  </style>
-    
   </head>
 <body >
 
@@ -190,111 +144,171 @@
     </div>
   </nav>
 
-  <div class="container mobile-container" >
+  <div class="container" >
   <!--  Blog Title-->
   <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
-    <h1 class="text-center title-div" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" ><%= blog.title %></h1>
-    <!--  Blog DAte && Blog Creator-->
-    <h5 class="text-muted" ><%= blog.time %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted By: <%= blog.creator %></h5>
+    <h1 class="text-center display-4" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px; font-family: 'Ananda Namaste Regular'" >
+ Danzas populares de Manipura </h1>
   
     
   </div>
     <!---- Blog Image-->
-    <% if(blog.image.localeCompare("")==1){%>
-    <div class="text-center" style="margin-top:20px; margin-bottom:20px">
-    <img style="width:100%; height:auto; object-fit: contain;" src="/uploads/<%= blog.image%>" alt="blog-image">
+ 
+    <div class="text-center" style="margin-top:15px; margin-bottom:15px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/manipur.jpg" alt="blog-image">
     </div>
-    <%  }%>
-    
-    <div class="container"  >
+  
+    <div class="container" style="margin-top:15px; margin-bottom:15px" >
     <!---  Blog Content -->
-      <p class="target" style="text-align: justify !important; font-size: 18px;"><%= blog.content %></p>
+   
+      <p class="target" style="word-wrap:break-word; font-size: 18px;">
+La tierra de las joyas del noreste de la India es un destino popular para turistas de todo el mundo. Este exuberante estado verde está empapado de sus  tradiciones, lo que lo convierte en un  lugar especial. Cualquier época es buena para visitar Manipur. Las festividades duran todo el año. Las personas son alegres y entusiastas y sus vidas son el reflejo de su propia cultura.
+      <p class="target" style="word-wrap:break-word; font-size: 18px;">
+Las danzas populares de cualquier región son ejemplo de su rico y diverso patrimonio. Cada una, con su historia, ritmo, usos, canciones, música y temas únicos, tiene algo diferente que ofrecer. Este montañoso estado ofrece variadas manifestaciones populares.
+    </p>
+      <p class="target" style="word-wrap:break-word; font-size: 18px;">
+A continuación te presentamos algunas de las danzas folclóricas más importantes de Manipura Occidental que debed conocer:    
+      </p>
+
+
+    <br>
     </div>
     
     <div class="container">
-        <%subBlogz.forEach(function(subBlog){%>
+      
           
           <div>
-          <h4 style="font-weight: 1000; margin-top:20px;"><%=subBlog.title%></h4>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Khamba Thoibi</h2>
           </div>
-         <% if(subBlog.image.localeCompare("")==1){%>
-          <div  class="text-center">
-            <img style="width:100%; height:auto; object-fit: contain; margin-top: 20px; margin-bottom: 20px;" src="<%=subBlog.image%>" alt="image">
-          </div>
-        <%}%>
-          <div class="target mt-2" style="text-align: justify !important; font-size: 18px;"><%=subBlog.content%></div>
-        
-        <%})%>
-      </div>
-      <hr>
-     <% if(prevId!=0){%>
-        <a  href='/blogs/posts/<%=prevId%>'>
-          <input type="button" style="width: 20%;" value="<-Prev Blog" class="float-left">
-          </a>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
 
-      <%}if(nextId!=0){%>
-        <a href="/blogs/posts/<%=nextId%>">
-          <input type="button" style="width: 20%;" value="Next Blog->" class="float-right">
-        </a>
-      <%}%>
-      <hr>
-      <div class="container text-center" style="margin-top: 50px;" >
-        <h2>Suggested Blogs</h2>
-        <div id="lt-blog" class="mt-10 mb-5">
-          <a href="/blogs/posts/<%=suggestionBlog[0]._id%>">
-            
-            <% if(suggestionBlog[0].image.localeCompare("")==1){%>
-                    
-              <img alt="image" class="suggestedBlog"  src="/uploads/<%= suggestionBlog[0].thumbnail %>" />
-              <%} else {%>
-                
-                
-                <img alt="image" class="suggestedBlog"  src="<%= suggestionBlog[0].thumbnail %>"/>
-                <%}%>
-       
-       
-          </a>
-        <p style="color:black;font-weight:bolder; font-size: 20px;"><%=suggestionBlog[0].title%><br><span style="color: black; font-size: 17px;">Categoría-<%=suggestionBlog[0].tag%></span></p>
-      
+Un antiguo reino de Manipur, llamado Moirang es el lugar en donde surge esta danza. Según el folklore Manipuri, esta fue realizada por el legendario héroe Khmaba y la princesa de Moirang, Thoibi. Se cree que estos dos personajes mitológicos inmortales actuaron juntos frente al Señor Thangjing de Moirang, como  una ofrenda por la paz y la prosperidad de su tierra.
+
+</p>
+        <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+En la actualidad, esta danza popular se realiza en honor a la deidad Sylvan, Señor  Thangjing. Puede presentarse sola o como parte de la danza Laiharoba que también incluye algunos fragmentos de otros bailes.</p>
+
+<p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Los atuendos tradicionales están adornados por los bailarines. Las canciones y la música utilizadas para este baile son las adecuadas, ya que también sirven para narrar el episodio mitológico de Khamba y Thoibi durante la actuación. Pung (tambor) y Pena (instrumento de cuerda) son los instrumentos musicales esenciales usados tanto para la narración, como para el baile. El baile está bien coordinado con la letra y la música, por lo que es una experiencia fascinante para los espectadores.
+</p>
+
+  
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/khamba.png" alt="blog-image">
     </div>
+        
       </div>
       
- <% include ../partials/footer-blog.ejs %>   
- 
     
-  
-  
-  <div class="mobile-container text-center">
-    <hr>
-    <div style="padding-top: 100px; padding-bottom: 50px;">
-    <form action="/blogs/posts/<%= blog._id %>" method="POST">
-
-      <h3  style="color:grey">Leave A Reply </h3>
-      <input required type="text" style="width: 100%; margin-top:5px; margin-bottom: 15px;" name="comment[name]" placeholder="Name">
-      <input required type="email" style="width: 100%;  margin-bottom: 15px;" name="comment[email]" placeholder="Email">
-      <textarea required style="width: 100%;" name="comment[text]" rows="5" placeholder="Add Comment Here"></textarea>
-      <input required style="margin-top: 20px;  width:150px; "  type="submit" value="Post Comment" />
-    </form>
-  </div>
-  </div> 
-
-  <div class="mobile-container" style="margin-bottom:100px ">
-    <% commentz.forEach(comment=>{%>
-      <div class="media" style="background-color: #f5f5f5; border-radius: 10px; margin-top: 20px;">
-        <div class="media-body">
-          <h5 style="font-weight: bold; padding-left: 10px; padding-top: 10px;"><%=comment.name%></h5>
-         <p style="padding-top:5px; padding-left: 10px;"> <%= comment.text %></p>
-        </div>
+      <div class="container">
+        <div>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Pung Cholom</h2>
       </div>
-    <%})%>
+           <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+   
+La danza del tambor de Manipur no es para los débiles de corazón. Tocar el tambor y bailar de manera simultánea es una combinación única pero difícil. Este baile exige habilidades acrobáticas, así como una sincronía entre el cuerpo y la mente. Los bailarines realizan movimientos complicados y enérgicos mientras tocan el tambor. También realizan algunas volteretas  intrincadas en el suelo.  
+     </p>
+<p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">	 
+	 Cuando es interpretado como una pieza independiente, el número de bailarines es al menos 14 y la mayoría de las veces son solo hombres. Los artistas visten el dhoti blanco (prenda inferior), un turbante y una túnica especialmente atados que cuelgan de sus hombros.
+</p>
+
+<p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">   
+  Generalmente comienza con un tono sutil, pero vale la pena esperar el clímax. Como su nombre lo indica, es el rugido de los tambores al unísono con movimientos perfectamente equilibrados y elegantes. Tanto los que tocan el Pung, como los bailarines se han ganado admiración internacional por su extraordinaria actuación.
+</p>
+      <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/pung.png" alt="blog-image">
+    </div>
+     
+
+      </div>
+
+    <div class="container">
+      
+          
+          <div>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Nupa Pala</h2>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+
+ Puedes llamarlo Kartal Cholom, Danza de los platillos o Nupa Pala, todos son lo mismo. Es una ramificación del estilo de danza y música de Manipuri. Como su nombre lo indica, en este baile los platillos son una parte importante. La música producida por estos es acompañada con los ritmos del Pung (tambor). Al igual que Pung Cholom, esta estilo gana impulso gradualmente durante el transcurso de la actuación. La vestimenta es la misma que la de Pung Cholom y es interpretado principalmente por hombres. Esta danza habitualmente es una introducción al  Raas Leela de Manipur. Aunque es un baile grupal, los artistas actúan individualmente.
+
+        </p> 
+
+  
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/nupa.png" alt="blog-image">
+    </div>
+        
+      </div>
+
+      
+
+<div class="container">
+
+          <div>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Raas Leela</h2>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+
+Es la  danza del amor divino, que narra la historia mitológica de las deidades Radha y Krishna. Su interpretación  celebra este amor eterno de las deidades y evoca sentimientos arraigados por estos dioses,  entre la audiencia. El tema es  bastante popular entre  las danzas clásicas de la India, incluida la Danza Manipuri.        </p> 
+
+       
+
+  <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+
+El Raas Leela es representado en muchas otras regiones del país. Pero el Manipuri es extremadamente elaborado en términos de coreografía y  de vestuario. Este consiste en una falda bordada bien dura , una prenda de muselina liviana en la parte superior, velo blanco y joyas tradicionales de Manipur. Los pasos son elegantes y sencillos. El tono suave de los movimientos y los trajes coloridos y extravagantes convierten a este baile en una experiencia digna de admirar.         </p> 
+
+          	   
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/raas-leela.png" alt="blog-image">
+    </div>
+        
+
+		
+
+
+		
+      </div>
+      <div class="container">
+
+          <div>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Thang Ta</h2>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+
+El significado literal del nombre de este baile es Espada y Lanza. Sin embargo, otras armas como escudos, hachas y dagas también son utilizadas en la actuación. Hechas de metales o madera, los artistas usan todo tipo de armamento. 
+       
+
+  <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+
+Esta combinación de danza y artes marciales se originó en el pueblo Meity del estado de Manipur. La actuación tiene varios momentos escalofriantes y varios asombrosos. Entonces, si te gusta tanto el baile, como la acción, entonces no te debes perder el Thang Pa.       </p> 
+
+               
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/thang-ta.png" alt="blog-image">
+    </div>
+        
+
+    
+
+
+    
+      </div>
+        
+        
+
   </div>
 
-  
 
- 
- 
-
-  
+ <%- include footer-blogs.ejs %>
 
 
 <!--Parsing HTML JS-->

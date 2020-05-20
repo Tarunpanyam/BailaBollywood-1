@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title><%=blog.title %></title>
+    <title>Haryana Folk Danzas</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     
@@ -81,55 +81,9 @@
 
   <!---------------Css file for responsiveness------------------>
   <link rel="stylesheet" type="text/css" href="/stylesheets/responsive-breakpoints.css" />
-  <style>
-    a{
-      color:black;
-      font-weight: 700;
+    <link rel="stylesheet" type="text/css" href="/stylesheets/states-style.css">
 
-    }
-    strong{
-      font-weight: 1000;
-    }
-    a:hover{
-      color:black;
-    }
-    body{
-      font-size: 18px;
-    }
-    @media only screen and (max-width: 600px) {
   
-      .mobile-container{
-        width: 90%;
-        margin-left: 5%;
-      }
-      .suggestedBlog{
-        width: 90%;
-        height: auto;
-      }
-}
-@media only screen and (min-width: 992px) {
-  .mobile-container{
-    width: 62%;
-    margin-left:19%;
-  }
-  .suggestedBlog{
-    width: 63%;
-    height: auto;
-  }
-}
-@media only screen and (min-width:992px){
-  .mobile-container{
-    width: 50%;
-    margin-left: 25%;
-
-  }
-  .suggestedBlog{
-    width: 50%;
-    height: auto;
-  }
-}
-  </style>
-    
   </head>
 <body >
 
@@ -190,111 +144,129 @@
     </div>
   </nav>
 
-  <div class="container mobile-container" >
+  <div class="container" >
   <!--  Blog Title-->
   <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
-    <h1 class="text-center title-div" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" ><%= blog.title %></h1>
-    <!--  Blog DAte && Blog Creator-->
-    <h5 class="text-muted" ><%= blog.time %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted By: <%= blog.creator %></h5>
+    <h1 class="text-center display-4" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px; font-family: 'Ananda Namaste Regular'" >
+ Danzas populares de Haryana</h1>
   
     
   </div>
     <!---- Blog Image-->
-    <% if(blog.image.localeCompare("")==1){%>
-    <div class="text-center" style="margin-top:20px; margin-bottom:20px">
-    <img style="width:100%; height:auto; object-fit: contain;" src="/uploads/<%= blog.image%>" alt="blog-image">
-    </div>
-    <%  }%>
-    
-    <div class="container"  >
-    <!---  Blog Content -->
-      <p class="target" style="text-align: justify !important; font-size: 18px;"><%= blog.content %></p>
-    </div>
+ 
+  
     
     <div class="container">
-        <%subBlogz.forEach(function(subBlog){%>
+      
           
           <div>
-          <h4 style="font-weight: 1000; margin-top:20px;"><%=subBlog.title%></h4>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Jhumar</h2>
           </div>
-         <% if(subBlog.image.localeCompare("")==1){%>
-          <div  class="text-center">
-            <img style="width:100%; height:auto; object-fit: contain; margin-top: 20px; margin-bottom: 20px;" src="<%=subBlog.image%>" alt="image">
-          </div>
-        <%}%>
-          <div class="target mt-2" style="text-align: justify !important; font-size: 18px;"><%=subBlog.content%></div>
-        
-        <%})%>
-      </div>
-      <hr>
-     <% if(prevId!=0){%>
-        <a  href='/blogs/posts/<%=prevId%>'>
-          <input type="button" style="width: 20%;" value="<-Prev Blog" class="float-left">
-          </a>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
 
-      <%}if(nextId!=0){%>
-        <a href="/blogs/posts/<%=nextId%>">
-          <input type="button" style="width: 20%;" value="Next Blog->" class="float-right">
-        </a>
-      <%}%>
-      <hr>
-      <div class="container text-center" style="margin-top: 50px;" >
-        <h2>Suggested Blogs</h2>
-        <div id="lt-blog" class="mt-10 mb-5">
-          <a href="/blogs/posts/<%=suggestionBlog[0]._id%>">
-            
-            <% if(suggestionBlog[0].image.localeCompare("")==1){%>
-                    
-              <img alt="image" class="suggestedBlog"  src="/uploads/<%= suggestionBlog[0].thumbnail %>" />
-              <%} else {%>
-                
-                
-                <img alt="image" class="suggestedBlog"  src="<%= suggestionBlog[0].thumbnail %>"/>
-                <%}%>
        
-       
-          </a>
-        <p style="color:black;font-weight:bolder; font-size: 20px;"><%=suggestionBlog[0].title%><br><span style="color: black; font-size: 17px;">Categoría-<%=suggestionBlog[0].tag%></span></p>
-      
+Jhumar es un hermoso adorno que las jóvenes casadas llevan en la frente. Usado exclusivamente por las mujeres, no hay duda de que esta pieza de joyería las adorna durante la actuación. Ellas cantan, bailan y aplauden al unísono, al ritmo de Dholak (un tipo de tambor) y Thali (un instrumento de percusión). Esta danza se interpreta en forma de círculo, comienza con una mujer cantando y entrando en esa formación en un perfecto movimiento equilibrado. El ciclo continúa y el ritmo aumenta durante el desarrollo. Es un baile muy divertido, vivaz y alegre. Los atuendos tradicionales y coloridos que utilizan le dan más energía a la actuación.
+
+        <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Sin embargo, el Jhumar no es exclusivo de un solo estado. Jharkhand, Punjab y West Bengal también tienen versiones propias de este baile.</p>
+
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/jhumar-haryana.jpg" alt="blog-image">
     </div>
+        
       </div>
       
- <% include ../partials/footer-blog.ejs %>   
- 
     
-  
-  
-  <div class="mobile-container text-center">
-    <hr>
-    <div style="padding-top: 100px; padding-bottom: 50px;">
-    <form action="/blogs/posts/<%= blog._id %>" method="POST">
-
-      <h3  style="color:grey">Leave A Reply </h3>
-      <input required type="text" style="width: 100%; margin-top:5px; margin-bottom: 15px;" name="comment[name]" placeholder="Name">
-      <input required type="email" style="width: 100%;  margin-bottom: 15px;" name="comment[email]" placeholder="Email">
-      <textarea required style="width: 100%;" name="comment[text]" rows="5" placeholder="Add Comment Here"></textarea>
-      <input required style="margin-top: 20px;  width:150px; "  type="submit" value="Post Comment" />
-    </form>
-  </div>
-  </div> 
-
-  <div class="mobile-container" style="margin-bottom:100px ">
-    <% commentz.forEach(comment=>{%>
-      <div class="media" style="background-color: #f5f5f5; border-radius: 10px; margin-top: 20px;">
-        <div class="media-body">
-          <h5 style="font-weight: bold; padding-left: 10px; padding-top: 10px;"><%=comment.name%></h5>
-         <p style="padding-top:5px; padding-left: 10px;"> <%= comment.text %></p>
-        </div>
+      <div class="container">
+        <div>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Dhamal</h2>
       </div>
-    <%})%>
+           <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Este baile es bastante popular entre los Ahirs de la región de Gurgaon. Se realiza en el mes de febrero o marzo, cuando los cultivos están listos para ser cosechados. La danza se inicia con una larga y agradable melodía de Been (un instrumento musical) al que luego se unen otros instrumentos musicales como Dhol, Tasha, Nagara. Mientras tanto, los bailarines forman un semicírculo y se inclinan hacia abajo para recibir las bendiciones de sus deidades.</p>
+
+     <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/dhamal-1.png" alt="blog-image">
+    </div>
+     
+
+<p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">	 
+	 Este baile es bastante popular entre los Ahirs de la región de Gurgaon. Se realiza en el mes de febrero o marzo, cuando los cultivos están listos para ser cosechados. La danza se inicia con una larga y agradable melodía de Been (un instrumento musical) al que luego se unen otros instrumentos musicales como Dhol, Tasha, Nagara. Mientras tanto, los bailarines forman un semicírculo y se inclinan hacia abajo para recibir las bendiciones de sus deidades.
+</p>
+
+<p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">   
+  La actuación incluye el uso de accesorios. Algunos de los bailarines llevan grandes Daphs en sus manos, bordeadas con volantes de colores brillantes. Otros llevan varas envueltas en papel dorado y borlas, llamados shuntis. La actuación es bastante colorida y vibrante, debido a las coloridas ropas tradicionales de los bailarines.
+</p>
+
+ <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/dhamal-2.png" alt="blog-image">
+    </div>
+      
+
+      </div>
+
+    <div class="container">
+      
+          
+          <div>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Loor</h2>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+
+ El término Loor es usado para referirse a una joven en algunas partes de este estado. Este baile se  realiza principalmente en las regiones de Bangar y Bagar de Haryana durante la temporada de primavera y en especial durante el Holi (festival de colores). Marca la llegada de la primavera, lo que también es indicativo de la siembra de los cultivos de Rabi en las granjas. 
+
+        </p> 
+
+        <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Esta actuación representa la historia de un matrimonio. Muestra los sentimientos de una joven recién casada que tiene dificultades para salir de la casa de sus padres. Y que todavía no se adapta a su nueva vida. Su esposo tiene que dejarla para unirse al ejército, los años pasan y no hay señales de su regreso. Ella canta y baila mientras dirige sus emociones a una paloma imaginaria. Ella envía al ave con un mensaje para su esposo. Espera que esta regrese, con la noticia de la llegada de su esposo. Lo que la pone muy contenta y la llena de entusiasmo. Es en esta parte que el baile alcanza su punto máximo. Todo la actuación se basa en preguntas y respuestas, lo que lo vuelve aún más interesante. Todos los bailarines visten ropas y adornos tradicionales.
+   </p>   
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/loor.png" alt="blog-image">
+    </div>
+        
+      </div>
+
+      
+
+<div class="container">
+
+          <div>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Gugga</h2>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+
+Gugga es un baile ritual realizado en la procesión del santo Gugga Pir. El cual es adorado por personas de diversas religiones del norte de la India. Esta procesión se lleva a cabo una semana antes de Gugga Naumi (Día de nacimiento de Gugga Pir). Todos los devotos cantan y bailan en alabanza al santo en quien tienen una fe inmensa.
+        </p> 
+
+       
+
+  <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+
+La procesión es dirigida por un Bhagat que lleva un largo palo de bambú adornado con flores, guirnaldas y otras coloridas piezas de tela conocidas como Gugga Kichhari. Hay cinco Bhagats que son los bailarines principales. Ellos cantan y tocan sus propios instrumentos musicales como Dholak (tambor), Deru (tambor en forma de reloj de arena), platillos y algunos otros. Aunque el baile es simple, tiene un significado espiritual inmenso para los artistas. Algunos de ellos incluso derraman lágrimas cuando la actuación alcanza su clímax. Este baile es realizado exclusivamente por hombres.
+      </p> 
+
+          	   
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/gugga.png" alt="blog-image">
+    </div>
+        
+
+		
+
+
+		
+      </div>
+        
+
   </div>
 
-  
 
- 
- 
-
-  
+ <%- include footer-blogs.ejs %>
 
 
 <!--Parsing HTML JS-->

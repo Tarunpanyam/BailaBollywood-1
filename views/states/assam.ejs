@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title><%=blog.title %></title>
+    <title>Assam Folk Danzas</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     
@@ -81,55 +81,9 @@
 
   <!---------------Css file for responsiveness------------------>
   <link rel="stylesheet" type="text/css" href="/stylesheets/responsive-breakpoints.css" />
-  <style>
-    a{
-      color:black;
-      font-weight: 700;
+    <link rel="stylesheet" type="text/css" href="/stylesheets/states-style.css">
 
-    }
-    strong{
-      font-weight: 1000;
-    }
-    a:hover{
-      color:black;
-    }
-    body{
-      font-size: 18px;
-    }
-    @media only screen and (max-width: 600px) {
   
-      .mobile-container{
-        width: 90%;
-        margin-left: 5%;
-      }
-      .suggestedBlog{
-        width: 90%;
-        height: auto;
-      }
-}
-@media only screen and (min-width: 992px) {
-  .mobile-container{
-    width: 62%;
-    margin-left:19%;
-  }
-  .suggestedBlog{
-    width: 63%;
-    height: auto;
-  }
-}
-@media only screen and (min-width:992px){
-  .mobile-container{
-    width: 50%;
-    margin-left: 25%;
-
-  }
-  .suggestedBlog{
-    width: 50%;
-    height: auto;
-  }
-}
-  </style>
-    
   </head>
 <body >
 
@@ -190,111 +144,153 @@
     </div>
   </nav>
 
-  <div class="container mobile-container" >
+
+  <div class="container" >
   <!--  Blog Title-->
   <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
-    <h1 class="text-center title-div" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" ><%= blog.title %></h1>
-    <!--  Blog DAte && Blog Creator-->
-    <h5 class="text-muted" ><%= blog.time %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted By: <%= blog.creator %></h5>
+    <h1 class="text-center display-4" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px; font-family: 'Ananda Namaste Regular';" >
+ Danzas populares de Assam</h1>
   
     
   </div>
     <!---- Blog Image-->
-    <% if(blog.image.localeCompare("")==1){%>
-    <div class="text-center" style="margin-top:20px; margin-bottom:20px">
-    <img style="width:100%; height:auto; object-fit: contain;" src="/uploads/<%= blog.image%>" alt="blog-image">
+ 
+    <div class="text-center" style="margin-top:15px; margin-bottom:15px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/assam.jpg" alt="blog-image">
     </div>
-    <%  }%>
-    
-    <div class="container"  >
+  
+    <div class="container" style="margin-top:15px; margin-bottom:15px" >
     <!---  Blog Content -->
-      <p class="target" style="text-align: justify !important; font-size: 18px;"><%= blog.content %></p>
-    </div>
+   
+      <p class="target" style="word-wrap:break-word; font-size: 18px;">
+¿Sabías que las islas fluviales más grandes y más pequeñas del mundo se encuentran en este estado? Si no es así, prepárate ya que la lista de las bellezas de  Assam puede ser muy larga y este artículo no será suficiente para resumir sus diversas atracciones. Assam es conocida como la puerta de entrada a los estados del noreste de la India. 
+</p>
+
+      <p class="target" style="word-wrap:break-word; font-size: 18px;">
+Los conecta a todos con la India continental, a través de una pequeña franja de isla llamada Corredor de Siliguri. Por lo tanto, es ciertamente el Centinela del noreste de la India.  </p>
+  
+      <p class="target" style="word-wrap:break-word; font-size: 18px;">
+Assam es un estado diverso y de gran riqueza cultural. Es el hogar de varias tribus y comunidades que muestran sus influencias en la herencia popular de este estado. .    </p>
+  
+        <p class="target" style="word-wrap:break-word; font-size: 18px;">
+  Puede resultar interesante saber que Assam ha hecho algunas contribuciones importantes en el campo de las artes escénicas, una de estas es la película assamesa Village Rockstars presentada como película oficial de de la India en los 91 Premios de la Academia. Asimismo, en el 2019, ganó el récord mundial de la actuación más grande de danza Bihu (una de sus principales danzas folclóricas), en el patio de recreo de una escuela secundaria de Guwahati. Bueno, así de increíble es nuestro Assam.
+  </p>
+  
+  
+          <p class="target" style="word-wrap:break-word; font-size: 18px;">
+  Abajo encontrarás la lista de algunas danzas folclóricas de Assam que deberías ver
+  </p>
+  
+  
+  
     
     <div class="container">
-        <%subBlogz.forEach(function(subBlog){%>
+      
           
           <div>
-          <h4 style="font-weight: 1000; margin-top:20px;"><%=subBlog.title%></h4>
+          <h4 style="font-weight: 1000; margin-top: 50px;">Bihu</h4>
           </div>
-         <% if(subBlog.image.localeCompare("")==1){%>
-          <div  class="text-center">
-            <img style="width:100%; height:auto; object-fit: contain; margin-top: 20px; margin-bottom: 20px;" src="<%=subBlog.image%>" alt="image">
-          </div>
-        <%}%>
-          <div class="target mt-2" style="text-align: justify !important; font-size: 18px;"><%=subBlog.content%></div>
-        
-        <%})%>
-      </div>
-      <hr>
-     <% if(prevId!=0){%>
-        <a  href='/blogs/posts/<%=prevId%>'>
-          <input type="button" style="width: 20%;" value="<-Prev Blog" class="float-left">
-          </a>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+La danza Bihu, es originaria del estado nororiental de Assam, es realiza durante el festival del mismo nombre. Assam celebra tres festivales diferentes en los que se interpreta el Bihu, en diferentes meses del año. Es bailada de manera popular durante el  Rongali Bihu (en el mes de abril), èn el que se conmemora el inicio del Año Nuevo Assames y la entradas de la temporada de primavera. Son 7 días en los que la gente festeja la alegría de los agricultores mientras preparan sus campos para el cultivo de arroz. Rongali Bihu es otra festividad celebrada con mucha pompa y fervor en todo el estado y esta  danza es sin duda una parte importante de la misma.
 
-      <%}if(nextId!=0){%>
-        <a href="/blogs/posts/<%=nextId%>">
-          <input type="button" style="width: 20%;" value="Next Blog->" class="float-right">
-        </a>
-      <%}%>
-      <hr>
-      <div class="container text-center" style="margin-top: 50px;" >
-        <h2>Suggested Blogs</h2>
-        <div id="lt-blog" class="mt-10 mb-5">
-          <a href="/blogs/posts/<%=suggestionBlog[0]._id%>">
-            
-            <% if(suggestionBlog[0].image.localeCompare("")==1){%>
-                    
-              <img alt="image" class="suggestedBlog"  src="/uploads/<%= suggestionBlog[0].thumbnail %>" />
-              <%} else {%>
-                
-                
-                <img alt="image" class="suggestedBlog"  src="<%= suggestionBlog[0].thumbnail %>"/>
-                <%}%>
-       
-       
-          </a>
-        <p style="color:black;font-weight:bolder; font-size: 20px;"><%=suggestionBlog[0].title%><br><span style="color: black; font-size: 17px;">Categoría-<%=suggestionBlog[0].tag%></span></p>
-      
+</p>       
+
+
+
+     <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Este baile, realizado por hombres y mujeres jóvenes, se caracteriza por los movimientos tanto  bruscos cono suaves de los brazos y el cuerpo. Los bailarines danzan formando  líneas rectas o círculos,saltando,  moviendo las manos y balanceando las caderas. El instrumento musical por excelencia, tocado durante la presentación de Bihu es el Dhol (tambor) de doble cara que se lleva colgado del cuello. Otros instrumentos utilizados para lograr los ritmos adecuados para la música tradicional de Bihu son Pepa, Bamboo Clappers, Xutuli, Gogona y las flautas.
+
+</p>
+
+<p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+La vivacidad de este baile es realzada por sus hermosos trajes tradicionales. Los hombres visten con Dhoti (prenda inferior) y Gamocha (para la cabeza), mientras que las mujeres usan el atuendo tradicional Assames: Makhela (para la parte inferior) y Chador (para la parte superior del cuerpo). La mayoría de estos trajes  están hechos con la exquisita Muga Silk (seda) de Assam. Las bailarinas se adornan con joyas y flores tradicionales para completar su aspecto.</p>
+
+<p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+  La alegría de esta danza  popular es contagiosa y se transmite de manera rápida entre la audiencia. Presenciar este baile definitivamente debería estar en la lista de las cosas para ver en la India.
+</p>   
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/bihu.jpg" alt="blog-image">
     </div>
+        
       </div>
       
- <% include ../partials/footer-blog.ejs %>   
- 
     
-  
-  
-  <div class="mobile-container text-center">
-    <hr>
-    <div style="padding-top: 100px; padding-bottom: 50px;">
-    <form action="/blogs/posts/<%= blog._id %>" method="POST">
-
-      <h3  style="color:grey">Leave A Reply </h3>
-      <input required type="text" style="width: 100%; margin-top:5px; margin-bottom: 15px;" name="comment[name]" placeholder="Name">
-      <input required type="email" style="width: 100%;  margin-bottom: 15px;" name="comment[email]" placeholder="Email">
-      <textarea required style="width: 100%;" name="comment[text]" rows="5" placeholder="Add Comment Here"></textarea>
-      <input required style="margin-top: 20px;  width:150px; "  type="submit" value="Post Comment" />
-    </form>
-  </div>
-  </div> 
-
-  <div class="mobile-container" style="margin-bottom:100px ">
-    <% commentz.forEach(comment=>{%>
-      <div class="media" style="background-color: #f5f5f5; border-radius: 10px; margin-top: 20px;">
-        <div class="media-body">
-          <h5 style="font-weight: bold; padding-left: 10px; padding-top: 10px;"><%=comment.name%></h5>
-         <p style="padding-top:5px; padding-left: 10px;"> <%= comment.text %></p>
-        </div>
+      <div class="container">
+        <div>
+          <h4 style="font-weight: 1000; margin-top: 50px;">Bagurumba</h4>
       </div>
-    <%})%>
+           <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+   
+La danza Bagurumba, también conocida como danza de la mariposa, es propia de la tribu indígena Bodo de Assam. Se llama así debido a los movimientos rápidos, semejantes  a los de una mariposa que se realizan en este  baile. Su  naturaleza tranquila mantiene una sincronía perfecta con la exuberancia de la primavera. Este baile es parte de la celebración del festival Bwishagu,  que tiene lugar  a mediados del mes abril. Su objetivo es ofrecer un homenaje a su deidad. Los tranquilos movimientos de este baile, junto con los coloridos trajes, convierten a este baile, en uno de los más atractivos de este estado. Los trajes típicos: Dokhona, Jwmgra y Aronai son adornados con la joyería tradicional. 
+
+</p>
+     
+<p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">   
+Un baile está incompleto sin su música melodiosa. Esta danza utiliza especialmente instrumentos locales de la tribu Bodo como: Siphung (flauta), Serja ( instrumento con arco), Kham ( tipo de tambor), Tharkha (instrumento de percusión hecho de bambú) y Khawang (un par de platillos unidos por un cuerda). Los bailarines también contribuyen con la música.  Mientras danzan van pronunciando frases en su idioma local, como bagurumba hay bagurumba.
+</p>
+      <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/Bagurumba.jpg" alt="blog-image">
+    </div>
+     
+
+      </div>
+
+    <div class="container">
+      
+          
+          <div>
+          <h4 style="font-weight: 1000; margin-top: 50px;">Ojapali</h4>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+
+       
+Ojapali es una de las antiguas danzas folclóricas de Assam, es una fusión de cantos narrativos, bailes y obras dramáticas. Una compañía de artistas de Ojapali está conformada por un Oja (que lidera la actuación) y por cuatro a seis Palis (quienes  complementan la actuación) y tocan platillos. Está inspirada en episodios mitológicos aunque no siempre.
+        </p> 
+
+        <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Las canciones cantadas durante la interpretación están en sánscrito. El  Oja viste una camisa larga y fluida denominada Capcan, así como un pijama y una faja alrededor de la cintura. También se adornan con un tipo especial de turbante blanco y una Pachara en sus hombros. Los Palis usan capcan, dhotis y turbantes blancos.
+ </p>   
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/Ojapali.jpg" alt="blog-image">
+    </div>
+        
+      </div>
+      
+
+<div class="container">
+
+          <div>
+          <h4 style="font-weight: 1000; margin-top: 50px;">Ali Ai Ligang</h4>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+
+El significado literal del nombre de este baile es sembrar las semillas de la cosecha. Esta danza es un  homenaje a la Madre Tierra por una cosecha exitosa y productiva. Es interpretada durante el festival del mismo nombre, celebrado por la tribu Mishing de Assam        
+</p> 
+
+       
+
+  <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+
+Las principales  fuentes de ingresos de esta tribu son las actividades agrícolas y pesqueras. Por lo tanto, este festival es muy importante para este pueblo. Los hombres y las mujeres jóvenes bailan con sus coloridos atuendos tradicionales con gran entusiasmo. Sus pasos son rápidos y se pone un especial énfasis en el movimiento de las muñecas y de las manos, así como en el  balanceo rítmico del cuerpo. La flauta, los platillos, los tambores, las pipas son algunos de los instrumentos musicales que acompañan la actuación con los ritmos apropiados para los enérgicos movimientos de este baile.
+  </p> 
+
+               
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/Ali Ai Ligang.jpg" alt="blog-image">
+    </div>
+        
+
+
   </div>
+</div>
 
-  
-
- 
- 
-
-  
+ <%- include footer-blogs.ejs %>
 
 
 <!--Parsing HTML JS-->

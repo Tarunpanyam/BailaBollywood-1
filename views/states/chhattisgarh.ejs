@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title><%=blog.title %></title>
+    <title>Chhattisgarh Folk Danzas</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     
@@ -81,55 +81,9 @@
 
   <!---------------Css file for responsiveness------------------>
   <link rel="stylesheet" type="text/css" href="/stylesheets/responsive-breakpoints.css" />
-  <style>
-    a{
-      color:black;
-      font-weight: 700;
+    <link rel="stylesheet" type="text/css" href="/stylesheets/states-style.css">
 
-    }
-    strong{
-      font-weight: 1000;
-    }
-    a:hover{
-      color:black;
-    }
-    body{
-      font-size: 18px;
-    }
-    @media only screen and (max-width: 600px) {
   
-      .mobile-container{
-        width: 90%;
-        margin-left: 5%;
-      }
-      .suggestedBlog{
-        width: 90%;
-        height: auto;
-      }
-}
-@media only screen and (min-width: 992px) {
-  .mobile-container{
-    width: 62%;
-    margin-left:19%;
-  }
-  .suggestedBlog{
-    width: 63%;
-    height: auto;
-  }
-}
-@media only screen and (min-width:992px){
-  .mobile-container{
-    width: 50%;
-    margin-left: 25%;
-
-  }
-  .suggestedBlog{
-    width: 50%;
-    height: auto;
-  }
-}
-  </style>
-    
   </head>
 <body >
 
@@ -190,111 +144,158 @@
     </div>
   </nav>
 
-  <div class="container mobile-container" >
+  <div class="container" >
   <!--  Blog Title-->
   <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
-    <h1 class="text-center title-div" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" ><%= blog.title %></h1>
-    <!--  Blog DAte && Blog Creator-->
-    <h5 class="text-muted" ><%= blog.time %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted By: <%= blog.creator %></h5>
+    <h1 class="text-center display-4" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px; font-family: 'Ananda Namaste Regular'" >
+ Danzas populares de Chhattisgarha </h1>
   
     
   </div>
     <!---- Blog Image-->
-    <% if(blog.image.localeCompare("")==1){%>
-    <div class="text-center" style="margin-top:20px; margin-bottom:20px">
-    <img style="width:100%; height:auto; object-fit: contain;" src="/uploads/<%= blog.image%>" alt="blog-image">
-    </div>
-    <%  }%>
-    
-    <div class="container"  >
-    <!---  Blog Content -->
-      <p class="target" style="text-align: justify !important; font-size: 18px;"><%= blog.content %></p>
-    </div>
+ 
     
     <div class="container">
-        <%subBlogz.forEach(function(subBlog){%>
+      
           
           <div>
-          <h4 style="font-weight: 1000; margin-top:20px;"><%=subBlog.title%></h4>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Raut Nacha</h2>
           </div>
-         <% if(subBlog.image.localeCompare("")==1){%>
-          <div  class="text-center">
-            <img style="width:100%; height:auto; object-fit: contain; margin-top: 20px; margin-bottom: 20px;" src="<%=subBlog.image%>" alt="image">
-          </div>
-        <%}%>
-          <div class="target mt-2" style="text-align: justify !important; font-size: 18px;"><%=subBlog.content%></div>
-        
-        <%})%>
-      </div>
-      <hr>
-     <% if(prevId!=0){%>
-        <a  href='/blogs/posts/<%=prevId%>'>
-          <input type="button" style="width: 20%;" value="<-Prev Blog" class="float-left">
-          </a>
-
-      <%}if(nextId!=0){%>
-        <a href="/blogs/posts/<%=nextId%>">
-          <input type="button" style="width: 20%;" value="Next Blog->" class="float-right">
-        </a>
-      <%}%>
-      <hr>
-      <div class="container text-center" style="margin-top: 50px;" >
-        <h2>Suggested Blogs</h2>
-        <div id="lt-blog" class="mt-10 mb-5">
-          <a href="/blogs/posts/<%=suggestionBlog[0]._id%>">
-            
-            <% if(suggestionBlog[0].image.localeCompare("")==1){%>
-                    
-              <img alt="image" class="suggestedBlog"  src="/uploads/<%= suggestionBlog[0].thumbnail %>" />
-              <%} else {%>
-                
-                
-                <img alt="image" class="suggestedBlog"  src="<%= suggestionBlog[0].thumbnail %>"/>
-                <%}%>
-       
-       
-          </a>
-        <p style="color:black;font-weight:bolder; font-size: 20px;"><%=suggestionBlog[0].title%><br><span style="color: black; font-size: 17px;">Categoría-<%=suggestionBlog[0].tag%></span></p>
+.          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Raut Nacha o danza popular de los pastores es realizada por el pueblo Yadava / Yaduvanshi de Chhattisgarh. Se cree que estas personas son descendientes de la deidad hindú Señor Krishna. Según la mitología hindú, el Señor Krishna y Yadavas derrotaron al malvado Rey Kansa. Por lo tanto, se baila para celebrar el triunfo del bien sobre el mal después del festival de Diwali. Los palos y los escudos de metal son una parte importante de este baile. Los trajes son coloridos y los bailarines usan campanas atadas a sus cinturas y sus tobillos.</p>
       
+
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/raut.png" alt="blog-image">
     </div>
+        
       </div>
       
- <% include ../partials/footer-blog.ejs %>   
- 
     
-  
-  
-  <div class="mobile-container text-center">
-    <hr>
-    <div style="padding-top: 100px; padding-bottom: 50px;">
-    <form action="/blogs/posts/<%= blog._id %>" method="POST">
 
-      <h3  style="color:grey">Leave A Reply </h3>
-      <input required type="text" style="width: 100%; margin-top:5px; margin-bottom: 15px;" name="comment[name]" placeholder="Name">
-      <input required type="email" style="width: 100%;  margin-bottom: 15px;" name="comment[email]" placeholder="Email">
-      <textarea required style="width: 100%;" name="comment[text]" rows="5" placeholder="Add Comment Here"></textarea>
-      <input required style="margin-top: 20px;  width:150px; "  type="submit" value="Post Comment" />
-    </form>
-  </div>
-  </div> 
+    <div class="container">
+      
+          
+          <div>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Saila</h2>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
 
-  <div class="mobile-container" style="margin-bottom:100px ">
-    <% commentz.forEach(comment=>{%>
-      <div class="media" style="background-color: #f5f5f5; border-radius: 10px; margin-top: 20px;">
-        <div class="media-body">
-          <h5 style="font-weight: bold; padding-left: 10px; padding-top: 10px;"><%=comment.name%></h5>
-         <p style="padding-top:5px; padding-left: 10px;"> <%= comment.text %></p>
-        </div>
+Saila es una danza tribal popular realizada después de la cosecha. Específicamente antes del festival de Diwali (el festival de las luces). Los niños pequeños van de aldea en aldea presentando su baile. Los palos son esenciales en una actuación de Saila. Es esto lo que lo convierte en una forma de baile única y famosa, especialmente en los distritos de Baitul, entre la gente de las localidades de Sarguja y de Chhindwara. 
+
+        </p> 
+
+        <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Los temas presentados varían según la región y lo relevante para ese lugar. El baile es principalmente de ritmo rápido. Los bailarines intentan que sus pasos coincidan  con el Mandar, instrumento que marca los ritmos para la actuación. El clímax es el momento en el cual se baila con unas serpientes, lo que hace más atractiva a esta a esta forma de arte. La actuación es premiada por los espectadores, con arroz.     </p>   
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/saila.jpg" alt="blog-image">
+    </div>
+        
       </div>
-    <%})%>
+
+      
+
+<div class="container">
+
+          <div>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Panthi</h2>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Las comunidades tribales de este estado contribuyen de manera importante a la  diversidad cultural. Satnami es una de esas comunidades. La tribu es famosa por su danza única Panthi. Esta se realiza especialmente con motivo del Maghi Purnima, aniversario del nacimiento del Gurú Ghasidas (creador de una secta similar al sijismo). El baile es interpretado exclusivamente por varones. El líder del grupo comienza cantando una canción y moviendo el cuerpo de manera lenta. Los otros bailarines lo siguen y gradualmente todos ellos aceleran el ritmo. Realizan acrobacias y forman pirámides humanas durante la actuación. Los artistas se adornan con coloridas vestimentas tradicionales y joyas minimalistas. 
+        </p> 
+
+       
+
+  <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Sin embargo, este baile tiene  otro significado. Es una danza ritual en la que las mujeres El ritmo es proporcionado por el Mandar (tambor), el Jhanjh (platillo) y el Mridanga (instrumento de percusión) que establecen el tono para la ejecución de este baile. El Panthi es un reflejo del rico patrimonio cultural de los grupos tribales indígenas de la región.  </p> 
+       
+
+  <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+La actuación es acompañada por cantantes y músicos que tocan instrumentos como harmonium, flautas y dholak (un tipo de tambor). Hay una melodía devocional en las palabras "Haali-Huli Barshun Inder Deveta", cuando se canta con convicción.  </p> 
+
+          	   
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/panthi.jpg" alt="blog-image">
+    </div>
+        
+
+		
+
+
+		
+      </div>
+        
+
+<div class="container">
+
+          <div>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Sua Nacha</h2>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Sua o Suwa Nacha es una forma de danza tribal que también es conocida como la danza del loro. Se la baila con motivo del matrimonio Goura y también un mes después de Diwali. Las bailarinas hacen largos viajes a los pueblos vecinos para presentar esta danza tribal. Un loro hecho de madera enterrado con brotes de arroz dentro de una cazuela de bambú o de barro, es colocado en el centro de la actuación.
+        </p> 
+
+         <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Todos bailan en ronda alrededor de esta vasija. Imitar a un loro y aplaudir forman parte de la actuación. Aparte de la sonaja de madera, Thiski, no se utilizan  otros instrumentos musicales. Por su colorido atuendo tradicional y estilo único, este baile es una deleite  para los ojos de sus espectadores.
+        </p> 
+
+
+               
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/sua-nacha.jpg" alt="blog-image">
+    </div>
+        
+
+    
+
+
+    
+      </div>
+
+<div class="container">
+
+          <div>
+          <h2 style="font-weight: 1000; margin-top: 50px;">Karma</h2>
+          </div>
+          
+       <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Es una danza tribal popular entre las comunidades Gonds, Baigas y Oraons. El baile está asociado con el festival otoñal llamado Karma Puja. Este baile ceremonial es realizado en honor  a su deidad Karma Devta, quien se cree que trae la buena o la mala suerte a la vida de las personas. El festival también simboliza el final de los días lluviosos y la llegada de la primavera. 
+        </p> 
+               <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+Hombres y mujeres participan de este baile. Mueven sus pies en estilo "de aquí para allá". Los hombres saltan hacia adelante mientras que las mujeres del grupo se inclinan hacia el suelo. En una ronda, van tomando la cintura del bailarín de adelante, en perfecta coordinación. El baile se acompaña de las melodías de los instrumentos musicales tradicionales con Timki, (un tipo de tambor) como instrumento principal. Los bailarines se adornan con sus trajes y joyas étnicas.
+        </p> 
+               <p class="target mt-2" style="word-wrap:break-word; font-size: 18px;">
+La danza del karma no es exclusiva de este estado. También se realiza en otras partes del país. Sin embargo, cada estado tiene un estilo propio y único de bailar y en este sentido el Karma de Chhattisgarh también es único. 
+        </p> 
+
+       
+
+
+               
+
+    <div class="text-center" style="margin-top:40px; margin-bottom:40px">
+    <img class="img-responsive" style="max-width:100%; height:auto; object-fit: contain;" src="/images/karma.jpg" alt="blog-image">
+    </div>
+        
+
+    
+
+
+    
+      </div>
+
   </div>
 
-  
 
- 
- 
-
-  
+ <%- include footer-blogs.ejs %>
 
 
 <!--Parsing HTML JS-->
