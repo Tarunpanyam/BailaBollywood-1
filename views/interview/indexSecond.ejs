@@ -50,6 +50,17 @@ input#read-btn {
 div#lt-blog p span {
     color: #a9a9a9;
 }
+div#lt-blog img {
+    border: 2px solid #ffffff;
+    padding: 10px;
+}
+div#lt-blog a img:hover {
+    transform: scale(1.1) !important;
+}
+.image-wrapper:hover{
+  transform: scale(1.1) !important;
+
+}
 
 
 
@@ -139,6 +150,36 @@ div#lt-blog p span {
       </div>
 	  <hr>
     </div>
+    <div class="container grid-layout" style="margin-bottom: 100px;">
+      <h1 style="padding-top:50px; margin-bottom:30px; margin-top: 40px; font-weight: bold; color: white; font-family: 'Ananda Namaste Regular'; " class="text-center">Últimas publicaciones</h1>
+      <%    latestInterviews.forEach(data=>{ if(data.index===1){ %>
+          <div class="row d-flex justify-content-between">
+              
+            <%}if(data.check===0){%>
+              <div id="lt-blog" class="col-12 col-md-4 my-2">
+                <a href="<%=data.url%>">
+              <img src="<%= data.thumbnail %>" alt="image" style="width:100%; height:300px;">
+            </a>
+              <p style="color:white;font-weight:bold; font-size: 17px;"><%=data.title%></p>
+            
+          </div>
+        
+          <%}else{%>
+          <div id="lt-blog" class="col-12 col-md-4 my-2">
+                <a href="<%=data.url%>">
+              <img src="<%=data.thumbnail%>" alt="image" style="width:100%; height:300px;">
+            </a>
+              <p style="color:white;font-weight: bold; font-size: 17px; "><%=data.title%></p>
+            
+          </div>
+        
+      
+        <%}if(data.index===3){%>
+        </div> 
+    <%}})%>
+      
+    </div>
+    
 	
 	
 	

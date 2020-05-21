@@ -299,7 +299,7 @@ router.get('/:id/subBlogs/new',(req,res)=>{
 
 
 // deleting Blog ---only Admin can delete it
-router.get('/posts/:id/delete',cacheData.memoryCacheUse(36000),async (req,res)=>{
+router.get('/posts/:id/delete',async (req,res)=>{
   console.log("Delete Method Triggered");
   let id = req.params.id;
   Blog.findById(id).then(blog=>{

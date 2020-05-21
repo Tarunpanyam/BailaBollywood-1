@@ -3,7 +3,46 @@ const router = express.Router();
 const Interview = require('../models/Interview');
 const SubInterview = require('../models/SubInterview');
 const cacheData = require('../middleware/cacheData');
+const Comment = require('../models/Comment');
 
+
+router.get('/interviews/posts/:id/admin/comments',async(req,res)=>{
+  let id = req.params.id;
+  let interview = await Interview.findById(id).populate('comments');
+  let comments = interview.comments;
+  console.log(interview);
+  console.log(comments);
+  res.render("interview/commentAdmin",{comments});
+  
+})
+router.post('/interviews/:id/comments',async(req,res)=>{
+  try {
+    console.log("abc triggered");
+  let id = req.params.id;
+  console.log(req.body.comment);
+  let comment = await Comment.create(req.body.comment);
+  comment.save();
+  let interview = await Interview.findById(id);
+  interview.comments.push(comment);
+  interview.save();
+  res.redirect('/interviews/posts/'+id);
+    
+  } catch (error) {
+    console.log(error.message);
+    
+  }
+  
+})
+
+router.delete('/interviews/comments/:cid/delete',async(req,res)=>{
+  try {
+    let id = req.params.cid;
+  await Comment.findByIdAndRemove(id);
+  res.redirect('back');
+  } catch (error) {
+    console.log(error);
+  }
+})
 
 router.get('/interviews/index',(req,res)=>{
   Interview.find({},(err,Interviews)=>{
@@ -13,21 +52,21 @@ router.get('/interviews/index',(req,res)=>{
 
 
 
+
 router.get("/interviews/interview1",(req,res) => {
     
     res.render("../views/interview/interview1.ejs");
   });
 
   
-router.get("/interviews/",(req,res) => {
-  Interview.find({},(err,allInterviews)=>{
-    if(err)
-    console.log(err);
+router.get("/interviews/",async(req,res) => {
+  try{
+    let allInterviews = await Interview.find({});
     let fourInt=[];
     let count=0;
     let id;
     let twoQ=[];
-    console.log('all')
+    //console.log('all')
     allInterviews.forEach(interview=>{
       count++;
       if(count===1)
@@ -45,8 +84,9 @@ router.get("/interviews/",(req,res) => {
      
 
     });
-    Interview.findById(id).populate('subInterviews').exec(function(err,pinterview){
-      count=0;
+    let pinterview = await Interview.findById(id).populate('subInterviews');
+    count=0;
+    //console.log(pinterview);
       pinterview.subInterviews.forEach(sub=>{
         count++;
         if(count<=2)
@@ -59,11 +99,41 @@ router.get("/interviews/",(req,res) => {
         }
         
       })
-      console.log(twoQ[0]);
-      res.render('../views/interview/indexSecond',{fourInt,twoQ});
-    })
+      //console.log(twoQ[0]);
+      //----------------------
+      let interviews = await Interview.find({}).sort({created:-1});
+    let length = interviews.length;
+    let latestInterviews=[];
+    let c=0;
+    let check=0;
+    interviews.forEach(interview=>{
+      c++;
+      if(c<=9){
+      
+        let title = interview.title;
+        let thumbnail = interview.thumbnail;
+        let index = c%3;
+        let url = "/interviews/posts/"+interview._id;
+        if(index===0)
+        index=3;
+        let obj = {title:title,thumbnail:thumbnail,index:index,check:check,url:url};
+        latestInterviews.push(obj);
+      }
+      
+      });
+      //---------------------
+      console.log(latestInterviews);
 
-  })
+      res.render('../views/interview/index',{fourInt,twoQ,latestInterviews});
+
+
+  }
+  catch(error){
+
+    console.log(error.message);
+  }
+  
+    
   });
 
 router.get("/interviews/posts/new",(req,res)=>{
@@ -77,10 +147,12 @@ router.get("/interviews/posts/new",(req,res)=>{
 
 router.get('/interviews/posts/:id',(req,res)=>{
   let id = req.params.id;
-  Interview.findById(id).populate('subInterviews').exec(function(err,foundInterview){
+  Interview.findById(id).populate('subInterviews').populate('comments').exec(function(err,foundInterview){
     if(err)
     console.log(err.message);
-    res.render('../views/interview/show',{Interview:foundInterview});
+    let comments = foundInterview.comments;
+    console.log(comments);
+    res.render('../views/interview/show',{Interview:foundInterview,comments});
   });
 })
 
@@ -194,7 +266,9 @@ router.post('/interviews/posts/:id',(req,res)=>{
   })
   
 
-})
+});
+
+
 
 
 router.put('/interviews/posts/:id/subInterviews/:sid',(req,res)=>{
