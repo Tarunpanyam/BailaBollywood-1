@@ -24,6 +24,7 @@ const cacheData = require('./middleware/cacheData');
 const StateRoutes = require("./Routes/state");
 const InterviewRoutes = require('./Routes/interview');
 const socialHandleRoute = require('./Routes/social');
+const instrumentRoute = require('./Routes/instrument');
 
 app.use(apiRoutes);
 const port =  3000;
@@ -307,6 +308,7 @@ app.use("/",StateRoutes);
 app.use("/blogs",BlogRoutes);
 app.use("/",InterviewRoutes);
 app.use("/",socialHandleRoute);
+app.use("/instruments",instrumentRoute);
 app.get('/test',(req,res)=>{
   res.render("test");
 })
