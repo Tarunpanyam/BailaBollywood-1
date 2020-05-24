@@ -1,6 +1,7 @@
 <html>
   <head>
     <title><%=instrument.title %></title>
+    <link rel="canonical" href="https://bailabollywood.com<%=requestUrl%>">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     
@@ -174,19 +175,7 @@
               <a class="nav-link text-center font-weight-bold " href="/blogs">Blogs</a>
             </li>
           </ul>
-      <form class="form-inline  log-reg-btn ml-xl-5 ml-lg-5  justify-content-center">
-        <% if(!currentUser) {%>
-        <a class="btn mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3  login-btn " href="/login" target="_top"><i
-            class="fa fa-sign-in"></i> Iniciar Sesión </a>
-        <a class="btn mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 register-btn " href="/register" target="_top"><i
-            class="fa fa-user-plus"></i> Regístrate</a>
-        <% }else{ %>
-        <a class="btn  mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 login-btn " href="/logout" target="_top"><i
-            class="fa fa-sign-in"></i> Cerrar Sesión</a>
-        <a class="btn  mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 register-btn " href="/dashboard" target="_top"><i
-            class="fa fa-heart"></i> My Tablero</a>
-        <% } %>
-      </form>
+      
     </div>
   </nav>
   <!------------------------------Instrument Start ------------------------>

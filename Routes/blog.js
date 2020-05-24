@@ -19,6 +19,7 @@ const SubBlog = require('../models/SubBlog');
 //  INdex page route
 router.get('/', async(req, res) => {
   try {
+    let requestUrl = '/blogs/';
     let latestBlogs = [];
     let topBlogs = [];
     let i=0;
@@ -54,7 +55,7 @@ router.get('/', async(req, res) => {
       
       });
         
-      res.render('../views/blogs/index',{blogs:topBlogs,latestBlogs});
+      res.render('../views/blogs/index',{blogs:topBlogs,latestBlogs,requestUrl});
 
 
     
@@ -124,6 +125,7 @@ catch(err){
       var totalNumber = await blogs.length;
       console.log('totalNumber:'+totalNumber);
       let id = req.params.id;
+      let requestUrl = '/blogs/post/'+id;
       console.log(id);
       let blog = await Blog.findById(id).populate('subBlogs').populate('comments');
       var subBlogz=blog.subBlogs;
@@ -174,7 +176,7 @@ catch(err){
       let suggestionBlog = await Blog.find({number:suggestedNumber});
       console.log(suggestionBlog);
       
-      res.render('../views/blogs/show', {blog,subBlogz,commentz,nextId,prevId,suggestionBlog});
+      res.render('../views/blogs/show', {blog,subBlogz,commentz,nextId,prevId,suggestionBlog,requestUrl});
       
     } catch (error) {
       console.log(error.message);
