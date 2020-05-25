@@ -133,8 +133,8 @@ catch(err){
       let a = blog.number+1;
       let b = blog.number-1;
       let next , prev ,nextId ,prevId;
-      let next = null;
-      let prev = null;
+      next = null;
+      prev = null;
       nextId=0;
       prevId=0;
       
@@ -176,7 +176,8 @@ catch(err){
       let suggestionBlog = await Blog.find({number:suggestedNumber});
       
       console.log(next);
-      res.render('../views/blogs/show', {blog,subBlogz,commentz,next,prev,suggestionBlog,requestUrl});
+      console.log(prev);
+      res.render('../views/blogs/show', {blog,subBlogz,commentz,next,prevId,nextId,prev,suggestionBlog,requestUrl});
       
     } catch (error) {
       console.log(error.message);
