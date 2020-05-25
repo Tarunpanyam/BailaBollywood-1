@@ -148,8 +148,6 @@ app.get("/",cacheData.memoryCacheUse(36000), function (req, res) {
   });
 });
 
-// removed for now , might use in future
-/*
 app.get("/register",middleware.isLoggedIn1,cacheData.memoryCacheUse(36000), function (req, res) {
   res.render("register");
 });
@@ -301,7 +299,6 @@ app.get("/auth/facebook/redirect", passport.authenticate('facebook', {
   req.flash("success", "Welcome to BailaBollywood " + req.user.username);
   res.redirect("/");
 });
-*/
 
 
 
