@@ -123,17 +123,18 @@ catch(err){
     try {
       var blogs = await Blog.find({});
       var totalNumber = await blogs.length;
-      console.log('totalNumber:'+totalNumber);
+      
       let id = req.params.id;
       let requestUrl = '/blogs/post/'+id;
-      console.log(id);
       let blog = await Blog.findById(id).populate('subBlogs').populate('comments');
       var subBlogz=blog.subBlogs;
       var commentz = blog.comments;
-      console.log(blog.number);
+      
       let a = blog.number+1;
       let b = blog.number-1;
       let next , prev ,nextId ,prevId;
+      let next = null;
+      let prev = null;
       nextId=0;
       prevId=0;
       
@@ -159,7 +160,7 @@ catch(err){
       console.log(nextId);
       console.log(prevId);
       const tagg = blog.tag;
-      console.log(tagg);
+      
       let currNumber = blog.number;
       let blogz = await Blog.find({tag:tagg});
       let numberArray=[];
@@ -171,12 +172,11 @@ catch(err){
       })
       let randomNumber = Math.floor(Math.random()*count);
       
-      console.log(randomNumber);
       var suggestedNumber = numberArray[randomNumber];
       let suggestionBlog = await Blog.find({number:suggestedNumber});
-      console.log(suggestionBlog);
       
-      res.render('../views/blogs/show', {blog,subBlogz,commentz,nextId,prevId,suggestionBlog,requestUrl});
+      console.log(next);
+      res.render('../views/blogs/show', {blog,subBlogz,commentz,next,prev,suggestionBlog,requestUrl});
       
     } catch (error) {
       console.log(error.message);

@@ -134,52 +134,13 @@
   </head>
 <body >
 
- <!------------------------------------Navigation Bar Section-One------------------------------------------>
-
-  <nav id="nav-header" class="navbar navbar-expand-lg navbar-light sticky-top  ">
-    <a class="navbar-brand p-0 m-0" href="/"><img src="/images/Spanish-bolo-natraj-transparent.png" class="logo-navbar"
-        alt="Logo Of Baila Bollywood"></a>
-    <button class="navbar-toggler mr-3  " type="button" data-toggle="collapse"
-      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class=" navbar-toggler-icon"></span>
-    </button>
-
-   <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
-          <ul class="navbar-nav nav nav-pills ">
-            <li class="nav-item m-xl-2 active">
-              <a class="nav-link text-center font-weight-bold " href="/">Inicio </a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#about">
-                Quiénes Somos
-                </a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#blogs">Nuestro Blog</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#pop-categ">Lo más Popular</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#found-note">Nuestro Fundador </a>
-            </li>
-            
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/danzas-folkloricas-de-India">Danzas folclóricas</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/equipo">Equipo</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/blogs">Blogs</a>
-            </li>
-          </ul>
-      
-    </div>
-  </nav>
       <!----------------------------Interview Main Part --------------------->
     <div class="container-fluid">
+      <div class="text-center" style="margin-top:20px; margin-bottom: 20px;">
+        <a href="/chitChatInterviews/posts/<%=Interview._id%>/add-more-information">
+        <button style="width: 80%; background-color: black;" class="btn btn-primary">ADD MORE INFROMATION</button>
+      </a>
+      </div>
         <div class="container-sm">
             <div class="text-center" >
                 <img style="max-width:100%; max-height:auto;" class="mt-5 mb-1" src="<%=Interview.image%>" alt="interview-image">
@@ -193,6 +154,18 @@
         <div>
             <p class="target"><%=Interview.content%></p>
         </div>
+        <div class="container">
+            <div class="text-center" style="margin-top:20px; margin-bottom: 20px;">
+              <a href="/chitChatInterviews/posts/<%=Interview._id%>/edit">
+              <button style="width: 80%; background-color: black;" class="btn btn-primary">Edit This Part</button>
+            </a>
+            </div>
+            <div class="text-center" style="margin-top:20px; margin-bottom: 20px;">
+              <a href="/chitChatInterviews/posts/<%=Interview._id%>">
+              <button style="width: 80%; background-color: black;" class="btn btn-primary">View Interview</button>
+            </a>
+            </div>
+          </div>
         
         
     
@@ -216,66 +189,25 @@
             <div>
                 <p class="target"><%=data.content%></p>
             </div>
-        <%}})%>
-
-        <div  style="margin-top: 100px; margin-bottom: 200px; text-align:center; font-style: italic; font-weight:bolder; ">
-            <h4 style="font-size:19px; color: rgb(247,183,51); font-family: Arial, Helvetica, sans-serif; font-weight: 12000; ">
-           BailaBollywood trabaja sobre la misión de ofrecer al mundo hispanohablante una experiencia de primera mano a la cultura India. 
-           Es una plataforma única en internet para explorar la cultura India y conectar directamente con la India.
-           <span style="color: blue; text-decoration: underline; font-family: Arial, Helvetica, sans-serif; font-weight: 12000;">Te damos una calurosa bienvenida a nuestra App. Descarga, utiliza y comparte! 
-           </span> </h4>
-           
-              <a href="https://play.google.com/store/apps/details?id=com.spanishbolo.bb&hl=es" class="col-4 text-center" style="border: none;"><img src="/images/google-play-final-icon.png" style="width: 100px; height:100px; margin: 10px;"></a>
-           <h4>Conecta con Nosotros :</h4>
-           <div class="social-icons">
-                         <a href="https://www.facebook.com/Baila-Bollywood-105697461007966/"
-                           class="col-4 fa fa-facebook text-center" title="Facebook Link" target="_blank"></a>
-                        
-                         <a href="https://www.linkedin.com/in/baila-bollywood-3a3b031a1" class="col-4 fa fa-linkedin  text-center"
-                           title="Linkedin Link" target="_blank"></a>
-                         <a href="https://instagram.com/bailabollywood20?igshid=15jmz5uzyz1jj"
-                           class="col-4 fa fa-instagram text-center" title="Instagram Link" target="_blank"></a>
-                         <a href="https://www.quora.com/share/Baila-Bollywood-on-Instagram-Introducing-Baila-Bollywood-3-days-to-go-bailabollywood-spanishculture-indianculture-bollywood-music-spanishbolo-1?ch=3&share=2cd5e92a&srid=uOprOw"
-                           title="Quora Link" class="col-4 fa fa-quora  text-center" target="_blank"></a>
-                         <a href="https://www.medium.com/@bailabollywood20" class="col-4 fa fa-medium  text-center" title="Medium Link"
-                           target="_blank"></a>
-                           <a href="https://www.youtube.com/channel/UCUb7jsujf73W8NaVYXqOZ1w?view_as=subscriber" class="col-4 fa fa-youtube  text-center" title="Youtube Link"
-                           target="_blank"></a>
-           
-           
-                       
-                          
-           
-                       </div>
-           </div>
-
-
-    </div>
-    <div class="container text-center">
-      <hr>
-      <div style="padding-top: 100px; padding-bottom: 50px;">
-        
-      <form action="/interviews/<%=Interview._id%>/comments" method="POST" >
-  
-        <h3  style="color:grey">Leave A Reply </h3>
-        <input required type="text" style="width: 100%; margin-top:5px; margin-bottom: 15px;" name="comment[name]" placeholder="Name">
-        <input required type="email" style="width: 100%;  margin-bottom: 15px;" name="comment[email]" placeholder="Email">
-        <textarea required style="width: 100%;" name="comment[text]" rows="5" placeholder="Add Comment Here"></textarea>
-        <input required style="margin-top: 20px;  width:150px; "  type="submit" value="Post Comment" />
-      </form>
-    </div>
-    </div> 
-    <div class="container" style="margin-bottom:100px ">
-      <% comments.forEach(comment=>{%>
-        <div class="media" style="background-color: #f5f5f5; border-radius: 10px; margin-top: 20px;">
-          <div class="media-body">
-            <h5 style="font-weight: bold; padding-left: 10px; padding-top: 10px;"><%=comment.name%></h5>
-           <p style="padding-top:5px; padding-left: 10px;"> <%= comment.text %></p>
-          </div>
+            <%}%>
+      <!-------------------------------------Edit Button For Part---------------------->
+      <div class="container">
+        <div style="margin-top:20px;">
+          <a href="/chitChatInterviews/posts/<%=Interview._id%>/subInterviews/<%=data._id%>/edit">
+          <button style=" background-color: black; width: 20%;" class="btn btn-primary">Edit This Part</button>
+        </a>
+        <a href="/chitChatInterviews/posts/<%=Interview._id%>/subInterviews/<%=data._id%>/delete">
+          <button style=" background-color: black; width: 25%;" class="btn btn-primary">Delete This Part</button>
+        </a>
         </div>
-      <%})%>
+      </div>
+        <%})%>
+
+        
+
+
     </div>
-  
+    
     
     
 

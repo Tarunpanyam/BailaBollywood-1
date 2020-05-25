@@ -25,6 +25,7 @@ const StateRoutes = require("./Routes/state");
 const InterviewRoutes = require('./Routes/interview');
 const socialHandleRoute = require('./Routes/social');
 const instrumentRoute = require('./Routes/instrument');
+const chitChatInterviewRoute = require('./Routes/chitchatInterview');
 
 app.use(apiRoutes);
 const port =  3000;
@@ -309,8 +310,13 @@ app.use("/blogs",BlogRoutes);
 app.use("/",InterviewRoutes);
 app.use("/",socialHandleRoute);
 app.use("/instruments",instrumentRoute);
+app.use('/',chitChatInterviewRoute);
 app.get('/test',(req,res)=>{
   res.render("test");
+})
+app.post('/abc',async(req,res)=>{
+  console.log(req.body);
+  res.redirect('back');
 })
 app.get('/sitemap.xml', cacheData.memoryCacheUse(36000),(req, res)=> {
   res.sendFile(path.join(__dirname,'/sitemap.xml'));
