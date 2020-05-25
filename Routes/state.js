@@ -81,6 +81,11 @@ router.get("/equipo",(req,res) => {
                 router.get("/andhra-pradesh", cacheData.memoryCacheUse(36000),(req,res) => {
     res.render("../views/states/andhra-pradesh.ejs")
   });
+
+  router.get("/mizoram", cacheData.memoryCacheUse(36000),(req,res) => {
+    res.render("../views/states/mizoram.ejs")
+  });
+     
      
        
       
