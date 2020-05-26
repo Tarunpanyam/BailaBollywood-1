@@ -66,12 +66,14 @@ div#lt-blog a img:hover {
 }
 .container p {font-size:20px; }
 
+
 @media only screen and (max-width: 600px) {
   .mobile-container{
     width:90%
   }
  .title-div{
    font-size: 25px;
+   display: flex;
  }
  .container-xtr{
    width: 95%;
@@ -144,19 +146,7 @@ div#top-post-container h1 {
             </li>
             
           </ul>
-      <form class="form-inline  log-reg-btn ml-xl-5 ml-lg-5  justify-content-center">
-        <% if(!currentUser) {%>
-        <a class="btn mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3  login-btn " href="/login" target="_top"><i
-            class="fa fa-sign-in"></i> Iniciar Sesión </a>
-        <a class="btn mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 register-btn " href="/register" target="_top"><i
-            class="fa fa-user-plus"></i> Regístrate</a>
-        <% }else{ %>
-        <a class="btn  mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 login-btn " href="/logout" target="_top"><i
-            class="fa fa-sign-in"></i> Cerrar Sesión</a>
-        <a class="btn  mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 register-btn " href="/dashboard" target="_top"><i
-            class="fa fa-heart"></i> My Tablero</a>
-        <% } %>
-      </form>
+      
     </div>
   </nav>
 
