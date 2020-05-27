@@ -174,9 +174,13 @@ catch(err){
       
       var suggestedNumber = numberArray[randomNumber];
       let suggestionBlog = await Blog.find({number:suggestedNumber});
-      
-      console.log(next);
-      console.log(prev);
+      console.log(suggestionBlog);
+      if(suggestionBlog.length===0){
+        suggestionBlog=next;
+      }
+      console.log(suggestionBlog);
+      //console.log(next);
+      //console.log(prev);
       res.render('../views/blogs/show', {blog,subBlogz,commentz,next,prevId,nextId,prev,suggestionBlog,requestUrl});
       
     } catch (error) {
