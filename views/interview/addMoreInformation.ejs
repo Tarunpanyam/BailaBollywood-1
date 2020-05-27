@@ -14,9 +14,9 @@
     <h1 class="text-center">Add More Information Page for Formal Interviews</h1>
     <div class="container">
       <div class="text-center" style="margin-top:20px;">
-        <a href="/interviews/posts/<%=id%>/form1">
-        <button style="width: 80%;"  class="btn btn-primary">Add Title + Image Only</button>
-      </a>
+        
+        <button style="width: 80%;"  class="btn btn-primary" onclick="openform1()">Add Title + Image Only</button>
+      
       </div>
       <div class="text-center" style="margin-top:20px;">
         <a href="/interviews/posts/<%=id%>/form2">
@@ -29,9 +29,47 @@
       </a>
       </div>
       
+      <div class="container" id="form1" style="margin-top: 100px;">
+        <form action="/interviews/posts/<%=id%>?type=1" method="POST">
+            <div class="input-group input-group-lg">
+                
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
+                  
+                  name="subInterview[title]"
+                  placeholder="Enter Your Title">
+              </div>
+              
+              <div class="input-group input-group-lg mt-3">
+                
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
+                name="subInterview[image]"  
+                    placeholder="Enter Image URL">
+              </div>
+              <div class="text-center" style="margin-top:20px;">
+                <button style="width: 80%;" type="submit" class="btn btn-primary">Publish</button>
+              </div>
+              <div class="text-center" style="margin-top:20px;">
+                <button style="width: 80%;" type="button" onclick="closeform1()" class="btn btn-danger">Close Form</button>
+              </div>
+              
+              
+            </form>
+          </div>
+      
 
 
     </div>
-
+    
+    <script>
+      CKEDITOR.replace('editor');
+      </script>
+      <script>
+        function openform1(){
+          document.getElementById("form1").style.display = "block";
+        }
+        function closeform1(){
+          document.getElementById('form1').style.display="none";
+        }
+      </script>
   </body>
 </html>
