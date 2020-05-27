@@ -87,6 +87,26 @@ router.get("/equipo",(req,res) => {
   });
      
      
-       
+
+  router.get("/tripura", cacheData.memoryCacheUse(36000),(req,res) => {
+    res.render("../views/states/tripura.ejs")
+  });
+     
+
+  router.get("/uttar-pradesh", cacheData.memoryCacheUse(36000),(req,res) => {
+    res.render("../views/states/uttar-pradesh.ejs")
+  });
+     
+  router.get("/goa", cacheData.memoryCacheUse(36000),(req,res) => {
+    res.render("../views/states/goa.ejs")
+  });
+     
+       router.get("/jharkhand", cacheData.memoryCacheUse(36000),(req,res) => {
+    res.render("../views/states/jharkhand.ejs")
+  });
+        router.get("/sikkim", cacheData.memoryCacheUse(36000),(req,res) => {
+    res.render("../views/states/sikkim.ejs")
+  });
+         
       
   module.exports=router;
