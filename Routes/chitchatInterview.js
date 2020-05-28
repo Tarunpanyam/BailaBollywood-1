@@ -31,7 +31,6 @@ router.post('/chitChatInterviews/:id/comments',async(req,res)=>{
     
   } catch (error) {
     console.log(error.message);
-    
   }
   
 })
@@ -61,7 +60,19 @@ router.get('/chitChatInterviews/index',async(req,res)=>{
     }
 })
 
-  
+router.get('/chitChatInterviews',async(req,res)=>{
+  try{
+    res.render('chitChatInterview/index');
+
+  }
+  catch(err){
+    console.log(err.message);
+  }
+})
+
+
+
+  /*
 router.get("/chitChatInterviews/",async(req,res) => {
   try{
     let allInterviews = await chitChatInterview.find({});
@@ -139,6 +150,10 @@ router.get("/chitChatInterviews/",async(req,res) => {
   
     
   });
+  */
+
+
+
 
 router.get("/chitChatInterviews/posts/new",(req,res)=>{
     let requestUrl = '/chitChatInterviews/posts/new';
@@ -205,23 +220,6 @@ router.get('/chitChatInterviews/posts/:id/delete',(req,res)=>{
     foundInterview.remove();
     res.redirect('/chitChatInterviews');
   })
-})
-router.get("/chitChatInterviews/posts/:id/form1",(req,res)=>{
-  let id = req.params.id;
-  let requestUrl = 'chitChatInterviews/posts/'+id+'/form1';
-  res.render("../views/chitChatInterview/form1",{id,requestUrl});
-})
-
-router.get("/chitChatInterviews/posts/:id/form2",(req,res)=>{
-  let id = req.params.id;
-  let requestUrl = 'chitChatInterviews/posts/'+id+'/form2';
-  res.render("../views/chitChatInterview/form2",{id,requestUrl});
-})
-
-router.get("/chitChatInterviews/posts/:id/form3",(req,res)=>{
-  let id = req.params.id;
-  let requestUrl = 'chitChatInterviews/posts/'+id+'/form3';
-  res.render("../views/chitChatInterview/form3",{id,requestUrl});
 })
 
 router.get('/chitChatInterviews/posts/:id/subInterviews/:sid/edit',(req,res)=>{

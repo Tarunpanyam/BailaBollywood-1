@@ -199,23 +199,7 @@ router.get('/interviews/posts/:id/delete',(req,res)=>{
     res.redirect('/interviews');
   })
 })
-router.get("/interviews/posts/:id/form1",(req,res)=>{
-  let id = req.params.id;
-  let requestUrl = 'interviews/posts/'+id+'/form1';
-  res.render("../views/interview/form1",{id,requestUrl});
-})
 
-router.get("/interviews/posts/:id/form2",(req,res)=>{
-  let id = req.params.id;
-  let requestUrl = 'interviews/posts/'+id+'/form2';
-  res.render("../views/interview/form2",{id,requestUrl});
-})
-
-router.get("/interviews/posts/:id/form3",(req,res)=>{
-  let id = req.params.id;
-  let requestUrl = 'interviews/posts/'+id+'/form3';
-  res.render("../views/interview/form3",{id,requestUrl});
-})
 
 router.get('/interviews/posts/:id/subInterviews/:sid/edit',(req,res)=>{
   let sid = req.params.sid;

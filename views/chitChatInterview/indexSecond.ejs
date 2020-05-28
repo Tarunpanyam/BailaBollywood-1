@@ -1,114 +1,765 @@
 <html>
 <head>
-  <title>Interviews </title>
-  <link rel="canonical" href="https://bailabollywood.com<%=requestUrl%>">
+  <title>Interviews</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
   <!----------------------------Navbar Css Files---------------------->
   <link rel="stylesheet" type="text/css" href="/stylesheets/navbar.css" />
   <link rel="stylesheet" type="text/css" href="/stylesheets/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
 
 <style type="text/css">
-body{
-    
-  background:linear-gradient(to right,#ff5f6d,#f7b733);
+body {
+    background: #fc8b4f;
 }
 
-
-.container-fluid {
-    width: 90%;
-    margin-top: 50px;
-}
-
+ html,body
+ {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+ } 
+ 
 .col-12.col-sm-12.col-md-5, .col-12.col-sm-12.col-md-7 {
     padding-left: 0px;
     padding-right: 0px;
+    height: 100%;
 }
-
-
 .image-wrapper img {
     width: 100%;
-}
 
+}
 #lt-blog p {
     padding-top: 10px;
-}	
-	
-
-input#read-btn:hover {
-    background: #000;
-    color: #fff;
-}
-input#read-btn {
-    width: 200px;
+} 
+#read-btn {
     background: transparent;
     font-size: 20px;
+    padding: 10px 40px;
     border: 2px solid black;
-    color: #000;
+    color: black;
+    border-radius: 20px;
+    background:linear-gradient(to right,#ff5f6d,#f7b733)
+}
+  
+#read-btn:hover {
+    border-color: white;
+    color: #fff;
 }
 
 div#lt-blog p span {
     color: #a9a9a9;
 }
-div#lt-blog img {
-    border: 2px solid #ffffff;
-    padding: 10px;
-}
-div#lt-blog a img:hover {
-    transform: scale(1.1) !important;
-}
-.image-wrapper:hover{
-  transform: scale(1.1) !important;
 
+.container p {font-size:20px; }
+
+@media only screen and (max-width: 600px) {
+  .mobile-container{
+    width:90%
+  }
+ .title-div{
+   font-size: 25px;
+ }
+ .container-xtr{
+   width: 95%;
+ }
+}
+@media only screen and (min-width:600px){
+  .mobile-container{
+    width:90%;
+  }
+.title-div{
+  font-size: 40px;;
+}
+div#top-post-container p {
+    text-align: justify;
+}
+
+div#top-post-container h1 {
+    text-align: justify;
+}
+
+}
+
+
+
+
+.blog-list .blog-meta.big-meta h4 {
+    margin-left: -20%;
+    margin-top: 1rem;
+    background-color: #10112c;
+    padding: 1rem 1.5rem 1rem;
+}
+
+.blog-meta.big-meta h4 {
+    font-size: 24px;
+}
+
+.blog-meta.big-meta h4 a{
+    color: #fff;
+}
+
+div#top-post-container {
+    background: #10112c;
+}
+.container.mobile-container p {
+    color: #fff !important;
+}
+.container.mobile-container h1 {
+    color: #fff !important;
+}
+
+.image-wrapper {
+    background: #10112c;
+    color: #fff;
+    padding: 15px;
 }
 
 
 
 
 </style>
+
 <!------Boot Strap Files-->
 
 
+<script src="/scripts/spanish-to-english-translate.js"></script>
 </head>
 
 
 <body>
+<!------------------------------------Navigation Bar Section-One------------------------------------------>
+
+  <nav id="nav-header" class="navbar navbar-expand-lg navbar-light sticky-top  ">
+    <a class="navbar-brand p-0 m-0" href="/"><img src="/images/Spanish-bolo-natraj-transparent.png" class="logo-navbar"
+        alt="Logo Of Baila Bollywood"></a>
+    <button class="navbar-toggler mr-3  " type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class=" navbar-toggler-icon"></span>
+    </button>
+
+   <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
+          <ul class="navbar-nav nav nav-pills ">
+            <li class="nav-item m-xl-2 active">
+              <a class="nav-link text-center  " href="/">Inicio </a>
+            </li>
+            <li class="nav-item m-xl-2">
+              <a class="nav-link text-center  " href="/#about">
+                Quiénes Somos
+                </a>
+            </li>
+            <li class="nav-item m-xl-2">
+              <a class="nav-link text-center  " href="/#blogs">Nuestro Blog</a>
+            </li>
+            <li class="nav-item m-xl-2">
+              <a class="nav-link text-center  " href="/#pop-categ">Lo más Popular</a>
+            </li>
+            <li class="nav-item m-xl-2">
+              <a class="nav-link text-center  " href="/#found-note">Nuestro Fundador </a>
+            </li>
+            <li class="nav-item m-xl-2">
+              <a class="nav-link text-center  " href="/danzas-folkloricas-de-India">Danzas folclóricas</a>
+            </li>
+            <li class="nav-item m-xl-2">
+              <a class="nav-link text-center  " href="/equipo">Equipo</a>
+            </li>
+            <li class="nav-item m-xl-2">
+              <a class="nav-link text-center  " href="/blogs">Blogs</a>
+            </li>
+            
+          </ul>
+      <form class="form-inline  log-reg-btn ml-xl-5 ml-lg-5  justify-content-center">
+        <% if(!currentUser) {%>
+        <a class="btn mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3  login-btn " href="/login" target="_top"><i
+            class="fa fa-sign-in"></i> Iniciar Sesión </a>
+        <a class="btn mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 register-btn " href="/register" target="_top"><i
+            class="fa fa-user-plus"></i> Regístrate</a>
+        <% }else{ %>
+        <a class="btn  mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 login-btn " href="/logout" target="_top"><i
+            class="fa fa-sign-in"></i> Cerrar Sesión</a>
+        <a class="btn  mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 register-btn " href="/dashboard" target="_top"><i
+            class="fa fa-heart"></i> My Tablero</a>
+        <% } %>
+      </form>
+    </div>
+  </nav>
 
 
-<div class="container-fluid">
 
-      <% interviews.forEach(data=>{%>
-        <a href="/chitChatInterviews/posts/<%=data._id%>">
-        <h1><%=data._id%></h1>
-      </a>
-      <%})%>
-</div>
-    
-	
-	
-	
 
-	
-	
-	
+<section class="section">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+              <div class="page-wrapper">
+                  <div class="blog-top clearfix">                      
+    <h2 style="padding-top:20px; margin-bottom:20px; font-weight: bold; font-family:'Ananda Namaste Regular';" class="display-4" >
+                      Public, News & Gossip
+                      </h2>
+                  </div><!-- end blog-top -->
 
-	
-	
-	
-	
-	<script>
-        $(".target").each(function(){
-            let text = ( $(this).text());
+                  <div class="blog-list clearfix">
+
+
+                      <div class="blog-box row">
+                          <div class="col-md-4">
+                              <div class="post-media">
+                                  <a href="" title="">
+                                      <img src="uploads/bollywood-news.jpg" alt="" class="img-fluid" style="width: 100%; height: 230px;">
+                                      <div class="hovereffect"></div>
+                                  </a>
+                              </div><!-- end media -->
+                          </div><!-- end col -->
+
+                          <div class="blog-meta big-meta col-md-8">
+                            <h4 style="line-height: 2em;"><a href="" title="">  <span style="font-size: 18px; color: #f7bc42; line-height: 2em;">
+                              - News Gossip</span> <br>Today's Latest Bollywood News</a></h4>
+                                <p>
+                                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                                   </p>                        
+                          </div><!-- end meta -->
+                      </div><!-- end blog-box -->
+
+
+                      <hr class="invis">
+
+
+                      
+                      <div class="blog-box row">
+                        <div class="col-md-4">
+                            <div class="post-media">
+                                <a href="" title="">
+                                    <img src="uploads/bollywood-news.jpg" alt="" class="img-fluid" style="width: 100%; height: 230px;">
+                                    <div class="hovereffect"></div>
+                                </a>
+                            </div><!-- end media -->
+                        </div><!-- end col -->
+
+                        <div class="blog-meta big-meta col-md-8">
+                          <h4 style="line-height: 2em;"><a href="" title="">  <span style="font-size: 18px; color: #f7bc42; line-height: 2em;">
+                            - TV</span> <br>Today's Latest Bollywood News</a></h4>
+                              <p>
+                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                                 </p>                        
+                        </div><!-- end meta -->
+                    </div><!-- end blog-box -->
+
+                    <hr class="invis">
+
+
+                    <div class="blog-box row">
+                      <div class="col-md-4">
+                          <div class="post-media">
+                              <a href="" title="">
+                                  <img src="uploads/bollywood-news.jpg" alt="" class="img-fluid" style="width: 100%; height: 230px;">
+                                  <div class="hovereffect"></div>
+                              </a>
+                          </div><!-- end media -->
+                      </div><!-- end col -->
+
+                      <div class="blog-meta big-meta col-md-8">
+                        <h4 style="line-height: 2em;"><a href="" title="">  <span style="font-size: 18px; color: #f7bc42; line-height: 2em;">
+                          - Public Gossip</span> <br>Today's Latest Bollywood News</a></h4>
+                            <p>
+                               Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                               </p>                        
+                      </div><!-- end meta -->
+                  </div><!-- end blog-box -->
+
+                  <hr class="invis">
+
+
+                  <div class="row d-flex justify-content-between">
+                
+            
+                    <div id="lt-blog" class="col-12 col-md-4 my-2">
+                      <a href="#">
+                    <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:200px;">
+                  </a>
+                  <p style="font-weight: bold; font-size: 17px; ">
+                    Lorem Ipsum is simply dummy text of the printing.
+                    </p>
+                  
+                </div>
         
-            let html = $.parseHTML(text);
-            $(this).empty();
-            $(this).append(html);
-          });
-        </script>
-	
-	
-	
-	
+                <div id="lt-blog" class="col-12 col-md-4 my-2">
+                  <a href="#">
+                <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:200px;">
+              </a>
+              <p style="font-weight: bold; font-size: 17px; ">
+                Lorem Ipsum is simply dummy text of the printing.
+                </p>
+              
+               </div>
+              
+             
+                <div id="lt-blog" class="col-12 col-md-4 my-2">
+                      <a href="#">
+                    <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:200px;">
+                  </a>
+                  <p style="font-weight: bold; font-size: 17px; ">
+                    Lorem Ipsum is simply dummy text of the printing.
+                    </p>
+                  
+                </div>
+      
+              </div> 
+
+
+
+
+              <div class="row d-flex justify-content-between">
+                
+            
+                <div id="lt-blog" class="col-12 col-md-6 my-2">
+             <h4 style="font-size: 26px; margin-bottom:10px; font-weight: bold; font-family:'Ananda Namaste Regular';"> Public News</h4>
+                      <p>
+                  <a href="#">
+                <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:300px;">
+              </a>
+              <p style="font-weight: bold; font-size: 17px; ">
+                Lorem Ipsum is simply dummy text of the printing.
+                </p>
+              
+            </div>
+    
+            <div id="lt-blog" class="col-12 col-md-6 my-2">
+              <h4 style="font-size: 26px; margin-bottom:20px; font-weight: bold; font-family:'Ananda Namaste Regular';"> Public News</h4>
+              <a href="#">
+            <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:300px;">
+          </a>
+          <p style="font-weight: bold; font-size: 17px; ">
+            Lorem Ipsum is simply dummy text of the printing.
+            </p>
+          
+           </div>
+          
+    
+        
+          </div> 
+
+
+
+
+
+                  </div><!-- end blog-list -->
+              </div><!-- end page-wrapper -->
+          </div><!-- end col -->
+
+
+
+
+
+
+
+          
+
+
+
+
+
+          
+          <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+              <div class="sidebar">
+                <div class="blog-top clearfix">                      
+                  <h2 style="padding-top:20px; margin-bottom:20px; font-weight: bold; font-family:'Ananda Namaste Regular';" class="display-4" >
+                   Trends
+                  </h2>
+              </div><!-- end blog-top -->
+                  <div class="widget">
+
+                    <div class="container">
+
+                      <div class="image-wrapper" style="margin-bottom: 30px;">
+                        <h4>Videos</h4>
+                        <a href="">
+                              <img src="uploads/b1.jpg">
+                          </a>
+                              <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 0px;">
+                                Public News</h4>
+                  
+                      </div>
+                    </div>
+
+                  
+                  </div><!-- end widget -->
+
+
+                  <div class="widget">
+
+                    <div class="container">
+
+                      <div class="image-wrapper" style="margin-bottom: 30px;">
+                        <h4>News</h4>
+                        <a href="">
+                              <img src="uploads/b1.jpg">
+                          </a>
+                              <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 0px;">
+                                Public News</h4>
+                  
+                      </div>
+                    </div>
+
+                  
+                  </div><!-- end widget -->
+
+                  
+                  <div class="widget">
+
+                    <div class="container">
+
+                      <div class="image-wrapper" style="margin-bottom: 30px;">
+                        <h4>Public</h4>
+                        <a href="">
+                              <img src="uploads/b1.jpg">
+                          </a>
+                              <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 0px;">
+                                Public News</h4>
+                  
+                      </div>
+                    </div>
+
+                  
+                  </div><!-- end widget -->
+
+
+                     
+                  <div class="widget">
+
+                    <div class="container">
+
+                      <div class="image-wrapper" style="margin-bottom: 30px;">
+                        <h4>Movies</h4>
+                        <a href="">
+                              <img src="uploads/b1.jpg">
+                          </a>
+                              <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 0px;">
+                                Public News</h4>
+                  
+                      </div>
+                    </div>
+
+                  
+                  </div><!-- end widget -->
+
+
+                     
+                  <div class="widget">
+
+                    <div class="container">
+
+                      <div class="image-wrapper" style="margin-bottom: 30px;">
+                        <h4>South</h4>
+                        <a href="">
+                              <img src="uploads/b1.jpg">
+                          </a>
+                              <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 0px;">
+                                Bollywood News</h4>
+                  
+                      </div>
+                    </div>
+
+                  
+                  </div><!-- end widget -->
+
+               
+
+              </div><!-- end sidebar -->
+          </div><!-- end col -->
+      </div><!-- end row -->
+  </div><!-- end container -->
+</section>
+
+
+
+
+
+
+
+<div class="container">
+  <hr style="border-top: 1px solid rgba(138, 138, 138, 0.63);"> 
+ </div>
+
+<div class="container grid-layout" style="margin-bottom: 50px;">
+
+  <h2 style="padding-top:20px; margin-bottom:20px; font-weight: bold; font-family:'Ananda Namaste Regular';" class="text-center display-4" >
+    Latest from Public </h2> 
+
+  <div class="row d-flex justify-content-between">
+          
+      
+          <div id="lt-blog" class="col-12 col-md-2 my-2" style="padding: 0px 5px;">
+            <a href="#">
+          <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:150px;">
+        </a>
+        <p style="font-weight: bold; font-size: 17px; ">
+          Lorem Ipsum is simply dummy.
+          </p>
+        
+      </div>
+
+      <div id="lt-blog" class="col-12 col-md-2 my-2" style="padding: 0px 5px;">
+        <a href="#">
+      <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:150px;">
+    </a>
+    <p style="font-weight: bold; font-size: 17px; ">
+      Lorem Ipsum is simply dummy.
+    </p>
+    
+  </div>
+
+      <div id="lt-blog" class="col-12 col-md-2 my-2" style="padding: 0px 5px;">
+        <a href="#">
+      <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:150px;">
+    </a>
+    <p style="font-weight: bold; font-size: 17px; ">
+      Lorem Ipsum is simply dummy.
+    </p>
+    
+     </div>
+    
+   
+      <div id="lt-blog" class="col-12 col-md-2 my-2" style="padding: 0px 5px;">
+            <a href="#">
+          <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:150px;">
+        </a>
+        <p style="font-weight: bold; font-size: 17px; ">
+          Lorem Ipsum is simply dummy.
+          </p>
+        
+      </div>
+
+      <div id="lt-blog" class="col-12 col-md-2 my-2" style="padding: 0px 5px;">
+        <a href="#">
+      <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:150px;">
+    </a>
+    <p style="font-weight: bold; font-size: 17px; ">
+      Lorem Ipsum is simply dummy.
+    </p>
+    
+  </div>
+  <div id="lt-blog" class="col-12 col-md-2 my-2" style="padding: 0px 5px;">
+    <a href="#">
+  <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:150px;">
+</a>
+<p style="font-weight: bold; font-size: 17px; ">
+  Lorem Ipsum is simply dummy.
+</p>
+
+</div>
+  
+    </div> 
+ 
+</div>
+
+
+
+
+
+<div class="container">
+  <hr style="border-top: 1px solid rgba(138, 138, 138, 0.63);"> 
+ </div>
+
+
+<div class="container grid-layout" style="margin-bottom: 50px;">
+
+  <h2 style="padding-top:20px; margin-bottom:20px; font-weight: bold; font-family:'Ananda Namaste Regular';" class="text-center display-4" >
+    Popular Public Interviews</h2> 
+
+  <div class="row d-flex justify-content-between">
+          
+      
+          <div id="lt-blog" class="col-12 col-md-3 my-2" style="padding: 0px 5px;">
+            <a href="#">
+          <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:200px;">
+        </a>
+        <p style="font-weight: bold; font-size: 17px; ">
+          Lorem Ipsum is simply dummy.
+          </p>
+        
+      </div>
+
+      <div id="lt-blog" class="col-12 col-md-3 my-2" style="padding: 0px 5px;">
+        <a href="#">
+      <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:200px;">
+    </a>
+    <p style="font-weight: bold; font-size: 17px; ">
+      Lorem Ipsum is simply dummy.
+    </p>
+    
+  </div>
+
+      <div id="lt-blog" class="col-12 col-md-3 my-2" style="padding: 0px 5px;">
+        <a href="#">
+      <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:200px;">
+    </a>
+    <p style="font-weight: bold; font-size: 17px; ">
+      Lorem Ipsum is simply dummy.
+    </p>
+    
+     </div>
+    
+
+     <div id="lt-blog" class="col-12 col-md-3 my-2" style="padding: 0px 5px;">
+      <a href="#">
+    <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:200px;">
+  </a>
+  <p style="font-weight: bold; font-size: 17px; ">
+    Lorem Ipsum is simply dummy.
+  </p>
+  
+   </div>
+  
+  
+    </div> 
+ 
+
+
+
+    <div class="row d-flex justify-content-between">
+          
+      
+      <div id="lt-blog" class="col-12 col-md-3 my-2" style="padding: 0px 5px;">
+        <a href="#">
+      <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:200px;">
+    </a>
+    <p style="font-weight: bold; font-size: 17px; ">
+      Lorem Ipsum is simply dummy.
+      </p>
+    
+  </div>
+
+  <div id="lt-blog" class="col-12 col-md-3 my-2" style="padding: 0px 5px;">
+    <a href="#">
+  <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:200px;">
+</a>
+<p style="font-weight: bold; font-size: 17px; ">
+  Lorem Ipsum is simply dummy.
+</p>
+
+</div>
+
+  <div id="lt-blog" class="col-12 col-md-3 my-2" style="padding: 0px 5px;">
+    <a href="#">
+  <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:200px;">
+</a>
+<p style="font-weight: bold; font-size: 17px; ">
+  Lorem Ipsum is simply dummy.
+</p>
+
+ </div>
+
+
+ <div id="lt-blog" class="col-12 col-md-3 my-2" style="padding: 0px 5px;">
+  <a href="#">
+<img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:200px;">
+</a>
+<p style="font-weight: bold; font-size: 17px; ">
+Lorem Ipsum is simply dummy.
+</p>
+
+</div>
+
+
+</div> 
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ <section class="baila-section section-six" style="padding:0; margin: 0;">
+      <div class="container-fluid" style="width: 100%; margin: auto; border: none;">
+        <div class="row footer-row">
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 footer-left ">
+            <div id="logo-float">            
+            <a href="https://www.bailabollywood.com/" target="_blank"> <img class="footer-logo mt-5"
+                src="/images/baila-bollywood-transparent-white.png" alt="spanish bolo" style="width: 140px; height: 140px;"></a>
+            
+            <a href="https://www.spanishbolo.com/" target="_blank"> <img class="footer-logo mt-5"
+                src="/images/spanish-bolo-logo.png" style="max-width: 140px; max-height: 140px;" alt="spanish bolo"></a>
+            </div>
+            <p class="text-white text-center mt-3">Nuestros proyectos <a href="https://www.spanishbolo.com/" target="_blank">SpanishBOLO</a> y BailaBollywood exploran los rincones culturales  de la India y el mundo hispanohablante, para compartir estas riquezas con nuestros lectores, y así,  afianzar el  vínculo entre ambas regiones, creando un sentido de comunidad y hermandad social.   
+      </p>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 footer-center">
+            <h4 class="mt-5  display-5">Conecta con Nosotros :</h4>
+            <br>
+            <div class="social-icons row justify-content-center">
+              <a href="https://www.facebook.com/Baila-Bollywood-105697461007966/"
+                class="col-4 fa fa-facebook text-center" title="Facebook Link" target="_blank"></a>
+             
+              <a href="https://www.linkedin.com/in/baila-bollywood-3a3b031a1" class="col-4 fa fa-linkedin  text-center"
+                title="Linkedin Link" target="_blank"></a>
+              <a href="https://instagram.com/bailabollywood20?igshid=15jmz5uzyz1jj"
+                class="col-4 fa fa-instagram text-center" title="Instagram Link" target="_blank"></a>
+              <a href="https://www.quora.com/share/Baila-Bollywood-on-Instagram-Introducing-Baila-Bollywood-3-days-to-go-bailabollywood-spanishculture-indianculture-bollywood-music-spanishbolo-1?ch=3&share=2cd5e92a&srid=uOprOw"
+                title="Quora Link" class="col-4 fa fa-quora  text-center" target="_blank"></a>
+              <a href=" https://link.medium.com/jSOvCnafY3" class="col-4 fa fa-medium  text-center" title="Medium Link"
+                target="_blank"></a>
+                <a href="https://www.youtube.com/channel/UCUb7jsujf73W8NaVYXqOZ1w?view_as=subscriber" class="col-4 fa fa-youtube  text-center" title="Youtube Link"
+                target="_blank"></a>
+            </div>
+          </div>
+          <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 footer-right">
+            <img src="/images/baila-bollywood-transparent-white.png" class="footer-right-img " alt="baila bollywood">
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <div class="footer-section ">
+    <i style="color:#fff"class="fa mr-3 d-block fa-flag-checkered"></i>
+      Website Made With &hearts; By <div style="line-height: 48px;"><a href=" https://www.linkedin.com/in/vaibhav-kaul-ab5941182/"
+          class="text-white mx-1" target="_blank" title="Vaibhav's Linkedin Profile" style="font-size: 20px;">Vaibhav Kaul</a></div>
+      And <a href="https://www.linkedin.com/in/pawan-saggu-06589b157/" class="text-white mx-1"
+          target="_blank" title="Pawan's Linkedin Profile" style="font-size: 20px">Pawan Saggu</a>
+          <a style="text-decoration: underline;" href="#privacyPolicyModal" class="text-white text-center  mb-1"  data-toggle="modal" data-target="#privacyPolicyModal">Política de Privacidad</a>
+      <br />
+      &copy; 2020 Copyright BailaBollywood<img src="/images/Spanish-bolo-natraj-transparent.png" alt="Spanish Bolo">
+  </div>
+
+
+
+
+
+
+  <script>
+  $(".target").each(function(){
+    let text = ( $(this).text());
+    text = text.substring(0,200);
+    text = text + "...."
+    let html = $.parseHTML(text);
+    $(this).empty();
+    $(this).append(html);
+  });
+</script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

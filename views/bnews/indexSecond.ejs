@@ -1,0 +1,120 @@
+<html>
+<head>
+  <title>Interviews Second Page </title>
+  <link rel="canonical" href="https://bailabollywood.com<%=requestUrl%>">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <!----------------------------Navbar Css Files---------------------->
+  <link rel="stylesheet" type="text/css" href="/stylesheets/navbar.css" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/index.css" />
+
+<style type="text/css">
+body{
+    
+  background:linear-gradient(to right,#ff5f6d,#f7b733);
+}
+
+
+.container-fluid {
+    width: 90%;
+    margin-top: 50px;
+}
+
+.col-12.col-sm-12.col-md-5, .col-12.col-sm-12.col-md-7 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+
+.image-wrapper img {
+    width: 100%;
+}
+
+#lt-blog p {
+    padding-top: 10px;
+}	
+	
+
+input#read-btn:hover {
+    background: #000;
+    color: #fff;
+}
+input#read-btn {
+    width: 200px;
+    background: transparent;
+    font-size: 20px;
+    border: 2px solid black;
+    color: #000;
+}
+
+div#lt-blog p span {
+    color: #a9a9a9;
+}
+div#lt-blog img {
+    border: 2px solid #ffffff;
+    padding: 10px;
+}
+div#lt-blog a img:hover {
+    transform: scale(1.1) !important;
+}
+.image-wrapper:hover{
+  transform: scale(1.1) !important;
+
+}
+
+
+
+
+</style>
+<!------Boot Strap Files-->
+
+
+</head>
+
+
+<body>
+
+<div class="container">
+  <% allBollywoodNews.forEach(element=>{%>
+
+  
+    <div class="card text-center" style="width: 100%; margin-top: 35px;">
+      <img class="card-img-top" style="width: 50%; height: auto; margin-left: 25%;" src="<%=element.image%>" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%=element.title%></h5>
+        <p class="card-text target"><%=element.content%></p>
+        <a href="/bollywoodNews/posts/<%=element._id%>" class="btn btn-primary" style="width: 80%; margin-left: 10%; ">Ver Mas</a>
+      </div>
+    </div>
+  
+<%})%>
+
+</div>
+	
+	
+	
+
+	
+	
+	
+
+	
+	
+	
+	
+	<script>
+        $(".target").each(function(){
+            let text = ( $(this).text());
+        
+            let html = $.parseHTML(text);
+            $(this).empty();
+            $(this).append(html);
+          });
+        </script>
+	
+	
+	
+	
+</body>
+</html>

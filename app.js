@@ -1,31 +1,32 @@
-const express = require("express");
-const app = express();
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const passport = require('passport');
-const User = require('./models/user');
-const flash = require("connect-flash");
-const nodemailer = require("nodemailer");
-const cookieParser = require("cookie-parser");
-const passportSetup = require('./config/passport_setup');
-const keys = require("./config/keys");
-const feed = require('rss-to-json');
-const middleware = require('./middleware/index');
-const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
-const Promise = require('promise');
-const apiRoutes = require('./androidApi/index');
-const path = require('path');
-const BlogRoutes = require('./Routes/blog');
-const fileUpload = require('express-fileupload');
-const expressSanitizer = require('express-sanitizer');
-const methodOverride = require('method-override');
-const cacheData = require('./middleware/cacheData');
-const StateRoutes = require("./Routes/state");
-const InterviewRoutes = require('./Routes/interview');
-const socialHandleRoute = require('./Routes/social');
-const instrumentRoute = require('./Routes/instrument');
-const chitChatInterviewRoute = require('./Routes/chitchatInterview');
+const express                             = require("express");
+const app                                 = express();
+const bodyParser                          = require('body-parser');
+const mongoose                            = require('mongoose');
+const passport                            = require('passport');
+const User                                = require('./models/user');
+const flash                               = require("connect-flash");
+const nodemailer                          = require("nodemailer");
+const cookieParser                        = require("cookie-parser");
+const passportSetup                       = require('./config/passport_setup');
+const keys                                = require("./config/keys");
+const feed                                = require('rss-to-json');
+const middleware                          = require('./middleware/index');
+const session                             = require('express-session');
+const MongoStore                          = require('connect-mongo')(session);
+const Promise                             = require('promise');
+const apiRoutes                           = require('./androidApi/index');
+const path                                = require('path');
+const BlogRoutes                          = require('./Routes/blog');
+const fileUpload                          = require('express-fileupload');
+const expressSanitizer                    = require('express-sanitizer');
+const methodOverride                      = require('method-override');
+const cacheData                           = require('./middleware/cacheData');
+const StateRoutes                         = require("./Routes/state");
+const InterviewRoutes                     = require('./Routes/interview');
+const socialHandleRoutes                  = require('./Routes/social');
+const instrumentRoutes                    = require('./Routes/instrument');
+const chitChatInterviewRoutes             = require('./Routes/chitchatInterview');
+const bollywoodNewsRoutes                 = require('./Routes/bnews');
 
 app.use(apiRoutes);
 const port =  3000;
@@ -308,9 +309,12 @@ app.get("/auth/facebook/redirect", passport.authenticate('facebook', {
 app.use("/",StateRoutes);
 app.use("/blogs",BlogRoutes);
 app.use("/",InterviewRoutes);
-app.use("/",socialHandleRoute);
-app.use("/instruments",instrumentRoute);
-app.use('/',chitChatInterviewRoute);
+app.use("/",socialHandleRoutes);
+app.use("/instruments",instrumentRoutes);
+app.use('/',chitChatInterviewRoutes);
+app.use('/',bollywoodNewsRoutes);
+
+
 app.get('/test',(req,res)=>{
   res.render("test");
 })
