@@ -203,12 +203,12 @@ router.get('/interviews/posts/:id/delete',(req,res)=>{
 
 router.get('/interviews/posts/:id/subInterviews/:sid/edit',(req,res)=>{
   let sid = req.params.sid;
-  let id = req.params.id;
+  let id = req.params.id; 
   let requestUrl = '/interviews/posts/'+id+'subInterviews/'+sid+'/edit';
   SubInterview.findById(sid,(err,foundSubInterview)=>{
     if(err)
     console.log(err.message);
-    res.render('../views/interview/subInterviewEdit',{subInterview:foundSubInterview,id,sid});
+    res.render('../views/interview/subInterviewEdit',{subInterview:foundSubInterview,id,sid,requestUrl});
   })
 })
 

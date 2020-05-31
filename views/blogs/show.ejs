@@ -175,19 +175,7 @@
               <a class="nav-link text-center font-weight-bold " href="/blogs">Blogs</a>
             </li>
           </ul>
-      <form class="form-inline  log-reg-btn ml-xl-5 ml-lg-5  justify-content-center">
-        <% if(!currentUser) {%>
-        <a class="btn mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3  login-btn " href="/login" target="_top"><i
-            class="fa fa-sign-in"></i> Iniciar Sesión </a>
-        <a class="btn mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 register-btn " href="/register" target="_top"><i
-            class="fa fa-user-plus"></i> Regístrate</a>
-        <% }else{ %>
-        <a class="btn  mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 login-btn " href="/logout" target="_top"><i
-            class="fa fa-sign-in"></i> Cerrar Sesión</a>
-        <a class="btn  mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 register-btn " href="/dashboard" target="_top"><i
-            class="fa fa-heart"></i> My Tablero</a>
-        <% } %>
-      </form>
+      
     </div>
   </nav>
 
@@ -229,17 +217,24 @@
       </div>
       <hr>
      <% if(prevId!=0){%>
+      <p>
         <a  href='/blogs/posts/<%=prevId%>'>
           <input type="button"  value="<-<%=prev[0].title%>" class="float-left">
           </a>
+        </p>
 
       <%}if(nextId!=0){%>
+        <br><br>
+        <p style="padding-top: 5px;">
         <a href="/blogs/posts/<%=nextId%>">
           <input type="button"  value="<%=next[0].title%>->" class="float-right">
         </a>
+      </p>
+      <br>
       <%}%>
-      <hr>
+      
       <div class="container text-center" style="margin-top: 50px;" >
+        
         <h2>Te puede interesar</h2>
         <div id="lt-blog" class="mt-10 mb-5">
           <a href="/blogs/posts/<%=suggestionBlog[0]._id%>">

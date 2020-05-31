@@ -124,8 +124,9 @@ div#top-post-container {
 }
 #radio-list{
   position: absolute; 
-  left:75%; 
-  top:10% ; 
+  left:70%; 
+  width: 30%;
+  top:13% ; 
   z-index:1080;
   display: block;
   list-style-type: none;
@@ -136,23 +137,52 @@ div#top-post-container {
 }
 
 #radio-list li img{
-  width:38%; height: auto;
+  width:20%; height: auto;
   border-radius: 10px;
   
 }
 
 #radio-list li button{
    border:none;
-   float:right;
+   
    background-color: white;
 }
 #radio-list li button:hover{
   transform: scale(1.2) !important;
 }
 #radio-list li button span{
-  position: relative;
-  top:8px;
+
 }
+@media (min-width: 768px) and (max-width: 991.98px) { 
+  #radio-list{
+  position: absolute; 
+  left:50%; 
+  width: 50%;
+  top:13% ; 
+  z-index:1080;
+  display: block;
+  list-style-type: none;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+
+}
+}
+@media (max-width: 767.98px) { 
+  #radio-list{
+  position: absolute; 
+  left:0%; 
+  width: 100%;
+  top:13% ; 
+  z-index:1080;
+  display: block;
+  list-style-type: none;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+
+}
+ }
 
 
 
@@ -223,12 +253,13 @@ div#top-post-container {
     <source src="blob:http://allindiaradio.gov.in/ee4d44e1-b9f0-4187-8f2e-8c1dbbdc9864" type="audio/ogg">
     <source src="blob:http://allindiaradio.gov.in/ee4d44e1-b9f0-4187-8f2e-8c1dbbdc9864" type="audio/mpeg">
   </audio>
+  <div class="container">
   
-    <ul id="radio-list">
-      <li >
+    <ul class="list-group" id="radio-list">
+      <li class="list-group-item d-flex justify-content-between align-items-center" >
         
         <img src="https://cdn.onlineradiobox.com/img/logo/6/3906.v6.png" >
-        &emsp;  91.1 Radio City FM &emsp; 
+        <span style="padding-left: 20px; padding-right: 20px;">  91.1 Radio City FM </span>
         <button class="play-btn" onclick='playRadio("radio-city")' >
           <audio id="radio-city" style="display: none;">
 
@@ -241,17 +272,17 @@ div#top-post-container {
         </span>
       
       </button>
-      <hr>
+      
       
       </li>
 
 
 
 
-      <li >
+      <li class="list-group-item d-flex justify-content-between align-items-center" >
         
         <img src="https://cdn.onlineradiobox.com/img/logo/7/60907.v12.png" >
-        &emsp;  Retro Bollywood &emsp; 
+        <span style="padding-left: 20px; padding-right: 20px;">  Retro Bollywood  </span>
         <button class="play-btn" onclick='playRadio("retro-bollywood")' >
           <audio id="retro-bollywood" style="display: none;">
             
@@ -264,16 +295,16 @@ div#top-post-container {
         </span>
       
       </button>
-      <hr>
+      
       </li>
 
 
 
 
-      <li >
+      <li class="list-group-item d-flex justify-content-between align-items-center" >
         
         <img src="https://cdn.onlineradiobox.com/img/logo/1/3791.v2.png" >
-        &emsp;  FM Rainbow &emsp; 
+        <span style="padding-left: 20px; padding-right: 20px;">  FM Rainbow </span>
         <button class="play-btn" onclick='playRadio("hits-of-bollywood")' >
           <audio id="hits-of-bollywood" style="display: none;">
             
@@ -286,11 +317,32 @@ div#top-post-container {
         </span>
       
       </button>
-      <hr>
+      
       </li>
+      <li class="list-group-item d-flex justify-content-between align-items-center" >
+        
+        <img src="https://cdn.onlineradiobox.com/img/logo/3/78503.v10.png" >
+        <span style="padding-left: 20px; padding-right: 20px;">  Bollywood Punjabi Radio </span>
+        <button class="play-btn" onclick='playRadio("bollywood-pubjabi-radio")' >
+          <audio id="bollywood-pubjabi-radio" style="display: none;">
+            
+          <source src="https://stream.zeno.fm/1k0y9f0cm0quv">
+
+        </audio>
+        
+        
+        <span class="fa fa-play-circle" style="font-size:50px;color:#932121;">
+        </span>
+      
+      </button>
+      
+      </li>
+
+      
 
 
     </ul>
+  </div>
   
 
 
