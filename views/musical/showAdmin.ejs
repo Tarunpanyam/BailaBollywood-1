@@ -219,7 +219,14 @@
       </div>
     <%}%>
       <div class="target mt-2" style="text-align: justify !important; font-size: 18px;"><%=subInstrument.content%></div>
-    
+      <div style="margin-top:20px;">
+        <a href="/instruments/posts/<%=instrument._id%>/subInstruments/<%=subInstrument._id%>/edit" target="_blank">
+        <button style="width: 80%;" class="btn btn-primary">Edit This Part</button>
+      </a>
+      <a href="/instruments/posts/<%=instrument._id%>/subInstruments/<%=subInstrument._id%>/delete">
+        <button style="width: 80%;"  class="btn btn-danger">Delete This Part</button>
+      </a>
+      </div>
     <%})%>
   </div>
   <hr>

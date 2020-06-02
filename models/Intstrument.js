@@ -20,19 +20,26 @@ function date () {
 }
 
 const InstrumentSchema = new Schema({
-  title:{type:String, trim:true , required:true},
-  image:{type:String, trim:true , required:true},
-  thumbnail:{type:String , trim:true,required:true},
-  content:{type:String},
+  title:{type:String, trim:true , required:true,default:""},
+  image:{type:String, trim:true  ,default:""},
+  imageSource:{type:String, trim:true,default:""},
+  thumbnail:{type:String , trim:true,required:true,default:""},
+  content:{type:String,default:""},
   created:  {type: Date, default: Date.now},
   time: {type: String},
-  audio:{type:String},
+  audio:{type:String,default:""},
   index:{type:Number},
   comments:[
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Comment"
    }
+  ],
+  subInstruments:[
+    {
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"SubInstrument"
+    }
   ]
   
 })

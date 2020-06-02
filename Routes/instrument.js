@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Instrument = require('../models/Intstrument');
+const SubInstrument =require('../models/SubInstrument');
 const Comment = require('../models/Comment');
 
 router.get('/', async(req,res)=>{
@@ -15,6 +16,49 @@ try {
     console.log(error.message);
     
 }
+})
+
+//-----------------get route for subinstrument form-------------------//
+router.get('/posts/:id/addMoreInformation',async(req,res)=>{
+    try {
+        let id = req.params.id;
+        res.render('musical/addMorInformation',{id});
+        
+    } catch (error) {
+        console.log(error.message);
+    }
+})
+
+router.post('/posts/:id',async(req,res)=>{
+    try {
+        let id = req.params.id
+        console.log(req.body.subInstrument);
+        let subInstrument =await new SubInstrument(req.body.subInstrument);
+        let subinstrument = await subInstrument.save();
+        console.log(subinstrument);
+        let instrument = await Instrument.findById(id);
+        instrument.subInstruments.push(subinstrument);
+        let savedInstrument = await instrument.save();
+        console.log(savedInstrument);
+
+        res.redirect('back');
+
+
+        
+    } catch (error) {
+        console.log(error.message);
+    }
+})
+
+router.get('/posts/all',async(req,res)=>{
+    try{
+        let instruments = await Instrument.find({});
+        res.render('musical/all',{instruments});
+
+    }
+    catch(err){
+        console.log(err.message);
+    }
 })
 
 
@@ -37,13 +81,27 @@ router.get('/posts/:id',async(req,res)=>{
     try {
         let id = req.params.id;
         let requestUrl = '/instruments/posts/'+id;
-        let instrument = await Instrument.findById(id).populate('comments');
+        let instrument = await Instrument.findById(id).populate('comments').populate('subInstruments');
+        //console.log(instrument);
         res.render('musical/show',{instrument,requestUrl});
 
     } catch (error) {
     console.log(error.message);        
     }
 })
+router.get('/posts/:id/admin',async(req,res)=>{
+    try {
+        let id = req.params.id;
+        let requestUrl = '/instruments/posts/'+id;
+        let instrument = await Instrument.findById(id).populate('comments').populate('subInstruments');
+        //console.log(instrument);
+        res.render('musical/showAdmin',{instrument,requestUrl});
+
+    } catch (error) {
+    console.log(error.message);        
+    }
+})
+
 
 
 
@@ -53,19 +111,26 @@ router.get('/posts/:id',async(req,res)=>{
 
 router.post('/posts',async(req,res)=>{
     try {
-
+        if(req.files){
         let audio = req.files.audio;
         console.log(audio);
         console.log(audio.name);
         audio.mv(`./public/audios/${audio.name}`, err => console.log(err ? 'audio on save the image!' : 'Audio Uploaded!'));
         
+    }
+    else{
+        audio={};
+        audio.name="";
+    }
         console.log("Post Triggered")
         let newInstrument = await Instrument.create({
             title:req.body.title,
             image:req.body.image,
+            imageSource:req.body.imageSource,
             thumbnail:req.body.thumbnail,
             content:req.body.content,
-            audio:audio.name
+            audio:audio.name,
+
         });
 
         let instrument = await newInstrument.save();
@@ -99,7 +164,18 @@ router.put('/posts/:id',async(req,res)=>{
     try {
         let id = req.params.id;
         console.log('Put Method Triggered');
-        let instrument = await Instrument.findByIdAndUpdate(id,req.body.instrument);
+        
+        let instrument = await Instrument.findById(id);
+
+        const {title , thumbnail , image , content} = req.body.instrument;
+    if(content!==""){
+        instrument.content = content;
+    }
+    instrument.title = title;
+    instrument.image = image;
+    instrument.thumbnail = thumbnail;
+    let saveInstrument = await instrument.save();
+    
         res.redirect('/instruments/posts/'+id);
         
     } catch (error) {
@@ -140,6 +216,7 @@ console.log(err.message);
 
 
 
+
 router.get('/posts/:id/admin/comments',async(req,res)=>{
     try {
         let id = req.params.id;
@@ -164,5 +241,62 @@ router.delete('/comments/:cid/delete',async(req,res)=>{
         console.log(error.message)
     }
 })
+
+router.get('/posts/:id/subInstruments/:sid/edit',async(req,res)=>{
+    try {
+        let sid = req.params.sid;
+        let id = req.params.id;
+        let subInstrument = await SubInstrument.findById(sid);
+        res.render('musical/subInstrumentEdit',{subInstrument,id});
+        
+    } catch (error) {
+        console.log(error.message);
+    }
+})
+router.post('/posts/:id/subInstruments/:sid',async(req,res)=>{
+    try {
+        
+        console.log("Put method triggered");
+        let sid = req.params.sid;
+        let id = req.params.id;
+        console.log(req.body.subInstrument);
+        let subinstrument = await SubInstrument.findById(sid);
+        const {title ,  image , imageSource , content} = req.body.subInstrument;
+        if(content!==""){
+            subinstrument.content = content;
+        }
+        subinstrument.title = title;
+        subinstrument.image = image;
+        subinstrument.imageSource=imageSource;
+        let savedSubinstrument = await subinstrument.save();
+        
+        res.redirect('/instruments/posts/'+id);
+        
+        
+        } catch (error) {
+            console.log(error.message);
+            
+        }
+})
+router.get('/posts/:id/subInstruments/:sid/delete',async(req,res)=>{
+    try {
+        console.log('im hitting it');
+        let sid = req.params.id;
+        SubInstrument.findByIdAndRemove(sid);
+        res.redirect('back');
+        
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+
+
+//-------------------------update route for subinstrument------------------------//
+/*router.put('/posts/instruments/subInstruments/:sid', async(req,res)=>{
+    
+    
+  })
+  */
 
   module.exports=router;
