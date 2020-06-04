@@ -1,19 +1,27 @@
 <html>
   <head>
     <title><%=blog.title %></title>
-    <link rel="canonical" href="https://bailabollywood.com<%=requestUrl%>">
+    <link rel="canonical" href="/blogs/posts/<%=blog._id%>">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     
-   <script>
-      $(document).ready(function(){
-    let text = ( $("#target").text());
-    let html = $.parseHTML(text);
-    $("#target").empty();
-    $("#target").append(html);
-  
-});
-    </script>
+   
+    <script>window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+    
+      return t;
+    }(document, "script", "twitter-wjs"));</script>
 
         <meta charset="UTF-8">
   <!--Title of the Website-->
@@ -129,11 +137,68 @@
     height: auto;
   }
 }
+
+#share {
+	width: 100%;
+  	margin: 30px auto;
+  	text-align: center;
+}
+
+/* buttons */
+
+#share a {
+	width: 50px;
+  	height: 50px;
+  	display: inline-block;
+  	margin: 8px;
+  	border-radius: 50%;
+  	font-size: 24px;
+  	color: #fff;
+	opacity: 0.75;
+	transition: opacity 0.15s linear;
+}
+
+#share a:hover {
+	opacity: 1;
+}
+
+/* icons */
+
+#share i {
+  	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
+}
+
+/* colors */
+
+.facebook {
+ 	background: #3b5998;
+}
+
+.whatsapp
+{
+	background:green;
+}
+.twitter {
+  	background: #55acee;
+}
+
+.googleplus {
+  	background: #dd4b39;
+}
+
+.linkedin {
+  	background: #0077b5;
+}
+
+.pinterest {
+  	background: #cb2027;
+}
   </style>
     
   </head>
 <body >
-
  <!------------------------------------Navigation Bar Section-One------------------------------------------>
 
   <nav id="nav-header" class="navbar navbar-expand-lg navbar-light sticky-top  ">
@@ -194,6 +259,37 @@
     <img style="width:100%; height:auto; object-fit: contain;" src="/uploads/<%= blog.image%>" alt="blog-image">
     </div>
     <%  }%>
+    
+<!-- 
+
+1. load font awesome with your favorite method
+2. replace items in {{ }}s with details specific to your content 
+
+-->
+
+<div id="share">
+
+  <!-- facebook -->
+  <a class="facebook" href="https://www.facebook.com/share.php?u=https://bailabollywood.com/blogs/posts/<%=blog._id%>&title=<%=blog.title%>" target="blank"><i class="fa fa-facebook"></i></a>
+
+  <!-- twitter -->
+  <a class="twitter" href="https://twitter.com/intent/tweet?text=<%=blog.title%>%20+https://bailabollywood.com/blogs/posts/<%=blog._id%>" target="blank"><i class="fa fa-twitter"></i></a>
+
+<a class="whatsapp" href="whatsapp://send?text=<%=blog.title%>%20+https://bailabollywood.com/blogs/posts/<%=blog._id%>" data-action="share/whatsapp/share" target="blank"><i class="fa fa-whatsapp"></i></a>
+
+ 
+	
+  <!-- google plus -->
+  <a class="googleplus" href="https://plus.google.com/share?url=https://bailabollywood.com/blogs/posts/<%=blog._id%>" target="blank"><i class="fa fa-google-plus"></i></a>
+
+  <!-- linkedin -->
+  <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://bailabollywood.com/blogs/posts/<%=blog._id%>&title=<%=blog.title%>&source=bailabollywood.com" target="blank"><i class="fa fa-linkedin"></i></a>
+  
+  <!-- pinterest 
+  <a class="pinterest" href="https://pinterest.com/pin/create/bookmarklet/?media=<%=blog.thumbnail%>&url=https://bailabollywood.com/blogs/posts/<%=blog._id%>&is_video=false&description=<%=blog.title%>" target="blank"><i class="fa fa-pinterest-p"></i></a>
+  -->
+</div>
+
     
     <div class="container"  >
     <!---  Blog Content -->
