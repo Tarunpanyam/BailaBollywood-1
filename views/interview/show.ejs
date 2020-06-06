@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title><%=blog.title %></title>
+    <title><%=Interview.title %></title>
     <link rel="canonical" href="https://bailabollywood.com<%=requestUrl%>">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
@@ -86,7 +86,6 @@
     a{
       color:black;
       font-weight: 700;
-
     }
     strong{
       font-weight: 1000;
@@ -122,7 +121,6 @@
   .mobile-container{
     width: 50%;
     margin-left: 25%;
-
   }
   .suggestedBlog{
     width: 50%;
@@ -178,98 +176,133 @@
       
     </div>
   </nav>
-
-  <div class="container mobile-container" >
-  <!--  Blog Title-->
-  <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
-    <h1 class="text-center title-div" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" ><%= blog.title %></h1>
-    
-  
-    
-  </div>
-    <!---- Blog Image-->
-    <% if(blog.image.localeCompare("")==1){%>
-    <div class="text-center" style="margin-top:20px; margin-bottom:20px">
-    <img style="width:100%; height:auto; object-fit: contain;" src="/uploads/<%= blog.image%>" alt="blog-image">
-    </div>
-    <%  }%>
-    
-    <div class="container"  >
-    <!---  Blog Content -->
-      <p class="target" style="text-align: justify !important; font-size: 18px;"><%= blog.content %></p>
-    </div>
-    
-    <div class="container">
-        <%subBlogz.forEach(function(subBlog){%>
-          
-          <div>
-          <h4 style="font-weight: 1000; margin-top:20px;"><%=subBlog.title%></h4>
-          </div>
-         <% if(subBlog.image.localeCompare("")==1){%>
-          <div  class="text-center">
-            <img style="width:100%; height:auto; object-fit: contain; margin-top: 20px; margin-bottom: 20px;" src="<%=subBlog.image%>" alt="image">
-          </div>
-        <%}%>
-          <div class="target mt-2" style="text-align: justify !important; font-size: 18px;"><%=subBlog.content%></div>
-        
-        <%})%>
-      </div>
-      <hr>
-     
-      
-      
-      
- <% include ../partials/footer-blog.ejs %>   
- 
-    
-  
-  
-  <div class="mobile-container text-center">
-    <hr>
-    <div style="padding-top: 100px; padding-bottom: 50px;">
-    <form action="/blogs/posts/<%= blog._id %>" method="POST">
-
-      <h3  style="color:grey">Leave A Reply </h3>
-      <input required type="text" style="width: 100%; margin-top:5px; margin-bottom: 15px;" name="comment[name]" placeholder="Name">
-      <input required type="email" style="width: 100%;  margin-bottom: 15px;" name="comment[email]" placeholder="Email">
-      <textarea required style="width: 100%;" name="comment[text]" rows="5" placeholder="Add Comment Here"></textarea>
-      <input required style="margin-top: 20px;  width:150px; "  type="submit" value="Post Comment" />
-    </form>
-  </div>
-  </div> 
-
-  <div class="mobile-container" style="margin-bottom:100px ">
-    <% commentz.forEach(comment=>{%>
-      <div class="media" style="background-color: #f5f5f5; border-radius: 10px; margin-top: 20px;">
-        <div class="media-body">
-          <h5 style="font-weight: bold; padding-left: 10px; padding-top: 10px;"><%=comment.name%></h5>
-         <p style="padding-top:5px; padding-left: 10px;"> <%= comment.text %></p>
+      <!----------------------------Interview Main Part --------------------->
+    <div class="container-fluid">
+        <div class="container-sm">
+            <div class="text-center" >
+                <img style="max-width:100%; max-height:auto;" class="mt-5 mb-1" src="<%=Interview.image%>" alt="interview-image">
+            </div>
+        <div style="margin-top:12px;">
+            <h2><i><%=Interview.title%></i></h2>
+            <div style="border-top:2px solid #bfbfbf">
+            <p ><small><strong>May 13 2020&emsp;|&emsp;By <%=Interview.interviewer%></strong></small></p>
         </div>
-      </div>
-    <%})%>
-  </div>
+        </div>
+        <div>
+            <p class="target"><%=Interview.content%></p>
+        </div>
+        
+        
+    
+        
+        
+        
+    <!---------------------------------------------------------------------------->
+
+
+    <!-------------------------------Interview Remaining Part------------------------->
+    
+        <% Interview.subInterviews.forEach(function(data){if(data.title!=("")){%>
+            <div class="mt-5 mb-5">
+                <h5><strong><%=data.title%></strong></h5>
+            </div>
+        <%}if(data.image!=("")){%>
+            <div class="text-center" >
+                <img style="max-width:100%; height:auto;" class="mt-5 mb-1" src="<%=data.image%>" alt="interview-image">
+            </div>
+        <%}if(data.content!=("")){%>
+            <div>
+                <p class="target"><%=data.content%></p>
+            </div>
+        <%}})%>
+
+        <div  style="margin-top: 100px; margin-bottom: 200px; text-align:center; font-style: italic; font-weight:bolder; ">
+            <h4 style="font-size:19px; color: rgb(247,183,51); font-family: Arial, Helvetica, sans-serif; font-weight: 12000; ">
+           BailaBollywood trabaja sobre la misión de ofrecer al mundo hispanohablante una experiencia de primera mano a la cultura India. 
+           Es una plataforma única en internet para explorar la cultura India y conectar directamente con la India.
+           <span style="color: blue; text-decoration: underline; font-family: Arial, Helvetica, sans-serif; font-weight: 12000;">Te damos una calurosa bienvenida a nuestra App. Descarga, utiliza y comparte! 
+           </span> </h4>
+           
+              <a href="https://play.google.com/store/apps/details?id=com.spanishbolo.bb&hl=es" class="col-4 text-center" style="border: none;"><img src="/images/google-play-final-icon.png" style="width: 100px; height:100px; margin: 10px;"></a>
+           <h4>Conecta con Nosotros :</h4>
+           <div class="social-icons">
+                         <a href="https://www.facebook.com/Baila-Bollywood-105697461007966/"
+                           class="col-4 fa fa-facebook text-center" title="Facebook Link" target="_blank"></a>
+                        
+                         <a href="https://www.linkedin.com/in/baila-bollywood-3a3b031a1" class="col-4 fa fa-linkedin  text-center"
+                           title="Linkedin Link" target="_blank"></a>
+                         <a href="https://instagram.com/bailabollywood20?igshid=15jmz5uzyz1jj"
+                           class="col-4 fa fa-instagram text-center" title="Instagram Link" target="_blank"></a>
+                         <a href="https://www.quora.com/share/Baila-Bollywood-on-Instagram-Introducing-Baila-Bollywood-3-days-to-go-bailabollywood-spanishculture-indianculture-bollywood-music-spanishbolo-1?ch=3&share=2cd5e92a&srid=uOprOw"
+                           title="Quora Link" class="col-4 fa fa-quora  text-center" target="_blank"></a>
+                         <a href="https://www.medium.com/@bailabollywood20" class="col-4 fa fa-medium  text-center" title="Medium Link"
+                           target="_blank"></a>
+                           <a href="https://www.youtube.com/channel/UCUb7jsujf73W8NaVYXqOZ1w?view_as=subscriber" class="col-4 fa fa-youtube  text-center" title="Youtube Link"
+                           target="_blank"></a>
+           
+           
+                       
+                          
+           
+                       </div>
+           </div>
+
+
+    </div>
+    <div class="container text-center">
+      <hr>
+      <div style="padding-top: 100px; padding-bottom: 50px;">
+        
+      <form action="/interviews/<%=Interview._id%>/comments" method="POST" >
+  
+        <h3  style="color:grey">Leave A Reply </h3>
+        <input required type="text" style="width: 100%; margin-top:5px; margin-bottom: 15px;" name="comment[name]" placeholder="Name">
+        <input required type="email" style="width: 100%;  margin-bottom: 15px;" name="comment[email]" placeholder="Email">
+        <textarea required style="width: 100%;" name="comment[text]" rows="5" placeholder="Add Comment Here"></textarea>
+        <input required style="margin-top: 20px;  width:150px; "  type="submit" value="Post Comment" />
+      </form>
+    </div>
+    </div> 
+    <div class="container" style="margin-bottom:100px ">
+      <% comments.forEach(comment=>{%>
+        <div class="media" style="background-color: #f5f5f5; border-radius: 10px; margin-top: 20px;">
+          <div class="media-body">
+            <h5 style="font-weight: bold; padding-left: 10px; padding-top: 10px;"><%=comment.name%></h5>
+           <p style="padding-top:5px; padding-left: 10px;"> <%= comment.text %></p>
+          </div>
+        </div>
+      <%})%>
+    </div>
+  
+    
+    
+
+
+</div>
 
   
 
- 
- 
-
-  
 
 
-<!--Parsing HTML JS-->
-<script>
-$(".target").each(function(){
-    let text = ( $(this).text());
 
-    let html = $.parseHTML(text);
-    $(this).empty();
-    $(this).append(html);
-  });
-</script>
+
+
+    <!-------------------------------------------------------------------------------->
+    
+    <!---------------------------------Using Jquery to parse html-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    
+    <script>
+        $(".target").each(function(){
+            let text = ( $(this).text());
+        
+            let html = $.parseHTML(text);
+            $(this).empty();
+            $(this).append(html);
+          });
+        </script>
 <!--Boot Strap-->  
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
 </body>
 </html>
