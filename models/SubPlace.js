@@ -9,4 +9,4 @@ const SubPlaceSchema = new Schema({
 
 })
 
-module.exports = mongoose.model('SubPlace',SubPlaceSchema);
+module.exports = mongoose.model('SubPlace',subPlaceSchema);
