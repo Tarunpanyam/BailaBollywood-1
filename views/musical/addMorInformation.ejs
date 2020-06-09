@@ -7,62 +7,152 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+    <script src="//cdn.ckeditor.com/4.14.0/basic/ckeditor.js"></script>
     <title>Add More Information</title>
   </head>
   <body>
-    <h1 class="text-center">Add More Information Page for Musical Instruments</h1>
+    <h1 class="text-center">Add More Information Page for Instruments</h1>
     <div class="container">
+      <div style="display: block;" id="button-navi">
+      <div class="text-center" style="margin-top:20px;">
+        
+        <button style="width: 80%;"  class="btn btn-primary" onclick="openform1()">Add Title + Image Only</button>
       
+      </div>
+      <div class="text-center" style="margin-top:20px;">
+        
+        <button style="width: 80%;" onclick="openform2()"  class="btn btn-primary">Add Title + Text Only</button>
       
+      </div>
+      <div class="text-center" style="margin-top:20px;">
+        
+        <button style="width: 80%;" onclick="openform3()" class="btn btn-primary">Add  Title + Image + Text</button>
       
-                <div class="container" id='form3' style="margin-top: 100px; ">
-                  <form action="/instruments/posts/<%=id%>?type=3" method="POST">
+      </div>
+    </div>
+      
+      <div class="container" id="form1" style="margin-top: 100px; display:none;">
+        <form action="/places/posts/<%=id%>?type=1" method="POST">
+            <div class="input-group input-group-lg">
+                
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
+                  
+                  name="subInterview[title]"
+                  placeholder="Enter Your Title">
+              </div>
+              
+              <div class="input-group input-group-lg mt-3">
+                
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
+                name="subInterview[image]"  
+                    placeholder="Enter Image URL">
+              </div>
+              <div class="text-center" style="margin-top:20px;">
+                <button style="width: 80%;" type="submit" class="btn btn-primary">Publish</button>
+              </div>
+              <div class="text-center" style="margin-top:20px;">
+                <button style="width: 80%;" type="button" onclick="closeform1()" class="btn btn-danger">Close Form</button>
+              </div>
+              
+              
+            </form>
+          </div>
+          <div class="container" id='form2' style="margin-top: 100px; display:none;">
+            <form action="/places/posts/<%=id%>?type=2" method="POST">
+                <div class="input-group input-group-lg">
+                    
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
+                      
+                      name="subInterview[title]"
+                      placeholder="Enter Your Title">
+                  </div>
+                  
+                  <div class="form-group mt-5">
+                    <label for="editor">Enter Your Content Here:</label>
+                    <textarea 
+                    name="subInterview[content]"
+                    class="form-control"  rows="9"
+                    id='editor'  type="text"  ></textarea>
+                    
+                  </div>
+                  <div class="text-center" style="margin-top:20px;">
+                    <button style="width: 80%;" type="submit" class="btn btn-primary">Publish</button>
+                  </div>
+                  <div class="text-center" style="margin-top:20px;">
+                    <button style="width: 80%;" type="button" onclick="closeform2()" class="btn btn-danger">Close Form</button>
+                  </div>
+                </form>
+                </div>
+                <div class="container" id='form3' style="margin-top: 100px; display: none;">
+                  <form action="/places/posts/<%=id%>?type=3" method="POST">
                       <div class="input-group input-group-lg">
                           
                           <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
                             
-                            name="subInstrument[title]"
+                            name="subInterview[title]"
                             placeholder="Enter Your Title">
                         </div>
                         <div class="input-group input-group-lg mt-3">
                           
                           <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
-                          name="subInstrument[image]"  
+                          name="subInterview[image]"  
                               placeholder="Enter Image URL">
                         </div>
-                        <div class="input-group input-group-lg mt-3">
-                          
-                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
-                            name="subInstrument[imageSource]"  
-                                placeholder="Enter Image Source">
-                          </div>
                         
                         
                         <div class="form-group mt-5">
-                          <label for="editor">Enter Your Content Here:</label>
+                          <label for="editor2">Enter Your Content Here:</label>
                           <textarea 
-                          name="subInstrument[content]"
+                          name="subInterview[content]"
                           class="form-control"  rows="9"
-                          id='editor'  type="text"  ></textarea>
+                          id='editor2'  type="text"  ></textarea>
                           
                         </div>
                         <div class="text-center" style="margin-top:20px;">
                           <button style="width: 80%;" type="submit" class="btn btn-primary">Publish</button>
                         </div>
-                        
+                        <div class="text-center" style="margin-top:20px;">
+                          <button style="width: 80%;" type="button" onclick="closeform3()" class="btn btn-danger">Close Form</button>
+                        </div>
                       </form>
                     </div>
-
                       </div>
                       
       
 
 
+    </div>
     
     <script>
       CKEDITOR.replace('editor');
-      </script>
+      CKEDITOR.replace('editor2');
       
+      </script>
+      <script>
+        function openform1(){
+          document.getElementById("form1").style.display = "block";
+          document.getElementById('button-navi').style.display = 'none';
+        }
+        function closeform1(){
+          document.getElementById('form1').style.display="none";
+          document.getElementById('button-navi').style.display = 'block';
+        }
+        function openform2(){
+          document.getElementById("form2").style.display = "block";
+          document.getElementById('button-navi').style.display = 'none';
+        }
+        function closeform2(){
+          document.getElementById('form2').style.display="none";
+          document.getElementById('button-navi').style.display = 'block';
+        }
+        function openform3(){
+          document.getElementById("form3").style.display = "block";
+          document.getElementById('button-navi').style.display = 'none';
+        }
+        function closeform3(){
+          document.getElementById('form3').style.display="none";
+          document.getElementById('button-navi').style.display = 'block';
+        }
+      </script>
   </body>
 </html>

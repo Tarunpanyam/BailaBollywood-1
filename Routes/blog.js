@@ -332,40 +332,6 @@ router.get('/posts/:id/delete',async (req,res)=>{
 
 
 
-// bollywood blog index page
-router.get("/bollywood",cacheData.memoryCacheUse(36000),(req,res)=>{
-  
-  Blog.find({tag:"Bollywood"}).sort({created:-1}).then(blogs => {
-    
-    res.render('../views/blogs/bollywood',{blogs});
-  })
-})
-// Folk Dance Blog Index Page
-router.get("/folkDance",cacheData.memoryCacheUse(36000),(req,res)=>{
-  Blog.find({tag:"Danzas folklóricas"}).sort({created:-1}).then(blogs => {
-    res.render('../views/blogs/folkDance',{blogs});
-  })
-})
-// Música Blog Index Page
-router.get("/music",cacheData.memoryCacheUse(36000),(req,res)=>{
-  Blog.find({tag:"Música"}).sort({created:-1}).then(blogs => {
-    res.render('../views/blogs/music',{blogs});
-  })
-})
-// letras Blogs Index Page
-router.get("/art",cacheData.memoryCacheUse(36000),(req,res)=>{
-  
-  Blog.find({tag:"letras"}).sort({created:-1}).then(blogs => {
-    res.render('../views/blogs/art',{blogs});
-  })
-})
-
-// Literatura Blog Index Page
-router.get("/literature",cacheData.memoryCacheUse(36000),(req,res)=>{
-  Blog.find({tag:"Literatura"}).sort({created:-1}).then(blogs => {
-    res.render('../views/blogs/literature',{blogs});
-  })
-})
 router.get("/allblogs/try",async(req,res)=>{
   axios.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40bailabollywood20')
 .then(response => {

@@ -6,6 +6,7 @@ const passport                            = require('passport');
 const User                                = require('./models/user');
 const flash                               = require("connect-flash");
 const nodemailer                          = require("nodemailer");
+const ejsLint                             = require('ejs-lint');
 const cookieParser                        = require("cookie-parser");
 const passportSetup                       = require('./config/passport_setup');
 const keys                                = require("./config/keys");
@@ -27,6 +28,7 @@ const socialHandleRoutes                  = require('./Routes/social');
 const instrumentRoutes                    = require('./Routes/instrument');
 const chitChatInterviewRoutes             = require('./Routes/chitchatInterview');
 const bollywoodNewsRoutes                 = require('./Routes/bnews');
+const placesToVisitRoutes                 = require('./Routes/place');
 
 app.use(apiRoutes);
 const port =  3000;
@@ -313,6 +315,7 @@ app.use("/",socialHandleRoutes);
 app.use("/instruments",instrumentRoutes);
 app.use('/',chitChatInterviewRoutes);
 app.use('/',bollywoodNewsRoutes);
+app.use('/places',placesToVisitRoutes);
 
 
 app.get('/test',(req,res)=>{
@@ -332,6 +335,7 @@ app.get('/Robots.txt',cacheData.memoryCacheUse(36000),(req,res)=>{
 app.use(function(req,res){
     res.status(404).render('error-page.ejs');
 });
+
 
 
 

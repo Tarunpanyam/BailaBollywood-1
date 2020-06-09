@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Musical Instruments</title>
+  <title>Blogs </title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
 <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
@@ -9,833 +9,146 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://bailabollywood.com/allBlogs">
 
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="models/caro.js"></script>
-
-
-  <style type="text/css">
-
-
-    body {
-        background: linear-gradient(to right,#ff5f6d,#f7b733);
-    }
-    
-    
-    .col-12.col-sm-12.col-md-5, .col-12.col-sm-12.col-md-7 {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-    
-    
-    .image-wrapper img {
-        width: 100%;
-    }
-    
-    #lt-blog p {
-        padding-top: 10px;
-    }	
-        
-    
-    p { text-align: justify; }
-    
-    div#lt-blog p span {
-        color: #a9a9a9;
-    }
-    
-    .audio-container {
-    padding: 20px 0px;
+<style type="text/css">
+ html,body
+ {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+ } 
+ body
+ {
+  background:linear-gradient(to right,#ff5f6d,#f7b733);
+ }
+.container-fluid {
+    width: 80%;
+    margin-top: 50px;
 }
-    
-    
-    button.more {
-    border: 2px solid #fff;
-    background: transparent;
-    padding: 7px 20px;
-    float: right;
-    color: #fff;
-}
-    
-.container.grid-layout .more {
-    background: transparent;
-    padding: 7px 20px;
-    float: right;
-    color: #000;
-}
-
-.container-sec {
-    background-image: url(uploads/ban-img.jpg);
-    padding: 130px 100px; background-size: cover;
-}
- 
-    
-.container.grid-layout .fa {
-    color: #000 !important; 
-    padding: 6px 20px;
-} 
-
-.fa-play:before {
-    content: "\f04b";
-    font-size: 26px;
-}
-    
-    @-webkit-keyframes fade {
-      from {opacity: .4} 
-      to {opacity: 1}
-    }
-    
-    @keyframes fade {
-      from {opacity: .4} 
-      to {opacity: 1}
-    }
-    
-    /* On smaller screens, decrease text size */
-    @media only screen and (max-width: 300px) {
-      .prev, .next,.text {font-size: 11px}
-    }
-    
-
-
-    .blog .carousel-indicators {
-	left: 0;
-	top: auto;
-    bottom: -40px;
-
-}
-
-/* The colour of the indicators */
-.blog .carousel-indicators li {
-    background: #a3a3a3;
-    width: 8px;
-    height: 8px;
-}
-
-.blog .carousel-indicators .active {
-background: #707070;
-}
-
-
-div#blogCarousel .col-md-3 {
+.col-12.col-sm-12.col-md-5, .col-12.col-sm-12.col-md-7 {
     padding-left: 0px;
     padding-right: 0px;
+    height: 100%;
 }
-
-.row.blog .col-md-12 {
-    padding: 0px;
-}
-
-  
-
-
-/** css for accordion **/
-.custom-accordion {margin-bottom: 50px; width: 100%;}
- 
-button.accordion {
-  width: 100%;
-  background-color: #10112c;
-  border: none;
-  outline: none;
-  text-align: left;
-  padding: 25px 20px;
-  font-size: 18px;
-  color: #fff;
-  cursor: pointer;
-  transition: background-color 0.2s linear;
-}
-button.accordion:hover, button.accordion.is-open {
-    background-color: #10112c !important;
-    color: #fff;
-    border: none;
-}
- 
-button.accordion:after {
-  content: '\f055';
-  font-family: "fontawesome";
-  font-size: 14px;
-  float: right;
-  margin-top: -25px;
-  
-}
- 
-button.accordion.is-open:after {
-  content: '\f056';
-}
- 
-button.accordion:hover, button.accordion.is-open {
-  background-color: #ddd;
-}
- 
-.accordion-content {
-  background-color: #10112c;
-  padding: 0 20px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-in-out;
-}
-
-button.accordion.is-open {
-    font-weight: 800;
-}
-
-
-button.accordion {
-    font-weight: 800;
+.image-wrapper img {
+    width: 100%;
 
 }
-
-.container-acc p {
-    text-align: justify; color: #fff;
-}
-
-.accordion-heading
-{
-  font-size: 22px;
-  padding: 0;
-  margin: 0;
-}
-
-
-
-@media screen and (max-width: 768px) {
-  .col-6{
-flex: 0 0 100%;
-max-width: 100%;
-}
-
-.container-sec {
-    padding: 40px 40px !important; }
-
-
-.col-6 {
-    max-width: 100% !important; }
-
-
-
-}
-@media screen and (max-width: 768px) {
-
-.col-7 {
-    flex: 0 0 100%;
-    max-width: 100%;
-}
-
-
-.col-5 {
-    -ms-flex: 0 0 41.666667%;
-    flex: 0 0 100%;
-    max-width: 100%;
-
-    margin-bottom: 50px;
-}
-
+#lt-blog p {
+    padding-top: 10px;
 } 
+  
+button#read-btn:hover {
+    background: #000;
+    color: #fff;
+}
+button#read-btn {
+    background: transparent;
+    font-size: 20px;
+    padding: 10px 40px;
+    border: 2px solid black;
+    color: #000;
+}
+div#lt-blog p span {
+    color: #a9a9a9;
+}
+div#lt-blog img {
+    border: 2px solid #ffffff;
+    padding: 10px;
+}
+div#lt-blog a img:hover {
+    transform: scale(1.1) !important;
+}
+.image-wrapper:hover{
+  transform: scale(1.1) !important;
+
+}
+.container p {font-size:20px; }
 
 
-    </style>
-    <!------Boot Strap Files-->
-    
-    
-    <script src="/scripts/spanish-to-english-translate.js"></script>
-    </head>
-    
-    
-    <body>
+@media only screen and (max-width: 600px) {
+  .mobile-container{
+    width:90%
+  }
+ .title-div{
+   font-size: 25px;
+   display: flex;
+ }
+ .container-xtr{
+   width: 95%;
+ }
+}
+@media only screen and (min-width:600px){
+  .mobile-container{
+    width:90%;
+  }
+.title-div{
+  font-size: 40px;;
+}
+div#top-post-container p {
+    text-align: justify;
+}
+
+div#top-post-container h1 {
+    text-align: justify;
+}
+
+}
+</style>
+
+<!------Boot Strap Files-->
 
 
+<script src="/scripts/spanish-to-english-translate.js"></script>
+</head>
+
+
+<body>
 <!------------------------------------Navigation Bar Section-One------------------------------------------>
-<% include ../partials/navbar.ejs %>   
 
-  
-    
-        
-<div class="container-sec">
-  <div class="row">
-  <div id="lt-blog" class="col-6">
-        </div>
-      
-       
+  <% include ../partials/navbar.ejs %>
 
-        <div id="lt-blog" class="col-6" style="padding: 30px;">
-          <h1 style="line-height: 1em; color: #fff; text-align: left;">Instrumentos Musicales  </h1>
-    
-              <p style="color: #fff;">India es el heredero de uno de los sistemas de música más antiguos y evolucionados 
-                del mundo. La continuidad de las tradiciones musicales de la India se establece a través del estudio 
-                de textos musicales y numerosas referencias visuales que uno encuentra de instrumentos musicales en 
-                pintura y escultura desde la prehistoria hasta nuestros días.
-
-             </p>
-              
-          
-        </div> 
-      </div>
-</div>
-    
-        
-  
-
-
-      <div class="container-fluid">
-
-        
-
-        <div class="row blog">
-          
-            <div class="col-md-12">
-                <div id="blogCarousel" class="carousel slide" data-ride="carousel">
-
-                    
-                    <!-- Carousel items -->
-                    <div class="carousel-inner">
-
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <a href="#">
-                                        <img src="uploads/01.jpg" alt="Image" style="max-width:100%;">
-                                    </a>
-                                </div>
-                                <div class="col-md-3">
-                                    <a href="#">
-                                        <img src="uploads/02.jpg" alt="Image" style="max-width:100%;">
-                                    </a>
-                                </div>
-                                <div class="col-md-3">
-                                    <a href="#">
-                                        <img src="uploads/03.jpg" alt="Image" style="max-width:100%;">
-                                    </a>
-                                </div>
-                                <div class="col-md-3">
-                                    <a href="#">
-                                        <img src="uploads/04.jpg" alt="Image" style="max-width:100%;">
-                                    </a>
-                                </div>
-                            </div>
-                            <!--.row-->
-                        </div>
-                        <!--.item-->
-
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <a href="#">
-                                        <img src="uploads/05.jpg" alt="Image" style="max-width:100%;">
-                                    </a>
-                                </div>
-                                <div class="col-md-3">
-                                    <a href="#">
-                                        <img src="uploads/06.jpg" alt="Image" style="max-width:100%;">
-                                    </a>
-                                </div>
-                                <div class="col-md-3">
-                                    <a href="#">
-                                        <img src="uploads/01.jpg" alt="Image" style="max-width:100%;">
-                                    </a>
-                                </div>
-                                <div class="col-md-3">
-                                    <a href="#">
-                                        <img src="uploads/02.jpg" alt="Image" style="max-width:100%;">
-                                    </a>
-                                </div>
-                            </div>
-                            <!--.row-->
-                        </div>
-                        <!--.item-->
-
-                    </div>
-                    <!--.carousel-inner-->
-                </div>
-                <!--.Carousel-->
-
-            </div>
-        </div>
-</div>
-
-
-
-
-        
-        <div class="container" style="padding-top:7%;">
-        <div class="row">
-        <div id="lt-blog" class="col-md-6">
-    
-        <h2 style="font-weight:bold; font-size: 3rem;" class="display-4">
-            Acerca de la música</h2>
-    <p>
-    
-      India es el heredero de uno de los sistemas de música más antiguos y evolucionados del mundo. 
-      La continuidad de las tradiciones musicales de la India se establece a través del estudio de textos 
-      musicales y numerosas referencias visuales que uno encuentra de instrumentos musicales en pintura y 
-      escultura desde la prehistoria hasta nuestros días.
-      <br><br>
-      La evidencia más temprana de actividad musical se encuentra en las paredes de pinturas rupestres en 
-      Bhimbetka y en varias partes de Madhya Pradesh, que fueron ocupadas por el hombre hace aproximadamente 
-      10.000 años. Mucho más tarde, en las excavaciones de la civilización de Harappan también, hay evidencia 
-      de actividad de danza y música.
-      
-    </p>
-   
-  
-          </div>
-
-    
-          <div id="lt-blog" class="col-md-6">
-            <img class="" src="https://peachmode.com/media/images/post/314/1570423429_Cover-Page.jpg" alt="image" style="width:100%; height:auto; margin-top:50px;">
-    
-          </div>
-    
-        </div> 
-      </div>
-    
-    
-
-      <div class="container" style=" padding-bottom:3%;">
-        <div class="row">
-        <div id="lt-blog" class="col-12">
-<p>
-      Los instrumentos musicales son la representación tangible y material de la música, que es un arte auditivo. Un estudio de estos ayuda a rastrear la evolución de la música y también explica muchos aspectos de la cultura material del grupo de personas al que pertenecen estos instrumentos. Por ejemplo, el cabello que se usa para hacer el arco, la madera o la arcilla que se usa para hacer el tambor, o la piel de los animales que se usan en los instrumentos, todo esto nos cuenta sobre la flora y la fauna de una región en particular.
-      <br><br>
-      La palabra tamil para instrumento-Karuvi se encuentra en la literatura de Sangam del siglo II al VI d. C., cuyo significado literal es "herramienta". Esto se extiende para significar instrumento en el contexto de la música.
-      Los instrumentos muy antiguos pueden verse como una extensión del cuerpo humano y hasta hoy encontramos palitos y badajos. Los sonajeros de frutas secas, el Kaniyani Danda de Oraons o las bayas secas o conchas atadas a la cintura se utilizan para producir ritmo, incluso hoy.
-      La mano se conoce como Hasta Veena, donde las manos y los dedos se usan para mostrar el sistema de notación de canto védico, coordinando el sonido con el gesto de la mano mudra.
-      <br><br>
-
-      </p>
-
-
-
-     </div>
-      </div>
-     </div>
-
-     <div class="container">
-      <hr style="border-top: 1px solid rgba(255, 255, 255, 0.63);"> 
-     </div>
-    
-
-     <div class="container" style="padding-top:30px;">
-
-      <h3 style="line-height: 1.4em; font-weight: 600; text-align:justify;"> En la Natya Shastra, compilada por Bharat Muni con fecha de 200 a. C.-200 d. C., los instrumentos musicales se 
-        han dividido en cuatro categorías principales en función de cómo se produce el sonido.</h3>
-        <p style="line-height: 1.8em; font-weight: 600; font-size:18px;">
-            (i) Los instrumentos de cuerda Tata Vadya o Chordophones<br>
-            (ii) Los instrumentos de viento Sushira Vadya o Aerophones<br>
-            (iii) Los instrumentos Avanaddha Vadya o Membranophones- Percussion<br>
-           (iv) Ghana Vadya o Idiophones: instrumentos sólidos que no requieren afinación.<br>
-  
-        </p>
-     </div>
-
-     
-    <div class="container" style=" padding-bottom:3%;">
-      <h2 style="padding-top:50px; margin-bottom:20px; font-weight: bold; font-size: 3rem;">
-        Tata Vadya o Chordophones- Instrumentos de cuerda</h2>
-      
-      <div class="row">
-      <div class="col-6"> 
-      
-
-<p>
-
-  El tata vadya es una categoría de instrumentos en los que el sonido se produce por la vibración de una cuerda o 
-  acorde. Estas vibraciones son causadas por desplumar o inclinarse sobre la cuerda que se ha tensado. La longitud 
-  de la cuerda o cable vibrante, el grado en que se ha apretado, determina el tono de la nota y también, en cierta 
-  medida, la duración del sonido.
-
-  <br><br>
-
-  Los tata vadya se dividen en dos amplias categorías: los arrancados y los inclinados, y se subdividen en la 
-  variedad con y sin trastes.
-La evidencia más antigua de instrumentos de cuerda en nuestra tierra, sin embargo, son arpas en forma de arco de 
-cazadores. Tenían un número variable de cuerdas paralelas hechas de fibra o intestino. Solía ​​haber una cuerda para 
-cada nota, pulsada con los dedos o con la púa llamada kona. Veena era el término genérico para los instrumentos de 
-cuerda mencionados en los textos: y tenemos el ekatantri, el sata-tantri veena, etc. El Chitra tenía siete cuerdas 
-y el Vipanchi nueve; el primero se jugó con los dedos y el segundo con una púa.
-</p>
-   
-</div>
-
-<div class="col-6">
-<iframe class="popular-artist-videos" src="https://www.youtube.com/embed/FqMB9pWTJpk" frameborder="0"
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-
-        </div>
-        </div>
-
-
-
-        <section class="container custom-accordion">
- 
-          <button class="accordion"><h1 class="accordion-heading">Read more</h1></button>
-          <div class="accordion-content">
-           
-            <div class="container-acc">
-         
-           <p style=" font-size: 18px;">
-            <br>
-            La representación de estos se puede encontrar en muchas esculturas y murales de antaño, como por ejemplo, en la 
-            estupa de Bharhut y Sanchi, los relieves de Amaravati, etc. Mencion de. Los yazh se encuentran en los antiguos 
-            textos tamiles del siglo II d.C. Tocar tales instrumentos fue una parte importante de los rituales y ceremonias. 
-            Mientras cantaban los sacerdotes y los artistas, sus esposas tocaban instrumentos.
-            
-            <br><br>
-            
-            Otra clase es del tipo dulcimer, donde varias cuerdas se estiran en una caja de madera. El más conocido de estos fue 
-            el sata-tantri veena-el cien venas de cuerda. Un pariente cercano de esto es el Santoor, un instrumento muy popular 
-            que todavía se toca en Cachemira y otras partes de la India.
-            Un desarrollo posterior de los instrumentos de cuerda es la variedad de diapasón, que fue más adecuada para Raga 
-            Sangeet y muchos de los instrumentos prevalecientes de la plataforma de concierto, ya sea con trastes o sin trastes, 
-            arqueados o punteados, entran en esta categoría. La gran ventaja de estos instrumentos es la riqueza de la producción
-            de tonos y la continuidad del sonido. En los instrumentos de diapasón, todas las notas requeridas se producen en un 
-            acorde (cuerda o alambre) al alterar la longitud del alambre al presionarlo con un dedo o un trozo de metal o madera. Este aumento o disminución en la longitud del cable vibrador es responsable de los cambios en los tonos de las notas-swaras.
-            
-            <br><br>
-            
-            Los instrumentos con arco generalmente se usan como acompañamiento de la música vocal y se conocen como Geetanuga. 
-            Se dividen en dos amplias categorías: la vertical y la invertida. En la primera categoría, el diapasón se sostiene 
-            hacia arriba como en el caso de Sarangi y en la segunda categoría, es decir, en la variedad invertida, el tablero o 
-            resonador se sostiene hacia el hombro y el dandi del diapasón se sostiene sobre el brazo del jugador como en el caso 
-            del Ravanhastaveena, el Banam, el violín.
-            </p> 
-      
-
-            <div class="row">
-              <div class="col-7" style=" color: #fff;">
-
-              <h4> Toomba </h4>
-               <p style=" font-size: 18px;">
-                El resonador-Toomba de la mayoría de los instrumentos de cuerda está hecho de madera o de una 
-                calabaza especialmente desarrollada.
-
-Sobre este Toomba hay una placa de madera conocida como Tabli. El resonador está conectado al diapasón, 
-el Danda en el extremo superior del cual se insertan las clavijas, el Khoontis, para afinar el instrumento.
-
-En el Tabli hay un puente hecho de marfil o hueso. Las cuerdas principales pasan sobre el puente, algunos 
-instrumentos también tienen una serie de cuerdas simpáticas debajo de las cuerdas principales. Se llaman los 
-Tarab. Cuando estas cuerdas vibran, agregan resonancia al sonido.
-
-En el diapasón de danda, en algunos instrumentos, se colocan trastes de metal que se fijan permanentemente o 
-son móviles. Algunos instrumentos de cuerda se tocan con los dedos o mediante el uso de un pequeño espectro 
-llamado Kona, mientras que en otros, el sonido se produce al inclinarse.
-
-
-              </p> 
-             </div>
-
-             <div class="col-5"><div>
-             <img src="uploads/toomba.jpg" alt="Image" style="max-width:100%;">
-            </div>
-            <audio controls style="margin-top: 20px; display:none">
-              <source src="horse.ogg" type="audio/ogg">
-              <source src="horse.mp3" type="audio/mpeg">
-             
-            </audio>
-                    </div>
-
-                   
-
-                  </div>
-
-          </div>
-                </div>
-        </section>
-                
-            
-        <div class="container">
-          <hr style="border-top: 1px solid rgba(255, 255, 255, 0.63);"> 
-         </div>
-
-
-        <div class="container" style=" padding-bottom:3%;">
-          <h2 style="padding-top:50px; margin-bottom:20px; font-weight: bold; font-size: 3rem;">
-            Los instrumentos de viento Sushira Vadya o Aerophones</h2>
-          
-          <div class="row">
-          <div class="col-6"> 
-          
-    
-    <p>
-    
-      El tata vadya es una categoría de instrumentos en los que el sonido se produce por la vibración de una cuerda o 
-  acorde. Estas vibraciones son causadas por desplumar o inclinarse sobre la cuerda que se ha tensado. La longitud 
-  de la cuerda o cable vibrante, el grado en que se ha apretado, determina el tono de la nota y también, en cierta 
-  medida, la duración del sonido.
-
-  <br><br>
-
-  El diámetro de las flautas de bambú generalmente es de aproximadamente 1.9 cms; sin embargo, flautas con 
-  diámetros más amplios. También son comúnmente utilizados. El texto musical Sangeet Ratnakar escrito en el 13. 
-  siglo por Sharangdev se refiere a 18 tipos de flautas. Estas categorías se basan en la distancia entre el 
-  orificio de soplado y el orificio del primer dedo.
-    </p>
-       
-    </div>
-    
-    <div class="col-6">
-    <iframe class="popular-artist-videos" src="https://www.youtube.com/embed/FqMB9pWTJpk" frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    
-            </div>
-            </div>
-    
-    
-    
-            <section class="container custom-accordion">
-     
-              <button class="accordion"><h1 class="accordion-heading">Read more</h1></button>
-              <div class="accordion-content">
+<h1 style="padding-top:70px; margin-bottom:20px; font-weight: bold; color: white; font-family:'Ananda Namaste Regular';" class="text-center display-4" >Lo más destacado </h1>
+    <% instruments.forEach( data => { %>
+<div class="container-xtr container-fluid" id="top-post-container" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);">
+      <div class="row" style= "padding: 10px 0px;">
+        <div class="col-12 col-sm-12 col-md-5">
+          <div class="container" style="margin-top: 10px;">
+            <a href="/instruments/posts/<%= data._id %>" class="article-links"><div class="promo" style="--overlay-color: hotpink">
+                <div class="image-wrapper " >
                
-                <div class="container-acc">
-             
-               <p style=" font-size: 18px;">
-                <br>
-                Excavations of the Indus civilizations have shown bird whistles of clay, and seals which show wind 
-                and percussion instruments. Actual musical instruments are made of bamboo, wood, animal hide, etc. 
-                which perish when buried for any length of time, hence, flutes made of wood or bamboo have not 
-                survived the ravages of time and are not found in excavations of past civilizations.
-
-                <br><br>
-                There is reference in the Vedas to an instrument-the Venu which was used as an accompaniment to 
-                chanting and recitation. There is also mention of a kind of a flute called the Nadi. The flute has 
-                a variety of names like Venu, Vamsi, Bansuri, Murali and so on in the north, and Pullankuzhal, 
-                Pillankarovi and Kolalu in the south. The wind instruments are roughly divided into two categories 
-                on the basis of how sound is produced. They are:
-                - the flutes, and
-                - the reed instruments
-                
-              </p> 
-              <br>
-               
-          </div>
-              
-
-          <div class="row">
-              <div class="col-7" style=" color: #fff;">
-
-              <h4> Flutes</h4>
-               <p style=" font-size: 18px;">
-                Single or double flutes with only one hollow tube with finger holes for controlling the pitch of 
-                the note are very common in many parts of the country. Long horizontal flutes with a larger diameter 
-                are used to play slow passages such as Alap of the lower registers. Smaller and shorter flutes, 
-                sometimes held vertically, are used for Taans, the faster passages, and also for producing higher 
-                pitches of sound. The double flutes are mostly played by musicians of the tribal and rural areas 
-                and are rarely found on the concert platform. They resemble beak flutes which have a narrow aperture 
-                at one end. One finds references to these types of instruments in the sculptures of the first century 
-                in the Sanchi Stupa which shows a musician playing on a double flute.
-              </p> 
-             </div>
-
-             <div class="col-5"><div>
-             <img src="uploads/flute.jpg" alt="Image" style="max-width:100%;">
-            </div>
-
-            <audio controls style="margin-top: 20px; display:none">
-              <source src="horse.ogg" type="audio/ogg">
-              <source src="horse.mp3" type="audio/mpeg">
-             
-            </audio>
-                    </div>
-
-                  </div>
-
-                  </div>
-
-                  
-            </section>
-                    
-                
-
-            <div class="container">
-              <hr style="border-top: 1px solid rgba(255, 255, 255, 0.63);"> 
-             </div>
-
-
-
-
-             <div class="container" style=" padding-bottom:3%;">
-              <h2 style="padding-top:50px; margin-bottom:20px; font-weight: bold; font-size: 3rem;">
-                Los instrumentos Avanaddha Vadya o Membranophones- Percussion</h2>
-              
-              <div class="row">
-              <div class="col-6"> 
-              
-        
-        <p>
-        
-          En la categoría de instrumentos Avanaddha Vadya, el sonido se produce al golpear la piel del animal 
-          que se ha extendido sobre una olla de tierra o metal o un barril o marco de madera. 
-          
-          <br><br>
-          Las primeras referencias a tales instrumentos se han encontrado en los Vedas donde se menciona a Bhumi 
-          Dundhubhi; Este era un hoyo hueco excavado en el suelo y cubierto con la piel de un búfalo o un buey que 
-          se extendía sobre el hoyo. La cola del animal se usó para golpear la piel del animal y así se produjo 
-          el sonido.
-
-    
-      <br><br>
-    
-      Los tambores se han dividido en diferentes categorías en función de sus formas y estructura, 
-      así como la posición y ubicación para tocar. Las categorías principales son: Oordhwaka, Ankya, 
-      Alingya y la familia de tambores Waisted o Damaru.
-
-        </p>
-           
-        </div>
-        
-        <div class="col-6">
-        <iframe class="popular-artist-videos" src="https://www.youtube.com/embed/FqMB9pWTJpk" frameborder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        
-                </div>
-                </div>
-        
-        
-        
-                <section class="container custom-accordion">
-         
-                  <button class="accordion"><h1 class="accordion-heading">Read more</h1></button>
-                  <div class="accordion-content">
-                   
-                    <div class="container-acc">
-                 
-                  
-                      <div class="row" style="padding-top: 20px; padding-bottom: 20px;">
-                        <div class="col-7" style=" color: #fff;">
-          
-                        <h4> Tabla</h4>
-                         <p style=" font-size: 18px;">
-                          El par Tabla es un conjunto de dos tambores verticales Oordhwaka. El lado derecho 
-                          se llama Tabla y el izquierdo, Bayan o Dagga. La Tabla tiene un cuerpo de madera con 
-                          una cubierta de piel de animal, que se sujeta con correas de cuero. Entre las correas 
-                          y el cuerpo de madera, se colocan bloques de madera oblongos. Estos se utilizan para 
-                          afinar la batería. Hay una pasta de syahi aplicada en el centro de la piel del animal, 
-                          la tabla se puede ajustar con precisión golpeando los bordes con un martillo. El cuerpo 
-                          del bayan está hecho de arcilla o metal y está cubierto con piel anil'J1al que también 
-                          tiene aplicada pasta de syahi. Algunos músicos no afinan este tambor a un tono preciso.
-
-                        </p> 
-                       </div>
-          
-                       <div class="col-5"><div>
-                       <img src="uploads/02.jpg" alt="Image" style="max-width:100%; margin-top: 20px;">
-                      </div>
-
-
-                      <audio controls style="margin-top: 20px; display: none;">
-                        <source src="horse.ogg" type="audio/ogg">
-                        <source src="horse.mp3" type="audio/mpeg">
-                       
-                      </audio>
-                              </div>
-          
-                            </div>
-              </div>
-                  
-    
-              
-    
-                      </div>
-    
-                      
-                </section>
-
-
-  
-
-                <div class="container">
-                  <hr style="border-top: 1px solid rgba(255, 255, 255, 0.63);"> 
-                 </div>
-    
-    
-    
-    
-                 <div class="container" style=" padding-bottom:3%;">
-                  <h2 style="padding-top:50px; margin-bottom:20px; font-weight: bold; font-size: 3rem;">
-                    La Ghana Vadya o Idiófonos</h2>
-                  
-                  <div class="row">
-                  <div class="col-6"> 
-                  
-            
-            <p>
-            
-              Se dice que los primeros instrumentos inventados por el hombre son los Ghana Vadya. 
-              Una vez construido, esta variedad de instrumentos no necesita una afinación especial antes 
-              de tocar. 
-              <br><br>
-
-              En los primeros tiempos, estos instrumentos eran la extensión del cuerpo humano, 
-              como palos, badajos, varillas, etc., y también estaban estrechamente relacionados con objetos 
-              de utilidad en la vida cotidiana, como ollas y sartenes, jhanj, falams, etc. Son principalmente 
-              rítmicos. en función y son más adecuados como acompañamiento de música y danza folclórica y tribal.
-
-            </p>
-               
-            </div>
-            
-            <div class="col-6">
-            <iframe class="popular-artist-videos" src="https://www.youtube.com/embed/FqMB9pWTJpk" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            
-                    </div>
-                    </div>
-            
-            
-            
-                    <section class="container custom-accordion">
-             
-                      <button class="accordion"><h1 class="accordion-heading">Read more</h1></button>
-                      <div class="accordion-content">
-                       
-                        <div class="container-acc">
+                    <img src="<%= data.thumbnail %>"/>`
                      
-                      
-                          <div class="row" style="padding-top: 20px; padding-bottom: 20px;">
-                            <div class="col-7" style=" color: #fff;">
+                </div>
+
+                <!-- <h2 class="title" style="color: black;" data-cta="Explora nuestro mundo →"></h2> -->
+            </div></a>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-7" style="padding-bottom: 20px; padding-top: 20px;"> 
+          <div class="container mobile-container">
+          
+            <div>
               
-                            <h4 style="padding-top: 50px;"> Jugador Jhanj, Konarak, Orissa</h4>
-                             <p style=" font-size: 18px;">
-                              En el templo del Sol de Konarak, Orissa, vemos esta gran escultura <br>de casi 8 f1. 
-                              alto de una dama tocando el Jhanj.
-
-                            </p> 
-                           </div>
-              
-                           <div class="col-5"><div>
-                           <img src="uploads/Jhanj.jpg" alt="Image" style="max-width:100%;">
-                          </div>
-
-                          <audio controls style="margin-top: 20px; display: none;">
-                            <source src="horse.ogg" type="audio/ogg">
-                            <source src="horse.mp3" type="audio/mpeg">
-                           
-                          </audio>
-                                  </div>
-              
-                                </div>
-                  </div>
-                      
-        
-                  
-        
-                          </div>
-        
-                          
-                    </section>
-
-
-
-
-
-
-
+             <h1 style="padding:5px;color:black; letter-spacing: 1px;" class="title-div"><%=data.title%></h1>
+             
+             <p style="color:black; word-wrap:break-word;" class="target"><%=data.content%></p>
+            <a href="/instruments/posts/<%= data._id %>"> 
+            
+              <button id="read-btn" class="read-more-btn" style="background:linear-gradient(to right,#ff5f6d,#f7b733); font-size:20px; padding-left: 45px; padding-right: 45px; padding-bottom: 40px; border:3px solid #000; border-radius: 20px;">Ver Más</button>
+            
+            
+            </a></div><a href="/instruments/posts/<%= data._id %>">
+          </a>
+        </div>
+        </div>
+      </div>
+    </div>
+    <%})%>
+    
+  </div>
+  
     
   
  <section class="baila-section section-six" style="padding:0; margin: 0;">
@@ -888,31 +201,6 @@ llamado Kona, mientras que en otros, el sonido se produce al inclinarse.
       <br />
       &copy; 2020 Copyright BailaBollywood<img src="/images/Spanish-bolo-natraj-transparent.png" alt="Spanish Bolo">
   </div>
-
-
-
-   
-
-  <script>
-    var accordions = document.getElementsByClassName("accordion");
-     
-    for (var i = 0; i < accordions.length; i++) {
-      accordions[i].onclick = function() {
-        this.classList.toggle('is-open');
-     
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight) {
-          // accordion is currently open, so close it
-          content.style.maxHeight = null;
-        } else {
-          // accordion is currently closed, so open it
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-      }
-    }
-      </script>
-
-    
   <script>
   $(".target").each(function(){
     let text = ( $(this).text());
