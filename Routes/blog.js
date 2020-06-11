@@ -68,9 +68,39 @@ router.get('/', async(req, res) => {
     
   })
 
+  router.get('/check',async(req,res)=>{
+    try {
+      const blogs = await Blog.find({}).sort({created:-1}).limit(4);
+      res.render('blogs/check',{blogs})
+    } catch (error) {
+      console.log(error.message);
+    }
+  })
 
-  router.get('/tags',(req,res)=>{
-    res.render("../views/blogs/tags");
+
+  router.get('/blogGet',async(req,res)=>{
+    try{
+
+      var page = 1;
+  const limit = 4;
+      
+  const count = await Blog.countDocuments();
+  const totalPages = Math.ceil(count/limit);
+  if(req.query.page!=null)
+  page = req.query.page;
+  console.log(page);
+  if(page<=0)
+  page=1;
+  if(page>totalPages)
+  page=totalPages;
+  
+  const blogs = await Blog.find().limit(limit*1).skip((page-1)*limit).sort({created:-1}).exec();
+    res.send(blogs);
+
+    }
+    catch(err){
+      console.log(err.message);
+    }
   })
   //url:/blogs/new
   // Posting new Blog

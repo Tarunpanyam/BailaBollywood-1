@@ -142,19 +142,7 @@ img.footer-right-img {
             </li>
             
           </ul>
-      <form class="form-inline  log-reg-btn ml-xl-5 ml-lg-5  justify-content-center">
-        <% if(!currentUser) {%>
-        <a class="btn mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3  login-btn " href="/login" target="_top"><i
-            class="fa fa-sign-in"></i> Iniciar Sesión </a>
-        <a class="btn mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 register-btn " href="/register" target="_top"><i
-            class="fa fa-user-plus"></i> Regístrate</a>
-        <% }else{ %>
-        <a class="btn  mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 login-btn " href="/logout" target="_top"><i
-            class="fa fa-sign-in"></i> Cerrar Sesión</a>
-        <a class="btn  mr-xl-3 mr-lg-3 mr-md-3 mr-sm-3 register-btn " href="/dashboard" target="_top"><i
-            class="fa fa-heart"></i> My Tablero</a>
-        <% } %>
-      </form>
+     
     </div>
   </nav>
 
@@ -165,7 +153,9 @@ img.footer-right-img {
       <div class="row" style= "padding: 15px 0px;">
         <div class="col-12 col-sm-12 col-md-5">
           <div class="container">
-            <a href="/blogs/posts/<%= blog._id %>" class="article-links"><div class="promo" style="--overlay-color: hotpink">
+            <a href="/blogs/posts/<%= blog._id %>" class="article-links">
+              
+              <div class="promo" style="--overlay-color: hotpink">
                 <div class="image-wrapper" >
               
                     
@@ -189,7 +179,6 @@ img.footer-right-img {
           <div class="container" style="width: 90%;">
           
             <div>
-              <p><span style="color: #000; border: 2px #000 solid; padding: 10px 25px;"><%=blog.time%></span></p>
              <h1 style="padding:5px;color:black;"><%=blog.title%></h1>
              <p style="color: #000;">Categoría:<%=blog.tag%></p>
              
@@ -197,45 +186,28 @@ img.footer-right-img {
             <a href="/blogs/posts/<%= blog._id %>"> 
              
              <button id="read-btn" class="read-more-btn" style="background:linear-gradient(to right,#ff5f6d,#f7b733); font-size:20px; padding-left: 45px; padding-right: 45px; padding-bottom: 40px; border:3px solid #000;">Ver Más</button>
-            </a></div><a href="/blogs/posts/<%= blog._id %>">
-          </a>
+            </a></div>
         </div>
         </div>
+
+
+
       </div>
     </div>
     <%})%>
-    
-    
-  <div class="container grid-layout">
-    <h1 style="padding-top:50px; margin-bottom:30px; margin-top: 40px; font-weight: bold; color: white;" class="text-center display-4">Últimas publicaciones</h1>
-    <%    latestBlogs.forEach(data=>{ if(data.index===1){ %>
-        <div class="row d-flex justify-content-between">
-            
-          <%}if(data.check===0){%>
-            <div id="lt-blog" class="col-12 col-md-4 my-2">
-              <a href="<%=data.url%>">
-            <img src="/uploads/<%= data.thumbnail %>" alt="image" style="width:100%; height:300px;">
-          </a>
-            <p style="color:white;font-weight:bold; font-size: 17px;"><%=data.title%><br><span style="color: #f5f5f5;">Categoría-<%=data.tag%></span></p>
-          
-        </div>
+
+    <div id="load-more-content">
+
+    </div>
+
+    <div class="text-center mt-5 mb-5">
+      <button id="load-more-btn" class="load-more-btn" style="background:linear-gradient(to right,#ff5f6d,#f7b733); font-size:20px; padding-left: 45px; padding-right: 45px; 
+      border:3px solid #000;">Load More</button>
       
-        <%}else{%>
-        <div id="lt-blog" class="col-12 col-md-4 my-2">
-              <a href="<%=data.url%>">
-            <img src="<%=data.thumbnail%>" alt="image" style="width:100%; height:300px;">
-          </a>
-            <p style="color:white;font-weight: bold; font-size: 17px; "><%=data.title%><br><span style="color: #f5f5f5;">Categoría-<%=data.tag%></span></p>
-          
-        </div>
-      
+    </div>
     
-      <%}if(data.index===3){%>
-      </div> 
-  <%}})%>
     
-  </div>
-  </div>
+  
   
     
   
@@ -302,5 +274,78 @@ img.footer-right-img {
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
+  let pagecount=1;
+  $("#load-more-btn").on('click',function(){
+    
+    var request = new XMLHttpRequest;
+  request.open('GET','/blogs/blogGet?page='+pagecount);
+  request.send();
+  pagecount++;
+  request.onload = function(){
+    var data = JSON.parse(request.responseText);
+    console.log(data);
+    renderHTML(data);
+    
+
+  }
+
+  })
+  function renderHTML(data){
+    
+    var html ='';
+    for(i =0 ; i<data.length ; i++){
+      
+      html+='<div class="container-fluid" id="top-post-container" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);">'
+      html+='<div class="row" style= "padding: 15px 0px;">'
+      //-----------------------------------------
+      html+='<div class="col-12 col-sm-12 col-md-5">'
+      html+='<div class="container">'
+      html+='<a href="/blogs/posts/'+data[i]._id+'" class="article-links">'
+      html+='<div class="promo" style="--overlay-color: hotpink"><div class="image-wrapper" >'
+      if(data[i].image.localeCompare("")==1)
+      html+='<img src="/uploads/'+data[i].thumbnail+'" />'
+      else
+      html+='<img src="'+data[i].thumbnail+'"/>'
+      html+='</div></div></a></div></div>';
+
+
+      //--------------------------------------
+      html+='<div class="col-12 col-sm-12 col-md-7" style="padding-bottom: 20px; padding-top: 20px;">'
+      html+='<div class="container" style="width: 90%;"><div>'
+      html+='<h1 style="padding:5px;color:black;">'+data[i].title+'</h1>'
+      html+='<p style="color: #000;">Categoría:'+ data[i].tag  +'</p>'
+      if(data[i].content!=="")
+      html+='<p style="color:black; word-wrap:break-word;" class="target">'+data[i].content.substring(0,200)+ '....'+'</p>'
+      html+='<a href="/blogs/posts/'+data[i]._id+'">'
+      html+='<button id="read-btn" class="read-more-btn" style="background:linear-gradient(to right,#ff5f6d,#f7b733);'
+             +'font-size:20px; padding-left: 45px; padding-right: 45px; padding-bottom: 40px; border:3px solid #000;">Ver Más</button>'
+      
+
+      
+      
+      html+='</a></div></div></div>'
+      
+
+      html+='</div></div>'
+    }
+
+    
+    console.log(html);
+    let parsedHTML =   $.parseHTML(html);
+    console.log(parsedHTML);
+    $("#load-more-content").append(parsedHTML);
+                 
+    
+  }
+
+
+
+  
+
+  
+
+
+</script>
 </body>
 </html>
