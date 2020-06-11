@@ -6,11 +6,11 @@ const Comment = require('../models/Comment');
 
 router.get('/', async(req,res)=>{
 try {
-    let carouselItems = await Instrument.find({}).limit(3);
-    console.log(carouselItems);
     let requestUrl = '/instruments';
-    let instruments = await Instrument.find({}).sort({created:-1}).limit(4);
-    res.render('musical/index',{instruments,carouselItems,requestUrl});
+    let instrumentz = await Instrument.find({}).populate('subInstruments');
+    let instruments = [];
+    
+    res.render('musical/index',{instruments:instrumentz,requestUrl});
     
 } catch (error) {
     console.log(error.message);
