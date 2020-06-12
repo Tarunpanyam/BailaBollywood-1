@@ -416,53 +416,8 @@ allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
 
         <section class="container custom-accordion">
  
-          <button class="accordion"><h1 class="accordion-heading">Read more</h1></button>
-          <div class="accordion-content">
-           
-            <div class="container-acc">
-              
-
-              <div class="container ">
-                <!-------------------------------Show page start-->
-                
-
-            
-                  <div class="text-center" style="margin-top:20px; margin-bottom:20px">
-                    <%if(data.image!==""){%>
-                    <img style="width:100%; height:auto; object-fit: contain;" src="<%= data.image%>" alt="data-image">
-                <%}%>
-                        
-                      
-                </div>
-                <div class="mobile-container">
-                  <%data.subInstruments.forEach(function(subInstrument){%>
-                    
-                    <div>
-                    <h4 style="font-weight: 1000; margin-top:20px; color:whitesmoke"><%=subInstrument.title%></h4>
-                    </div>
-                   <% if(subInstrument.image!==""){%>
-                    <div  class="text-center">
-                      <img  style="max-height:auto; width: auto; object-fit: contain; margin-top: 20px; margin-bottom: 20px;" class="instrument-image-sub"src="<%=subInstrument.image%>" alt="image">
-                    </div>
-                  <%}%>
-                    <div class="target mt-2" style="text-align: justify !important; font-size: 18px; color:white"><%=subInstrument.content%></div>
-                  
-                  <%})%>
-                </div>
-                    
-                  
-            
-              </div>
-              <!-------------------------------Instrument End ------------------------->
-              <!---------------------------------Subinstrument start-->
-            
-              
-           <!-------------------------------Show page end------------------------------->
-                  
-
-          </div>
-                </div>
-        </section>
+          
+          <a href="#" onClick="window.open('/instruments/posts/<%=data._id%>','<%=data.title%>','resizable,height=660,width=660'); return false;"><button  class="accordion"><h1 class="accordion-heading">Read more</h1></button></a><noscript>You need Javascript to use the previous link or use <a href="/instruments/posts/<%=data._id%>" target="_blank"><button  class="accordion"><h1 class="accordion-heading">Read more</h1></button></a></noscript>
       <%})%>
                 
             
@@ -556,6 +511,7 @@ allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
     $(this).empty();
     $(this).append(html);
   });
+  
 </script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
