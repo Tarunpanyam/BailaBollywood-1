@@ -505,7 +505,7 @@ allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
   <script>
   $(".target").each(function(){
     let text = ( $(this).text());
-    //text = text.substring(0,200);
+    text = text.substring(0,1000)+'...';
     //text = text + "...."
     let html = $.parseHTML(text);
     $(this).empty();

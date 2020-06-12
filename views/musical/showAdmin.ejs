@@ -200,6 +200,12 @@
 
             <!---  Blog Content -->
               <p class="target" style="text-align: justify !important; font-size: 18px;"><%= instrument.content %></p>
+              <a href="/instruments/posts/<%=instrument._id%>/edit" target="_blank">
+                <button style="width: 80%;" class="btn btn-primary">Edit This Part</button>
+              </a>
+              <a href="/instruments/posts/<%=instrument._id%>/delete">
+                <button style="width: 80%;"  class="btn btn-danger">Delete This Part</button>
+              </a>
             </div>
       
 
@@ -278,7 +284,6 @@
 <script>
 $(".target").each(function(){
     let text = ( $(this).text());
-
     let html = $.parseHTML(text);
     $(this).empty();
     $(this).append(html);
