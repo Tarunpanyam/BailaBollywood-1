@@ -225,50 +225,7 @@ section.intro h2 {
 
     
  <!------------------------------------Navigation Bar Section-One------------------------------------------>
-
-  <nav id="nav-header" class="navbar navbar-expand-lg navbar-light sticky-top  " >
-    <a class="navbar-brand p-0 m-0" href="/"><img src="/images/Spanish-bolo-natraj-transparent.png" class="logo-navbar"
-        alt="Logo Of Baila Bollywood"></a>
-    <button class="navbar-toggler mr-3  " type="button" data-toggle="collapse"
-      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class=" navbar-toggler-icon"></span>
-    </button>
-
-   <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
-          <ul class="navbar-nav nav nav-pills ">
-            <li class="nav-item m-xl-2 active">
-              <a class="nav-link text-center font-weight-bold " href="/">Inicio </a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#about">
-                Quiénes Somos
-                </a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#blogs">Nuestro Blog</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#pop-categ">Lo más Popular</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#found-note">Nuestro Fundador </a>
-            </li>
-            
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/danzas-folkloricas-de-India">Danzas folclóricas</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/equipo">Equipo</a>
-            </li>
-             <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/blogs">Blogs</a>
-            </li>
-            
-          </ul>
-      
-    </div>
-  </nav>
+  <% include ./partials/navbar.ejs%>
 
 
 
@@ -4493,7 +4450,7 @@ Las principales  fuentes de ingresos de esta tribu son las actividades agrícola
       <div class="container-acc" >
             
                 <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
-    <h1 class="text-center display-4" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px; font font-family: 'Ananda Namaste Regular';" >
+    <h1 class="text-center display-4" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px; font-family: 'Ananda Namaste Regular';" >
  Danzas tradicionales de Mizoram</h1>
   
     
@@ -4763,14 +4720,12 @@ Realizado tanto por hombres como por mujeres, el baile involucra cinco movimient
 </section> -->
 
 <div class="footer-section ">
-<i style="color:#fff"class="fa mr-3 d-block fa-flag-checkered"></i>
-  Website Made With &hearts; By <div style="line-height: 48px;"><a href=" https://www.linkedin.com/in/vaibhav-kaul-ab5941182/"
-      class="text-white mx-1" target="_blank" title="Vaibhav's Linkedin Profile" style="font-size: 20px;">Vaibhav Kaul</a></div>
-  And <a href="https://www.linkedin.com/in/pawan-saggu-06589b157/" class="text-white mx-1"
-      target="_blank" title="Pawan's Linkedin Profile" style="font-size: 20px">Pawan Saggu</a>
+      <span class="float-left">
       <a style="text-decoration: underline;" href="#privacyPolicyModal" class="text-white text-center  mb-1"  data-toggle="modal" data-target="#privacyPolicyModal">Política de Privacidad</a>
-  <br />
+    </span>
+  <span class="float-right">
   &copy; 2020 Copyright BailaBollywood<img src="/images/Spanish-bolo-natraj-transparent.png" alt="Spanish Bolo">
+</span>
 </div>
 
 
