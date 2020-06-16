@@ -5,8 +5,8 @@ const SubInterview = require('../models/SubInterview');
 const cacheData = require('../middleware/cacheData');
 const Comment = require('../models/Comment');
 
-
-router.get('/interviews/posts/:id/admin/comments',async(req,res)=>{
+// everything start from /cafe-cultural
+router.get('/posts/:id/admin/comments',async(req,res)=>{
   let id = req.params.id;
   let requestUrl = '/interviews/posts/'+id+'/admin/comments';
   let interview = await Interview.findById(id).populate('comments');
@@ -16,7 +16,7 @@ router.get('/interviews/posts/:id/admin/comments',async(req,res)=>{
   res.render("interview/commentAdmin",{comments,requestUrl});
   
 })
-router.post('/interviews/:id/comments',async(req,res)=>{
+router.post('/:id/comments',async(req,res)=>{
   try {
     console.log("abc triggered");
   let id = req.params.id;
@@ -36,7 +36,7 @@ router.post('/interviews/:id/comments',async(req,res)=>{
   
 })
 
-router.delete('/interviews/comments/:cid/delete',async(req,res)=>{
+router.delete('/comments/:cid/delete',async(req,res)=>{
   try {
     let id = req.params.cid;
   await Comment.findByIdAndRemove(id);
@@ -46,7 +46,7 @@ router.delete('/interviews/comments/:cid/delete',async(req,res)=>{
   }
 })
 
-router.get('/interviews/index',(req,res)=>{
+router.get('/index',(req,res)=>{
   Interview.find({},(err,Interviews)=>{
 
     let requestUrl = '/interviews/index';
@@ -55,10 +55,10 @@ router.get('/interviews/index',(req,res)=>{
 })
 
   
-router.get("/interviews/",async(req,res) => {
+router.get("/",async(req,res) => {
   try{
     let allInterviews = await Interview.find({});
-    let requestUrl = '/interviews/';
+    let requestUrl = '/cafe-cultural/';
     let fourInt=[];
     let count=0;
     let id;
@@ -74,7 +74,7 @@ router.get("/interviews/",async(req,res) => {
       if(count<=4){
       let image = interview.image;
       let title = interview.title;
-      let url = '/interviews/posts/'+interview._id;
+      let url = '/cafe-cultural/entrevista-'+interview.interviewee+'/'+interview._id;
       let obj = {image:image,title:title,url:url};
       fourInt.push(obj);
     }
@@ -133,7 +133,7 @@ router.get("/interviews/",async(req,res) => {
     
   });
 
-router.get("/interviews/posts/new",(req,res)=>{
+router.get("/posts/new",(req,res)=>{
     let requestUrl = '/interviews/posts/new';
     req.flash("success","Welcome");
     res.render("../views/interview/new.ejs",{requestUrl});
@@ -143,7 +143,7 @@ router.get("/interviews/posts/new",(req,res)=>{
 
 
 
-router.get('/interviews/posts/:id',(req,res)=>{
+router.get('/:name/:id',(req,res)=>{
   let id = req.params.id;
   let requestUrl = '/interviews/posts/'+id;
   Interview.findById(id).populate('subInterviews').populate('comments').exec(function(err,foundInterview){
@@ -155,14 +155,14 @@ router.get('/interviews/posts/:id',(req,res)=>{
   });
 })
 
-router.get("/interviews/posts/:id/add-more-information",(req,res)=>{
+router.get("/:name/:id/add-more-information",(req,res)=>{
   let id = req.params.id;
   let requestUrl = '/interviews/posts/'+id+'/add-more-information';
   res.render("../views/interview/addMoreInformation.ejs",{id,requestUrl});
 })
 
 
-router.get('/interviews/posts/:id/edit',(req,res)=>{
+router.get('/:name/:id/edit',(req,res)=>{
   let id = req.params.id;
   let requestUrl = '/interviews/posts/'+id+'/edit';
   Interview.findById(id,function(err,foundInterview){
@@ -170,7 +170,7 @@ router.get('/interviews/posts/:id/edit',(req,res)=>{
   })
 })
 
-router.get('/interviews/posts/:id/admin',(req,res)=>{
+router.get('/:name/:id/admin',(req,res)=>{
   let id = req.params.id;
   let requestUrl = '/interviews/posts/'+id+'/admin';
   Interview.findById(id).populate('subInterviews').exec(function(err,foundInterview){
@@ -180,7 +180,7 @@ router.get('/interviews/posts/:id/admin',(req,res)=>{
     res.render('../views/interview/showAdmin',{Interview:foundInterview,requestUrl});
   });
 })
-router.get('/interviews/posts/:id/delete',(req,res)=>{
+router.get('/:name/:id/delete',(req,res)=>{
   let id=req.params.id;
   //let requestUrl = '/interviews/posts/'+id+'/delete';
   console.log(id);
@@ -201,7 +201,7 @@ router.get('/interviews/posts/:id/delete',(req,res)=>{
 })
 
 
-router.get('/interviews/posts/:id/subInterviews/:sid/edit',(req,res)=>{
+router.get('/:name/:id/subInterviews/:sid/edit',(req,res)=>{
   let sid = req.params.sid;
   let id = req.params.id; 
   let requestUrl = '/interviews/posts/'+id+'subInterviews/'+sid+'/edit';
@@ -212,7 +212,7 @@ router.get('/interviews/posts/:id/subInterviews/:sid/edit',(req,res)=>{
   })
 })
 
-router.get('/interviews/posts/:id/subInterviews/:sid/delete',(req,res)=>{
+router.get('/:name/:id/subInterviews/:sid/delete',(req,res)=>{
   let sid = req.params.sid;
   let id = req.params.id;
   SubInterview.findByIdAndDelete(sid,(err)=>{
@@ -225,7 +225,7 @@ router.get('/interviews/posts/:id/subInterviews/:sid/delete',(req,res)=>{
 
 
 
-router.post('/interviews/posts',(req,res)=>{
+router.post('/posts',(req,res)=>{
   Interview.create(req.body.interview).then((err,newInterview)=>{
     if(err)
     console.log(err.message);
@@ -236,7 +236,7 @@ router.post('/interviews/posts',(req,res)=>{
   )
 })
 
-router.post('/interviews/posts/:id',(req,res)=>{
+router.post('/posts/:id',(req,res)=>{
   let id = req.params.id;
   console.log(req.body.subInterview);
   
@@ -262,7 +262,7 @@ router.post('/interviews/posts/:id',(req,res)=>{
 
 
 
-router.put('/interviews/posts/:id/subInterviews/:sid',(req,res)=>{
+router.put('/posts/:id/subInterviews/:sid',(req,res)=>{
   console.log("Put method triggered");
   let sid = req.params.sid;
   let id = req.params.id;
@@ -274,7 +274,7 @@ router.put('/interviews/posts/:id/subInterviews/:sid',(req,res)=>{
   })
 })
 
-router.put('/interviews/posts/:id',(req,res)=>{
+router.put('/posts/:id',(req,res)=>{
   console.log("Put method triggered");
   let id = req.params.id;
   Interview.findByIdAndUpdate(id,req.body.interview,function(err,foundInterview){

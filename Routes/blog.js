@@ -6,8 +6,6 @@ const path = require('path');
 const Comment = require('../models/Comment');
 const middleware = require('../middleware');
 const cacheData = require('../middleware/cacheData');
-const axios = require('axios');
-const feed = require('rss-to-json');
 const SubBlog = require('../models/SubBlog');
 
 

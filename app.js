@@ -309,9 +309,9 @@ app.get("/auth/facebook/redirect", passport.authenticate('facebook', {
 //})
 app.use("/",StateRoutes);
 app.use("/blogs",BlogRoutes);
-app.use("/",InterviewRoutes);
+app.use("/cafe-cultural",InterviewRoutes);
 app.use("/",socialHandleRoutes);
-app.use("/instruments",instrumentRoutes);
+app.use("/sonidos-de-la-india",instrumentRoutes);
 app.use('/',chitChatInterviewRoutes);
 app.use('/',bollywoodNewsRoutes);
 app.use('/places',placesToVisitRoutes);

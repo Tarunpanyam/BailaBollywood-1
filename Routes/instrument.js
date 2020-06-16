@@ -3,8 +3,9 @@ const router = express.Router();
 const Instrument = require('../models/Intstrument');
 const SubInstrument =require('../models/SubInstrument');
 const Comment = require('../models/Comment');
+const cacheData = require('../middleware/cacheData');
 
-router.get('/', async(req,res)=>{
+router.get('/', cacheData.memoryCacheUse(36000),async(req,res)=>{
 try {
     let requestUrl = '/instruments';
     let instrumentz = await Instrument.find({}).populate('subInstruments');
@@ -17,7 +18,7 @@ try {
     
 }
 })
-
+/*
 //-----------------get route for subinstrument form-------------------//
 router.get('/posts/:id/addMoreInformation',async(req,res)=>{
     try {
@@ -298,5 +299,6 @@ router.get('/posts/:id/subInstruments/:sid/delete',async(req,res)=>{
     
   })
   */
+ 
 
   module.exports=router;
