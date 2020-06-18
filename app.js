@@ -312,8 +312,8 @@ app.use("/blogs",BlogRoutes);
 app.use("/cafe-cultural",InterviewRoutes);
 app.use("/",socialHandleRoutes);
 app.use("/sonidos-de-la-india",instrumentRoutes);
-app.use('/',chitChatInterviewRoutes);
-app.use('/',bollywoodNewsRoutes);
+app.use('/chai-con-baila-bollywood',chitChatInterviewRoutes);
+app.use('/canal-bollywood',bollywoodNewsRoutes);
 app.use('/places',placesToVisitRoutes);
 
 

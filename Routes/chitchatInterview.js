@@ -6,9 +6,9 @@ const cacheData = require('../middleware/cacheData');
 const Comment = require('../models/Comment');
 
 
-router.get('/chitChatInterviews/posts/:id/admin/comments',async(req,res)=>{
+router.get('/posts/:id/admin/comments',async(req,res)=>{
   let id = req.params.id;
-  let requestUrl = '/chitChatInterviews/posts/'+id+'/adming/comments';
+  let requestUrl = '/chai-con-baila-bollywood/posts/'+id+'/adming/comments';
   let interview = await chitChatInterview.findById(id).populate('comments');
   let comments = interview.comments;
   console.log(interview);
@@ -16,18 +16,18 @@ router.get('/chitChatInterviews/posts/:id/admin/comments',async(req,res)=>{
   res.render("chitChatInterview/commentAdmin",{comments,requestUrl});
   
 })
-router.post('/chitChatInterviews/:id/comments',async(req,res)=>{
+router.post('/:id/comments',async(req,res)=>{
   try {
     console.log("abc triggered");
   let id = req.params.id;
-  //let requestUrl = '/chitChatInterviews/'+id+'/comments';
+  //let requestUrl = '/chai-con-baila-bollywood/'+id+'/comments';
   console.log(req.body.comment);
   let comment = await Comment.create(req.body.comment);
   comment.save();
   let interview = await chitChatInterview.findById(id);
   interview.comments.push(comment);
   interview.save();
-  res.redirect('/chitChatInterviews/posts/'+id);
+  res.redirect('/chai-con-baila-bollywood/posts/'+id);
     
   } catch (error) {
     console.log(error.message);
@@ -35,7 +35,7 @@ router.post('/chitChatInterviews/:id/comments',async(req,res)=>{
   
 })
 
-router.delete('/chitChatInterviews/comments/:cid/delete',async(req,res)=>{
+router.delete('/comments/:cid/delete',async(req,res)=>{
   try {
     let id = req.params.cid;
   await Comment.findByIdAndRemove(id);
@@ -45,11 +45,11 @@ router.delete('/chitChatInterviews/comments/:cid/delete',async(req,res)=>{
   }
 })
 
-router.get('/chitChatInterviews/index',async(req,res)=>{
+router.get('/index',async(req,res)=>{
     try {
         let interviews = await chitChatInterview.find({});
         console.log(interviews);
-        let requestUrl = '/chitChatInterviews/index';
+        let requestUrl = '/chai-con-baila-bollywood/index';
         res.render('../views/chitChatInterview/indexSecond',{interviews,requestUrl});
         
         
@@ -60,7 +60,7 @@ router.get('/chitChatInterviews/index',async(req,res)=>{
     }
 })
 
-router.get('/chitChatInterviews',async(req,res)=>{
+router.get('',async(req,res)=>{
   try{
     res.render('chitChatInterview/index');
 
@@ -73,10 +73,10 @@ router.get('/chitChatInterviews',async(req,res)=>{
 
 
   /*
-router.get("/chitChatInterviews/",async(req,res) => {
+router.get("/",async(req,res) => {
   try{
     let allInterviews = await chitChatInterview.find({});
-    let requestUrl = '/chitChatInterviews/';
+    let requestUrl = '/chai-con-baila-bollywood/';
     let fourInt=[];
     let count=0;
     let id;
@@ -92,7 +92,7 @@ router.get("/chitChatInterviews/",async(req,res) => {
       if(count<=4){
       let image = interview.image;
       let title = interview.title;
-      let url = '/chitChatInterviews/posts/'+interview._id;
+      let url = '/chai-con-baila-bollywood/posts/'+interview._id;
       let obj = {image:image,title:title,url:url};
       fourInt.push(obj);
     }
@@ -116,19 +116,19 @@ router.get("/chitChatInterviews/",async(req,res) => {
       })
       //console.log(twoQ[0]);
       //----------------------
-      let chitChatInterviews = await chitChatInterview.find({}).sort({created:-1});
-    let length = chitChatInterviews.length;
+      let chai-con-baila-bollywood = await chitChatInterview.find({}).sort({created:-1});
+    let length = chai-con-baila-bollywood.length;
     let latestInterviews=[];
     let c=0;
     let check=0;
-    chitChatInterviews.forEach(interview=>{
+    chai-con-baila-bollywood.forEach(interview=>{
       c++;
       if(c<=9){
       
         let title = interview.title;
         let thumbnail = interview.thumbnail;
         let index = c%3;
-        let url = "/chitChatInterviews/posts/"+interview._id;
+        let url = "/chai-con-baila-bollywood/posts/"+interview._id;
         if(index===0)
         index=3;
         let obj = {title:title,thumbnail:thumbnail,index:index,check:check,url:url};
@@ -155,8 +155,8 @@ router.get("/chitChatInterviews/",async(req,res) => {
 
 
 
-router.get("/chitChatInterviews/posts/new",(req,res)=>{
-    let requestUrl = '/chitChatInterviews/posts/new';
+router.get("/posts/new",(req,res)=>{
+    let requestUrl = '/chai-con-baila-bollywood/posts/new';
     req.flash("success","Welcome");
     res.render("../views/chitChatInterview/new.ejs",{requestUrl});
 })
@@ -165,9 +165,9 @@ router.get("/chitChatInterviews/posts/new",(req,res)=>{
 
 
 
-router.get('/chitChatInterviews/posts/:id',(req,res)=>{
+router.get('/posts/:id',(req,res)=>{
   let id = req.params.id;
-  let requestUrl = '/chitChatInterviews/posts/'+id;
+  let requestUrl = '/chai-con-baila-bollywood/posts/'+id;
   chitChatInterview.findById(id).populate('subInterviews').populate('comments').exec(function(err,foundInterview){
     if(err)
     console.log(err.message);
@@ -177,24 +177,24 @@ router.get('/chitChatInterviews/posts/:id',(req,res)=>{
   });
 })
 
-router.get("/chitChatInterviews/posts/:id/add-more-information",(req,res)=>{
+router.get("/posts/:id/add-more-information",(req,res)=>{
   let id = req.params.id;
-  let requestUrl = '/chitChatInterviews/posts/'+id+'/add-more-information';
+  let requestUrl = '/chai-con-baila-bollywood/posts/'+id+'/add-more-information';
   res.render("../views/chitChatInterview/addMoreInformation.ejs",{id,requestUrl});
 })
 
 
-router.get('/chitChatInterviews/posts/:id/edit',(req,res)=>{
+router.get('/posts/:id/edit',(req,res)=>{
   let id = req.params.id;
-  let requestUrl = '/chitChatInterviews/posts/'+id+'/edit';
+  let requestUrl = '/chai-con-baila-bollywood/posts/'+id+'/edit';
   chitChatInterview.findById(id,function(err,foundInterview){
     res.render("../views/chitChatInterview/interviewEdit",{interview:foundInterview,requestUrl});
   })
 })
 
-router.get('/chitChatInterviews/posts/:id/admin',(req,res)=>{
+router.get('/posts/:id/admin',(req,res)=>{
   let id = req.params.id;
-  let requestUrl = '/chitChatInterviews/posts/'+id+'/admin';
+  let requestUrl = '/chai-con-baila-bollywood/posts/'+id+'/admin';
   chitChatInterview.findById(id).populate('subInterviews').exec(function(err,foundInterview){
     if(err)
     console.log(err.message);
@@ -202,9 +202,9 @@ router.get('/chitChatInterviews/posts/:id/admin',(req,res)=>{
     res.render('../views/chitChatInterview/showAdmin',{Interview:foundInterview,requestUrl});
   });
 })
-router.get('/chitChatInterviews/posts/:id/delete',(req,res)=>{
+router.get('/posts/:id/delete',(req,res)=>{
   let id=req.params.id;
-  //let requestUrl = '/chitChatInterviews/posts/'+id+'/delete';
+  //let requestUrl = '/chai-con-baila-bollywood/posts/'+id+'/delete';
   console.log(id);
   chitChatInterview.findById(id,function(err,foundInterview){
     if(err)
@@ -218,14 +218,14 @@ router.get('/chitChatInterviews/posts/:id/delete',(req,res)=>{
       })
     })
     foundInterview.remove();
-    res.redirect('/chitChatInterviews');
+    res.redirect('/chai-con-baila-bollywood');
   })
 })
 
-router.get('/chitChatInterviews/posts/:id/subInterviews/:sid/edit',(req,res)=>{
+router.get('/posts/:id/subInterviews/:sid/edit',(req,res)=>{
   let sid = req.params.sid;
   let id = req.params.id;
-  let requestUrl = '/chitChatInterviews/posts/'+id+'subInterviews/'+sid+'/edit';
+  let requestUrl = '/chai-con-baila-bollywood/posts/'+id+'subInterviews/'+sid+'/edit';
   SubInterview.findById(sid,(err,foundSubInterview)=>{
     if(err)
     console.log(err.message);
@@ -233,7 +233,7 @@ router.get('/chitChatInterviews/posts/:id/subInterviews/:sid/edit',(req,res)=>{
   })
 })
 
-router.get('/chitChatInterviews/posts/:id/subInterviews/:sid/delete',(req,res)=>{
+router.get('/posts/:id/subInterviews/:sid/delete',(req,res)=>{
   let sid = req.params.sid;
   let id = req.params.id;
   SubInterview.findByIdAndDelete(sid,(err)=>{
@@ -246,18 +246,18 @@ router.get('/chitChatInterviews/posts/:id/subInterviews/:sid/delete',(req,res)=>
 
 
 
-router.post('/chitChatInterviews/posts',(req,res)=>{
+router.post('/posts',(req,res)=>{
   chitChatInterview.create(req.body.interview).then((err,newInterview)=>{
     if(err)
     console.log(err.message);
     console.log("created");
     console.log(newInterview);
-    res.redirect('/chitChatInterviews');
+    res.redirect('/chai-con-baila-bollywood');
   }
   )
 })
 
-router.post('/chitChatInterviews/posts/:id',(req,res)=>{
+router.post('/posts/:id',(req,res)=>{
   let id = req.params.id;
   console.log(req.body.subInterview);
   
@@ -271,7 +271,7 @@ router.post('/chitChatInterviews/posts/:id',(req,res)=>{
       console.log("Pushed into interview");
       foundInterview.subInterviews.push(subinterview);
       foundInterview.save();
-      res.redirect('/chitChatInterviews/posts/'+id+'/admin');
+      res.redirect('/chai-con-baila-bollywood/posts/'+id+'/admin');
     })
     
     //console.log(subinterview.title +"\n"+subinterview.image+"\n"+subinterview.content );
@@ -283,7 +283,7 @@ router.post('/chitChatInterviews/posts/:id',(req,res)=>{
 
 
 
-router.put('/chitChatInterviews/posts/:id/subInterviews/:sid',(req,res)=>{
+router.put('/posts/:id/subInterviews/:sid',(req,res)=>{
   console.log("Put method triggered");
   let sid = req.params.sid;
   let id = req.params.id;
@@ -291,18 +291,18 @@ router.put('/chitChatInterviews/posts/:id/subInterviews/:sid',(req,res)=>{
     if(err)
     console.log(err.message);
     console.log("SubInterview Updated");
-    res.redirect('/chitChatInterviews/posts/'+id+'/admin');
+    res.redirect('/chai-con-baila-bollywood/posts/'+id+'/admin');
   })
 })
 
-router.put('/chitChatInterviews/posts/:id',(req,res)=>{
+router.put('posts/:id',(req,res)=>{
   console.log("Put method triggered");
   let id = req.params.id;
   chitChatInterview.findByIdAndUpdate(id,req.body.interview,function(err,foundInterview){
     if(err)
     console.log(err.message);
     console.log("chitChatInterview Updated");
-    res.redirect('/chitChatInterviews/posts/'+id+'/admin');
+    res.redirect('/chai-con-baila-bollywood/posts/'+id+'/admin');
   })
 })
  

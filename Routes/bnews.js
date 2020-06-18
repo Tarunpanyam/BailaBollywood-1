@@ -6,9 +6,9 @@ const cacheData = require('../middleware/cacheData');
 const Comment = require('../models/Comment');
 
 
-router.get('/bollywoodNews/posts/:id/admin/comments',async(req,res)=>{
+router.get('/posts/:id/admin/comments',async(req,res)=>{
   let id = req.params.id;
-  let requestUrl = '/bollywoodNews/posts/'+id+'/admin/comments';
+  let requestUrl = '/canal-bollywood/posts/'+id+'/admin/comments';
   let bnews = await BollywoodNews.findById(id).populate('comments');
   let comments = bnews.comments;
   console.log(bnews);
@@ -16,7 +16,7 @@ router.get('/bollywoodNews/posts/:id/admin/comments',async(req,res)=>{
   res.render("bnews/commentAdmin",{comments,requestUrl});
   
 })
-router.post('/bollywoodNews/:id/comments',async(req,res)=>{
+router.post('/:id/comments',async(req,res)=>{
   try {
     console.log("abc triggered");
   let id = req.params.id;
@@ -26,7 +26,7 @@ router.post('/bollywoodNews/:id/comments',async(req,res)=>{
   let bnews = await BollywoodNews.findById(id);
   bnews.comments.push(comment);
   bnews.save();
-  res.redirect('/bollywoodNews/posts/'+id);
+  res.redirect('/canal-bollywood/posts/'+id);
     
   } catch (error) {
     console.log(error.message);
@@ -35,7 +35,7 @@ router.post('/bollywoodNews/:id/comments',async(req,res)=>{
   
 })
 
-router.delete('/bollywoodNews/comments/:cid/delete',async(req,res)=>{
+router.delete('/comments/:cid/delete',async(req,res)=>{
   try {
     let id = req.params.cid;
   await Comment.findByIdAndRemove(id);
@@ -45,27 +45,27 @@ router.delete('/bollywoodNews/comments/:cid/delete',async(req,res)=>{
   }
 })
 
-router.get('/bollywoodNews',(req,res)=>{
+router.get('',(req,res)=>{
   BollywoodNews.find({},(err,allBollywoodNews)=>{
 
-    let requestUrl = '/bollywoodNews/index';
+    let requestUrl = '/canal-bollywood/index';
     res.render('../views/bnews/index',{allBollywoodNews,requestUrl});
   })
 })
 
 
-router.get('/bollywoodNews/index',(req,res)=>{
+router.get('/index',(req,res)=>{
   BollywoodNews.find({},(err,allBollywoodNews)=>{
 
-    let requestUrl = '/bollywoodNews/index';
+    let requestUrl = '/canal-bollywood/index';
     res.render('bnews/indexSecond',{allBollywoodNews,requestUrl});
   })
 })
 
 
 
-router.get("/bollywoodNews/posts/new",(req,res)=>{
-    let requestUrl = '/bollywoodNews/posts/new';
+router.get("/posts/new",(req,res)=>{
+    let requestUrl = '/canal-bollywood/posts/new';
     req.flash("success","Welcome");
     res.render("bnews/new.ejs",{requestUrl});
 })
@@ -74,9 +74,9 @@ router.get("/bollywoodNews/posts/new",(req,res)=>{
 
 
 
-router.get('/bollywoodNews/posts/:id',(req,res)=>{
+router.get('/posts/:id',(req,res)=>{
   let id = req.params.id;
-  let requestUrl = '/bollywoodNews/posts/'+id;
+  let requestUrl = '/canal-bollywood/posts/'+id;
   BollywoodNews.findById(id).populate('subNews').populate('comments').exec(function(err,foundNews){
     if(err)
     console.log(err.message);
@@ -86,24 +86,24 @@ router.get('/bollywoodNews/posts/:id',(req,res)=>{
   });
 })
 
-router.get("/bollywoodNews/posts/:id/add-more-information",(req,res)=>{
+router.get("/posts/:id/add-more-information",(req,res)=>{
   let id = req.params.id;
-  let requestUrl = '/bollywoodNews/posts/'+id+'/add-more-information';
+  let requestUrl = '/canal-bollywood/posts/'+id+'/add-more-information';
   res.render("../views/bnews/addMoreInformation.ejs",{id,requestUrl});
 })
 
 
-router.get('/bollywoodNews/posts/:id/edit',(req,res)=>{
+router.get('/posts/:id/edit',(req,res)=>{
   let id = req.params.id;
-  let requestUrl = '/bollywoodNews/posts/'+id+'/edit';
+  let requestUrl = '/canal-bollywood/posts/'+id+'/edit';
   BollywoodNews.findById(id,function(err,foundNews){
     res.render("../views/bnews/bollywoodNewsEdit",{bnews:foundNews,requestUrl});
   })
 })
 
-router.get('/bollywoodNews/posts/:id/admin',(req,res)=>{
+router.get('/posts/:id/admin',(req,res)=>{
   let id = req.params.id;
-  let requestUrl = '/bollywoodNews/posts/'+id+'/admin';
+  let requestUrl = '/canal-bollywood/posts/'+id+'/admin';
   BollywoodNews.findById(id).populate('subNews').exec(function(err,foundNews){
     if(err)
     console.log(err.message);
@@ -111,9 +111,9 @@ router.get('/bollywoodNews/posts/:id/admin',(req,res)=>{
     res.render('../views/bnews/showAdmin',{BollywoodNews:foundNews,requestUrl});
   });
 })
-router.get('/bollywoodNews/posts/:id/delete',(req,res)=>{
+router.get('/posts/:id/delete',(req,res)=>{
   let id=req.params.id;
-  //let requestUrl = '/bollywoodNews/posts/'+id+'/delete';
+  //let requestUrl = '/canal-bollywood/posts/'+id+'/delete';
   console.log(id);
   BollywoodNews.findById(id,function(err,foundNews){
     if(err)
@@ -127,14 +127,14 @@ router.get('/bollywoodNews/posts/:id/delete',(req,res)=>{
       })
     })
     foundNews.remove();
-    res.redirect('/bollywoodNews');
+    res.redirect('/canal-bollywood');
   })
 })
 
-router.get('/bollywoodNews/posts/:id/subNews/:sid/edit',(req,res)=>{
+router.get('/posts/:id/subNews/:sid/edit',(req,res)=>{
   let sid = req.params.sid;
   let id = req.params.id;
-  let requestUrl = '/bollywoodNews/posts/'+id+'subNews/'+sid+'/edit';
+  let requestUrl = '/canal-bollywood/posts/'+id+'subNews/'+sid+'/edit';
   SubNews.findById(sid,(err,foundSubInterview)=>{
     if(err)
     console.log(err.message);
@@ -142,7 +142,7 @@ router.get('/bollywoodNews/posts/:id/subNews/:sid/edit',(req,res)=>{
   })
 })
 
-router.get('/bollywoodNews/posts/:id/subNews/:sid/delete',(req,res)=>{
+router.get('/posts/:id/subNews/:sid/delete',(req,res)=>{
   let sid = req.params.sid;
   let id = req.params.id;
   SubNews.findByIdAndDelete(sid,(err)=>{
@@ -155,18 +155,18 @@ router.get('/bollywoodNews/posts/:id/subNews/:sid/delete',(req,res)=>{
 
 
 
-router.post('/bollywoodNews/posts',(req,res)=>{
+router.post('/posts',(req,res)=>{
   BollywoodNews.create(req.body.bnews).then((err,newNews)=>{
     if(err)
     console.log(err.message);
     console.log("created");
     console.log(newNews);
-    res.redirect('/bollywoodNews');
+    res.redirect('/canal-bollywood');
   }
   )
 })
 
-router.post('/bollywoodNews/posts/:id',(req,res)=>{
+router.post('/posts/:id',(req,res)=>{
   let id = req.params.id;
   console.log(req.body.subInterview);
   
@@ -180,7 +180,7 @@ router.post('/bollywoodNews/posts/:id',(req,res)=>{
       console.log("Pushed into bnews");
       foundNews.subNews.push(subNews);
       foundNews.save();
-      res.redirect('/bollywoodNews/posts/'+id+'/admin');
+      res.redirect('/canal-bollywood/posts/'+id+'/admin');
     })
     
     //console.log(subNews.title +"\n"+subNews.image+"\n"+subNews.content );
@@ -192,7 +192,7 @@ router.post('/bollywoodNews/posts/:id',(req,res)=>{
 
 
 
-router.put('/bollywoodNews/posts/:id/subNews/:sid',(req,res)=>{
+router.put('/posts/:id/subNews/:sid',(req,res)=>{
   console.log("Put method triggered");
   let sid = req.params.sid;
   let id = req.params.id;
@@ -200,18 +200,18 @@ router.put('/bollywoodNews/posts/:id/subNews/:sid',(req,res)=>{
     if(err)
     console.log(err.message);
     console.log("SubNews Updated");
-    res.redirect('/bollywoodNews/posts/'+id+'/admin');
+    res.redirect('/canal-bollywood/posts/'+id+'/admin');
   })
 })
 
-router.put('/bollywoodNews/posts/:id',(req,res)=>{
+router.put('/posts/:id',(req,res)=>{
   console.log("Put method triggered");
   let id = req.params.id;
   BollywoodNews.findByIdAndUpdate(id,req.body.bnews,function(err,foundNews){
     if(err)
     console.log(err.message);
     console.log("BollywoodNews Updated");
-    res.redirect('/bollywoodNews/posts/'+id+'/admin');
+    res.redirect('/canal-bollywood/posts/'+id+'/admin');
   })
 })
  

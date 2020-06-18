@@ -6,7 +6,7 @@ const cacheData = require('../middleware/cacheData');
 const Comment = require('../models/Comment');
 
 // everything start from /cafe-cultural
-router.get('/posts/:id/admin/comments',async(req,res)=>{
+router.get('/:name/:id/admin/comments',async(req,res)=>{
   let id = req.params.id;
   let requestUrl = '/interviews/posts/'+id+'/admin/comments';
   let interview = await Interview.findById(id).populate('comments');
@@ -110,7 +110,7 @@ router.get("/",async(req,res) => {
         let title = interview.title;
         let thumbnail = interview.thumbnail;
         let index = c%3;
-        let url = "/interviews/posts/"+interview._id;
+        let url = '/cafe-cultural/entrevista-'+interview.interviewee+'/'+interview._id;
         if(index===0)
         index=3;
         let obj = {title:title,thumbnail:thumbnail,index:index,check:check,url:url};
