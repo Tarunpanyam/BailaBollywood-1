@@ -249,13 +249,9 @@ div#top-post-container {
 
 
 
-  <audio controls>
-    <source src="blob:http://allindiaradio.gov.in/ee4d44e1-b9f0-4187-8f2e-8c1dbbdc9864" type="audio/ogg">
-    <source src="blob:http://allindiaradio.gov.in/ee4d44e1-b9f0-4187-8f2e-8c1dbbdc9864" type="audio/mpeg">
-  </audio>
   <div class="container">
   
-    <ul class="list-group" id="radio-list">
+    <ul class="list-group" id="radio-list" style="display: none;">
       <li class="list-group-item d-flex justify-content-between align-items-center" >
         
         <img src="https://cdn.onlineradiobox.com/img/logo/6/3906.v6.png" >
@@ -335,7 +331,13 @@ div#top-post-container {
         </span>
       
       </button>
-      
+      </li>
+      <li >
+        <div class="container">
+        <button class="float-right" id="close-btn-radio">
+      <span style='font-size:20px; '>&#10006;</span>
+    </button>
+  </div>
       </li>
 
       
@@ -362,11 +364,18 @@ div#top-post-container {
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script>
+  
   $("#radio-button").on('click',function(){
     if($("#radio-list").css('display')==='none')
     $("#radio-list").css('display','block');
     else
     $("#radio-list").css('display','none');
+    
+  });
+  $("#close-btn-radio").on('click',function(){
+    if($("#radio-list").css('display')==='block')
+    $("#radio-list").css('display','none');
+    
     
   });
   

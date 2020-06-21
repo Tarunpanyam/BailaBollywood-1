@@ -5,10 +5,163 @@
   <% include partials/header.ejs %>
 </head>
 
+
+
 <body>
 
    <!------------------------------------Navigation Bar Section-One------------------------------------------>
-    <% include partials/navbar.ejs%>
+<!------------------------------------Navigation Bar Section-One------------------------------------------>
+
+<nav id="nav-header" class="navbar navbar-expand-lg navbar-light sticky-top  ">
+  <a class="navbar-brand p-0 m-0" href="/"><img src="/images/Spanish-bolo-natraj-transparent.png" class="logo-navbar"
+      alt="Logo Of Baila Bollywood"></a>
+  <button class="navbar-toggler mr-3  " type="button" data-toggle="collapse"
+    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class=" navbar-toggler-icon"></span>
+  </button>
+
+ <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
+        <ul class="navbar-nav nav nav-pills ">
+          <li class="nav-item m-xl-2 active">
+            <a class="nav-link text-center font-weight-bold " href="/">Inicio </a>
+          </li>
+          <li class="nav-item m-xl-2 active">
+            <a class="nav-link text-center font-weight-bold " href="/equipo">Equipo </a>
+          </li>
+          
+          
+          <li class="nav-item m-xl-2">
+            <a class="nav-link text-center font-weight-bold " href="/canal-bollywood">Canal Bollywood</a>
+          </li>
+          <li class="nav-item m-xl-2">
+            <a class="nav-link text-center font-weight-bold " href="/chai-con-baila-bollywood">Chai Con Baila Bollywood</a>
+          </li>
+          
+          <li class="nav-item m-xl-2">
+            <a class="nav-link text-center font-weight-bold " href="/danzas-folkloricas-de-India">Danzas folclóricas</a>
+          </li>
+          <li class="nav-item m-xl-2">
+            <a class="nav-link text-center font-weight-bold " href="/cafe-cultural">Cafe Cultural</a>
+          </li>
+          <li class="nav-item m-xl-2">
+            <a class="nav-link text-center font-weight-bold " href="/blogs">Blogs</a>
+          </li>
+          <li class="nav-item m-xl-2">
+              <a class="nav-link text-center font-weight-bold " href="/sonidos-de-la-india">Sonidos De La India</a>
+            </li>
+          <li class="nav-item m-xl-2">
+              <a class="nav-link text-center font-weight-bold" data-toggle="modal" data-target="#exampleModalCenter" >Contacto</a>
+            </li>
+          
+        </ul>
+        
+    
+  </div>
+  <div style="margin-right: 3%;" id="radio-button">
+    <img  src="https://img.icons8.com/pastel-glyph/64/000000/radio.png"/>
+  </div>
+</nav>
+<!------------------------------Radio List --------------------------->
+
+<div class="container">
+
+  <ul class="list-group" id="radio-list" style="display: none;">
+    <li class="list-group-item d-flex justify-content-between align-items-center" >
+      
+      <img src="https://cdn.onlineradiobox.com/img/logo/6/3906.v6.png" >
+      <span style="padding-left: 20px; padding-right: 20px;">  91.1 Radio City FM </span>
+      <button class="play-btn" onclick='playRadio("radio-city")' >
+        <audio id="radio-city" style="display: none;">
+
+        <source src="https://prclive1.listenon.in/">
+
+      </audio>
+      
+      
+      <span class="fa fa-play-circle" style="font-size:50px;color:#0056b9">
+      </span>
+    
+    </button>
+    
+    
+    </li>
+
+
+
+
+    <li class="list-group-item d-flex justify-content-between align-items-center" >
+      
+      <img src="https://cdn.onlineradiobox.com/img/logo/7/60907.v12.png" >
+      <span style="padding-left: 20px; padding-right: 20px;">  Retro Bollywood  </span>
+      <button class="play-btn" onclick='playRadio("retro-bollywood")' >
+        <audio id="retro-bollywood" style="display: none;">
+          
+        <source src="https://stream.zeno.fm/60ef4p33vxquv">
+
+      </audio>
+      
+      
+      <span class="fa fa-play-circle" style="font-size:50px;color:#c5a31f;">
+      </span>
+    
+    </button>
+    
+    </li>
+
+
+
+
+    <li class="list-group-item d-flex justify-content-between align-items-center" >
+      
+      <img src="https://cdn.onlineradiobox.com/img/logo/1/3791.v2.png" >
+      <span style="padding-left: 20px; padding-right: 20px;">  FM Rainbow </span>
+      <button class="play-btn" onclick='playRadio("hits-of-bollywood")' >
+        <audio id="hits-of-bollywood" style="display: none;">
+          
+        <source src="http://64.71.79.181:5124/stream">
+
+      </audio>
+      
+      
+      <span class="fa fa-play-circle" style="font-size:50px;color:#000000;">
+      </span>
+    
+    </button>
+    
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center" >
+      
+      <img src="https://cdn.onlineradiobox.com/img/logo/3/78503.v10.png" >
+      <span style="padding-left: 20px; padding-right: 20px;">  Bollywood Punjabi Radio </span>
+      <button class="play-btn" onclick='playRadio("bollywood-pubjabi-radio")' >
+        <audio id="bollywood-pubjabi-radio" style="display: none;">
+          
+        <source src="https://stream.zeno.fm/1k0y9f0cm0quv">
+
+      </audio>
+      
+      
+      <span class="fa fa-play-circle" style="font-size:50px;color:#932121;">
+      </span>
+    
+    </button>
+    
+    </li>
+    <li >
+      <div class="container">
+      <button class="float-right" id="close-btn-radio">
+    <span style='font-size:20px; '>&#10006;</span>
+  </button>
+</div>
+    </li>
+
+    
+
+
+  </ul>
+</div>
+
 
   
     <div class=" container-header ">
@@ -78,14 +231,14 @@
           <p>
             <a href="https://es.wikipedia.org/wiki/India" target="_blank" title="India increíble">India</a> es famosa por sus danzas 
             clásicas, tan diversas como su cultura misma; presentes en la mayoría de sus estados y provincias, estas danzas son un 
-            medio de expresión y representación de historias compiladas en textos mitológicos y religiosos, así como de la tradición 
-            oral de los pueblos originarios.<br><br><br>
+            medio de expresión y representación de historias comp iladas en textos mitológicos y religiosos, así como de la tradición 
+            oral de los pueblos originarios.<br><br>
             Algunas de las características más importantes de estas danzas, son el significado del movimiento de las manos,
              los gestos y las posturas corporales; tres aspectos que configuran las actuaciones de danza clásica india,
               y que engloban el ritmo, la expresión y el espacio escénico en su totalidad. Además,
                el vestuario tradicional otorga un significado estético y profundo, que difiere dependiendo del estilo
                 de danza y la región donde se practica. 
-            <br><br><br>
+            <br><br>
             Por ejemplo, los bailarines de <a href="https://es.wikipedia.org/wiki/Bharatanatyam" target="_blank"
             title="Forma de danza bharatnatyam">Bharatnatyam</a> usan un sari, mientras que los bailarines de <a
             href="https://en.wikipedia.org/wiki/Kathak" target="_blank" title="Kathak Dance Form"> Kathak</a> usan un anarkali. 
@@ -93,22 +246,22 @@
             pone en contacto con el exterior. Muchas formas de danza clásica india han sufrido grandes cambios al ponerse en 
             contacto con la cultura occidental; sin embargo, se ha logrado mantener su esencia y su registro histórico a 
             través del tiempo. 
-            <br><br><br>
+            <br><br>
             <a href="https://es.wikipedia.org/wiki/M%C3%BAsica_de_India" target="_blank" title="Música india">Música
               india</a>: la música de la India incluye múltiples variedades, 
             desde rap punjabi, música clásica del norte y sur de la India, música folklórica, música <a
             href="https://es.wikipedia.org/wiki/Bollywood" target="_blank" title="Bollywood"> Bollywood</a>, hasta desi 
             rock y desi pop. Pero sin lugar a dudas, las canciones más famosas provienen del cine Bollywood, son tan populares 
             que suelen bailarse en bodas, cumpleaños y cualquier tipo de celebración. 
-            <br><br><br>
+            <br><br>
             Pero también la música clásica india es muy reconocida, por su excelente armonía y composición; posee dos elementos 
             fundamentales, llamados "Raga", melodía que enciende las emociones y "Tala", que mide el ciclo de tiempo en la melodía.
-              <br><br><br>
+              <br><br>
 A los indios les encanta bailar y probar nuevos ritmos. La danza y la música, han sido parte integral de la cultura 
 india desde tiempos inmemoriales; ya sea música devocional, o un buen bollywood blast, en India siempre hay 
 disposición para bailar y disfrutar.
 
-            <br><br><br>
+            <br><br>
 
 
           
@@ -164,8 +317,6 @@ disposición para bailar y disfrutar.
           Baila Bollywood
         </h2>
         <div class="line mt-3 mb-5 "></div>
-        <img class="about-image d-inline float-left" alt="Logo Of Baila Bollywood"
-          src="/images/Spanish-bolo-natraj-transparent.png">
         <p class="about_us-paragraph spanish_translation text-justify notranslate">
           <strong>BailaBollywood</strong> trabaja sobre la misión de ofrecer al mundo hispanohablante una experiencia de primera mano de la cultura india, con especial énfasis en la música, la danza, y el cine Bollywood; generamos contenido diverso y totalmente en idioma español. 
           <br><br>
@@ -369,5 +520,29 @@ Ambos proyectos,<strong> SpanishBOLO</strong> y<strong> BailaBollywood</strong>,
 
   });
 </script>
+<script>
+  $("#radio-button").on('click',function(){
+    if($("#radio-list").css('display')==='none')
+    $("#radio-list").css('display','block');
+    else
+    $("#radio-list").css('display','none');
+    
+  });
+  $("#close-btn-radio").on('click',function(){
+    if($("#radio-list").css('display')==='block')
+    $("#radio-list").css('display','none');
+    
+    
+  });
+  
+  function playRadio(id) {
+    var audio = document.getElementById(id);
+    if(audio.paused)
+    audio.play();
+    else
+    audio.pause();
+}
+</script>
+
 
 </html>
