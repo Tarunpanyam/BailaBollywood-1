@@ -144,7 +144,7 @@ catch(err){
 }
 })
 
-
+  
   //url:/blogs/:id
   // getting individual Post
   router.get('/posts/:id', async (req, res) => { 
@@ -155,7 +155,12 @@ catch(err){
       let id = req.params.id;
       let requestUrl = '/blogs/post/'+id;
       let blog = await Blog.findById(id).populate('subBlogs').populate('comments');
+      console.log(blog);
       var subBlogz=blog.subBlogs;
+      console.log("----------------------");
+      console.log(subBlogz);
+      
+      console.log("----------------------");
       var commentz = blog.comments;
       
       let a = blog.number+1;
@@ -185,8 +190,6 @@ catch(err){
       }
       
       
-      console.log(nextId);
-      console.log(prevId);
       const tagg = blog.tag;
       
       let currNumber = blog.number;
@@ -202,11 +205,10 @@ catch(err){
       
       var suggestedNumber = numberArray[randomNumber];
       let suggestionBlog = await Blog.find({number:suggestedNumber});
-      console.log(suggestionBlog);
+      
       if(suggestionBlog.length===0){
         suggestionBlog=next;
       }
-      console.log(suggestionBlog);
       //console.log(next);
       //console.log(prev);
       res.render('../views/blogs/show', {blog,subBlogz,commentz,next,prevId,nextId,prev,suggestionBlog,requestUrl});
@@ -284,6 +286,10 @@ router.post('/posts/new', async(req, res) => {
           let blog = new Blog({ 
             title: req.body.title ,
             tag:req.body.tag,
+            tag1:req.body.tag1,
+            tag2:req.body.tag2,
+            tag3:req.body.tag3,
+            tag4:req.body.tag4,
             number:totalNumber,
             image: req.files.image.name,
             thumbnail:req.files.image.name, 
@@ -305,6 +311,10 @@ router.post('/posts/new', async(req, res) => {
           console.log(req.body.tag+"-------------");
           let blog = new Blog({ title: req.body.title ,
             tag:req.body.tag,
+            tag1:req.body.tag1,
+            tag2:req.body.tag2,
+            tag3:req.body.tag3,
+            tag4:req.body.tag4,
             image:"",
             thumbnail:"", 
             content: sanitizedContent, 

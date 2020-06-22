@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
@@ -25,7 +25,7 @@ const BlogSchema = new Schema({
   image: {type: String,  unique: false},
   content: {type: String},
   creator: {type: String , default:"Baila Bollywood"},
-  tag:{type:String , required:true},
+  tag:{type:String },
   tag2:{type:String,default:""},
   tag3:{type:String,default:""},
   tag1:{type:String,default:""},

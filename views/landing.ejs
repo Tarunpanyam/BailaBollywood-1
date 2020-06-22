@@ -3,6 +3,69 @@
 
 <head>
   <% include partials/header.ejs %>
+  <style>
+    #radio-list{
+  position: absolute; 
+  left:70%; 
+  width: 30%;
+  top:13% ; 
+  z-index:1080;
+  display: none;
+  list-style-type: none;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+
+}
+
+#radio-list li img{
+  width:20%; height: auto;
+  border-radius: 10px;
+  
+}
+
+#radio-list li button{
+   border:none;
+   
+   background-color: white;
+}
+#radio-list li button:hover{
+  transform: scale(1.2) !important;
+}
+#radio-list li button span{
+ text-decoration: none;
+}
+@media (min-width: 768px) and (max-width: 991.98px) { 
+  #radio-list{
+  position: absolute; 
+  left:50%; 
+  width: 50%;
+  top:13% ; 
+  z-index:1080;
+  display: none;
+  list-style-type: none;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+
+}
+}
+@media (max-width: 767.98px) { 
+  #radio-list{
+  position: absolute; 
+  left:0%; 
+  width: 100%;
+  top:13% ; 
+  z-index:1080;
+  display: block;
+  list-style-type: none;
+  border-radius: 10px;
+  background-color: white;
+  padding: 10px;
+
+}
+ }
+  </style>
 </head>
 
 
@@ -66,7 +129,7 @@
 
 <div class="container">
 
-  <ul class="list-group" id="radio-list" style="display: none;">
+  <ul class="list-group" id="radio-list" >
     <li class="list-group-item d-flex justify-content-between align-items-center" >
       
       <img src="https://cdn.onlineradiobox.com/img/logo/6/3906.v6.png" >

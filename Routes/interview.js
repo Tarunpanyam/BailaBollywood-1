@@ -146,11 +146,18 @@ router.get("/posts/new",(req,res)=>{
 router.get('/:name/:id',(req,res)=>{
   let id = req.params.id;
   let requestUrl = '/interviews/posts/'+id;
-  Interview.findById(id).populate('subInterviews').populate('comments').exec(function(err,foundInterview){
+  Interview.findById(id,function(err,interview){
+    console.log(interview.subInterviews.length);
+    console.log(interview.subInterviews);
+  })
+  Interview.findById(id).populate("subInterviews").populate('comments').exec(function(err,foundInterview){
     if(err)
     console.log(err.message);
     let comments = foundInterview.comments;
-    console.log(comments);
+    console.log(foundInterview.subInterviews.length);
+    foundInterview.subInterviews.forEach(ele=>{
+      console.log(ele._id+" ");
+    })
     res.render('../views/interview/show',{Interview:foundInterview,comments,requestUrl});
   });
 })

@@ -67,12 +67,11 @@ app.use(function (req, res, next) {
   next();
 });
 
-var MongoURI = "mongodb+srv://pawan:ps199912@cluster0-y6m1y.mongodb.net/test?retryWrites=true&w=majority";
+//var MongoURI = "mongodb+srv://pawan:ps199912@cluster0-y6m1y.mongodb.net/test?retryWrites=true&w=majority";
+var uri = "mongodb+srv://bailabollywood:bailabollywood@cluster0-ewyo9.mongodb.net/test?retryWrites=true&w=majority ";
 //mongoose.connect("mongodb://localhost/bailaBollywood",{useNewUrlParser:true , useUnifiedTopology:true});
 
-mongoose.connect(MongoURI, { useUnifiedTopology: true, useNewUrlParser: true });
-
-
+mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser: true });
 
 
 
@@ -82,8 +81,8 @@ mongoose.connect(MongoURI, { useUnifiedTopology: true, useNewUrlParser: true });
 var transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "bailabollywood20@gmail.com",
-    pass: 'holabolo2020'
+    user: "bailabollywood2020@gmail.com",
+    pass: 'Haikyuu@2020'
   }
 });
 var mailOptions = {
