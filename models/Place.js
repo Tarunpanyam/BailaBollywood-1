@@ -21,7 +21,7 @@ function date () {
 
 const PlaceSchema = new Schema({
   title:{type:String, trim:true , required:true},
-  image:{type:String, trim:true , required:true},
+  image:{type:String, trim:true },
   thumbnail:{type:String , trim:true,required:true},
   content:{type:String},
   created:  {type: Date, default: Date.now},

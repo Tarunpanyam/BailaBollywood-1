@@ -29,7 +29,7 @@ try {
 })
 
 //-----------------get route for subplace form-------------------//
-router.get('/posts/:id/addMoreInformation',async(req,res)=>{
+router.get('/posts/:id/add-more-information',async(req,res)=>{
     try {
         let id = req.params.id;
         res.render('places/addMorInformation',{id});
@@ -135,7 +135,7 @@ router.post('/posts',async(req,res)=>{
 
         let place = await newPlace.save();
         
-        res.redirect('/places/posts/'+place._id);
+        res.redirect('/places');
         
     } catch (error) {
         console.log(error.message);
@@ -174,7 +174,7 @@ router.put('/posts/:id',async(req,res)=>{
     place.title = title;
     place.image = image;
     place.thumbnail = thumbnail;
-    let saveInstrument = await place.save();
+    let savedPlace = await place.save();
     
         res.redirect('/places/posts/'+id);
         
@@ -247,7 +247,7 @@ router.get('/posts/:id/subPlaces/:sid/edit',async(req,res)=>{
         let sid = req.params.sid;
         let id = req.params.id;
         let subPlace = await SubPlace.findById(sid);
-        res.render('places/subInstrumentEdit',{subPlace,id});
+        res.render('places/subPlaceEdit',{subPlace,id});
         
     } catch (error) {
         console.log(error.message);

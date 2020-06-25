@@ -164,14 +164,14 @@ router.get('/:name/:id',(req,res)=>{
 
 router.get("/:name/:id/add-more-information",(req,res)=>{
   let id = req.params.id;
-  let requestUrl = '/interviews/posts/'+id+'/add-more-information';
+  let requestUrl = '/cafe-cultural/posts/'+id+'/add-more-information';
   res.render("../views/interview/addMoreInformation.ejs",{id,requestUrl});
 })
 
 
 router.get('/:name/:id/edit',(req,res)=>{
   let id = req.params.id;
-  let requestUrl = '/interviews/posts/'+id+'/edit';
+  let requestUrl = '/cafe-cultural/posts/'+id+'/edit';
   Interview.findById(id,function(err,foundInterview){
     res.render("../views/interview/interviewEdit",{interview:foundInterview,requestUrl});
   })
@@ -179,7 +179,7 @@ router.get('/:name/:id/edit',(req,res)=>{
 
 router.get('/:name/:id/admin',(req,res)=>{
   let id = req.params.id;
-  let requestUrl = '/interviews/posts/'+id+'/admin';
+  let requestUrl = '/cafe-cultural/posts/'+id+'/admin';
   Interview.findById(id).populate('subInterviews').exec(function(err,foundInterview){
     if(err)
     console.log(err.message);
@@ -189,7 +189,7 @@ router.get('/:name/:id/admin',(req,res)=>{
 })
 router.get('/:name/:id/delete',(req,res)=>{
   let id=req.params.id;
-  //let requestUrl = '/interviews/posts/'+id+'/delete';
+  //let requestUrl = '/cafe-cultrual/posts/'+id+'/delete';
   console.log(id);
   Interview.findById(id,function(err,foundInterview){
     if(err)
@@ -203,7 +203,7 @@ router.get('/:name/:id/delete',(req,res)=>{
       })
     })
     foundInterview.remove();
-    res.redirect('/interviews');
+    res.redirect('/cafe-cultural');
   })
 })
 
@@ -211,7 +211,7 @@ router.get('/:name/:id/delete',(req,res)=>{
 router.get('/:name/:id/subInterviews/:sid/edit',(req,res)=>{
   let sid = req.params.sid;
   let id = req.params.id; 
-  let requestUrl = '/interviews/posts/'+id+'subInterviews/'+sid+'/edit';
+  let requestUrl = '/cafe-cultrual/posts/'+id+'subInterviews/'+sid+'/edit';
   SubInterview.findById(sid,(err,foundSubInterview)=>{
     if(err)
     console.log(err.message);
@@ -237,8 +237,8 @@ router.post('/posts',(req,res)=>{
     if(err)
     console.log(err.message);
     console.log("created");
-    console.log(newInterview);
-    res.redirect('/interviews');
+    console.log(newInterview)
+    res.redirect('/cafe-cultural');
   }
   )
 })
@@ -257,7 +257,7 @@ router.post('/posts/:id',(req,res)=>{
       console.log("Pushed into interview");
       foundInterview.subInterviews.push(subinterview);
       foundInterview.save();
-      res.redirect('/interviews/posts/'+id+'/admin');
+      res.redirect('cafe-cultural');
     })
     
     //console.log(subinterview.title +"\n"+subinterview.image+"\n"+subinterview.content );
@@ -269,15 +269,16 @@ router.post('/posts/:id',(req,res)=>{
 
 
 
-router.put('/posts/:id/subInterviews/:sid',(req,res)=>{
+router.put('/posts/:id/subInterviews/:sid',async(req,res)=>{
   console.log("Put method triggered");
   let sid = req.params.sid;
   let id = req.params.id;
+  let interview = await Blog.findById(id);
   SubInterview.findByIdAndUpdate(sid,req.body.subInterview,function(err,newSubInterview){
     if(err)
     console.log(err.message);
     console.log("SubInterview Updated");
-    res.redirect('/interviews/posts/'+id+'/admin');
+    res.redirect('/cafe-cultural/posts/'+id+'/admin');
   })
 })
 

@@ -17,27 +17,27 @@
       
       
                 <div class="container" id='form3' style="margin-top: 100px; ">
-                  <form action="/instruments/posts/<%=id%>/subInstruments/<%=subInstrument._id%>" method="POST">
+                  <form action="/places/posts/<%=id%>/subPlaces/<%=subPlace._id%>" method="POST">
                       <div class="input-group input-group-lg">
                           
                           <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
                             
-                            value="<%=subInstrument.title%>"
-                            name="subInstrument[title]"
+                            value="<%=subPlace.title%>"
+                            name="subPlace[title]"
                             placeholder="Enter Your Title">
                         </div>
                         <div class="input-group input-group-lg mt-3">
                           
                           <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
-                          value="<%=subInstrument.image%>"  
-                          name="subInstrument[image]"
+                          value="<%=subPlace.image%>"  
+                          name="subPlace[image]"
                               placeholder="Enter Image URL">
                         </div>
                         <div class="input-group input-group-lg mt-3">
                           
                             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
-                            value="<%subInstrument.imageSource%>"  
-                            name="subInstrument[imageSource]"
+                            value="<%subPlace.imageSource%>"  
+                            name="subPlace[imageSource]"
                                 placeholder="Enter Image Source">
                           </div>
                         
@@ -45,7 +45,7 @@
                         <div class="form-group mt-5">
                           <label for="editor">Enter Your Content Here:</label>
                           <textarea 
-                          name="subInstrument[content]"
+                          name="subPlace[content]"
                           class="form-control"  rows="9"
                           id='editor'  type="text"  ></textarea>
                           

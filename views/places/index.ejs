@@ -151,33 +151,11 @@ div#top-post-container h1 {
 
       <%}})%>
     </div> 
-    <div class="container mobile-container" >
-      <% places.forEach( data =>{ if(data.colIndex===1){%>
-            <div class="row mt-5 mb-5 text-center">
-            <div class="col-12 col-md-6 text-center thumbnail-parent">
-              <a href="/places/posts/<%=data.id%>">
-              <img class="thumbnail" src="<%=data.thumbnail%>" alt="place-to-visit-image" >
-            </a>
-              <p class="text-center" style="color:whitesmoke; font-size:28px"><%=data.title%> </p>
-            
-            </div>
-          
-          <%}else{%>
-            <div class="col-12 col-md-6 text-center thumbnail-parent">
-              <a href="/places/posts/<%=data.id%>">
-                <img class="thumbnail" src="<%=data.thumbnail%>" alt="place-to-visit-image" >
-              </a>
-                <p class="text-center" style="color:whitesmoke; font-size:28px"><%=data.title%> </p>
-              
-            </div>
-          </div>
     
-          <%}})%>
-        </div> 
         
     
-    
-  
+        
+        
         <% include ../partials/footerAll.ejs %>
 
 

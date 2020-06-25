@@ -11,30 +11,30 @@
     <title>Add More Information</title>
   </head>
   <body>
-    <h1 class="text-center">Add More Information Page for Musical Instruments</h1>
+    <h1 class="text-center">Add More Information for Places To Visit</h1>
     <div class="container">
       
       
       
                 <div class="container" id='form3' style="margin-top: 100px; ">
-                  <form action="/instruments/posts/<%=id%>?type=3" method="POST">
+                  <form action="/places/posts/<%=id%>?type=3" method="POST">
                       <div class="input-group input-group-lg">
                           
                           <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
                             
-                            name="subInstrument[title]"
+                            name="subPlace[title]"
                             placeholder="Enter Your Title">
                         </div>
                         <div class="input-group input-group-lg mt-3">
                           
                           <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
-                          name="subInstrument[image]"  
+                          name="subPlace[image]"  
                               placeholder="Enter Image URL">
                         </div>
                         <div class="input-group input-group-lg mt-3">
                           
                             <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"
-                            name="subInstrument[imageSource]"  
+                            name="subPlace[imageSource]"  
                                 placeholder="Enter Image Source">
                           </div>
                         
@@ -42,7 +42,7 @@
                         <div class="form-group mt-5">
                           <label for="editor">Enter Your Content Here:</label>
                           <textarea 
-                          name="subInstrument[content]"
+                          name="subPlace[content]"
                           class="form-control"  rows="9"
                           id='editor'  type="text"  ></textarea>
                           

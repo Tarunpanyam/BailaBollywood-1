@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>New SubBlog</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/blog.css" />
+    <script src="//cdn.ckeditor.com/4.14.0/basic/ckeditor.js"></script>
+  </head>
+  <body>
+    <h1 class="text-center">Form for adding new Sub Blogs</h1>
+    <div class="container">
+      <form action="/blogs/posts/<%=id%>/subBlogs/<%=subBlog._id%>?_method=PUT" method="POST" >
+        <input type="text" name="subBlog[title]" placeholder="Post title" value="<%=subBlog.title%>"  autofocus="on" minlength="4"/>
+        <textarea id='editor' id="wysiwyg" name="subBlog[content]" value="<%=subBlog.content%>" type="text" placeholder="Post Content..." required minlength="30"></textarea>
+        <input type="text" name="subBlog[image]" value="<%=subBlog.image%>" />
+        <input type="submit" value="Publish" />
+      </form>
+    </div>
+    <script>
+      CKEDITOR.replace('editor');
+      </script>
+  </body>
+</html>

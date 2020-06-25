@@ -9,7 +9,59 @@ const cacheData = require('../middleware/cacheData');
 const SubBlog = require('../models/SubBlog');
 
 
+router.get('/posts/new',async(req,res)=>{
+  try{
+    res.render('blogs/new');
 
+  }
+  catch(err){
+    console.log(err.message);
+  }
+})
+router.put('/posts/:id/subBlogs/:sid',async(req,res)=>{
+  try {
+    let sid = req.params.sid;
+    let subBlog = await SubBlog.findById(sid);
+    subBlog.image = req.body.subBlog.image;
+    subBlog.title = req.body.subBlog.title;
+    if(req.body.subBlog.content!="")
+    {
+      subBlog.content = req.body.subBlog.content;
+    }
+    let savedSubBlog =await subBlog.save();
+    res.redirect('/blogs/posts'+req.params.id);
+  } catch (error) {
+    console.log(error.message);
+  }
+})
+
+
+
+// subBlogs route
+router.get('/posts/:id/subBlogs/:sid/edit',async(req,res)=>{
+  try {
+    console.log("-------triigered---------");
+    let sid = req.params.sid;
+    let id = req.params.id;
+    let subBlog = await SubBlog.findById(sid);
+    
+    res.render('../views/blogs/subBlogEdit',{subBlog,id});
+  } catch (error) {
+    console.log(error.message);
+  }
+})
+
+router.get('/posts/:id/subBlogs/:sid/delete',async(req,res)=>{
+  try {
+    let sid = req.params.sid;
+    await SubBlog.findByIdAndRemove(sid);
+    res.redirect('back');
+    
+  } catch (error) {
+    console.log(error.message);
+    
+  }
+})
 
 // everything will start from /blogs
 
@@ -100,15 +152,7 @@ router.get('/', async(req, res) => {
       console.log(err.message);
     }
   })
-  //url:/blogs/new
-  // Posting new Blog
-  // Only Admin can see this page
-  router.get('/posts/new',cacheData.memoryCacheUse(36000),(req, res) => res.render('../views/blogs/new'));
-  console.log(global.admin);
 
-  router.get("/posts/new2",(req,res)=>{
-    res.render("../views/blogs/new2");
-  })
 
   // All Blogs Combined
 router.get("/AllBlogs",async (req,res)=>{
@@ -158,8 +202,7 @@ catch(err){
       console.log(blog);
       var subBlogz=blog.subBlogs;
       console.log("----------------------");
-      console.log(subBlogz);
-      
+      console.log(blog);
       console.log("----------------------");
       var commentz = blog.comments;
       
@@ -173,11 +216,13 @@ catch(err){
       
       if(blog.number===1){
         next = await Blog.find({number:a});
+        if(next!=null)
         nextId = next[0]._id;
         
       }
       else if(blog.number===totalNumber){
         prev = await Blog.find({number:b});
+        if(prev!=null)
         prevId = prev[0]._id;
       }
 
@@ -185,7 +230,9 @@ catch(err){
       else{
       next = await Blog.find({number:a});
       prev = await Blog.find({number:b});
+      if(next!=null && next[0]._id!=null)
       nextId = next[0]._id;
+      if(prev!=null && prev[0]._id!=null)
       prevId = prev[0]._id;
       }
       
@@ -239,7 +286,7 @@ catch(err){
 
 
   // Only Admin can see the comments
-  router.get('/posts/:id/admin',cacheData.memoryCacheUse(36000),(req,res)=>{
+  router.get('/posts/:id/admin',(req,res)=>{
     let id = req.params.id;
     
     Blog.findById(id).populate("subBlogs").populate("comments").exec(function(err,blog){
@@ -298,7 +345,8 @@ router.post('/posts/new', async(req, res) => {
 
           file.mv(`./public/uploads/${file.name}`, err => console.log(err ? 'Error on save the image!' : 'Image Uploaded!'));
           
-          await blog.save();
+          const savedBlog = await blog.save();
+          console.log(savedBlog);
           console.log('Blog Saved!');
           res.redirect('/blogs/allBlogs');
         
@@ -361,7 +409,7 @@ router.get('/posts/:id/delete',async (req,res)=>{
   await Blog.findByIdAndRemove(id);
   
     console.log("item deleted");
-    res.redirect('/blogs');
+    res.redirect('/blogs/allBlogs');
   } catch (err) {
     console.log(err);
     res.sendStatus(404).render('error-page');
@@ -370,43 +418,8 @@ router.get('/posts/:id/delete',async (req,res)=>{
 
 
 
-router.get("/allblogs/try",async(req,res)=>{
-  axios.get('https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2F%40bailabollywood20')
-.then(response => {
-     let data = response.data.items[0];
-     res.render("../views/blogs/try",{data});
-})
-.catch(error => {
-     console.log(error);
-})
-});
 
 
-
-// deleting Blog ---only Admin can delete it
-router.get('/posts/:id/delete',async (req,res)=>{
-  console.log("Delete Method Triggered");
-  let id = req.params.id;
-  Blog.findById(id).then(blog=>{
-    let toDel = path.join(__dirname,'../public/uploads/',blog.image);
-    
-    fs.unlinkSync(toDel);
-    blog.subBlogs.remove({},err=>{
-      if(err)
-      console.log(err.message);
-      console.log("SubBlogs Deleted");
-    });
-  });
-  try {
-  await Blog.findByIdAndRemove(id);
-  
-    console.log("item deleted");
-    res.redirect('/blogs');
-  } catch (err) {
-    console.log(err);
-    res.sendStatus(404).render('error-page');
-  }
-})
 
 router.get('/posts/:id/admin/comments',(req,res)=>{
   let id = req.params.id;
@@ -417,6 +430,10 @@ router.get('/posts/:id/admin/comments',(req,res)=>{
     res.render('../views/blogs/commentAdmin',{comments});
   })
 }) 
+
+router.get('/posts/:id/subBlogs/:sid/edit',async(req,res)=>{
+
+})
 
 // Post route for adding new comment on individual Blog
 // url:/blogs/posts/:id
@@ -513,7 +530,6 @@ router.put('/posts/:id',async(req,res)=>{
   
   
 })
-
 
 
 module.exports = router;

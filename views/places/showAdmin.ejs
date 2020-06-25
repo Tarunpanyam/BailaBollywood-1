@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title><%=instrument.title %></title>
+    <title><%=place.title %></title>
     <link rel="canonical" href="https://bailabollywood.com<%=requestUrl%>">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
@@ -136,53 +136,11 @@
 
  <!------------------------------------Navigation Bar Section-One------------------------------------------>
 
-  <nav id="nav-header" class="navbar navbar-expand-lg navbar-light sticky-top  ">
-    <a class="navbar-brand p-0 m-0" href="/"><img src="/images/Spanish-bolo-natraj-transparent.png" class="logo-navbar"
-        alt="Logo Of Baila Bollywood"></a>
-    <button class="navbar-toggler mr-3  " type="button" data-toggle="collapse"
-      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class=" navbar-toggler-icon"></span>
-    </button>
-
-   <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
-          <ul class="navbar-nav nav nav-pills ">
-            <li class="nav-item m-xl-2 active">
-              <a class="nav-link text-center font-weight-bold " href="/">Inicio </a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#about">
-                Quiénes Somos
-                </a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#blogs">Nuestro Blog</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#pop-categ">Lo más Popular</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/#found-note">Nuestro Fundador </a>
-            </li>
-            
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/danzas-folkloricas-de-India">Danzas folclóricas</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/equipo">Equipo</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center font-weight-bold " href="/blogs">Blogs</a>
-            </li>
-          </ul>
-      
-    </div>
-  </nav>
   <!------------------------------Instrument Start ------------------------>
   <div class="container mobile-container">
 
     <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
-        <h1 class="text-center title-div" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" ><%= instrument.title %></h1>
+        <h1 class="text-center title-div" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" ><%= place.title %></h1>
         <!--  Blog DAte && Blog Creator-->
       
         
@@ -190,8 +148,8 @@
 
 
       <div class="text-center" style="margin-top:20px; margin-bottom:20px">
-        <%if(instrument.image!==""){%>
-        <img style="width:100%; height:auto; object-fit: contain;" src="<%= instrument.image%>" alt="instrument-image">
+        <%if(place.image!==""){%>
+        <img style="width:100%; height:auto; object-fit: contain;" src="<%= place.image%>" alt="place-image">
     <%}%>
             
           
@@ -199,8 +157,20 @@
         <div class="container"  >
 
             <!---  Blog Content -->
-              <p class="target" style="text-align: justify !important; font-size: 18px;"><%= instrument.content %></p>
+              <p class="target" style="text-align: justify !important; font-size: 18px;"><%= place.content %></p>
             </div>
+            <div style="margin-top:20px;">
+              <a href="/places/posts/<%=place._id%>/edit" target="_blank">
+              <button style="width: 80%;" class="btn btn-primary">Edit This Part</button>
+            </a>
+            <a href="/places/posts/<%=place._id%>/delete">
+              <button style="width: 80%;"  class="btn btn-danger">Delete This Complete Post</button>
+            </a>
+            <a href="/places/posts/<%=place._id%>/add-more-information">
+              <button style="width: 80%;background-color: yellow;"  class="btn btn-primary">Add More Information</button>
+            </a>
+            </div>
+
       
 
   </div>
@@ -208,22 +178,22 @@
   <!---------------------------------Subinstrument start-->
 
   <div class="mobile-container">
-    <%instrument.subInstruments.forEach(function(subInstrument){%>
+    <%place.subPlaces.forEach(function(subPlace){%>
       
       <div>
-      <h4 style="font-weight: 1000; margin-top:20px;"><%=subInstrument.title%></h4>
+      <h4 style="font-weight: 1000; margin-top:20px;"><%=subPlace.title%></h4>
       </div>
-     <% if(subInstrument.image!==""){%>
+     <% if(subPlace.image!==""){%>
       <div  class="text-center">
-        <img style="width:100%; height:auto; object-fit: contain; margin-top: 20px; margin-bottom: 20px;" src="<%=subInstrument.image%>" alt="image">
+        <img style="width:100%; height:auto; object-fit: contain; margin-top: 20px; margin-bottom: 20px;" src="<%=subPlace.image%>" alt="image">
       </div>
     <%}%>
-      <div class="target mt-2" style="text-align: justify !important; font-size: 18px;"><%=subInstrument.content%></div>
+      <div class="target mt-2" style="text-align: justify !important; font-size: 18px;"><%=subPlace.content%></div>
       <div style="margin-top:20px;">
-        <a href="/instruments/posts/<%=instrument._id%>/subInstruments/<%=subInstrument._id%>/edit" target="_blank">
+        <a href="/places/posts/<%=place._id%>/subPlaces/<%=subPlace._id%>/edit" target="_blank">
         <button style="width: 80%;" class="btn btn-primary">Edit This Part</button>
       </a>
-      <a href="/instruments/posts/<%=instrument._id%>/subInstruments/<%=subInstrument._id%>/delete">
+      <a href="/places/posts/<%=place._id%>/subPlaces/<%=subPlace._id%>/delete">
         <button style="width: 80%;"  class="btn btn-danger">Delete This Part</button>
       </a>
       </div>
@@ -244,7 +214,7 @@
   <div class="mobile-container text-center">
     <hr>
     <div style="padding-top: 100px; padding-bottom: 50px;">
-    <form action="/instruments/posts/<%= instrument._id %>/comments" method="POST">
+    <form action="/places/posts/<%= place._id %>/comments" method="POST">
 
       <h3  style="color:grey">Leave A Reply </h3>
       <input required type="text" style="width: 100%; margin-top:5px; margin-bottom: 15px;" name="comment[name]" placeholder="Name">
@@ -256,7 +226,7 @@
   </div> 
 
   <div class="mobile-container" style="margin-bottom:100px ">
-    <% instrument.comments.forEach(comment=>{%>
+    <% place.comments.forEach(comment=>{%>
       <div class="media" style="background-color: #f5f5f5; border-radius: 10px; margin-top: 20px;">
         <div class="media-body">
           <h5 style="font-weight: bold; padding-left: 10px; padding-top: 10px;"><%=comment.name%></h5>
