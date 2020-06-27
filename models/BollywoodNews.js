@@ -23,6 +23,8 @@ const BollywoodNewsSchema = new Schema({
   title:{type:String, trim:true , required:true},
   image:{type:String, trim:true , required:true},
   thumbnail:{type:String , trim:true,required:true},
+  category:{type:String ,trim:true,required:true},
+  index:{type:Number},
   newsModel:{type:String , trim:true , required:true},
   uploader:{type:String , trim:true , required:true},
   content:{type:String},
