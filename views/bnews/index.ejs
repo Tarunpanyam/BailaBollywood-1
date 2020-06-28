@@ -195,27 +195,19 @@ En fin, nunca está de más saber un poco del medio del espectáculo y en Canal 
 
           <div class="image-wrapper" style="padding: 20px 20px 0px 20px;">
             
-                  <img src="uploads/bollywood-news.jpg">
+                  <img src="<%=news[0].image%>">
               <h4 style="font-style: italic; margin-top: 8px; font-size: 22px; ">Bollywood News</h4>
               <hr>
     
               </div>
 
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has 
-                been the industry's standard dummy text ever since the 1500s, when an unknown printer took a 
-                galley of type and scrambled it to make a type specimen book. 
-                
-                <br><br>It has survived not only five 
-                centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
-                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum 
-                passages, and more recently with desktop publishing software like Aldus PageMaker including 
-                versions of Lorem Ipsum.
-      </p>
-
+              <h2 style="color: white;">
+                <%=news[0].title%>
+            </h2>
+          <a href="/canal-bollywood/posts/<%=news[0]._id%>">
       <button type="button" style=" margin-bottom:10px;padding: 12px 35px; background: transparent;  border: 3px solid #10112c;
       color: #10112c; font-size: 18px;">Ver Mas</button>
-             
+             </a>
           </div>
         </div>
 
@@ -232,44 +224,36 @@ En fin, nunca está de más saber un poco del medio del espectáculo y en Canal 
         <div class="container">
 
           <div class="image-wrapper" style="margin-bottom: 30px;">
-            <a href="">
-                  <img src="uploads/bollywood-news.jpg">
+            <a href="/canal-bollywood/posts/<%=news[1]._id%>">
+                  <img src="<%=news[1].image%>">
               </a>
                   <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 0px;">
-                    Bollywood News</h4>
+                    <%=news[1].title%></h4>
       
           </div>
       
              <div class="image-wrapper" style="margin-bottom: 30px;">
-               <a href="">
-              <img src="uploads/bollywood-news.jpg">
+               <a href="/canal-bollywood/posts/<%=news[2]._id%>">
+              <img src="<%=news[2].image%>">
                  </a>
               <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 0px;">
-                Bollywood News</h4>
+                <%=news[2].title%></h4>
   
                </div>
 
 
                <div class="image-wrapper" style="margin-bottom: 30px;">
-                <a href="">
-               <img src="uploads/bollywood-news.jpg">
+                <a href="/canal-bollywood/posts/<%=news[3]._id%>">
+                  <img src="<%=news[3].image%>">
                   </a>
                <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 0px;">
-                 Bollywood News</h4>
+                 <%=news[3].title%></h4>
    
                 </div>
 
 
       
-             <div class="image-wrapper" style="margin-bottom: 30px;">
-             <a href="">
-              <img src="uploads/bollywood-news.jpg">
-               </a>
-                <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 0px;">
-            Bollywood News</h4>
-
-            </div>
-    
+             
     
       </div>
       </div>
@@ -310,20 +294,21 @@ En fin, nunca está de más saber un poco del medio del espectáculo y en Canal 
                       <div class="blog-box row">
                           <div class="col-md-4">
                               <div class="post-media">
-                                  <a href="" title="">
-                                      <img src="uploads/bollywood-news.jpg" alt="" class="img-fluid" style="width: 100%; height: 230px;">
+                                <a href="/canal-bollywood/posts/<%=news[2]._id%>">
+                                      <img src="<%=news[4].image%>" alt="" class="img-fluid" style="width: 100%; height: 230px;">
                                       <div class="hovereffect"></div>
                                   </a>
                               </div><!-- end media -->
                           </div><!-- end col -->
 
                           <div class="blog-meta big-meta col-md-8">
-                            <h4 style="line-height: 2em;"><a href="" title="">  <span style="font-size: 18px; color: #f7bc42; line-height: 2em;">
-                              - News Gossip</span> <br>Today's Latest Bollywood News</a></h4>
+                            <h4 style="line-height: 2em;"><a href="/canal-bollywood/posts/<%=news[4]._id%>" title="">  <%=news[4].title%></a></h4>
                                 <p>
+                                  <!--
                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                                   </p>                        
+                                   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.--->
+                                 
+                                  </p>                        
                           </div><!-- end meta -->
                       </div><!-- end blog-box -->
 
@@ -335,19 +320,19 @@ En fin, nunca está de más saber un poco del medio del espectáculo y en Canal 
                       <div class="blog-box row">
                         <div class="col-md-4">
                             <div class="post-media">
-                                <a href="" title="">
-                                    <img src="uploads/bollywood-news.jpg" alt="" class="img-fluid" style="width: 100%; height: 230px;">
+                                <a href="/canal-bollywood/posts/<%=news[5]._id%>" title="">
+                                    <img src="<%=news[5].image%>" alt="" class="img-fluid" style="width: 100%; height: 230px;">
                                     <div class="hovereffect"></div>
                                 </a>
                             </div><!-- end media -->
                         </div><!-- end col -->
 
                         <div class="blog-meta big-meta col-md-8">
-                          <h4 style="line-height: 2em;"><a href="" title="">  <span style="font-size: 18px; color: #f7bc42; line-height: 2em;">
-                            - TV</span> <br>Today's Latest Bollywood News</a></h4>
+                          <h4 style="line-height: 2em;"><a href="/canal-bollywood/posts/<%=news[5]._id%>" title="">   <%=news[5].title%></a></h4>
                               <p>
+                                <!--
                                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.-->
                                  </p>                        
                         </div><!-- end meta -->
                     </div><!-- end blog-box -->
@@ -358,19 +343,19 @@ En fin, nunca está de más saber un poco del medio del espectáculo y en Canal 
                     <div class="blog-box row">
                       <div class="col-md-4">
                           <div class="post-media">
-                              <a href="" title="">
-                                  <img src="uploads/bollywood-news.jpg" alt="" class="img-fluid" style="width: 100%; height: 230px;">
+                              <a href="/canal-bollywood/posts/<%=news[6]._id%>" title="">
+                                  <img src="<%=news[6].image%> " alt="" class="img-fluid" style="width: 100%; height: 230px;">
                                   <div class="hovereffect"></div>
                               </a>
                           </div><!-- end media -->
                       </div><!-- end col -->
 
                       <div class="blog-meta big-meta col-md-8">
-                        <h4 style="line-height: 2em;"><a href="" title="">  <span style="font-size: 18px; color: #f7bc42; line-height: 2em;">
-                          - South Gossip</span> <br>Today's Latest Bollywood News</a></h4>
+                        <h4 style="line-height: 2em;"><a href="/canal-bollywood/posts/<%=news[6]._id%>" title="">  <%=news[6].title%></a></h4>
                             <p>
+                              <!--
                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                               Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.-->
                                </p>                        
                       </div><!-- end meta -->
                   </div><!-- end blog-box -->
@@ -382,33 +367,30 @@ En fin, nunca está de más saber un poco del medio del espectáculo y en Canal 
                 
             
                     <div id="lt-blog" class="col-12 col-md-4 my-2">
-                      <a href="#">
-                    <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:200px;">
+                      <a href="/canal-bollywood/posts/<%=news[7]._id%>">
+                    <img src="<%=news[7].image%>" alt="image" style="width:100%; height:200px;">
                   </a>
                   <p style="font-weight: bold; font-size: 17px; ">
-                    Lorem Ipsum is simply dummy text of the printing.
-                    </p>
+                    <%=news[7].title%></p>
                   
                 </div>
         
                 <div id="lt-blog" class="col-12 col-md-4 my-2">
-                  <a href="#">
-                <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:200px;">
+                  <a href="/canal-bollywood/posts/<%=news[8]._id%>">
+                <img src="<%=news[8].image%>" alt="image" style="width:100%; height:200px;">
               </a>
               <p style="font-weight: bold; font-size: 17px; ">
-                Lorem Ipsum is simply dummy text of the printing.
-                </p>
+                <%=news[8].title%></p>
               
                </div>
               
              
                 <div id="lt-blog" class="col-12 col-md-4 my-2">
-                      <a href="#">
-                    <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:200px;">
+                      <a href="/canal-bollywood/posts/<%=news[9]._id%>">
+                    <img src="<%=news[9].image%>" alt="image" style="width:100%; height:200px;">
                   </a>
                   <p style="font-weight: bold; font-size: 17px; ">
-                    Lorem Ipsum is simply dummy text of the printing.
-                    </p>
+                    <%=news[9].title%> </p>
                   
                 </div>
       
@@ -423,23 +405,22 @@ En fin, nunca está de más saber un poco del medio del espectáculo y en Canal 
                 <div id="lt-blog" class="col-12 col-md-6 my-2">
                   <h4 style="font-size: 26px; margin-bottom:20px; font-weight: bold; font-family:'Ananda Namaste Regular';"> 
                     South News</h4>
-                  <a href="#">
-                <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:300px;">
+                  <a href="/canal-bollywood/posts/<%=news[10]._id%>">
+                <img src="<%=news[10].image%>" alt="image" style="width:100%; height:300px;">
               </a>
               <p style="font-weight: bold; font-size: 17px; ">
-                Lorem Ipsum is simply dummy text of the printing.
-                </p>
+                <%=news[10].title%>  
+              </p>
               
                </div>
     
             <div id="lt-blog" class="col-12 col-md-6 my-2">
               <h4 style="font-size: 26px; margin-bottom:20px; font-weight: bold; font-family:'Ananda Namaste Regular';"> Bollywood News</h4>
-              <a href="#">
-            <img src="uploads/bollywood-news.jpg" alt="image" style="width:100%; height:300px;">
+              <a href="/canal-bollywood/posts/<%=news[11]._id%>">
+            <img src="<%=news[11].image%>" alt="image" style="width:100%; height:300px;">
           </a>
           <p style="font-weight: bold; font-size: 17px; ">
-            Lorem Ipsum is simply dummy text of the printing.
-            </p>
+            <%=news[11].title%> </p>
           
            </div>
           
@@ -480,12 +461,12 @@ En fin, nunca está de más saber un poco del medio del espectáculo y en Canal 
                     <div class="container">
 
                       <div class="image-wrapper" style="margin-bottom: 30px;">
-                        <h4>bollyvideo</h4>
-                        <a href="">
-                              <img src="uploads/bollywood-news.jpg">
+                        
+                        <a href="/canal-bollywood/posts/<%=news[12]._id%>">
+                              <img src="<%=news[12].image%>">
                           </a>
                               <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 0px;">
-                                Bollywood News</h4>
+                                <%=news[12].title%></h4>
                   
                       </div>
                     </div>
@@ -499,12 +480,12 @@ En fin, nunca está de más saber un poco del medio del espectáculo y en Canal 
                     <div class="container">
 
                       <div class="image-wrapper" style="margin-bottom: 30px;">
-                        <h4>News</h4>
-                        <a href="">
-                              <img src="uploads/bollywood-news.jpg">
+                        
+                        <a href="/canal-bollywood/posts/<%=news[13]._id%>">
+                              <img src="<%=news[13].image%>">
                           </a>
                               <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 0px;">
-                                Bollywood News</h4>
+                                <%=news[13].title%></h4>
                   
                       </div>
                     </div>
@@ -518,32 +499,12 @@ En fin, nunca está de más saber un poco del medio del espectáculo y en Canal 
                     <div class="container">
 
                       <div class="image-wrapper" style="margin-bottom: 30px;">
-                        <h4>Hollywood</h4>
-                        <a href="">
-                              <img src="uploads/bollywood-news.jpg">
+                        
+                        <a href="/canal-bollywood/posts/<%=news[14]._id%>">
+                              <img src="<%=news[14].image%>">
                           </a>
                               <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 0px;">
-                                Bollywood News</h4>
-                  
-                      </div>
-                    </div>
-
-                  
-                  </div><!-- end widget -->
-
-
-                     
-                  <div class="widget">
-
-                    <div class="container">
-
-                      <div class="image-wrapper" style="margin-bottom: 30px;">
-                        <h4>Movies</h4>
-                        <a href="">
-                              <img src="uploads/bollywood-news.jpg">
-                          </a>
-                              <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 0px;">
-                                Bollywood News</h4>
+                                <%=news[14].title%></h4>
                   
                       </div>
                     </div>
@@ -558,12 +519,32 @@ En fin, nunca está de más saber un poco del medio del espectáculo y en Canal 
                     <div class="container">
 
                       <div class="image-wrapper" style="margin-bottom: 30px;">
-                        <h4>South</h4>
-                        <a href="">
-                              <img src="uploads/bollywood-news.jpg">
+                        
+                        <a href="/canal-bollywood/posts/<%=news[15]._id%>">
+                              <img src="<%=news[15].image%>">
                           </a>
                               <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 0px;">
-                                Bollywood News</h4>
+                                <%=news[15].title%></h4>
+                  
+                      </div>
+                    </div>
+
+                  
+                  </div><!-- end widget -->
+
+
+                     
+                  <div class="widget">
+
+                    <div class="container">
+
+                      <div class="image-wrapper" style="margin-bottom: 30px;">
+                        
+                        <a href="/canal-bollywood/posts/<%=news[16]._id%>">
+                              <img src="<%=news[16].image%>">
+                          </a>
+                              <h4 style="font-style: italic; margin-top: 8px; font-size: 18px; margin-bottom: 0px;">
+                                <%=news[16].title%></h4>
                   
                       </div>
                     </div>

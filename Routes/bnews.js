@@ -5,6 +5,18 @@ const SubNews = require('../models/SubNews');
 const cacheData = require('../middleware/cacheData');
 const Comment = require('../models/Comment');
 
+router.get('/',async(req,res)=>{
+  try {
+    let news = await BollywoodNews.find({}).sort({created:-1}).limit(19);
+    
+    res.render('bnews/index',{news});
+
+    
+  } catch (error) {
+    console.log(error.message);
+    
+  }
+})
 
 
 router.get('/all',async(req,res)=>{
@@ -13,14 +25,14 @@ router.get('/all',async(req,res)=>{
    var length = allNews.length;
    allNews.forEach(news=>{
      news.index = length;
+     
      length--;
      news.save();
    })
-   allNews.forEach(news=>{
-    console.log(news.index);
-   })
    
-  const bnews = await BollywoodNews.find({}).limit(10);
+   
+  const bnews = await BollywoodNews.find({}).sort({created:-1}).limit(19);
+  
    res.render('bnews/all',{bnews});
   } catch (error) {
   console.log(error.message);  
@@ -66,22 +78,6 @@ router.delete('/comments/:cid/delete',async(req,res)=>{
   }
 })
 
-router.get('',(req,res)=>{
-  BollywoodNews.find({},(err,allBollywoodNews)=>{
-
-    let requestUrl = '/canal-bollywood/index';
-    res.render('../views/bnews/index',{allBollywoodNews,requestUrl});
-  })
-})
-
-
-router.get('/index',(req,res)=>{
-  BollywoodNews.find({},(err,allBollywoodNews)=>{
-
-    let requestUrl = '/canal-bollywood/index';
-    res.render('bnews/indexSecond',{allBollywoodNews,requestUrl});
-  })
-})
 
 
 
