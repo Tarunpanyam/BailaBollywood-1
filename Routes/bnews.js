@@ -8,8 +8,23 @@ const Comment = require('../models/Comment');
 router.get('/',async(req,res)=>{
   try {
     let news = await BollywoodNews.find({}).sort({created:-1}).limit(19);
-    
-    res.render('bnews/index',{news});
+    console.log("----------------------");
+    console.log("----------------------");
+    console.log("----------------------");
+   // let text = news[0].content;
+   //console.log(news[0]._id);
+   let newss = await BollywoodNews.findById(news[0]._id).populate('subNews');
+   //console.log(newss);
+   let text = "";
+   if(news[0].content!=="")
+   text = news[0].content;
+   newss.subNews.forEach(subNews=>{
+    if(text==="")
+    text = subNews.content;
+     
+   })
+   console.log(text);
+    res.render('bnews/index',{news,text});
 
     
   } catch (error) {

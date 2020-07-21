@@ -204,6 +204,9 @@ En fin, nunca está de más saber un poco del medio del espectáculo y en Canal 
               <h2 style="color: white;">
                 <%=news[0].title%>
             </h2>
+            <div>
+              <p class="target"><%=text%></p>
+          </div>
           <a href="/canal-bollywood/posts/<%=news[0]._id%>">
       <button type="button" style=" margin-bottom:10px;padding: 12px 35px; background: transparent;  border: 3px solid #10112c;
       color: #10112c; font-size: 18px;">Ver Mas</button>
@@ -302,13 +305,8 @@ En fin, nunca está de más saber un poco del medio del espectáculo y en Canal 
                           </div><!-- end col -->
 
                           <div class="blog-meta big-meta col-md-8">
-                            <h4 style="line-height: 2em;"><a href="/canal-bollywood/posts/<%=news[4]._id%>" title="">  <%=news[4].title%></a></h4>
-                                <p>
-                                  <!--
-                                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.--->
-                                 
-                                  </p>                        
+                            <h4 style="line-height: 2em; margin-top: 2em; margin-bottom: 2em;"><a href="/canal-bollywood/posts/<%=news[4]._id%>" title="">  <%=news[4].title%></a></h4>
+                                                  
                           </div><!-- end meta -->
                       </div><!-- end blog-box -->
 
@@ -328,12 +326,8 @@ En fin, nunca está de más saber un poco del medio del espectáculo y en Canal 
                         </div><!-- end col -->
 
                         <div class="blog-meta big-meta col-md-8">
-                          <h4 style="line-height: 2em;"><a href="/canal-bollywood/posts/<%=news[5]._id%>" title="">   <%=news[5].title%></a></h4>
-                              <p>
-                                <!--
-                                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                 Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.-->
-                                 </p>                        
+                          <h4 style="line-height: 2em; margin-top: 2em; margin-bottom: 2em;"><a href="/canal-bollywood/posts/<%=news[5]._id%>" title="">   <%=news[5].title%></a></h4>
+                                                
                         </div><!-- end meta -->
                     </div><!-- end blog-box -->
 
@@ -351,7 +345,7 @@ En fin, nunca está de más saber un poco del medio del espectáculo y en Canal 
                       </div><!-- end col -->
 
                       <div class="blog-meta big-meta col-md-8">
-                        <h4 style="line-height: 2em;"><a href="/canal-bollywood/posts/<%=news[6]._id%>" title="">  <%=news[6].title%></a></h4>
+                        <h4 style="line-height: 2em; margin-top: 2em; margin-bottom: 2em;"><a href="/canal-bollywood/posts/<%=news[6]._id%>" title="">  <%=news[6].title%></a></h4>
                             <p>
                               <!--
                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -578,18 +572,19 @@ En fin, nunca está de más saber un poco del medio del espectáculo y en Canal 
 
 
 
-  <script>
+  
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
   $(".target").each(function(){
     let text = ( $(this).text());
-    text = text.substring(0,200);
-    text = text + "...."
+    //text = text.substring(0,200);
+    //text = text + "...."
     let html = $.parseHTML(text);
     $(this).empty();
     $(this).append(html);
   });
 </script>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
