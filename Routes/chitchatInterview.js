@@ -4,6 +4,7 @@ const chitChatInterview = require('../models/ChitChatInterview');
 const SubInterview = require('../models/SubInterview');
 const cacheData = require('../middleware/cacheData');
 const Comment = require('../models/Comment');
+const ChitChatInterview = require('../models/ChitChatInterview');
 
 
 router.get('/posts/:id/admin/comments',async(req,res)=>{
@@ -47,10 +48,49 @@ router.delete('/comments/:cid/delete',async(req,res)=>{
 
 router.get('/index',async(req,res)=>{
     try {
-        let interviews = await chitChatInterview.find({});
-        console.log(interviews);
+        let chitChatInt = await ChitChatInterview.find({}).sort({created:-1}).limit(4);
+        
         let requestUrl = '/chai-con-baila-bollywood/index';
-        res.render('../views/chitChatInterview/indexSecond',{interviews,requestUrl});
+        
+  // console.log(chitChatInt);
+    
+        let interviews = await chitChatInterview.find({});
+        //console.log(interviews);
+        //let textArray = [];
+        let interview = await ChitChatInterview.findById(chitChatInt[0]._id).populate('subInterview');
+        //console.log(newss);
+        let text1 = "";
+        if(chitChatInt[0].content!=="")
+        text1 = chitChatInt[0].content;
+        interview.subInterviews.forEach(subNews=>{
+        if(text1==="")
+        text1 = subNews.content;
+     
+   })
+   console.log(text1);
+   let interview2 = await ChitChatInterview.findById(chitChatInt[0]._id).populate('subInterview');
+   //console.log(newss);
+   let text2 = "";
+   if(chitChatInt[1].content!=="")
+   text2 = chitChatInt[1].content;
+   interview2.subInterviews.forEach(subNews=>{
+   if(text2==="")
+   text2 = subNews.content;
+
+})
+   console.log("text2="+text2);
+   let interview3 = await ChitChatInterview.findById(chitChatInt[0]._id).populate('subInterview');
+   //console.log(newss);
+   let text3 = "";
+   if(chitChatInt[2].content!=="")
+   text3 = chitChatInt[2].content;
+   interview3.subInterviews.forEach(subNews=>{
+   if(text3==="")
+   text3 = subNews.content;
+
+})
+console.log(text3);
+        res.render('../views/chitChatInterview/indexSecond',{chitChatInt,requestUrl});
         
         
     } catch (error) {
@@ -60,14 +100,58 @@ router.get('/index',async(req,res)=>{
     }
 })
 
-router.get('',async(req,res)=>{
-  try{
-    res.render('chitChatInterview/index');
+router.get('/',async(req,res)=>{
+  try {
+    let chitChatInt = await ChitChatInterview.find({}).sort({created:-1}).limit(20);
+    
+    let requestUrl = '/chai-con-baila-bollywood/index';
+    
+// console.log(chitChatInt);
 
-  }
-  catch(err){
-    console.log(err.message);
-  }
+    let interviews = await chitChatInterview.find({});
+    //console.log(interviews);
+    //let textArray = [];
+    let interview = await ChitChatInterview.findById(chitChatInt[0]._id).populate('subInterview');
+    //console.log(newss);
+    let text1 = "";
+    if(chitChatInt[0].content!=="")
+    text1 = chitChatInt[0].content;
+    interview.subInterviews.forEach(subNews=>{
+    if(text1==="")
+    text1 = subNews.content;
+ 
+})
+console.log(text1);
+let interview2 = await ChitChatInterview.findById(chitChatInt[1]._id).populate('subInterview');
+//console.log(newss);
+let text2 = "";
+if(chitChatInt[1].content!=="")
+text2 = chitChatInt[1].content;
+interview2.subInterviews.forEach(subNews=>{
+if(text2==="")
+text2 = subNews.content;
+
+})
+console.log("text2="+text2);
+let interview3 = await ChitChatInterview.findById(chitChatInt[2]._id).populate('subInterview');
+//console.log(newss);
+let text3 = "";
+if(chitChatInt[2].content!=="")
+text3 = chitChatInt[2].content;
+interview3.subInterviews.forEach(subNews=>{
+if(text3==="")
+text3 = subNews.content;
+
+})
+console.log(text3);
+    res.render('../views/chitChatInterview/index',{chitChatInt,requestUrl,text1,text2,text3});
+    
+    
+} catch (error) {
+
+    console.log(error.message);
+    
+}
 })
 
 
@@ -82,7 +166,7 @@ router.get("/",async(req,res) => {
     let id;
     let twoQ=[];
     //console.log('all')
-    allInterviews.forEach(interview=>{
+    allInterviews.forEach(i2nterview=>{
       count++;
       if(count===1)
       {
