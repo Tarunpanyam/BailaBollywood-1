@@ -111,6 +111,17 @@ div#top-post-container h1 {
 }
 
 }
+section.introText {
+    width: 100%;
+    
+    background: linear-gradient(to right,#ff5f6d,#f8b336);
+    padding-bottom: 10px;
+    text-align: justify;
+    padding: 30px 30px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 800;
+}
 </style>
 
 <!------Boot Strap Files-->
@@ -124,9 +135,22 @@ div#top-post-container h1 {
 <!------------------------------------Navigation Bar Section-One------------------------------------------>
  <% include ../partials/navbar.ejs %>
 
+  <section class="introText" >
+    <h1 class="text-center" style="font-family: 'Ananda Namaste Regular';font-size:50px;
+    ">lugares para visitar
+    </h1>
+    <h5 style="font-weight:100; font-size:larger; line-height: 1.1em;">
+      
+      India es un país hermoso, de eso no hay ninguna duda, su diversidad cultural provee miles de perspectivas para el más intrépido viajero; desde parajes naturales de incalculable belleza, hasta palacios, museos, templos, galerías y plazas populares que dejan atónito a cualquiera; cada rincón de este maravilloso país tiene algo que ofrecer. 
+  <br><br>
+  Atrévete a descubrir la India y sus mejores lugares turísticos de la mano de Baila Bollywood, sumérgete en lo más profundo de su cultura y sus tradiciones aprendiendo sobre las vistas más populares y los espacios más recónditos del país de los mil colores.
+  <br>    <br> 
+      
+  
+  <hr>
+  </h5>
+  </section>
 
-<h1 style="padding-top:70px; margin-bottom:20px; font-weight: bold; color: white; font-family:'Ananda Namaste Regular';" class="text-center display-4" >
-  lugares para visitar </h1>
   <div class="container mobile-container" >
   <% places.forEach( data =>{ if(data.colIndex===1){%>
         <div class="row mt-5 mb-5 text-center">
