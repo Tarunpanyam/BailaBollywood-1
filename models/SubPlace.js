@@ -1,12 +1,10 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const SubPlaceSchema = new Schema({
-    title   :{type:String , trim:true , default:""},
-    image   :{type:String , trim:true , default:""},
-    content :{type:String , default:""}
+var subPlaceSchema = new mongoose.Schema({
+    title:{type:String},
+    content:{type:String},
+    image:{type:String} 
+ });
 
+ module.exports = mongoose.model("SubPlace", subPlaceSchema);
 
-})
-
-module.exports = mongoose.model('SubPlace',SubPlaceSchema);

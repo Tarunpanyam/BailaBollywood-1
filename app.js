@@ -27,7 +27,7 @@ const socialHandleRoutes                  = require('./Routes/social');
 const instrumentRoutes                    = require('./Routes/instrument');
 const chitChatInterviewRoutes             = require('./Routes/chitchatInterview');
 const bollywoodNewsRoutes                 = require('./Routes/bnews');
-const placesToVisitRoutes                 = require('./Routes/place');
+const PlaceRoutes                         = require('./Routes/place');
 
 app.use(apiRoutes);
 const port =  3000;
@@ -313,7 +313,7 @@ app.use("/",socialHandleRoutes);
 app.use("/sonidos-de-la-india",instrumentRoutes);
 app.use('/chai-con-baila-bollywood',chitChatInterviewRoutes);
 app.use('/canal-bollywood',bollywoodNewsRoutes);
-app.use('/places',placesToVisitRoutes);
+app.use('/places',PlaceRoutes);
 
 
 app.get('/test',(req,res)=>{

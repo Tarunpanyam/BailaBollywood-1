@@ -20,12 +20,20 @@ function date () {
 }
 
 const PlaceSchema = new Schema({
-  title:{type:String, trim:true , required:true},
-  image:{type:String, trim:true },
-  thumbnail:{type:String , trim:true,required:true},
-  content:{type:String},
+  
+  title: {type: String, trim: true, required: true},
+  image: {type: String,  unique: false},
+  content: {type: String},
+  creator: {type: String , default:"Baila Bollywood"},
+  tag:{type:String },
+  tag2:{type:String,default:""},
+  tag3:{type:String,default:""},
+  tag1:{type:String,default:""},
+  tag4:{type:String,default:""},
   created:  {type: Date, default: Date.now},
-  time: {type: String},
+  time: {type: String, default: date()},
+  thumbnail:{type:String, default:""},
+  number:{type:Number},
   comments:[
     {
       type: mongoose.Schema.Types.ObjectId,
