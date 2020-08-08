@@ -181,7 +181,7 @@ router.get("/AllPlaces",async (req,res)=>{
    
    place.save();
     })
-  res.render('../views/places/placeAll',{places});
+  res.render('../views/places/all',{places});
 }
 catch(err){
   console.log(err.message);
@@ -270,7 +270,7 @@ catch(err){
     try {
       let id = req.params.id;
       let place = await Place.findById(id);
-      res.render('../views/places/placeEdit',{place});
+      res.render('../views/places/edit',{place});
   
       
     } catch (error) {
@@ -385,7 +385,7 @@ router.post('/posts/new', async(req, res) => {
 
 router.get('/:id/subPlaces/new',(req,res)=>{
   var id = req.params.id;
-  res.render('../views/places/newSubPlace',{id});
+  res.render('../views/places/add-more-information',{id});
   
 })
 
