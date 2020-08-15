@@ -1,27 +1,19 @@
 <html>
   <head>
     <title><%=place.title %></title>
-    <link rel="canonical" href="/places/posts/<%=place._id%>">
+    <link rel="canonical" href="https://bailabollywood.com<%=requestUrl%>">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     
-   
-    <script>window.twttr = (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0],
-        t = window.twttr || {};
-      if (d.getElementById(id)) return t;
-      js = d.createElement(s);
-      js.id = id;
-      js.src = "https://platform.twitter.com/widgets.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    
-      t._e = [];
-      t.ready = function(f) {
-        t._e.push(f);
-      };
-    
-      return t;
-    }(document, "script", "twitter-wjs"));</script>
+   <script>
+      $(document).ready(function(){
+    let text = ( $("#target").text());
+    let html = $.parseHTML(text);
+    $("#target").empty();
+    $("#target").append(html);
+  
+});
+    </script>
 
         <meta charset="UTF-8">
   <!--Title of the Website-->
@@ -111,7 +103,7 @@
         width: 90%;
         margin-left: 5%;
       }
-      .suggestedPlace{
+      .suggestedBlog{
         width: 90%;
         height: auto;
       }
@@ -121,7 +113,7 @@
     width: 62%;
     margin-left:19%;
   }
-  .suggestedPlace{
+  .suggestedBlog{
     width: 63%;
     height: auto;
   }
@@ -132,183 +124,69 @@
     margin-left: 25%;
 
   }
-  .suggestedPlace{
+  .suggestedBlog{
     width: 50%;
     height: auto;
   }
-}
-
-#share {
-	width: 100%;
-  	margin: 30px auto;
-  	text-align: center;
-}
-
-/* buttons */
-
-#share a {
-	width: 50px;
-  	height: 50px;
-  	display: inline-block;
-  	margin: 8px;
-  	border-radius: 50%;
-  	font-size: 24px;
-  	color: #fff;
-	opacity: 0.75;
-	transition: opacity 0.15s linear;
-}
-
-#share a:hover {
-	opacity: 1;
-}
-
-/* icons */
-
-#share i {
-  	position: relative;
-  	top: 50%;
-  	transform: translateY(-50%);
-}
-
-/* colors */
-
-.facebook {
- 	background: #3b5998;
-}
-
-.whatsapp
-{
-	background:green;
-}
-.twitter {
-  	background: #55acee;
-}
-
-.googleplus {
-  	background: #dd4b39;
-}
-
-.linkedin {
-  	background: #0077b5;
-}
-
-.pinterest {
-  	background: #cb2027;
 }
   </style>
     
   </head>
 <body >
-  <% include ../partials/navbar.ejs %>   
 
-  <div class="container mobile-container" >
-  <!--  Place Title-->
-  <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
-    <h1 class="text-center title-div" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" ><%= place.title %></h1>
-    <!--  Place DAte && Place Creator-->
-    <h5 class="text-muted" ><%= place.time %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Posted By: <%= place.creator %></h5>
-  
-    
-  </div>
-    <!---- Place Image-->
-    <% if(place.image.localeCompare("")==1){%>
-    <div class="text-center" style="margin-top:20px; margin-bottom:20px">
-    <img style="width:100%; height:auto; object-fit: contain;" src="/uploads/<%= place.image%>" alt="place-image">
-    </div>
-    <%  }%>
-    
-<!-- 
+  <% include ../partials/navbar.ejs%>
 
-1. load font awesome with your favorite method
-2. replace items in {{ }}s with details specific to your content 
+  <!------------------------------Instrument Start ------------------------>
+  <div class="container mobile-container">
 
--->
-
-<div id="share">
-
-  <!-- facebook -->
-  <a class="facebook" href="https://www.facebook.com/share.php?u=https://bailabollywood.com/places/posts/<%=place._id%>&title=<%=place.title%>" target="blank"><i class="fa fa-facebook"></i></a>
-
-  <!-- twitter -->
-  <a class="twitter" href="https://twitter.com/intent/tweet?text=<%=place.title%>%20+https://bailabollywood.com/places/posts/<%=place._id%>" target="blank"><i class="fa fa-twitter"></i></a>
-
-<a class="whatsapp" href="whatsapp://send?text=<%=place.title%>%20+https://bailabollywood.com/places/posts/<%=place._id%>" data-action="share/whatsapp/share" target="blank"><i class="fa fa-whatsapp"></i></a>
-
- 
-	
-  <!-- google plus -->
-  <a class="googleplus" href="https://plus.google.com/share?url=https://bailabollywood.com/places/posts/<%=place._id%>" target="blank"><i class="fa fa-google-plus"></i></a>
-
-  <!-- linkedin -->
-  <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://bailabollywood.com/places/posts/<%=place._id%>&title=<%=place.title%>&source=bailabollywood.com" target="blank"><i class="fa fa-linkedin"></i></a>
-  
-  <!-- pinterest 
-  <a class="pinterest" href="https://pinterest.com/pin/create/bookmarklet/?media=<%=place.thumbnail%>&url=https://bailabollywood.com/places/posts/<%=place._id%>&is_video=false&description=<%=place.title%>" target="blank"><i class="fa fa-pinterest-p"></i></a>
-  -->
-</div>
-
-    
-    <div class="container"  >
-    <!---  Place Content -->
-      <p class="target" style="text-align: justify !important; font-size: 18px;"><%= place.content %></p>
-    </div>
-    
-    <div class="container">
-        <%subPlacez.forEach(function(subPlace){%>
-          
-          <div>
-          <h4 style="font-weight: 1000; margin-top:20px;"><%=subPlace.title%></h4>
-          </div>
-         <% if(subPlace.image.localeCompare("")==1){%>
-          <div  class="text-center">
-            <img style="width:100%; height:auto; object-fit: contain; margin-top: 20px; margin-bottom: 20px;" src="<%=subPlace.image%>" alt="image">
-          </div>
-        <%}%>
-          <div class="target mt-2" style="text-align: justify !important; font-size: 18px;"><%=subPlace.content%></div>
-        
-        <%})%>
-      </div>
-      <hr>
-     <% if(prevId!=0){%>
-      <p>
-        <a  href='/places/posts/<%=prevId%>'>
-          <input type="button"  value="<-<%=prev[0].title%>" class="float-left">
-          </a>
-        </p>
-
-      <%}if(nextId!=0){%>
-        <br><br>
-        <p style="padding-top: 5px;">
-        <a href="/places/posts/<%=nextId%>">
-          <input type="button"  value="<%=next[0].title%>->" class="float-right">
-        </a>
-      </p>
-      <br>
-      <%}%>
+    <div class="text-center" style="margin-top:15px ;margin-bottom:15px">
+        <h1 class="text-center title-div" style="color:black; font-weight: bold; padding-top:15px; padding-bottom:15px;" ><%= place.title %></h1>
+        <!--  Blog DAte && Blog Creator-->
       
-      <!-- <div class="container text-center" style="margin-top: 50px;" >
         
-        <h2>Te puede interesar</h2>
-        <div id="lt-place" class="mt-10 mb-5">
-          <a href="/places/posts/<%=suggestionPlace[0]._id%>">
+      </div>
+
+
+      <div class="text-center" style="margin-top:20px; margin-bottom:20px">
+        <%if(place.image!==""){%>
+        <img style="width:100%; height:auto; object-fit: contain;" src="<%= place.image%>" alt="place-image">
+    <%}%>
             
-            <% if(suggestionPlace[0].image.localeCompare("")==1){%>
-                    
-              <img alt="image" class="suggestedPlace"  src="/uploads/<%= suggestionPlace[0].thumbnail %>" />
-              <%} else {%>
-                
-                
-                <img alt="image" class="suggestedPlace"  src="<%= suggestionPlace[0].thumbnail %>"/>
-                <%}%>
-       
-       
-          </a>
-        <p style="color:black;font-weight:bolder; font-size: 20px;"><%=suggestionPlace[0].title%><br><span style="color: black; font-size: 17px;">Categoría-<%=suggestionPlace[0].tag%></span></p>
+          
+    </div>
+        <div class="container"  >
+
+            <!---  Blog Content -->
+              <p class="target" style="text-align: justify !important; font-size: 18px;"><%= place.content %></p>
+            </div>
       
-    </div> -->
-    <br>
+
+  </div>
+  <!-------------------------------Instrument End ------------------------->
+  <!---------------------------------Subinstrument start-->
+
+  <div class="mobile-container">
+    <%place.subPlaces.forEach(function(subPlace){%>
+      
+      <div>
+      <h4 style="font-weight: 1000; margin-top:20px;"><%=subPlace.title%></h4>
       </div>
-      
+     <% if(subPlace.image!==""){%>
+      <div  class="text-center">
+        <img style="width:100%; height:auto; object-fit: contain; margin-top: 20px; margin-bottom: 20px;" src="<%=subPlace.image%>" alt="image">
+      </div>
+    <%}%>
+      <div class="target mt-2" style="text-align: justify !important; font-size: 18px;"><%=subPlace.content%></div>
+    
+    <%})%>
+  </div>
+  <hr>
+
+
+
+
+  <!--------------------------------subinstrument end-->
+  
  <% include ../partials/footer-blog.ejs %>   
  
     
@@ -317,7 +195,7 @@
   <div class="mobile-container text-center">
     <hr>
     <div style="padding-top: 100px; padding-bottom: 50px;">
-    <form action="/places/posts/<%= place._id %>" method="POST">
+    <form action="/instruments/posts/<%= place._id %>/comments" method="POST">
 
       <h3  style="color:grey">Leave A Reply </h3>
       <input required type="text" style="width: 100%; margin-top:5px; margin-bottom: 15px;" name="comment[name]" placeholder="Name">
@@ -329,7 +207,7 @@
   </div> 
 
   <div class="mobile-container" style="margin-bottom:100px ">
-    <% commentz.forEach(comment=>{%>
+    <% place.comments.forEach(comment=>{%>
       <div class="media" style="background-color: #f5f5f5; border-radius: 10px; margin-top: 20px;">
         <div class="media-body">
           <h5 style="font-weight: bold; padding-left: 10px; padding-top: 10px;"><%=comment.name%></h5>

@@ -9,7 +9,7 @@
   <link rel="stylesheet" type="text/css" href="/stylesheets/index.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="canonical" href="https://bailabollywood.com/allPlaces">
+  <link rel="canonical" href="https://bailabollywood.com/allBlogs">
 
 <style type="text/css">
  html,body
@@ -35,7 +35,7 @@
     width: 100%;
 
 }
-#lt-place p {
+#lt-blog p {
     padding-top: 10px;
 } 
   
@@ -50,14 +50,14 @@ button#read-btn {
     border: 2px solid black;
     color: #000;
 }
-div#lt-place p span {
+div#lt-blog p span {
     color: #a9a9a9;
 }
-div#lt-place img {
+div#lt-blog img {
     border: 2px solid #ffffff;
     padding: 10px;
 }
-div#lt-place a img:hover {
+div#lt-blog a img:hover {
     transform: scale(1.1) !important;
 }
 .image-wrapper:hover{
@@ -106,73 +106,22 @@ div#top-post-container h1 {
 
 <body>
 <!------------------------------------Navigation Bar Section-One------------------------------------------>
-
-  <nav id="nav-header" class="navbar navbar-expand-lg navbar-light sticky-top  ">
-    <a class="navbar-brand p-0 m-0" href="/"><img src="/images/Spanish-bolo-natraj-transparent.png" class="logo-navbar"
-        alt="Logo Of Baila Bollywood"></a>
-    <button class="navbar-toggler mr-3  " type="button" data-toggle="collapse"
-      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class=" navbar-toggler-icon"></span>
-    </button>
-
-   <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
-          <ul class="navbar-nav nav nav-pills ">
-            <li class="nav-item m-xl-2 active">
-              <a class="nav-link text-center  " href="/">Inicio </a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center  " href="/#about">
-                Quiénes Somos
-                </a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center  " href="/#blogs">Nuestro Blog</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center  " href="/#pop-categ">Lo más Popular</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center  " href="/#found-note">Nuestro Fundador </a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center  " href="/danzas-folkloricas-de-India">Danzas folclóricas</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center  " href="/equipo">Equipo</a>
-            </li>
-            <li class="nav-item m-xl-2">
-              <a class="nav-link text-center  " href="/blogs">Blogs</a>
-            </li>
-            
-          </ul>
-      
-    </div>
-  </nav>
+ <% include ../partials/navbar.ejs %>
 
 
 <h1 style="padding-top:70px; margin-bottom:20px; font-weight: bold; color: white; font-family:'Ananda Namaste Regular';" class="text-center display-4" >Lo más destacado </h1>
-    <% places.forEach( place => { %>
+    <% places.forEach( data => { %>
 <div class="container-xtr container-fluid" id="top-post-container" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);">
       <div class="row" style= "padding: 10px 0px;">
         <div class="col-12 col-sm-12 col-md-5">
           <div class="container" style="margin-top: 10px;">
-            <a href="/places/posts/<%= place._id %>" class="article-links"><div class="promo" style="--overlay-color: hotpink">
+            <a href="/places/posts/<%= data._id %>" class="article-links"><div class="promo" style="--overlay-color: hotpink">
                 <div class="image-wrapper " >
-              
-                    
-                  <% if(place.image.localeCompare("")==1){%>
-                    
-                    <img src="/uploads/<%= place.thumbnail %>" />
-                    <%} else {%>
-                      
-                      
-                      <img src="<%= place.thumbnail %>"/>`
-                      <%}%>
-                  
-                
-                
+               
+                    <img src="<%= data.thumbnail %>"/>`
+                     
                 </div>
+
                 <!-- <h2 class="title" style="color: black;" data-cta="Explora nuestro mundo →"></h2> -->
             </div></a>
           </div>
@@ -182,16 +131,15 @@ div#top-post-container h1 {
           
             <div>
               
-             <h1 style="padding:5px;color:black; letter-spacing: 1px;" class="title-div"><%=place.title%></h1>
-             <p style="color:#000;">Categoría:<%=place.tag%></p>
+             <h1 style="padding:5px;color:black; letter-spacing: 1px;" class="title-div"><%=data.title%></h1>
              
-             <p style="color:black; word-wrap:break-word;" class="target"><%=place.content%></p>
-            <a href="/places/posts/<%= place._id %>"> 
+             <p style="color:black; word-wrap:break-word;" class="target"><%=data.content%></p>
+            <a href="/places/posts/<%= data._id %>"> 
             
               <button id="read-btn" class="read-more-btn" style="background:linear-gradient(to right,#ff5f6d,#f7b733); font-size:20px; padding-left: 45px; padding-right: 45px; padding-bottom: 40px; border:3px solid #000; border-radius: 20px;">Ver Más</button>
             
             
-            </a></div><a href="/places/posts/<%= place._id %>">
+            </a></div><a href="/places/posts/<%= data._id %>">
           </a>
         </div>
         </div>
