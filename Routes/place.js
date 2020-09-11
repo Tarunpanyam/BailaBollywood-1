@@ -8,14 +8,18 @@ router.get('/', async(req,res)=>{
 try {
     let Allplaces = await Place.find({});
     let places=[];
-    let i=0;
+    let i=-1;
     Allplaces.forEach(data=>{
         i++;
-        if(i%2===1)
-        var obj={title:data.title,thumbnail:data.thumbnail,colIndex:1,id:data._id};
-        else
+    
+        if(i%4==0)
         var obj={title:data.title,thumbnail:data.thumbnail,colIndex:0,id:data._id};
-        
+        else if(i%4==1)
+        var obj={title:data.title,thumbnail:data.thumbnail,colIndex:1,id:data._id};
+        else if(i%4==2)
+        var obj={title:data.title,thumbnail:data.thumbnail,colIndex:2,id:data._id};
+        else if(i%4==3)
+        var obj={title:data.title,thumbnail:data.thumbnail,colIndex:3,id:data._id};
         places.push(obj);
     })
     console.log(places);
