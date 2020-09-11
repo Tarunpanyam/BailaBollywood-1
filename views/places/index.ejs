@@ -48,6 +48,18 @@
          
     }
 
+div#lt-blog a img:hover {
+    transform: scale(1.1) !important;
+}
+.thumbnail-parent:hover{
+  transform: scale(1.1) !important;
+  color:whitesmoke
+  
+}
+.image-wrapper:hover{
+  transform: scale(1.1) !important;
+
+}
 
 
 .testimonial{
@@ -165,14 +177,14 @@
             <a href="/places/posts/<%=data.id%>">
             <img class="thumbnail" src="<%=data.thumbnail%>" alt="place-to-visit-image" style="height: 170px ;width:100%;" >
             </a>
-            <p class="text-center" style="color:whitesmoke; font-size:20px"><%=data.title%> </p>                    
+            <p class="text-center" style="color:whitesmoke; font-size:20px"><strong><%=data.title%></strong></p>                    
           </div>      
           <%}else if(data.colIndex===1){%>
             <div class="col-12 col-md-3 text-center thumbnail-parent">
               <a href="/places/posts/<%=data.id%>">
                 <img class="thumbnail" src="<%=data.thumbnail%>" alt="place-to-visit-image" style="height: 170px ;width:100%;" >
               </a>
-                <p class="text-center" style="color:whitesmoke; font-size:20px"><%=data.title%> </p>         
+                <p class="text-center" style="color:whitesmoke; font-size:20px"><strong><%=data.title%> </strong></p>         
     
             </div>
             <%}else if(data.colIndex===2){%>
@@ -180,7 +192,7 @@
                 <a href="/places/posts/<%=data.id%>">
                   <img class="thumbnail" src="<%=data.thumbnail%>" alt="place-to-visit-image" style="height: 170px ;width:100%;" >
                 </a>
-                  <p class="text-center" style="color:whitesmoke; font-size:20px"><%=data.title%> </p>         
+                  <p class="text-center" style="color:whitesmoke; font-size:20px"><strong><%=data.title%></strong> </p>         
       
               </div>
               <%}else if(data.colIndex===3){%>
@@ -188,7 +200,7 @@
                   <a href="/places/posts/<%=data.id%>">
                     <img class="thumbnail" src="<%=data.thumbnail%>" alt="place-to-visit-image" style="height: 170px ;width:100%;" >
                   </a>
-                    <p class="text-center" style="color:whitesmoke; font-size:20px"><%=data.title%> </p>       
+                    <p class="text-center" style="color:whitesmoke; font-size:20px"><strong><%=data.title%> </strong></p>       
         
                 </div>     
                
