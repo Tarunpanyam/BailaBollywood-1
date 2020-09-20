@@ -9,6 +9,10 @@ try {
     let Allplaces = await Place.find({});
     let places=[];
     let i=-1;
+    let popular = ["5f5e13033400da16c435444e","5ef33d9d1adcce0c8cc2e8cf","5ef9959719c21a05c3d62a2e","5f0d7c2f679eb35a122d0af6","5f0d7fef679eb35a122d0b02","5f101d98e6a3b25f0f3e7af0","5f12f245e6a3b25f0f3e7b19","5f12f7abe6a3b25f0f3e7b25"];
+    let monuments=["5ef9959719c21a05c3d62a2e","5f0eab83e6a3b25f0f3e7aa9","5f0eb011e6a3b25f0f3e7ab5","5f101a85e6a3b25f0f3e7ae9","5f14476fe6a3b25f0f3e7b46","5f180219bceea105955677cd"];
+    let more=["5f1fe063b018fa055ba1075b","5f212e0c9f4ffb1290288541","5ef8188958adde056651db10","5ef9984719c21a05c3d62a37","5ef999ff19c21a05c3d62a38","5ef99d1419c21a05c3d62a3c","5ef99fbb19c21a05c3d62a46","5efaf0dd19c21a05c3d62a54"];
+       
     Allplaces.forEach(data=>{
         i++;
     
