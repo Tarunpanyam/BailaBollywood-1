@@ -27,7 +27,7 @@ try {
         places.push(obj);
     })
     console.log(places);
-    res.render('places/index',{places});
+    res.render('places/index',{places,popular,monuments,more});
 
     
 } catch (error) {
