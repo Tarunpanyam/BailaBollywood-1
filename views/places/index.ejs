@@ -149,6 +149,11 @@ div#lt-blog a img:hover {
         
     </div>
     
+     <section class="introText" >
+                <h1 class="text-center" style="font-family: 'Ananda Namaste Regular';font-size:50px;">Publicaciones más recientes
+                </h1>
+            </section>
+    
             
             
     <!-- Sliding code start-->
@@ -171,45 +176,105 @@ div#lt-blog a img:hover {
       </div>
   </div>
   <!-- Sliding code end-->
-      <div class="container mobile-container" >
+      <section class="introText" >
+      <h1 class="text-center" style="font-family: 'Ananda Namaste Regular';font-size:50px;">Attracción Turística
+      </h1>
+  </section>
+    <div class="container mobile-container" >
+    <div class="row mt-5 mb-5 text-center">
+   
+    <% var i = 0 %>
     
-      <% places.forEach( data =>{ if(data.colIndex===0){%>
-        <div class="row mt-5 mb-5 text-center">
-          <div class="col-12 col-md-3 text-center thumbnail-parent">
-            <a href="/places/posts/<%=data.id%>">
-            <img class="thumbnail" src="<%=data.thumbnail%>" alt="place-to-visit-image" style="height: 170px ;width:100%;" >
-            </a>
-            <p class="text-center" style="color:whitesmoke; font-size:20px"><strong><%=data.title%></strong></p>                    
-          </div>      
-          <%}else if(data.colIndex===1){%>
-            <div class="col-12 col-md-3 text-center thumbnail-parent">
+    
+      <% places.forEach( data =>{ Attracción_Turística.forEach( ele =>{if(data.id == ele){%> 
+          
+        <div class="col-12 col-md-3 text-center thumbnail-parent">                                    
               <a href="/places/posts/<%=data.id%>">
-                <img class="thumbnail" src="<%=data.thumbnail%>" alt="place-to-visit-image" style="height: 170px ;width:100%;" >
-              </a>
-                <p class="text-center" style="color:whitesmoke; font-size:20px"><strong><%=data.title%> </strong></p>         
-    
-            </div>
-            <%}else if(data.colIndex===2){%>
-              <div class="col-12 col-md-3 text-center thumbnail-parent">
-                <a href="/places/posts/<%=data.id%>">
-                  <img class="thumbnail" src="<%=data.thumbnail%>" alt="place-to-visit-image" style="height: 170px ;width:100%;" >
+                <img class="thumbnail" src="<%=data.thumbnail%>" alt="place-to-visit-image" style="height: 180px ;width:100%;" >
                 </a>
-                  <p class="text-center" style="color:whitesmoke; font-size:20px"><strong><%=data.title%></strong> </p>         
-      
-              </div>
-              <%}else if(data.colIndex===3){%>
-                <div class="col-12 col-md-3 text-center thumbnail-parent">
-                  <a href="/places/posts/<%=data.id%>">
-                    <img class="thumbnail" src="<%=data.thumbnail%>" alt="place-to-visit-image" style="height: 170px ;width:100%;" >
-                  </a>
-                    <p class="text-center" style="color:whitesmoke; font-size:20px"><strong><%=data.title%> </strong></p>       
-        
-                </div>     
-               
-          </div>
+                <p class="text-center" style="color:whitesmoke; font-size:20px; font-weight: bold;"><%=data.title%> </p>                         
+        </div>     
+      <%}})})%>   
+    </div>                     
+    </div>
+
+
+
+
+    <section class="introText" >
+      <h1 class="text-center" style="font-family: 'Ananda Namaste Regular';font-size:50px;">Lugares Históricos
+      </h1>
+  </section>
+    <div class="container mobile-container" >
+    <div class="row mt-5 mb-5 text-center">
+  
+      <% places.forEach( data =>{ Lugares_Históricos.forEach( ele =>{if(data.id == ele){%> 
+     
+        <div class="col-12 col-md-3 text-center thumbnail-parent">                                    
+              <a href="/places/posts/<%=data.id%>">
+                <img class="thumbnail" src="<%=data.thumbnail%>" alt="place-to-visit-image" style="height: 180px ;width:100%;" >
+                </a>
+                <p class="text-center" style="color:whitesmoke; font-size:20px; font-weight: bold;"><%=data.title%>%></p>                         
+        </div>    
+      <%}})})%>   
+    </div>                     
+    </div>
+
+    <section class="introText" >
+      <h1 class="text-center" style="font-family: 'Ananda Namaste Regular';font-size:50px;">Conozca a la India
+      </h1>
+  </section>
+    <div class="container mobile-container" >
+    <div class="row mt-5 mb-5 text-center">
+  
+      <% places.forEach( data =>{ Conzca_a_la_India.forEach( ele =>{if(data.id == ele){%> 
+     
+        <div class="col-12 col-md-3 text-center thumbnail-parent">                                    
+              <a href="/places/posts/<%=data.id%>">
+                <img class="thumbnail" src="<%=data.thumbnail%>" alt="place-to-visit-image" style="height: 180px ;width:100%;" >
+                </a>
+                <p class="text-center" style="color:whitesmoke; font-size:20px; font-weight: bold;"><%=data.title%>%></p>                         
+        </div>    
+      <%}})})%>   
+    </div>                     
+    </div>
     
-          <%}})%>
-        </div> 
+
+    <section class="introText" >
+      <h1 class="text-center" style="font-family: 'Ananda Namaste Regular';font-size:50px;">Gastronomía India
+      </h1>
+  </section>
+    <div class="container mobile-container" >
+    <div class="row mt-5 mb-5 text-center">
+  
+      <% places.forEach( data =>{ Gastronomía_India.forEach( ele =>{if(data.id == ele){%> 
+     
+        <div class="col-12 col-md-3 text-center thumbnail-parent">                                    
+              <a href="/places/posts/<%=data.id%>">
+                <img class="thumbnail" src="<%=data.thumbnail%>" alt="place-to-visit-image" style="height: 180px ;width:100%;" >
+                </a>
+                <p class="text-center" style="color:whitesmoke; font-size:20px; font-weight: bold;"><%=data.title%>%></p>                         
+        </div>    
+      <%}})})%>   
+    </div>                     
+    </div>
+
+    <section class="introText" >
+      <h1 class="text-center" style="font-family: 'Ananda Namaste Regular';font-size:50px;">Otros Articulos
+  </section>
+    <div class="container mobile-container" >
+    <div class="row mt-5 mb-5 text-center">
+  
+      <% places.forEach( data =>{ Otros_Articulos.forEach( ele =>{if(data.id == ele){%>     
+        <div class="col-12 col-md-3 text-center thumbnail-parent">                                    
+              <a href="/places/posts/<%=data.id%>">
+                <img class="thumbnail" src="<%=data.thumbnail%>" alt="place-to-visit-image" style="height: 180px ;width:100%;" >
+                </a>
+                <p class="text-center" style="color:whitesmoke; font-size:20px; font-weight: bold;"><%=data.title%> </p>                         
+        </div>     
+      <%}})})%>   
+    </div>                     
+    </div>
     <% include ../partials/footerAll.ejs %>
 
      <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
