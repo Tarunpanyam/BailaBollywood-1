@@ -6,28 +6,31 @@ const Comment = require('../models/Comment');
 
 router.get('/', async(req,res)=>{
 try {
+    const reverse = arr => arr.map((_, index) => arr[arr.length - 1 - index]);
     let Allplaces = await Place.find({});
-    let places=[];
+    let arr=[];
     let i=-1;
-    let popular = ["5f5e13033400da16c435444e","5ef33d9d1adcce0c8cc2e8cf","5ef9959719c21a05c3d62a2e","5f0d7c2f679eb35a122d0af6","5f0d7fef679eb35a122d0b02","5f101d98e6a3b25f0f3e7af0","5f12f245e6a3b25f0f3e7b19","5f12f7abe6a3b25f0f3e7b25"];
-    let monuments=["5ef9959719c21a05c3d62a2e","5f0eab83e6a3b25f0f3e7aa9","5f0eb011e6a3b25f0f3e7ab5","5f101a85e6a3b25f0f3e7ae9","5f14476fe6a3b25f0f3e7b46","5f180219bceea105955677cd"];
-    let more=["5f1fe063b018fa055ba1075b","5f212e0c9f4ffb1290288541","5ef8188958adde056651db10","5ef9984719c21a05c3d62a37","5ef999ff19c21a05c3d62a38","5ef99d1419c21a05c3d62a3c","5ef99fbb19c21a05c3d62a46","5efaf0dd19c21a05c3d62a54"];
-       
+    let Attracción_Turística= ["5ef33d9d1adcce0c8cc2e8cf","5ef9959719c21a05c3d62a2e","5f0d7c2f679eb35a122d0af6","5f0d7fef679eb35a122d0b02","5f12f245e6a3b25f0f3e7b19","5f12f7abe6a3b25f0f3e7b25"];
+    let Lugares_Históricos=["5ef99fbb19c21a05c3d62a46","5f101a85e6a3b25f0f3e7ae9","5f14476fe6a3b25f0f3e7b46","5f180219bceea105955677cd"];
+    let Conzca_a_la_India=["5ef8188958adde056651db10","5ef9984719c21a05c3d62a37","5ef999ff19c21a05c3d62a38","5ef99d1419c21a05c3d62a3c"];
+    let Gastronomía_India=["5f1fe063b018fa055ba1075b","5f212e0c9f4ffb1290288541"];
+    let Otros_Articulos=["5f0eb011e6a3b25f0f3e7ab5","5efaf0dd19c21a05c3d62a54","5f101d98e6a3b25f0f3e7af0","5f0eab83e6a3b25f0f3e7aa9"]
     Allplaces.forEach(data=>{
         i++;
-    
+        let tag = data.tag;
         if(i%4==0)
-        var obj={title:data.title,thumbnail:data.thumbnail,colIndex:0,id:data._id};
+        var obj={title:data.title,thumbnail:data.thumbnail,tag:tag,colIndex:0,id:data._id};
         else if(i%4==1)
-        var obj={title:data.title,thumbnail:data.thumbnail,colIndex:1,id:data._id};
+        var obj={title:data.title,thumbnail:data.thumbnail,tag:tag,colIndex:1,id:data._id};
         else if(i%4==2)
-        var obj={title:data.title,thumbnail:data.thumbnail,colIndex:2,id:data._id};
+        var obj={title:data.title,thumbnail:data.thumbnail,tag:tag,colIndex:2,id:data._id};
         else if(i%4==3)
-        var obj={title:data.title,thumbnail:data.thumbnail,colIndex:3,id:data._id};
-        places.push(obj);
+        var obj={title:data.title,thumbnail:data.thumbnail,tag:tag,colIndex:3,id:data._id};
+        arr.push(obj);
     })
+    let places= reverse(arr);
     console.log(places);
-    res.render('places/index',{places,popular,monuments,more});
+    res.render('places/index',{places,Attracción_Turística,Lugares_Históricos,Conzca_a_la_India,Gastronomía_India,Otros_Articulos});
 
     
 } catch (error) {
